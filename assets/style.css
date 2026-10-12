@@ -193,6 +193,8 @@ code, kbd { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; fon
 .guide-list a { font-size: 19px; font-weight: 600; text-decoration: none; color: var(--ink); letter-spacing: -0.01em; }
 .guide-list a:hover { color: var(--accent-ink); }
 .guide-list p { margin: 6px 0 0; color: var(--ink2); }
+.page .related { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
+.page .related h2 { margin-top: 0; }
 .cta-end { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 28px; max-width: var(--measure); }
 
 .foot { border-top: 1px solid var(--line); padding: 40px 0 56px; color: var(--ink3); font-size: 14px; }

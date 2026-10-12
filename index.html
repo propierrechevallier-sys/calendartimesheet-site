@@ -3,23 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calendar Timesheet: billable hours from Google Calendar, in Google Sheets</title>
-<meta name="description" content="Bill every hour that is already in your Google Calendar. A Google Sheets add-on that turns your meetings into hours, amounts and monthly statements per client, updated every hour. Free export, Pro trial, no account.">
+<title>Calendar Timesheet: billable hours from Google Calendar</title>
+<meta name="description" content="Bill every hour already in your Google Calendar. A Google Sheets add-on that turns meetings into hours, amounts and monthly statements per client.">
 <link rel="canonical" href="https://calendartimesheet.com/">
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
 <link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
 <meta property="og:title" content="Calendar Timesheet: bill every hour that is already in your calendar">
 <meta property="og:description" content="Your Google Calendar meetings become hours, amounts and monthly statements per client, in your own Google Sheet.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
 <meta property="og:url" content="https://calendartimesheet.com/">
 <meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calendar Timesheet","applicationCategory":"BusinessApplication","operatingSystem":"Web (Google Sheets)",
 "description":"Google Sheets add-on that turns Google Calendar events into billable hours and monthly statements by client.","url":"https://calendartimesheet.com/",
 "offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Monthly","price":"6.90","priceCurrency":"USD"},
 {"@type":"Offer","name":"Yearly","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Lifetime (early access)","price":"79","priceCurrency":"USD"}]}
 </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/","logo":"https://calendartimesheet.com/assets/apple-touch-icon.png","email":"support@calendartimesheet.com","founder":{"@type":"Person","name":"Pierre Chevallier"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where does my data go?","acceptedAnswer":{"@type":"Answer","text":"Into your own Google Sheet, in your Google account. The only thing that ever leaves it is your licence key, sent to Gumroad to check it. No analytics, no tracking. The privacy policy has the details."}},{"@type":"Question","name":"Does it change my calendar?","acceptedAnswer":{"@type":"Answer","text":"No. It only reads it."}},{"@type":"Question","name":"What happens when the trial ends?","acceptedAnswer":{"@type":"Answer","text":"Nothing is deleted. Your statements stay in the sheet and export keeps working for free. Autopilot, clients and rates need a licence."}},{"@type":"Question","name":"Why does Google say it hasn't verified the app?","acceptedAnswer":{"@type":"Answer","text":"During early access, Calendar Timesheet comes as a ready-made sheet that you copy. The copy belongs to you, so Google shows its standard warning for scripts it has not reviewed. The Marketplace version is going through Google's verification. The step-by-step page shows each screen."}},{"@type":"Question","name":"Can I cancel?","acceptedAnswer":{"@type":"Answer","text":"Yes, at any time from your Gumroad receipt. Pro keeps working until the end of the period you paid for. See managing your subscription."}},{"@type":"Question","name":"Does it work with Google Workspace accounts?","acceptedAnswer":{"@type":"Answer","text":"Yes, with personal Google accounts and Google Workspace accounts, as long as your organisation allows add-ons and scripts."}}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -169,6 +177,21 @@
   </div>
 </section>
 
+<section class="band" id="guides">
+  <div class="wrap">
+    <h2>Guides for billing from Google Calendar</h2>
+    <p class="intro">Free methods first, with the formulas and the mistakes to avoid.</p>
+    <div class="details">
+      <div><h3><a href="/guides/google-calendar-time-tracking/">Google Calendar time tracking</a></h3><p>Track billable hours without a timer: plan, correct, tag and count.</p></div>
+      <div><h3><a href="/guides/count-hours-in-google-calendar/">Count hours by client</a></h3><p>Colours, calendars, keywords and guest domains, and how to add them up.</p></div>
+      <div><h3><a href="/guides/google-sheets-timesheet-template/">Google Sheets timesheet template</a></h3><p>The columns and formulas of a freelance timesheet, rounding included.</p></div>
+      <div><h3><a href="/guides/google-calendar-timesheet/">Turn Google Calendar into a timesheet</a></h3><p>By hand, with a short script, or automatically.</p></div>
+      <div><h3><a href="/guides/export-google-calendar-to-google-sheets/">Export Google Calendar to Sheets</a></h3><p>The .ics export, Apps Script and an hourly sync, compared.</p></div>
+      <div><h3><a href="/guides/bill-clients-from-google-calendar/">Bill clients from your calendar</a></h3><p>Rates, rounding, minimums, retainers and month-end statements.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="final"><div class="wrap"><div class="box">
   <h2>Start with this month</h2>
   <p>The free sheet takes a minute to copy. The trial lasts until your first month-end statement, so you see a full month close before you pay anything.</p>
@@ -182,7 +205,6 @@
     <div>
       <a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
       <p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p>
-      <p>Written and built with the help of AI.</p>
     </div>
     <nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
   </div>
