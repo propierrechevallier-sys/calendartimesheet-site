@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to count hours in Google Calendar by client | Calendar Timesheet</title>
+<meta name="description" content="Google Calendar shows no totals. How to count hours per client or project using colours, calendars and keywords, for free or automatically.">
+<link rel="canonical" href="https://calendartimesheet.com/guides/count-hours-in-google-calendar/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:title" content="How to count hours in Google Calendar by client">
+<meta property="og:description" content="Google Calendar shows no totals. How to count hours per client or project using colours, calendars and keywords, for free or automatically.">
+<meta property="og:url" content="https://calendartimesheet.com/guides/count-hours-in-google-calendar/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to count hours in Google Calendar by client","description":"Google Calendar shows no totals. How to count hours per client or project using colours, calendars and keywords, for free or automatically.","author":{"@type":"Person","name":"Pierre Chevallier"},"publisher":{"@type":"Organization","name":"Calendar Timesheet"},"mainEntityOfPage":"https://calendartimesheet.com/guides/count-hours-in-google-calendar/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/guides/">Guides</a><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>How to count hours in Google Calendar by client</h1>
+<p class="meta">Updated 12 October 2026. About 6 minutes to read.</p>
+
+<p>Google Calendar shows when you work, not how much. There is no total per client, per project or per colour in a personal Google account. Counting hours takes two things: a consistent way to say which client each meeting belongs to, and a place where the durations are added up.</p>
+
+<h2>Step 1: tag each meeting with its client</h2>
+<p>There are four common conventions. Pick the one you will actually keep up.</p>
+<table>
+  <thead><tr><th scope="col">Convention</th><th scope="col">Good for</th><th scope="col">Watch out for</th></tr></thead>
+  <tbody>
+    <tr><td><b>A colour per client</b></td><td>Few clients, visual planning. Set it with right-click on an event.</td><td>Google offers 11 event colours; past 11 clients, colours run out.</td></tr>
+    <tr><td><b>A calendar per client</b></td><td>Many clients, or sharing a client's calendar with them.</td><td>More calendars to tick and keep visible.</td></tr>
+    <tr><td><b>A word in the title</b>, like "Acme: weekly call"</td><td>Any number of clients, works on the phone.</td><td>One typo and the meeting goes uncounted.</td></tr>
+    <tr><td><b>The guest's email domain</b>, like anyone at acme.com</td><td>Client meetings with invitations: no tagging at all.</td><td>Internal work without guests needs another tag.</td></tr>
+  </tbody>
+</table>
+<p>Mixing is fine as long as the rules are clear: for example, colour first, then the guest domain for meetings you forgot to colour.</p>
+
+<h2>Step 2: add up the durations</h2>
+<h3>Inside Google Calendar (work accounts only)</h3>
+<p>With some Google Workspace business, enterprise and education editions, the <b>Time insights</b> panel shows how your time splits, including <a href="https://workspaceupdates.googleblog.com/2022/08/color-categorization-time-insights-google-calendar.html">by colour</a>. It is not available in personal Google accounts, it shows charts rather than a list you can invoice from, and it has no rates or amounts.</p>
+<h3>In Google Sheets, for free</h3>
+<p>Get one line per event into a sheet first. The <a href="/guides/google-calendar-timesheet/">timesheet guide</a> has a ten-line script that writes date, start, end, hours, title and colour number. Then:</p>
+<ul>
+  <li><b>By colour</b>: <code>=SUMIF(F:F, "10", D:D)</code> adds the hours of colour 10. Google numbers event colours 1 Lavender, 2 Sage, 3 Grape, 4 Flamingo, 5 Banana, 6 Tangerine, 7 Peacock, 8 Graphite, 9 Blueberry, 10 Basil, 11 Tomato; an empty value means the calendar's own colour.</li>
+  <li><b>By word in the title</b>: <code>=SUMIF(E:E, "Acme*", D:D)</code> adds every event whose title starts with Acme.</li>
+  <li><b>All clients at once</b>: select the table, then <b>Insert</b>, <b>Pivot table</b>, with Colour or a client column in rows and the sum of Hours in values.</li>
+</ul>
+<p>To turn colours into client names, add a small two-column table (colour number, client) and a <code>VLOOKUP</code> next to each line.</p>
+<h3>Automatically, with Calendar Timesheet</h3>
+<p><a href="/">Calendar Timesheet</a> reads your calendars every hour and applies your rules in order: colour, calendar, title word, guest domain. Meetings that match no rule wait in a <b>To sort</b> list, where one click assigns them and can remember the choice for next time. Totals per client, amounts and a dashboard update on their own.</p>
+
+<h2>Make the count match reality</h2>
+<ul>
+  <li><b>Use what happened, not what was planned.</b> Move or shorten the event after the meeting if it ran differently. A calendar is only as true as its last edit.</li>
+  <li><b>Separate done from planned.</b> Mid-month, hours already worked and hours still booked are different numbers. Both are useful: one for the invoice, one for the forecast.</li>
+  <li><b>Skip what is not work.</b> Declined invitations, all-day events and time marked free should not count.</li>
+  <li><b>Count shared meetings once.</b> A meeting copied into two of your calendars is still one hour.</li>
+</ul>
+
+<h2>Which approach fits you</h2>
+<table>
+  <thead><tr><th scope="col">You have</th><th scope="col">Try</th></tr></thead>
+  <tbody>
+    <tr><td>3 clients, a few meetings a week</td><td>Colours and a monthly <code>SUMIF</code> on a script export</td></tr>
+    <tr><td>A work account and you only want to see the split</td><td>Time insights by colour</td></tr>
+    <tr><td>Clients billed by the hour every month</td><td>An automatic sheet with rates and month-end statements</td></tr>
+  </tbody>
+</table>
+
+<div class="cta-end">
+  <p><b>Let the sheet keep count.</b> Calendar Timesheet's free export gives you totals by colour and by calendar for any period; Pro adds clients, rates and autopilot.</p>
+  <p><a class="btn primary" href="/get-the-sheet/">Get the free sheet</a></p>
+</div>
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p><p>Written and built with the help of AI.</p></div><nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></div></footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to turn Google Calendar into a timesheet | Calendar Timesheet</title>
+<meta name="description" content="Three ways to turn Google Calendar into a timesheet: by hand, with a formula in Google Sheets, or automatically. Step by step, with the pitfalls.">
+<link rel="canonical" href="https://calendartimesheet.com/guides/google-calendar-timesheet/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:title" content="How to turn Google Calendar into a timesheet">
+<meta property="og:description" content="Three ways to turn Google Calendar into a timesheet: by hand, with a formula in Google Sheets, or automatically. Step by step, with the pitfalls.">
+<meta property="og:url" content="https://calendartimesheet.com/guides/google-calendar-timesheet/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to turn Google Calendar into a timesheet","description":"Three ways to turn Google Calendar into a timesheet: by hand, with a formula in Google Sheets, or automatically. Step by step, with the pitfalls.","author":{"@type":"Person","name":"Pierre Chevallier"},"publisher":{"@type":"Organization","name":"Calendar Timesheet"},"mainEntityOfPage":"https://calendartimesheet.com/guides/google-calendar-timesheet/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/guides/">Guides</a><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>How to turn Google Calendar into a timesheet</h1>
+<p class="meta">Updated 12 October 2026. About 7 minutes to read.</p>
+
+<p>If you already put your client work in Google Calendar, you have most of a timesheet. What you do not have is a list with dates and durations, and totals per client. Google Calendar does not produce one: its export is a calendar file, not a table. Here are three ways to get there, from free and manual to fully automatic, and the details that quietly make totals wrong.</p>
+
+<h2>Method 1: by hand, in a spreadsheet</h2>
+<p>Open Google Calendar in week view, open an empty Google Sheet next to it, and type one line per meeting: date, start, end, client. Add a column with <code>=(C2-B2)*24</code> to get hours, and a total at the bottom.</p>
+<p>It costs nothing and works for a handful of meetings a week. Past that, it takes time every week, and typing errors are invisible: nobody re-checks a typed 14:30 against the calendar.</p>
+
+<h2>Method 2: a short script in Google Sheets</h2>
+<p>Google Sheets can read your calendar with Apps Script, Google's built-in scripting. In a new sheet, open <b>Extensions</b>, then <b>Apps Script</b>, paste this, adjust the two dates, and run <code>listMonth</code>. Google will ask you to authorise your own script.</p>
+<pre><code>function listMonth() {
+  var cal = CalendarApp.getDefaultCalendar();
+  var start = new Date(2026, 9, 1), end = new Date(2026, 10, 1); // October 2026
+  var rows = [['Date', 'Start', 'End', 'Hours', 'Title', 'Colour']];
+  cal.getEvents(start, end).forEach(function (e) {
+    if (e.isAllDayEvent()) return;
+    var hours = (e.getEndTime() - e.getStartTime()) / 3600000;
+    rows.push([e.getStartTime(), e.getStartTime(), e.getEndTime(), hours, e.getTitle(), e.getColor()]);
+  });
+  var sheet = SpreadsheetApp.getActiveSheet();
+  sheet.clear();
+  sheet.getRange(1, 1, rows.length, rows[0].length).setValues(rows);
+}</code></pre>
+<p>Months in Apps Script count from 0, so <code>new Date(2026, 9, 1)</code> is 1 October. You get one line per event with its duration and colour number. From there, a pivot table or <code>SUMIF</code> gives totals (the <a href="/guides/count-hours-in-google-calendar/">counting guide</a> shows how).</p>
+<p>This is a good free option if you are comfortable with a little code. It reads only your main calendar, and it inherits every pitfall listed below unless you handle them yourself.</p>
+
+<h2>Method 3: automatically, with an add-on</h2>
+<p>An add-on does the same reading for you, on a schedule. <a href="/">Calendar Timesheet</a>, which we make, reads the calendars you choose every hour, puts each meeting under a client by colour, calendar, a word in the title or the guest's email domain, and keeps a <b>This month</b> tab up to date. On the 1st it closes the previous month into one statement per client and emails you a summary. Export of any period is free; clients, rates and autopilot are part of Pro, with a trial that lasts until your first month-end.</p>
+<p>Other add-ons export raw events to a sheet; that suits people who want to build their own report. The pitfalls below are what separates a raw export from a timesheet you can invoice from.</p>
+
+<h2>The pitfalls that make totals wrong</h2>
+<h3>Meetings across a boundary</h3>
+<p>A workshop from 22:00 to 01:00 on 31 October belongs to two months. Counting it whole in October overbills October and leaves November short. Only the part inside the period should count.</p>
+<h3>Declined and unanswered invitations</h3>
+<p>Calendar scripts return events you declined. If someone invites you to a meeting you turned down, it still lands in a naive export. Filter on your own response.</p>
+<h3>All-day events and "free" time</h3>
+<p>Holidays, travel days and reminders are often all-day events or marked "free". They are not work time, and an all-day event read as 24 hours wrecks a total.</p>
+<h3>The same meeting in two calendars</h3>
+<p>If a client invites you and you also copy the meeting into your work calendar, an export of both calendars counts it twice. Events share an identifier (iCalUID) you can use to keep one.</p>
+<h3>Recurring meetings with exceptions</h3>
+<p>A weekly call moved one week and cancelled another must count as it happened, not as the series says. Read expanded occurrences, not the series.</p>
+<h3>Time zones</h3>
+<p>If your sheet and a calendar use different time zones, start times shift. Use one time zone for the timesheet, usually the sheet's.</p>
+
+<h2>A timesheet you can trust: the checklist</h2>
+<ol>
+  <li>Choose one way to tag clients (colour, calendar, title word or guest domain) and keep to it.</li>
+  <li>Count only the part of each meeting inside the period.</li>
+  <li>Leave out declined invitations, all-day events and time marked free.</li>
+  <li>Count a meeting found in two calendars once.</li>
+  <li>Freeze each month once invoiced, so later edits in the calendar do not change what you sent.</li>
+</ol>
+
+<div class="cta-end">
+  <p><b>Want it done for you every hour?</b> Calendar Timesheet handles each point of this checklist, in your own Google Sheet, without an account.</p>
+  <p><a class="btn primary" href="/get-the-sheet/">Get the free sheet</a></p>
+</div>
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p><p>Written and built with the help of AI.</p></div><nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></div></footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Export Google Calendar to Google Sheets automatically | Calendar Timesheet</title>
+<meta name="description" content="Export Google Calendar events to Google Sheets: the .ics export, Apps Script, and an automatic hourly sync, compared honestly.">
+<link rel="canonical" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:title" content="Export Google Calendar to Google Sheets automatically">
+<meta property="og:description" content="Export Google Calendar events to Google Sheets: the .ics export, Apps Script, and an automatic hourly sync, compared honestly.">
+<meta property="og:url" content="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Export Google Calendar to Google Sheets automatically","description":"Export Google Calendar events to Google Sheets: the .ics export, Apps Script, and an automatic hourly sync, compared honestly.","author":{"@type":"Person","name":"Pierre Chevallier"},"publisher":{"@type":"Organization","name":"Calendar Timesheet"},"mainEntityOfPage":"https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/guides/">Guides</a><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Export Google Calendar to Google Sheets automatically</h1>
+<p class="meta">Updated 12 October 2026. About 6 minutes to read.</p>
+
+<p>Google Calendar has no "export to Sheets" button. What it offers is an export of your calendars as <code>.ics</code> files, the standard calendar format, meant for moving events into another calendar app. Getting events into a spreadsheet, and keeping them there up to date, takes one of the approaches below.</p>
+
+<h2>Option 1: Google Calendar's own export</h2>
+<p>In Google Calendar, open <b>Settings</b>, then <b>Import &amp; export</b>, then <b>Export</b>. You download a zip with one <code>.ics</code> file per calendar (Google's <a href="https://support.google.com/calendar/answer/37111">help page</a> describes it).</p>
+<ul>
+  <li><b>Good</b>: complete, official, works for any account.</li>
+  <li><b>Not so good</b>: Google Sheets cannot open <code>.ics</code> files. You need a converter, and the result has one line per event series, with recurrence rules instead of actual dates. It is a snapshot: next week, you do it again.</li>
+</ul>
+
+<h2>Option 2: a script with a timer</h2>
+<p>Apps Script, built into Google Sheets, can read your calendar and write rows, and a time-driven trigger can run it every hour. Start from the short script in the <a href="/guides/google-calendar-timesheet/">timesheet guide</a>, then, in the Apps Script editor, open <b>Triggers</b>, click <b>Add Trigger</b>, choose your function, "Time-driven" and "Hour timer".</p>
+<ul>
+  <li><b>Good</b>: free, exactly what you want, stays in your account.</li>
+  <li><b>Not so good</b>: you maintain it. Re-running it rewrites the sheet, so notes you add next to the rows get misaligned. Reading several calendars, skipping declined invitations, splitting meetings across midnight and avoiding duplicates are all yours to write.</li>
+</ul>
+
+<h2>Option 3: an add-on from the Google Workspace Marketplace</h2>
+<p>Add-ons install into Google Sheets in two clicks and do the reading for you. They fall into two families:</p>
+<ul>
+  <li><b>Raw exporters</b> copy events into a sheet, often with a schedule. They suit people who want the data and will build their own reports.</li>
+  <li><b>Timesheet add-ons</b> go further: they turn events into hours per client or project, with totals. <a href="/">Calendar Timesheet</a> is one of them, and it is ours.</li>
+</ul>
+<p>Before installing any add-on, look at what Google asks you to allow. A tool that only reads should ask to <i>view</i> your calendars, not to edit them, and to access only the spreadsheet you use it in.</p>
+
+<h2>Side by side</h2>
+<table>
+  <thead><tr><th scope="col"></th><th scope="col">.ics export</th><th scope="col">Script with timer</th><th scope="col">Calendar Timesheet</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Opens in Sheets</th><td>No, needs a converter</td><td>Yes</td><td>Yes</td></tr>
+    <tr><th scope="row">Stays up to date</th><td>No</td><td>Yes, hourly</td><td>Yes, hourly</td></tr>
+    <tr><th scope="row">Several calendars</th><td>One file each</td><td>If you code it</td><td>Yes</td></tr>
+    <tr><th scope="row">Real occurrences of recurring events</th><td>No, series rules</td><td>Yes</td><td>Yes</td></tr>
+    <tr><th scope="row">Keeps your notes next to rows</th><td>No</td><td>Not by default</td><td>Yes</td></tr>
+    <tr><th scope="row">Totals per client, amounts</th><td>No</td><td>If you code it</td><td>Yes (Pro)</td></tr>
+    <tr><th scope="row">Cost</th><td>Free</td><td>Free, plus your time</td><td>Free export; Pro from $49 a year</td></tr>
+  </tbody>
+</table>
+
+<h2>The free export in Calendar Timesheet</h2>
+<p>Calendar Timesheet's export is free without time limit: pick any period up to a year and the calendars to read, and it writes one line per event (date, start, end, duration, title, calendar, colour) to an <b>Export</b> tab, with totals by colour and by calendar. It never edits your calendar and sends nothing out of your Google account.</p>
+
+<div class="cta-end">
+  <p><a class="btn primary" href="/get-the-sheet/">Get the free sheet</a></p>
+</div>
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p><p>Written and built with the help of AI.</p></div><nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></div></footer>
+</body>
+</html>

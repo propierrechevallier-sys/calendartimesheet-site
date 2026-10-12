@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar Timesheet: billable hours from Google Calendar, in Google Sheets</title>
+<meta name="description" content="Bill every hour that is already in your Google Calendar. A Google Sheets add-on that turns your meetings into hours, amounts and monthly statements per client, updated every hour. Free export, Pro trial, no account.">
+<link rel="canonical" href="https://calendartimesheet.com/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:title" content="Calendar Timesheet: bill every hour that is already in your calendar">
+<meta property="og:description" content="Your Google Calendar meetings become hours, amounts and monthly statements per client, in your own Google Sheet.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calendartimesheet.com/">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calendar Timesheet","applicationCategory":"BusinessApplication","operatingSystem":"Web (Google Sheets)",
+"description":"Google Sheets add-on that turns Google Calendar events into billable hours and monthly statements by client.","url":"https://calendartimesheet.com/",
+"offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Monthly","price":"6.90","priceCurrency":"USD"},
+{"@type":"Offer","name":"Yearly","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Lifetime (early access)","price":"79","priceCurrency":"USD"}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
+  <nav class="nav" aria-label="Main"><a href="#how">How it works</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="/guides/">Guides</a><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav>
+</div></header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <span class="badge"><b>Google Sheets add-on</b>For freelancers and consultants who bill by the hour</span>
+    <h1>Bill every hour that is already in your calendar.</h1>
+    <p class="lede">Calendar Timesheet turns the meetings in your Google Calendar into hours and amounts per client, in your own Google Sheet. It updates every hour, and on the 1st each client has a statement ready to invoice.</p>
+    <div class="cta"><a class="btn primary" href="/get-the-sheet/">Get the free sheet</a><a class="btn quiet" href="#how">See how it works</a></div>
+    <p class="fine">No timer to start. No account to create. Your data stays in your Google account.</p>
+    <p class="early">Early access: while Google reviews the Marketplace listing, Calendar Timesheet comes as a ready-made sheet you copy into your account.</p>
+  </div>
+  <div class="stage" aria-label="Example: a client statement in Google Sheets, with the Calendar Timesheet panel open">
+    <div class="window">
+      <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">docs.google.com / Timesheet 2026</span></div>
+      <div class="app">
+        <div class="sheet">
+          <div class="sheetbar" aria-hidden="true"><b>Timesheet 2026</b><span>File</span><span>Edit</span><span>View</span><span>Extensions</span></div>
+          <div class="doc num">
+            <div class="dh">
+              <div><div class="cl"><i></i>Roux Legal</div><div class="sub">Statement for October 2026</div></div>
+              <div><div class="amt">$1,740.00</div><div class="sub" style="text-align:right">21 h 45 at $80 an hour <span class="chip">Ready to invoice</span></div></div>
+            </div>
+            <table>
+              <thead><tr><th scope="col">Date</th><th scope="col" class="l">Meeting</th><th scope="col">Start</th><th scope="col">End</th><th scope="col">Time</th><th scope="col">Billed</th><th scope="col">Amount</th></tr></thead>
+              <tbody>
+                <tr><td>Mon, Oct 5</td><td class="l">Contract review</td><td>9:00</td><td>11:00</td><td>2:00</td><td>2:00</td><td>$160.00</td></tr>
+                <tr><td>Tue, Oct 6</td><td class="l">Call with Julia</td><td>15:00</td><td>15:35</td><td>0:35</td><td>0:45</td><td>$60.00</td></tr>
+                <tr><td>Thu, Oct 8</td><td class="l">Due diligence</td><td>9:00</td><td>11:30</td><td>2:30</td><td>2:30</td><td>$200.00</td></tr>
+                <tr><td>Mon, Oct 12</td><td class="l">Board preparation</td><td>14:00</td><td>18:00</td><td>4:00</td><td>4:00</td><td>$320.00</td></tr>
+                <tr><td>Wed, Oct 14</td><td class="l">Contract review</td><td>10:00</td><td>12:15</td><td>2:15</td><td>2:15</td><td>$180.00</td></tr>
+                <tr><td>Wed, Oct 21</td><td class="l">Negotiation meeting</td><td>14:00</td><td>17:00</td><td>3:00</td><td>3:00</td><td>$240.00</td></tr>
+                <tr><td>Mon, Oct 26</td><td class="l">Closing documents</td><td>9:00</td><td>13:00</td><td>4:00</td><td>4:00</td><td>$320.00</td></tr>
+                <tr class="more"><td colspan="7">5 more meetings</td></tr>
+                <tr class="tot"><td>Total</td><td class="l">12 meetings</td><td></td><td></td><td>21:32</td><td>21:45</td><td>$1,740.00</td></tr>
+              </tbody>
+            </table>
+            <p class="foot-note">Each meeting rounded up to 15 minutes. Prepared from Google Calendar with Calendar Timesheet.</p>
+          </div>
+          <div class="tabs" aria-hidden="true"><span>This month</span><span>Dashboard</span><span>To sort</span><span class="on">Oct 2026: Roux Legal</span><span>Oct 2026: Martin Studio</span><span>Payments</span></div>
+        </div>
+        <div class="panel num" aria-hidden="true">
+          <div class="phead">Calendar Timesheet <span class="x">✕</span></div>
+          <div class="pbody">
+            <div class="prow"><span class="logo"><span><i></i><i></i><i></i></span></span><span class="pill">Pro</span></div>
+            <div class="prow"><span>November so far</span><span>Updated 09:00</span></div>
+            <div><div class="big">$787.50</div><div class="muted">of $4,017.50 expected</div></div>
+            <div class="ribbon"><i style="width:14%;background:var(--c1)"></i><i style="width:16%;background:var(--c2)"></i><i style="width:9%;background:var(--c3)"></i></div>
+            <div class="legend"><i style="background:var(--c1)"></i><span>Roux Legal</span><span class="m">3 h 30</span><b>$280</b><i style="background:var(--c2)"></i><span>Martin Studio</span><span class="m">4 h</span><b>$320</b><i style="background:var(--c3)"></i><span>Lumen Training</span><span class="m">2 h 30</span><b>$187.50</b></div>
+            <div class="todo"><span class="n">2</span><div><b>2 events to sort</b><div class="muted">Not matched to a client yet</div></div></div>
+            <div class="navl"><span>Clients and rules</span><span>Autopilot</span><span>Export a period</span><span>Plan and licence</span><span>Update now</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="border-top:1px solid var(--line)">
+  <div class="wrap problem">
+    <h2>What the end of the month looks like without it</h2>
+    <div><p>You open your calendar, go back four weeks and count each client's meetings. You copy dates and durations into a spreadsheet, round them and multiply by the rate.</p>
+      <p>It takes an evening, and you are never sure you have not missed a call that ran over. <b>The hours were already in your calendar: you wrote them down once, when you planned the meeting.</b></p></div>
+  </div>
+</section>
+
+<section class="band alt" id="how">
+  <div class="wrap">
+    <h2>Set it up once, in about three minutes</h2>
+    <p class="intro">The setup reads the last 30 days of your calendar and asks only what it cannot guess.</p>
+    <ol class="steps">
+      <li class="step"><h3>Tick your calendars</h3><p>Work, personal or a shared team calendar: pick the ones that hold billable time.</p>
+        <div class="mini cal" aria-hidden="true"><label><span class="box">✓</span>Work</label><label><span class="box">✓</span>Clients (shared)</label><label><span class="box off"></span>Personal</label></div></li>
+      <li class="step"><h3>Name your clients</h3><p>It finds the colours and guest email domains you already use and asks who each one is.</p>
+        <div class="mini assign num" aria-hidden="true"><i style="background:var(--c1)"></i><span>Blue meetings</span><b>Roux Legal, $80/h</b><i style="background:var(--c2)"></i><span>Green meetings</span><b>Martin Studio, $80/h</b><i style="background:var(--c3)"></i><span>@lumen-training.com</span><b>Lumen, $75/h</b></div></li>
+      <li class="step"><h3>Turn on autopilot</h3><p>The sheet updates every hour. On the 1st it closes last month and emails you the totals.</p>
+        <div class="mini" aria-hidden="true"><div class="switch"><span>Update every hour</span><span class="tog"></span></div><div class="switch" style="margin-top:8px"><span>Close each month on the 1st at 8:00</span><span class="tog"></span></div></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="features">
+  <div class="wrap">
+    <h2>Everything you need to invoice, inside Google Sheets</h2>
+    <p class="intro">Ordinary tabs in your own spreadsheet. Filter them, share them, print them to PDF like any other sheet.</p>
+    <div class="bento">
+      <div class="tile t-a"><h3>A statement per client, every month</h3><p>Every meeting with its date, times, billed duration and amount. Frozen when the month closes, so what you invoiced never changes.</p>
+        <div class="vis trio num" aria-hidden="true"><div class="todo"><span class="muted">Roux Legal</span><b style="font-size:22px">$1,740.00</b><span class="muted">21 h 45</span></div><div class="todo"><span class="muted">Martin Studio</span><b style="font-size:22px">$1,520.00</b><span class="muted">19 h 00</span></div><div class="todo"><span class="muted">Lumen Training</span><b style="font-size:22px">$1,012.50</b><span class="muted">13 h 30</span></div></div></div>
+      <div class="tile t-b"><h3>Dashboard</h3><p>Done, planned and expected by month-end.</p>
+        <div class="vis bars" aria-hidden="true"><div><span style="height:55%"></span></div><div><span style="height:72%"></span></div><div><span style="height:64%"></span></div><div><span style="height:88%;opacity:.45"></span></div></div></div>
+      <div class="tile t-c"><h3>Meetings to sort</h3><p>Anything no rule recognised waits here. One click bills it and can remember the choice.</p>
+        <div class="vis todo" aria-hidden="true"><span class="n">!</span><div><b>Kick-off</b><div class="muted">anna@newclient.com</div></div></div></div>
+      <div class="tile t-d"><h3>Your billing rules</h3><p>Per client and per project.</p>
+        <div class="vis rules" aria-hidden="true"><span>$80 an hour</span><span>Round up to 15 min</span><span>30 min minimum</span><span>20 h prepaid a month</span><span>EUR, USD, GBP</span></div></div>
+      <div class="tile t-e"><h3>Private by design</h3><p>No server and no tracking. It reads your calendar, writes to your sheet and never edits your calendar.</p>
+        <div class="vis" aria-hidden="true"><div class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <h2>The details that make the hours right</h2>
+    <p class="intro">Counting hours from a calendar sounds simple until a meeting crosses midnight or sits in two calendars.</p>
+    <div class="details">
+      <div><h3>Only hours inside the month</h3><p>A meeting across midnight or the end of the month is split at the boundary.</p></div>
+      <div><h3>Counted once</h3><p>The same meeting in two of your calendars counts once.</p></div>
+      <div><h3>Declined meetings left out</h3><p>Invitations you declined and all-day events are skipped; time marked free can be too.</p></div>
+      <div><h3>Rounding and minimums</h3><p>Exact time or rounded up to 5, 6, 10, 15, 30 or 60 minutes, with an optional minimum per meeting.</p></div>
+      <div><h3>Prepaid hours</h3><p>Monthly or one-off retainers, with an email at 80% and 100%.</p></div>
+      <div><h3>Notes that stay</h3><p>Lines and notes you add by hand survive every update.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pricing">
+  <div class="wrap">
+    <h2>Simple pricing</h2>
+    <p class="intro">Try everything free until your first month-end statement, 14 days at least. No card.</p>
+    <div class="plans num">
+      <div class="plan"><h3>Free</h3><div class="price">$0</div><p>Export any period to a tab, with totals by colour and by calendar. Forever.</p><a class="btn quiet" href="/get-the-sheet/">Get the free sheet</a></div>
+      <div class="plan"><h3>Monthly</h3><div class="price">$6.90<small> / month</small></div><ul><li>Clients and rates</li><li>Autopilot and monthly close</li><li>Statements and dashboard</li></ul><a class="btn quiet" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=monthly">Choose monthly</a></div>
+      <div class="plan pick"><span class="tag">Best value</span><h3>Yearly</h3><div class="price">$49<small> / year</small></div><ul><li>Everything in Pro</li><li>About $4.08 a month</li><li>30-day refund</li></ul><a class="btn primary" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=yearly">Choose yearly</a></div>
+      <div class="plan"><h3>Lifetime</h3><div class="price">$79<small> once</small></div><ul><li>Pay once, keep Pro</li><li>Early access, first 100 licences</li><li>Then $129</li></ul><a class="btn quiet" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-lifetime">Choose lifetime</a></div>
+    </div>
+    <p class="fine2">Prices in US dollars; sales tax or VAT may be added at checkout. 30-day refund, no questions asked. Payments, invoices and refunds are handled by Gumroad.</p>
+  </div>
+</section>
+
+<section class="band alt" id="faq">
+  <div class="wrap faq">
+    <h2>Questions</h2>
+    <div>
+      <details open><summary>Where does my data go?</summary><p>Into your own Google Sheet, in your Google account. The only thing that ever leaves it is your licence key, sent to Gumroad to check it. No analytics, no tracking. The <a href="/privacy/">privacy policy</a> has the details.</p></details>
+      <details><summary>Does it change my calendar?</summary><p>No. It only reads it.</p></details>
+      <details><summary>What happens when the trial ends?</summary><p>Nothing is deleted. Your statements stay in the sheet and export keeps working for free. Autopilot, clients and rates need a licence.</p></details>
+      <details><summary>Why does Google say it hasn't verified the app?</summary><p>During early access, Calendar Timesheet comes as a ready-made sheet that you copy. The copy belongs to you, so Google shows its standard warning for scripts it has not reviewed. The Marketplace version is going through Google's verification. The <a href="/get-the-sheet/">step-by-step page</a> shows each screen.</p></details>
+      <details><summary>Can I cancel?</summary><p>Yes, at any time from your Gumroad receipt. Pro keeps working until the end of the period you paid for. See <a href="/support/#subscription">managing your subscription</a>.</p></details>
+      <details><summary>Does it work with Google Workspace accounts?</summary><p>Yes, with personal Google accounts and Google Workspace accounts, as long as your organisation allows add-ons and scripts.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final"><div class="wrap"><div class="box">
+  <h2>Start with this month</h2>
+  <p>The free sheet takes a minute to copy. The trial lasts until your first month-end statement, so you see a full month close before you pay anything.</p>
+  <a class="btn primary" href="/get-the-sheet/">Get the free sheet</a>
+  <div class="rb" aria-hidden="true"><i style="width:40%;background:var(--c1)"></i><i style="width:35%;background:var(--c2)"></i><i style="width:25%;background:var(--c3)"></i></div>
+</div></div></section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
+      <p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p>
+      <p>Written and built with the help of AI.</p>
+    </div>
+    <nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+  </div>
+</footer>
+</body>
+</html>

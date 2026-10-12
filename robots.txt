@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://calendartimesheet.com/sitemap.xml
