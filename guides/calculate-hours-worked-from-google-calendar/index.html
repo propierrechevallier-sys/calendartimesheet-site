@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can Google Calendar calculate hours worked? | Calendar Timesheet</title>
+<meta name="description" content="Google Calendar does not total hours, and Working hours is only availability. Three ways to calculate hours worked, with the Google Sheets formulas.">
+<link rel="canonical" href="https://calendartimesheet.com/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Can Google Calendar calculate hours worked?">
+<meta property="og:description" content="Google Calendar does not total hours, and Working hours is only availability. Three ways to calculate hours worked, with the Google Sheets formulas.">
+<meta property="og:url" content="https://calendartimesheet.com/guides/calculate-hours-worked-from-google-calendar/">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calendartimesheet.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://calendartimesheet.com/guides/"},{"@type":"ListItem","position":3,"name":"Can Google Calendar calculate hours worked?","item":"https://calendartimesheet.com/guides/calculate-hours-worked-from-google-calendar/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Can Google Calendar calculate hours worked?","description":"Google Calendar does not total hours, and Working hours is only availability. Three ways to calculate hours worked, with the Google Sheets formulas.","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-15","dateModified":"2026-10-15","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/terms/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/guides/calculate-hours-worked-from-google-calendar/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/guides/">Guides</a><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Can Google Calendar calculate hours worked?</h1>
+<p class="meta">Updated 15 October 2026. About 5 minutes to read.</p>
+
+<p>No. Google Calendar places events on a grid, but it never adds up their durations, and there is no total at the bottom of a week. The setting called Working hours does not count anything either. To know how many hours you worked, the durations have to be added up somewhere else: in your head, in Google Sheets, or by a tool that reads the calendar for you.</p>
+
+<h2>Working hours is availability, not a count</h2>
+<p>On a work or school account, <a href="https://support.google.com/calendar/answer/7638168">Working hours</a> tells other people when you are available, so that they book meetings at sensible times. Google describes it as a recurring weekly schedule: Monday to Friday, 9:00 to 17:00, for example. It says nothing about what you actually did. A day with three hours of client work and a day with ten both show the same working hours.</p>
+
+<h2>Method 1: read the hours off the calendar</h2>
+<p>For a handful of events, week view is enough: add the blocks one by one and write the total down. Past ten events, or as soon as you need a total per client, this becomes slow and easy to get wrong.</p>
+
+<h2>Method 2: Google Sheets formulas</h2>
+<p>Put one event per line, with the date in column A, the start time in column B and the end time in column C. Google Sheets stores a time as a fraction of a day, which explains the formulas below.</p>
+<table>
+  <thead><tr><th scope="col">You want</th><th scope="col">Formula in column D</th></tr></thead>
+  <tbody>
+    <tr><td><b>Hours as a decimal number</b> (1.5 for 1 h 30)</td><td><code>=(C2-B2)*24</code>, with column D formatted as a number</td></tr>
+    <tr><td><b>An event that ends after midnight</b></td><td><code>=MOD(C2-B2,1)*24</code></td></tr>
+    <tr><td><b>Rounded up to the next quarter hour</b></td><td><code>=CEILING((C2-B2)*24,0.25)</code></td></tr>
+    <tr><td><b>The total of the column</b></td><td><code>=SUM(D2:D200)</code></td></tr>
+  </tbody>
+</table>
+<p>If you prefer to keep durations as times (1:30 rather than 1.5), use <code>=C2-B2</code> instead, and format the total with the custom number format <code>[h]:mm</code> (Format, Number, Custom number format). Without the square brackets, a total of 26 hours is shown as 2:00, because the display wraps every 24 hours.</p>
+<p>The formulas need the events in the sheet first. The <a href="/guides/google-calendar-timesheet/">timesheet guide</a> has a short script that copies them for any period, and the <a href="/guides/google-sheets-timesheet-template/">template guide</a> adds minimum charges, amounts and monthly totals per client.</p>
+
+<h2>Method 3: let a tool read the calendar</h2>
+<p><a href="/">Calendar Timesheet</a> does the copying and the arithmetic in your own Google Sheets: one line per event with date, start, end and hours, then totals per client, matched by colour, calendar, a word in the title or the guest's email domain. With autopilot, the sheet updates every hour and closes each month on its own.</p>
+
+<h2>Four things that make the total wrong</h2>
+<ul>
+  <li><b>All-day events.</b> A holiday or a deadline marked all day is not 24 hours of work. Leave them out.</li>
+  <li><b>Declined invitations.</b> They stay on many calendars. Count only what you attended.</li>
+  <li><b>The same meeting in two calendars.</b> Copied or shared events can appear twice. Count each one once.</li>
+  <li><b>What was planned instead of what happened.</b> If a call ran 20 minutes over, move the end of the event before you count.</li>
+</ul>
+
+<div class="cta-end">
+  <p><b>Stop adding up by hand.</b> Calendar Timesheet's free export gives you hours for any period, by colour and by calendar; Pro adds clients, rates and autopilot.</p>
+  <p><a class="btn primary" href="/get-the-sheet/">Get the free sheet</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">More guides</h2><ul class="guide-list"><li><a href="/guides/google-calendar-timesheet/">How to turn Google Calendar into a timesheet</a><p>Three ways to turn Google Calendar into a timesheet: by hand, with a formula in Google Sheets, or automatically. Step by step, with the pitfalls.</p></li><li><a href="/guides/count-hours-in-google-calendar/">How to count hours in Google Calendar by client</a><p>Google Calendar shows no totals. How to count hours per client or project using colours, calendars and keywords, for free or automatically.</p></li><li><a href="/guides/export-google-calendar-to-google-sheets/">Export Google Calendar to Google Sheets automatically</a><p>Export Google Calendar events to Google Sheets: the .ics export, Apps Script, and an automatic hourly sync, compared honestly.</p></li><li><a href="/guides/bill-clients-from-google-calendar/">Bill clients from Google Calendar: rates, rounding and minimums</a><p>How freelancers bill from their calendar: hourly rates per client, rounding rules, minimum charges, retainers and month-end statements.</p></li><li><a href="/guides/google-calendar-time-tracking/">Google Calendar time tracking: billable hours without a timer</a><p>Track billable hours with Google Calendar instead of a timer: plan, correct, tag each client, count. What the calendar cannot do, and 5 common mistakes.</p></li><li><a href="/guides/google-sheets-timesheet-template/">Google Sheets timesheet template for freelancers, with formulas</a><p>A freelance timesheet in Google Sheets: the columns, the formulas for duration, rounding up to 15 minutes, minimums, amounts and monthly totals per client.</p></li><li><a href="/guides/google-calendar-time-insights-personal-account/">Google Calendar Time Insights on a personal account</a><p>Why Time Insights is missing from personal Google accounts, what it counts and what it skips, and how to get hours per client from any Google Calendar.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p></div><nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></div></footer>
+</body>
+</html>

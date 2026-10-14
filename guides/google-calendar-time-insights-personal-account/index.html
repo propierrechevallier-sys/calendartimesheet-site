@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Calendar Time Insights on a personal account</title>
+<meta name="description" content="Why Time Insights is missing from personal Google accounts, what it counts and what it skips, and how to get hours per client from any Google Calendar.">
+<link rel="canonical" href="https://calendartimesheet.com/guides/google-calendar-time-insights-personal-account/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google Calendar Time Insights on a personal account">
+<meta property="og:description" content="Why Time Insights is missing from personal Google accounts, what it counts and what it skips, and how to get hours per client from any Google Calendar.">
+<meta property="og:url" content="https://calendartimesheet.com/guides/google-calendar-time-insights-personal-account/">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calendartimesheet.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://calendartimesheet.com/guides/"},{"@type":"ListItem","position":3,"name":"Google Calendar Time Insights on a personal account","item":"https://calendartimesheet.com/guides/google-calendar-time-insights-personal-account/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google Calendar Time Insights on a personal account","description":"Why Time Insights is missing from personal Google accounts, what it counts and what it skips, and how to get hours per client from any Google Calendar.","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-15","dateModified":"2026-10-15","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/terms/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/guides/google-calendar-time-insights-personal-account/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/guides/">Guides</a><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google Calendar Time Insights on a personal account</h1>
+<p class="meta">Updated 15 October 2026. About 5 minutes to read.</p>
+
+<p>Time Insights is the panel in Google Calendar that shows how your time splits between meetings. Many people look for it and cannot find it. The reason is in <a href="https://support.google.com/calendar/answer/10738043">Google's own help page</a>: Time Insights is offered for Google Calendar on a work or school account. A personal Google account, the free one that comes with Gmail, does not have it, and no setting turns it on.</p>
+
+<h2>What Time Insights shows</h2>
+<ul>
+  <li><b>Time breakdown</b>: focus time, one-to-one meetings, meetings with three or more guests, invitations you still need to answer, and the time that remains.</li>
+  <li><b>Time in meetings</b>: an average over the previous three weeks, or the previous three months in month view.</li>
+  <li><b>People you meet with</b>: the five people you spend the most time with in the date range.</li>
+</ul>
+<p>The date range follows the calendar view: switch to week or month view to change it. On work or school accounts you can also give events <a href="https://support.google.com/calendar/answer/12377581">labels</a>, up to 200, and follow them in the time breakdown.</p>
+
+<h2>Why Time Insights is not showing</h2>
+<table>
+  <thead><tr><th scope="col">Situation</th><th scope="col">What to do</th></tr></thead>
+  <tbody>
+    <tr><td><b>You use a personal Google account</b></td><td>Time Insights is not part of personal accounts. Use one of the alternatives below.</td></tr>
+    <tr><td><b>You are on your phone</b></td><td>Google says Time Insights can only be viewed on a computer. Open calendar.google.com in a browser.</td></tr>
+    <tr><td><b>Your organisation turned it off</b></td><td>Administrators can switch it off for everyone or for some teams. Ask your administrator; the setting is described in the <a href="https://support.google.com/a/answer/10985399">Google Workspace admin help</a>.</td></tr>
+    <tr><td><b>You are looking at another calendar</b></td><td>Time Insights works on your primary calendar. Other calendars you own or follow are not included.</td></tr>
+  </tbody>
+</table>
+
+<h2>What it does not count</h2>
+<p>Time Insights is built to understand meetings, not to bill hours. For time in meetings, Google counts an event only when you accepted it, it has at least one other guest, it is marked busy and it lasts less than 8 hours. A work block you schedule alone, such as "Acme: draft report", is therefore not a meeting for Time Insights, even if it is the work you invoice.</p>
+<p>The help page also describes no export, no total per client and no hourly rate. Time Insights answers "where did my week go?"; it does not produce the list of hours a client expects at the end of the month.</p>
+
+<h2>Alternatives on a personal Google account</h2>
+<h3>Free: a short script and a pivot table</h3>
+<p>Copy your events into Google Sheets with the ten-line script in the <a href="/guides/google-calendar-timesheet/">timesheet guide</a>: one line per event with date, start, end, hours, title and colour. Then follow the <a href="/guides/count-hours-in-google-calendar/">hour-counting guide</a> to add them up by colour, by word in the title or with a pivot table. It takes an hour to set up and a few minutes each month to rerun.</p>
+<h3>Automatic: Calendar Timesheet</h3>
+<p><a href="/">Calendar Timesheet</a> works in Google Sheets with personal Google accounts as well as work accounts. It reads the calendars you tick and writes one line per event in your own spreadsheet; with autopilot, it does so every hour. Solo work blocks count as much as meetings. Each event is matched to a client by colour, calendar, a word in the title or the guest's email domain.</p>
+
+<table>
+  <thead><tr><th scope="col"></th><th scope="col">Time Insights</th><th scope="col">Calendar Timesheet</th></tr></thead>
+  <tbody>
+    <tr><td><b>Accounts</b></td><td>Work or school accounts</td><td>Any Google account, including personal</td></tr>
+    <tr><td><b>Calendars</b></td><td>Your primary calendar</td><td>The calendars you tick, including shared ones</td></tr>
+    <tr><td><b>What counts</b></td><td>Accepted meetings with other guests</td><td>Every event your rules select, meetings or not</td></tr>
+    <tr><td><b>Per client</b></td><td>Labels, on work or school accounts</td><td>Colour, calendar, title word or guest domain</td></tr>
+    <tr><td><b>Where the numbers go</b></td><td>Charts in the side panel</td><td>Lines and totals in your spreadsheet</td></tr>
+    <tr><td><b>Rates and amounts</b></td><td>Not offered</td><td>Hourly rates, rounding and month-end statements (Pro)</td></tr>
+  </tbody>
+</table>
+
+<div class="cta-end">
+  <p><b>Insights for every Google account.</b> Calendar Timesheet's free export gives you totals by colour and by calendar for any period; Pro adds clients, rates and autopilot.</p>
+  <p><a class="btn primary" href="/get-the-sheet/">Get the free sheet</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">More guides</h2><ul class="guide-list"><li><a href="/guides/google-calendar-timesheet/">How to turn Google Calendar into a timesheet</a><p>Three ways to turn Google Calendar into a timesheet: by hand, with a formula in Google Sheets, or automatically. Step by step, with the pitfalls.</p></li><li><a href="/guides/count-hours-in-google-calendar/">How to count hours in Google Calendar by client</a><p>Google Calendar shows no totals. How to count hours per client or project using colours, calendars and keywords, for free or automatically.</p></li><li><a href="/guides/export-google-calendar-to-google-sheets/">Export Google Calendar to Google Sheets automatically</a><p>Export Google Calendar events to Google Sheets: the .ics export, Apps Script, and an automatic hourly sync, compared honestly.</p></li><li><a href="/guides/bill-clients-from-google-calendar/">Bill clients from Google Calendar: rates, rounding and minimums</a><p>How freelancers bill from their calendar: hourly rates per client, rounding rules, minimum charges, retainers and month-end statements.</p></li><li><a href="/guides/google-calendar-time-tracking/">Google Calendar time tracking: billable hours without a timer</a><p>Track billable hours with Google Calendar instead of a timer: plan, correct, tag each client, count. What the calendar cannot do, and 5 common mistakes.</p></li><li><a href="/guides/google-sheets-timesheet-template/">Google Sheets timesheet template for freelancers, with formulas</a><p>A freelance timesheet in Google Sheets: the columns, the formulas for duration, rounding up to 15 minutes, minimums, amounts and monthly totals per client.</p></li><li><a href="/guides/calculate-hours-worked-from-google-calendar/">Can Google Calendar calculate hours worked?</a><p>Google Calendar does not total hours, and Working hours is only availability. Three ways to calculate hours worked, with the Google Sheets formulas.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p></div><nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></div></footer>
+</body>
+</html>
