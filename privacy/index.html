@@ -26,7 +26,7 @@
 <header class="top"><div class="wrap"><a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/guides/">Guides</a><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav></div></header>
 <main id="main" class="page"><div class="wrap">
 <h1>Privacy policy</h1>
-<p class="meta">Effective 12 October 2026. Applies to the Calendar Timesheet add-on for Google Sheets, the ready-made Calendar Timesheet sheet, and this website.</p>
+<p class="meta">Effective 12 October 2026, updated 14 October 2026 (new section: how your data is protected). Applies to the Calendar Timesheet add-on for Google Sheets, the ready-made Calendar Timesheet sheet, and this website.</p>
 
 <div class="callout"><p><b>In short.</b> Calendar Timesheet runs inside your own Google account. It reads your calendars, writes to the Google Sheet you use it in, and sends nothing to us. The only data that ever leaves your Google account is your licence key, sent to Gumroad to check it. No analytics, no advertising, no tracking, no server of ours.</p></div>
 
@@ -58,6 +58,19 @@
   <li><b>Emails to you</b>: the monthly summary, retainer alerts and the trial reminder are sent from your own Google account to your own address, through Google. You can turn them off in the add-on's settings.</li>
 </ul>
 <p>Nothing else is sent anywhere. The add-on contains no analytics, no advertising and no third-party code.</p>
+
+<h2>How your data is protected</h2>
+<ul>
+  <li><b>No server, no copy.</b> The add-on's code runs on Google's Apps Script platform, under your own Google account. Your calendar data goes from Google Calendar to your spreadsheet inside Google's infrastructure and never passes through a server of ours, because we have none. We cannot see, copy or export your data.</li>
+  <li><b>Least privilege.</b> Calendar access is read-only: the add-on cannot create, edit or delete an event. Spreadsheet access is limited to the spreadsheet you use the add-on in (Google's "current spreadsheet only" permission), not your other files. Email access is send-only and goes to your own address: the add-on cannot read your mailbox.</li>
+  <li><b>Network locked to one address.</b> The add-on's manifest allows outgoing requests to a single host, <code>api.gumroad.com</code>, and Apps Script blocks requests to any other address. Only your licence key and the product identifier are sent there, over HTTPS, so they are encrypted in transit.</li>
+  <li><b>Encryption by Google.</b> Your spreadsheet and the add-on's stored settings are kept by Google, which encrypts customer content stored at rest (see <a href="https://cloud.google.com/docs/security/encryption/default-encryption">Google's default encryption at rest</a> and <a href="https://storage.googleapis.com/gfw-touched-accounts-pdfs/google-encryption-whitepaper-gsuite.pdf">how Google Workspace uses encryption</a>).</li>
+  <li><b>Access control.</b> Only your Google account runs the add-on on your data. The tabs it writes can be seen only by the people you share the spreadsheet with, like any other content of that spreadsheet. Your licence key and trial dates are kept in storage private to your account (Apps Script "user properties"), which people you share the spreadsheet with cannot read.</li>
+  <li><b>Data minimisation.</b> Only the fields listed above are read. Event descriptions, locations, attachments and video-call links are never read. Guest email addresses are written to the sheet only in the To sort tab, for events no rule recognised.</li>
+  <li><b>No human access, no resale.</b> No person reads your data, it is not used to train any model, never sold and never used for advertising.</li>
+  <li><b>Retention and deletion.</b> Data is kept only as long as you keep it: deleting the spreadsheet deletes its tabs and the add-on's settings for it, and removing the add-on's access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> stops all reading and writing at once. Purchase records we receive from Gumroad are deleted on request.</li>
+  <li><b>Security issues.</b> If we learn of a vulnerability in the add-on, we publish a fix as quickly as possible and tell affected customers at the email address used for their purchase. You can report a security issue to <a href="mailto:support@calendartimesheet.com">support@calendartimesheet.com</a>.</li>
+</ul>
 
 <h2>Google API Services User Data Policy</h2>
 <p>Calendar Timesheet's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Google user data is used only to provide the features described above, is never transferred to anyone, never used for advertising, never sold, and never read by a person.</p>
