@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar Timesheet: factureerbare uren uit Google Agenda</title>
+<meta name="description" content="Factureer elk uur dat al in je Google Agenda staat. Een add-on voor Google Spreadsheets die afspraken omzet in uren, bedragen en maandoverzichten per klant.">
+<link rel="canonical" href="https://calendartimesheet.com/nl/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:title" content="Calendar Timesheet: factureer elk uur dat al in je agenda staat">
+<meta property="og:description" content="Je afspraken in Google Agenda worden uren, bedragen en maandoverzichten per klant, in je eigen Google-spreadsheet.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:url" content="https://calendartimesheet.com/nl/">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calendar Timesheet","applicationCategory":"BusinessApplication","operatingSystem":"Web (Google Spreadsheets)",
+"description":"Add-on voor Google Spreadsheets die afspraken uit Google Agenda omzet in factureerbare uren en maandoverzichten per klant.","url":"https://calendartimesheet.com/nl/","inLanguage":"nl",
+"offers":[{"@type":"Offer","name":"Gratis","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Maandelijks","price":"6.90","priceCurrency":"USD"},
+{"@type":"Offer","name":"Jaarlijks","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Levenslang (vroege toegang)","price":"79","priceCurrency":"USD"}]}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/","logo":"https://calendartimesheet.com/assets/apple-touch-icon.png","email":"support@calendartimesheet.com","founder":{"@type":"Person","name":"Pierre Chevallier"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Waar gaan mijn gegevens naartoe?","acceptedAnswer":{"@type":"Answer","text":"Naar je eigen Google-spreadsheet, in je Google-account. Het enige wat je account ooit verlaat, is je licentiesleutel, die naar Gumroad wordt gestuurd om hem te controleren. Geen analysetools, geen tracking. In het privacybeleid lees je de details."}},{"@type":"Question","name":"Wijzigt het mijn agenda?","acceptedAnswer":{"@type":"Answer","text":"Nee. Je agenda wordt alleen gelezen."}},{"@type":"Question","name":"Wat gebeurt er als de proefperiode afloopt?","acceptedAnswer":{"@type":"Answer","text":"Er wordt niets verwijderd. Je maandoverzichten blijven in de spreadsheet en exporteren blijft gratis werken. Voor autopiloot, klanten en tarieven heb je een licentie nodig."}},{"@type":"Question","name":"Waarom zegt Google dat de app niet is geverifieerd?","acceptedAnswer":{"@type":"Answer","text":"Tijdens de vroege toegang komt Calendar Timesheet als kant-en-klare spreadsheet die je kopieert. De kopie is van jou, dus Google toont zijn standaardwaarschuwing voor scripts die het niet heeft gecontroleerd. De verificatie van de app door Google loopt nog. De uitleg stap voor stap laat elk scherm zien."}},{"@type":"Question","name":"Kan ik opzeggen?","acceptedAnswer":{"@type":"Answer","text":"Ja, op elk moment via je ontvangstbewijs van Gumroad. Pro blijft werken tot het einde van de periode die je hebt betaald. Zie abonnement beheren."}},{"@type":"Question","name":"Werkt het met Google Workspace-accounts?","acceptedAnswer":{"@type":"Answer","text":"Ja, met persoonlijke Google-accounts en Google Workspace-accounts, zolang je organisatie add-ons en scripts toestaat."}}]}</script>
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/">
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/nl/" aria-label="Calendar Timesheet, startpagina"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
+  <nav class="nav" aria-label="Hoofdmenu"><a href="/nl/#how">Zo werkt het</a><a href="/nl/#features">Functies</a><a href="/nl/#pricing">Prijzen</a><a href="/guides/">Handleidingen (in het Engels)</a><a class="btn primary sm" href="/nl/get-the-sheet/">Gratis spreadsheet</a></nav>
+</div></header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <span class="badge"><b>Add-on voor Google Spreadsheets</b>Voor freelancers en consultants die per uur factureren</span>
+    <h1>Factureer elk uur dat al in je agenda staat.</h1>
+    <p class="lede">Calendar Timesheet zet de afspraken in je Google Agenda om in uren en bedragen per klant, in je eigen Google-spreadsheet. De spreadsheet wordt elk uur bijgewerkt, en op de 1e heeft elke klant een maandoverzicht dat klaar is om te factureren.</p>
+    <div class="cta"><a class="btn primary" href="/nl/get-the-sheet/">Gratis spreadsheet ophalen</a><a class="btn quiet" href="#how">Bekijk hoe het werkt</a></div>
+    <p class="fine">Geen timer om te starten. Geen account om aan te maken. Je gegevens blijven in je Google-account.</p>
+    <p class="early">Vroege toegang: Calendar Timesheet komt als kant-en-klare spreadsheet die je naar je account kopieert.</p>
+  </div>
+  <div class="stage" aria-label="Voorbeeld: een maandoverzicht van een klant in Google Spreadsheets, met het paneel van Calendar Timesheet open">
+    <div class="window">
+      <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">docs.google.com / Urenstaat 2026</span></div>
+      <div class="app">
+        <div class="sheet">
+          <div class="sheetbar" aria-hidden="true"><b>Urenstaat 2026</b><span>Bestand</span><span>Bewerken</span><span>Weergave</span><span>Uitbreidingen</span></div>
+          <div class="doc num">
+            <div class="dh">
+              <div><div class="cl"><i></i>Roux Legal</div><div class="sub">Maandoverzicht van oktober 2026</div></div>
+              <div><div class="amt">$&nbsp;1.740,00</div><div class="sub" style="text-align:right">21 h 45 tegen $&nbsp;80 per uur <span class="chip">Klaar om te factureren</span></div></div>
+            </div>
+            <table>
+              <thead><tr><th scope="col">Datum</th><th scope="col" class="l">Afspraak</th><th scope="col">Begin</th><th scope="col">Einde</th><th scope="col">Duur</th><th scope="col">Gefactureerd</th><th scope="col">Bedrag</th></tr></thead>
+              <tbody>
+                <tr><td>ma 5 okt.</td><td class="l">Contractbeoordeling</td><td>9:00</td><td>11:00</td><td>2:00</td><td>2:00</td><td>$&nbsp;160,00</td></tr>
+                <tr><td>di 6 okt.</td><td class="l">Gesprek met Julia</td><td>15:00</td><td>15:35</td><td>0:35</td><td>0:45</td><td>$&nbsp;60,00</td></tr>
+                <tr><td>do 8 okt.</td><td class="l">Due diligence</td><td>9:00</td><td>11:30</td><td>2:30</td><td>2:30</td><td>$&nbsp;200,00</td></tr>
+                <tr><td>ma 12 okt.</td><td class="l">Voorbereiding bestuursvergadering</td><td>14:00</td><td>18:00</td><td>4:00</td><td>4:00</td><td>$&nbsp;320,00</td></tr>
+                <tr><td>wo 14 okt.</td><td class="l">Contractbeoordeling</td><td>10:00</td><td>12:15</td><td>2:15</td><td>2:15</td><td>$&nbsp;180,00</td></tr>
+                <tr><td>wo 21 okt.</td><td class="l">Onderhandelingsoverleg</td><td>14:00</td><td>17:00</td><td>3:00</td><td>3:00</td><td>$&nbsp;240,00</td></tr>
+                <tr><td>ma 26 okt.</td><td class="l">Closingdocumenten</td><td>9:00</td><td>13:00</td><td>4:00</td><td>4:00</td><td>$&nbsp;320,00</td></tr>
+                <tr class="more"><td colspan="7">Nog 5 afspraken</td></tr>
+                <tr class="tot"><td>Totaal</td><td class="l">12 afspraken</td><td></td><td></td><td>21:32</td><td>21:45</td><td>$&nbsp;1.740,00</td></tr>
+              </tbody>
+            </table>
+            <p class="foot-note">Elke afspraak omhoog afgerond op 15 minuten. Opgesteld vanuit Google Agenda met Calendar Timesheet.</p>
+          </div>
+          <div class="tabs" aria-hidden="true"><span>Deze maand</span><span>Dashboard</span><span>Toe te wijzen</span><span class="on">okt. 2026: Roux Legal</span><span>okt. 2026: Martin Studio</span><span>Betalingen</span></div>
+        </div>
+        <div class="panel num" aria-hidden="true">
+          <div class="phead">Calendar Timesheet <span class="x">✕</span></div>
+          <div class="pbody">
+            <div class="prow"><span class="logo"><span><i></i><i></i><i></i></span></span><span class="pill">Pro</span></div>
+            <div class="prow"><span>november tot nu toe</span><span>Bijgewerkt om 09:00</span></div>
+            <div><div class="big">$&nbsp;787,50</div><div class="muted">van $&nbsp;4.017,50 verwacht</div></div>
+            <div class="ribbon"><i style="width:14%;background:var(--c1)"></i><i style="width:16%;background:var(--c2)"></i><i style="width:9%;background:var(--c3)"></i></div>
+            <div class="legend"><i style="background:var(--c1)"></i><span>Roux Legal</span><span class="m">3 h 30</span><b>$&nbsp;280</b><i style="background:var(--c2)"></i><span>Martin Studio</span><span class="m">4 h</span><b>$&nbsp;320</b><i style="background:var(--c3)"></i><span>Lumen Training</span><span class="m">2 h 30</span><b>$&nbsp;187,50</b></div>
+            <div class="todo"><span class="n">2</span><div><b>2 afspraken toewijzen</b><div class="muted">Nog niet aan een klant gekoppeld</div></div></div>
+            <div class="navl"><span>Klanten en regels</span><span>Autopiloot</span><span>Periode exporteren</span><span>Pakket en licentie</span><span>Nu bijwerken</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="border-top:1px solid var(--line)">
+  <div class="wrap problem">
+    <h2>Zo ziet het einde van de maand eruit zonder Calendar Timesheet</h2>
+    <div><p>Je opent je agenda, gaat vier weken terug en telt de afspraken van elke klant. Je kopieert datums en duur naar een spreadsheet, rondt af en vermenigvuldigt met het tarief.</p>
+      <p>Het kost je een avond, en je weet nooit zeker of je geen gesprek hebt gemist dat uitliep. <b>De uren stonden al in je agenda: je hebt ze één keer opgeschreven, toen je de afspraak plande.</b></p></div>
+  </div>
+</section>
+
+<section class="band alt" id="how">
+  <div class="wrap">
+    <h2>Eén keer instellen, in ongeveer drie minuten</h2>
+    <p class="intro">Het instellen leest de afgelopen 30 dagen van je agenda en vraagt alleen wat het niet kan raden.</p>
+    <ol class="steps">
+      <li class="step"><h3>Vink je agenda's aan</h3><p>Werk, privé of een gedeelde teamagenda: kies de agenda's waarin factureerbare tijd staat.</p>
+        <div class="mini cal" aria-hidden="true"><label><span class="box">✓</span>Werk</label><label><span class="box">✓</span>Klanten (gedeeld)</label><label><span class="box off"></span>Privé</label></div></li>
+      <li class="step"><h3>Geef je klanten een naam</h3><p>Het vindt de kleuren en e-maildomeinen van gasten die je al gebruikt en vraagt bij elk ervan om welke klant het gaat.</p>
+        <div class="mini assign num" aria-hidden="true"><i style="background:var(--c1)"></i><span>Blauwe afspraken</span><b>Roux Legal, $&nbsp;80/uur</b><i style="background:var(--c2)"></i><span>Groene afspraken</span><b>Martin Studio, $&nbsp;80/uur</b><i style="background:var(--c3)"></i><span>@lumen-training.com</span><b>Lumen, $&nbsp;75/uur</b></div></li>
+      <li class="step"><h3>Zet de autopiloot aan</h3><p>De spreadsheet wordt elk uur bijgewerkt. Op de 1e wordt de vorige maand afgesloten en krijg je de totalen per e-mail.</p>
+        <div class="mini" aria-hidden="true"><div class="switch"><span>Elk uur bijwerken</span><span class="tog"></span></div><div class="switch" style="margin-top:8px"><span>Elke maand afsluiten op de 1e om 8:00</span><span class="tog"></span></div></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="features">
+  <div class="wrap">
+    <h2>Alles wat je nodig hebt om te factureren, in Google Spreadsheets</h2>
+    <p class="intro">Gewone bladen in je eigen spreadsheet. Filter ze, deel ze, druk ze af als pdf, net als elk ander blad.</p>
+    <div class="bento">
+      <div class="tile t-a"><h3>Een maandoverzicht per klant, elke maand</h3><p>Elke afspraak met datum, tijden, gefactureerde duur en bedrag. Vastgezet zodra de maand wordt afgesloten, zodat wat je hebt gefactureerd nooit meer verandert.</p>
+        <div class="vis trio num" aria-hidden="true"><div class="todo"><span class="muted">Roux Legal</span><b style="font-size:22px">$&nbsp;1.740,00</b><span class="muted">21 h 45</span></div><div class="todo"><span class="muted">Martin Studio</span><b style="font-size:22px">$&nbsp;1.520,00</b><span class="muted">19 h 00</span></div><div class="todo"><span class="muted">Lumen Training</span><b style="font-size:22px">$&nbsp;1.012,50</b><span class="muted">13 h 30</span></div></div></div>
+      <div class="tile t-b"><h3>Dashboard</h3><p>Gedaan, gepland en verwacht tegen het einde van de maand.</p>
+        <div class="vis bars" aria-hidden="true"><div><span style="height:55%"></span></div><div><span style="height:72%"></span></div><div><span style="height:64%"></span></div><div><span style="height:88%;opacity:.45"></span></div></div></div>
+      <div class="tile t-c"><h3>Toe te wijzen afspraken</h3><p>Alles wat geen enkele regel herkent, wacht hier. Met één klik factureer je het, en de keuze kan worden onthouden.</p>
+        <div class="vis todo" aria-hidden="true"><span class="n">!</span><div><b>Kick-off</b><div class="muted">anna@newclient.com</div></div></div></div>
+      <div class="tile t-d"><h3>Je factureringsregels</h3><p>Per klant en per project.</p>
+        <div class="vis rules" aria-hidden="true"><span>$&nbsp;80 per uur</span><span>Omhoog afronden op 15 min</span><span>Minimaal 30 min</span><span>20 h vooruitbetaald per maand</span><span>EUR, USD, GBP</span></div></div>
+      <div class="tile t-e"><h3>Privacy ingebouwd</h3><p>Geen server en geen tracking. Het leest je agenda, schrijft in je spreadsheet en wijzigt je agenda nooit.</p>
+        <div class="vis" aria-hidden="true"><div class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <h2>De details waardoor de uren kloppen</h2>
+    <p class="intro">Uren tellen uit een agenda klinkt eenvoudig, tot een afspraak over middernacht loopt of in twee agenda's staat.</p>
+    <div class="details">
+      <div><h3>Alleen uren binnen de maand</h3><p>Een afspraak over middernacht of over het einde van de maand heen wordt op de grens gesplitst.</p></div>
+      <div><h3>Eén keer geteld</h3><p>Dezelfde afspraak in twee van je agenda's telt één keer.</p></div>
+      <div><h3>Geweigerde afspraken weggelaten</h3><p>Uitnodigingen die je hebt geweigerd en hele-dagafspraken worden overgeslagen; tijd op Beschikbaar kan ook worden overgeslagen.</p></div>
+      <div><h3>Afronding en minimum</h3><p>Exacte tijd of omhoog afgerond op 5, 6, 10, 15, 30 of 60 minuten, met een optioneel minimum per afspraak.</p></div>
+      <div><h3>Vooruitbetaalde uren</h3><p>Maandelijkse of eenmalige urenbundels, met een e-mail bij 80% en 100%.</p></div>
+      <div><h3>Notities die blijven</h3><p>Regels en notities die je met de hand toevoegt, blijven bij elke update bewaard.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pricing">
+  <div class="wrap">
+    <h2>Eenvoudige prijzen</h2>
+    <p class="intro">Probeer alles gratis tot je eerste maandafsluiting, minstens 14 dagen. Geen betaalkaart nodig.</p>
+    <div class="plans num">
+      <div class="plan"><h3>Gratis</h3><div class="price">$&nbsp;0</div><p>Exporteer elke periode naar een blad, met totalen per kleur en per agenda. Voor altijd.</p><a class="btn quiet" href="/nl/get-the-sheet/">Gratis spreadsheet ophalen</a></div>
+      <div class="plan"><h3>Maandelijks</h3><div class="price">$&nbsp;6,90<small> / maand</small></div><ul><li>Klanten en tarieven</li><li>Autopiloot en maandafsluiting</li><li>Maandoverzichten en dashboard</li></ul><a class="btn quiet" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=monthly">Kies Maandelijks</a></div>
+      <div class="plan pick"><span class="tag">Voordeligst</span><h3>Jaarlijks</h3><div class="price">$&nbsp;49<small> / jaar</small></div><ul><li>Alles van Pro</li><li>Ongeveer $&nbsp;4,08 per maand</li><li>Terugbetaling binnen 30 dagen</li></ul><a class="btn primary" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=yearly">Kies Jaarlijks</a></div>
+      <div class="plan"><h3>Levenslang</h3><div class="price">$&nbsp;79<small> eenmalig</small></div><ul><li>Eenmalig betalen, Pro houden</li><li>Vroege toegang, eerste 100 licenties</li><li>Daarna $&nbsp;129</li></ul><a class="btn quiet" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-lifetime">Kies Levenslang</a></div>
+    </div>
+    <p class="meta">Veilige betaling via Gumroad (pagina in het Engels, prijzen in US-dollars).</p>
+    <p class="fine2">Prijzen in US-dollars; bij het afrekenen kan btw of sales tax worden toegevoegd. Terugbetaling binnen 30 dagen, zonder vragen. Betalingen, facturen en terugbetalingen worden afgehandeld door Gumroad.</p>
+  </div>
+</section>
+
+<section class="band alt" id="faq">
+  <div class="wrap faq">
+    <h2>Vragen</h2>
+    <div>
+      <details open><summary>Waar gaan mijn gegevens naartoe?</summary><p>Naar je eigen Google-spreadsheet, in je Google-account. Het enige wat je account ooit verlaat, is je licentiesleutel, die naar Gumroad wordt gestuurd om hem te controleren. Geen analysetools, geen tracking. In het <a href="/nl/privacy/">privacybeleid</a> lees je de details.</p></details>
+      <details><summary>Wijzigt het mijn agenda?</summary><p>Nee. Je agenda wordt alleen gelezen.</p></details>
+      <details><summary>Wat gebeurt er als de proefperiode afloopt?</summary><p>Er wordt niets verwijderd. Je maandoverzichten blijven in de spreadsheet en exporteren blijft gratis werken. Voor autopiloot, klanten en tarieven heb je een licentie nodig.</p></details>
+      <details><summary>Waarom zegt Google dat de app niet is geverifieerd?</summary><p>Tijdens de vroege toegang komt Calendar Timesheet als kant-en-klare spreadsheet die je kopieert. De kopie is van jou, dus Google toont zijn standaardwaarschuwing voor scripts die het niet heeft gecontroleerd. De verificatie van de app door Google loopt nog. De <a href="/nl/get-the-sheet/">uitleg stap voor stap</a> laat elk scherm zien.</p></details>
+      <details><summary>Kan ik opzeggen?</summary><p>Ja, op elk moment via je ontvangstbewijs van Gumroad. Pro blijft werken tot het einde van de periode die je hebt betaald. Zie <a href="/nl/support/#subscription">abonnement beheren</a>.</p></details>
+      <details><summary>Werkt het met Google Workspace-accounts?</summary><p>Ja, met persoonlijke Google-accounts en Google Workspace-accounts, zolang je organisatie add-ons en scripts toestaat.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="guides">
+  <div class="wrap">
+    <h2>Handleidingen voor factureren vanuit Google Agenda (in het Engels)</h2>
+    <p class="intro">Eerst de gratis methoden, met de formules en de fouten die je moet vermijden.</p>
+    <div class="details">
+      <div><h3><a href="/guides/google-calendar-time-tracking/">Tijdregistratie met Google Agenda</a></h3><p>Factureerbare uren bijhouden zonder timer: plannen, corrigeren, labelen en tellen.</p></div>
+      <div><h3><a href="/guides/count-hours-in-google-calendar/">Uren per klant tellen</a></h3><p>Kleuren, agenda's, trefwoorden en domeinen van gasten, en hoe je ze optelt.</p></div>
+      <div><h3><a href="/guides/google-sheets-timesheet-template/">Urenstaatsjabloon voor Google Spreadsheets</a></h3><p>De kolommen en formules van een urenstaat voor freelancers, inclusief afronding.</p></div>
+      <div><h3><a href="/guides/google-calendar-timesheet/">Van Google Agenda een urenstaat maken</a></h3><p>Met de hand, met een kort script of automatisch.</p></div>
+      <div><h3><a href="/guides/export-google-calendar-to-google-sheets/">Google Agenda exporteren naar Spreadsheets</a></h3><p>De .ics-export, Apps Script en een synchronisatie per uur, vergeleken.</p></div>
+      <div><h3><a href="/guides/bill-clients-from-google-calendar/">Klanten factureren vanuit je agenda</a></h3><p>Tarieven, afronding, minimums, urenbundels en maandoverzichten.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final"><div class="wrap"><div class="box">
+  <h2>Begin met deze maand</h2>
+  <p>De gratis spreadsheet kopieer je in een minuut. De proefperiode duurt tot je eerste maandafsluiting, zodat je een volledige maand ziet afsluiten voordat je iets betaalt.</p>
+  <a class="btn primary" href="/nl/get-the-sheet/">Gratis spreadsheet ophalen</a>
+  <div class="rb" aria-hidden="true"><i style="width:40%;background:var(--c1)"></i><i style="width:35%;background:var(--c2)"></i><i style="width:25%;background:var(--c3)"></i></div>
+</div></div></section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/nl/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
+      <p>Gemaakt in Frankrijk door Pierre Chevallier, entrepreneur individuel. Niet gelieerd aan of goedgekeurd door Google. Google Agenda™ en Google Spreadsheets™ zijn handelsmerken van Google LLC.</p>
+    </div>
+    <nav aria-label="Voettekst"><a href="/guides/">Handleidingen (in het Engels)</a><a href="/nl/support/">Support</a><a href="/nl/privacy/">Privacy</a><a href="/nl/terms/">Voorwaarden</a></nav><nav class="langs" aria-label="Taal"><a href="/" hreflang="en" lang="en">English</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/nl/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></nav>
+  </div>
+</footer>
+</body>
+</html>

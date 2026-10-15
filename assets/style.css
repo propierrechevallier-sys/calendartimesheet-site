@@ -12,7 +12,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16.5px/1.6 "Geist", system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16.5px/1.6 "Geist", system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif; -webkit-font-smoothing: antialiased; }
 img, svg { max-width: 100%; height: auto; display: block; }
 a { color: var(--accent-ink); text-underline-offset: 3px; }
 a:hover { color: var(--ink); }
@@ -202,6 +202,8 @@ code, kbd { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; fon
 .foot nav { display: flex; flex-wrap: wrap; gap: 18px; }
 .foot nav a { color: var(--ink2); text-decoration: none; }
 .foot nav a:hover { color: var(--ink); }
+.foot .langs { width: 100%; gap: 14px; font-size: 13px; }
+.foot .langs a[aria-current] { color: var(--ink); font-weight: 600; }
 .foot p { margin: 6px 0 0; max-width: 62ch; }
 
 @media (max-width: 960px) {

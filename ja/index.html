@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar Timesheet：Google カレンダーから請求可能な時間を集計</title>
+<meta name="description" content="Google カレンダーにある時間を、すべて請求に。予定をクライアントごとの時間、金額、月次の請求明細に変える Google スプレッドシートのアドオンです。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:title" content="Calendar Timesheet：カレンダーにすでにある時間を、すべて請求に">
+<meta property="og:description" content="Google カレンダーの予定が、あなた自身の Google スプレッドシートで、クライアントごとの時間、金額、月次の請求明細になります。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:url" content="https://calendartimesheet.com/ja/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calendar Timesheet","applicationCategory":"BusinessApplication","operatingSystem":"Web（Google スプレッドシート）","inLanguage":"ja",
+"description":"Google カレンダーの予定を、クライアントごとの請求可能な時間と月次の請求明細に変える Google スプレッドシートのアドオンです。","url":"https://calendartimesheet.com/ja/",
+"offers":[{"@type":"Offer","name":"無料","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"月額","price":"6.90","priceCurrency":"USD"},
+{"@type":"Offer","name":"年額","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"買い切り（早期アクセス）","price":"79","priceCurrency":"USD"}]}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/","logo":"https://calendartimesheet.com/assets/apple-touch-icon.png","email":"support@calendartimesheet.com","founder":{"@type":"Person","name":"Pierre Chevallier"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"データはどこに保存されますか？","acceptedAnswer":{"@type":"Answer","text":"あなたの Google アカウント内にある、あなた自身の Google スプレッドシートに保存されます。そこから外に出るのは、確認のために Gumroad に送信されるライセンスキーだけです。アクセス解析もトラッキングもありません。詳しくはプライバシーポリシーに記載しています。"}},{"@type":"Question","name":"カレンダーが変更されることはありますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。読み込むだけです。"}},{"@type":"Question","name":"トライアルが終了するとどうなりますか？","acceptedAnswer":{"@type":"Answer","text":"何も削除されません。請求明細はスプレッドシートに残り、エクスポートは引き続き無料で使えます。オートパイロット、クライアント、単価にはライセンスが必要です。"}},{"@type":"Question","name":"Google が、このアプリは確認されていないと表示するのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"早期アクセス期間中、Calendar Timesheet はコピーして使う既製のスプレッドシートとして提供しています。コピーはあなたのものになるため、Google は審査していないスクリプトに対する標準の警告を表示します。アプリに対する Google の確認手続きは進行中です。各画面は手順のページで紹介しています。"}},{"@type":"Question","name":"解約できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。Gumroad の領収書から、いつでも解約できます。Pro は、支払い済みの期間が終わるまで引き続き使えます。サブスクリプションの管理をご覧ください。"}},{"@type":"Question","name":"Google Workspace アカウントでも使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい。個人の Google アカウントでも、Google Workspace アカウントでも使えます。ただし、組織でアドオンとスクリプトの使用が許可されている必要があります。"}}]}</script>
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/">
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
+  <nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/guides/">ガイド（英語）</a><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav>
+</div></header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <span class="badge"><b>Google スプレッドシートのアドオン</b>時間単位で請求するフリーランスとコンサルタントのために</span>
+    <h1>カレンダーにすでにある時間を、すべて請求に。</h1>
+    <p class="lede">Calendar Timesheet は、Google カレンダーの予定を、あなた自身の Google スプレッドシートで、クライアントごとの時間と金額に変えます。1時間ごとに更新され、毎月1日には、各クライアントの請求明細が請求できる状態で用意されています。</p>
+    <div class="cta"><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a><a class="btn quiet" href="#how">使い方を見る</a></div>
+    <p class="fine">タイマーの操作は不要。アカウントの作成も不要。データはあなたの Google アカウント内にとどまります。</p>
+    <p class="early">早期アクセス：Calendar Timesheet は、ご自身のアカウントにコピーして使う既製のスプレッドシートとして提供しています。</p>
+  </div>
+  <div class="stage" aria-label="例：Google スプレッドシートに表示されたクライアントの請求明細と、開いた状態の Calendar Timesheet のパネル">
+    <div class="window">
+      <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">docs.google.com / タイムシート 2026</span></div>
+      <div class="app">
+        <div class="sheet">
+          <div class="sheetbar" aria-hidden="true"><b>タイムシート 2026</b><span>ファイル</span><span>編集</span><span>表示</span><span>拡張機能</span></div>
+          <div class="doc num">
+            <div class="dh">
+              <div><div class="cl"><i></i>Roux Legal</div><div class="sub">2026年10月の請求明細</div></div>
+              <div><div class="amt">$1,740.00</div><div class="sub" style="text-align:right">21 h 45、時間単価 $80 <span class="chip">請求準備完了</span></div></div>
+            </div>
+            <table>
+              <thead><tr><th scope="col">日付</th><th scope="col" class="l">予定</th><th scope="col">開始</th><th scope="col">終了</th><th scope="col">時間</th><th scope="col">請求時間</th><th scope="col">金額</th></tr></thead>
+              <tbody>
+                <tr><td>10月5日（月）</td><td class="l">契約書のレビュー</td><td>9:00</td><td>11:00</td><td>2:00</td><td>2:00</td><td>$160.00</td></tr>
+                <tr><td>10月6日（火）</td><td class="l">Julia との電話</td><td>15:00</td><td>15:35</td><td>0:35</td><td>0:45</td><td>$60.00</td></tr>
+                <tr><td>10月8日（木）</td><td class="l">デューデリジェンス</td><td>9:00</td><td>11:30</td><td>2:30</td><td>2:30</td><td>$200.00</td></tr>
+                <tr><td>10月12日（月）</td><td class="l">取締役会の準備</td><td>14:00</td><td>18:00</td><td>4:00</td><td>4:00</td><td>$320.00</td></tr>
+                <tr><td>10月14日（水）</td><td class="l">契約書のレビュー</td><td>10:00</td><td>12:15</td><td>2:15</td><td>2:15</td><td>$180.00</td></tr>
+                <tr><td>10月21日（水）</td><td class="l">交渉ミーティング</td><td>14:00</td><td>17:00</td><td>3:00</td><td>3:00</td><td>$240.00</td></tr>
+                <tr><td>10月26日（月）</td><td class="l">クロージング書類</td><td>9:00</td><td>13:00</td><td>4:00</td><td>4:00</td><td>$320.00</td></tr>
+                <tr class="more"><td colspan="7">ほか5件の予定</td></tr>
+                <tr class="tot"><td>合計</td><td class="l">予定12件</td><td></td><td></td><td>21:32</td><td>21:45</td><td>$1,740.00</td></tr>
+              </tbody>
+            </table>
+            <p class="foot-note">各予定は15分単位で切り上げています。Calendar Timesheet により Google カレンダーから作成しました。</p>
+          </div>
+          <div class="tabs" aria-hidden="true"><span>今月</span><span>ダッシュボード</span><span>振り分け待ち</span><span class="on">2026年10月：Roux Legal</span><span>2026年10月：Martin Studio</span><span>入金管理</span></div>
+        </div>
+        <div class="panel num" aria-hidden="true">
+          <div class="phead">Calendar Timesheet <span class="x">✕</span></div>
+          <div class="pbody">
+            <div class="prow"><span class="logo"><span><i></i><i></i><i></i></span></span><span class="pill">Pro</span></div>
+            <div class="prow"><span>11月（現時点）</span><span>09:00に更新</span></div>
+            <div><div class="big">$787.50</div><div class="muted">／見込み$4,017.50</div></div>
+            <div class="ribbon"><i style="width:14%;background:var(--c1)"></i><i style="width:16%;background:var(--c2)"></i><i style="width:9%;background:var(--c3)"></i></div>
+            <div class="legend"><i style="background:var(--c1)"></i><span>Roux Legal</span><span class="m">3 h 30</span><b>$280</b><i style="background:var(--c2)"></i><span>Martin Studio</span><span class="m">4 h</span><b>$320</b><i style="background:var(--c3)"></i><span>Lumen Training</span><span class="m">2 h 30</span><b>$187.50</b></div>
+            <div class="todo"><span class="n">2</span><div><b>振り分け待ちの予定2件</b><div class="muted">まだクライアントに割り当てられていません</div></div></div>
+            <div class="navl"><span>クライアントとルール</span><span>オートパイロット</span><span>期間をエクスポート</span><span>プランとライセンス</span><span>今すぐ更新</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="border-top:1px solid var(--line)">
+  <div class="wrap problem">
+    <h2>これがないと、月末はこうなります</h2>
+    <div><p>カレンダーを開き、4週間さかのぼって、クライアントごとに予定を数えます。日付と所要時間をスプレッドシートに書き写し、端数を丸めて、単価を掛けます。</p>
+      <p>それだけで一晩かかり、長引いた電話を見落としていないか、いつまでも確信が持てません。<b>時間はもともとカレンダーに入っていました。予定を入れたときに、一度書き込んでいたのです。</b></p></div>
+  </div>
+</section>
+
+<section class="band alt" id="how">
+  <div class="wrap">
+    <h2>設定は一度だけ、約3分で</h2>
+    <p class="intro">初期設定では過去30日間のカレンダーを読み込み、推測できないことだけを質問します。</p>
+    <ol class="steps">
+      <li class="step"><h3>カレンダーを選ぶ</h3><p>仕事用、個人用、チームの共有カレンダーなど、請求対象の時間が入っているカレンダーにチェックを入れます。</p>
+        <div class="mini cal" aria-hidden="true"><label><span class="box">✓</span>仕事</label><label><span class="box">✓</span>クライアント（共有）</label><label><span class="box off"></span>個人</label></div></li>
+      <li class="step"><h3>クライアントに名前を付ける</h3><p>すでに使っている色やゲストのメールドメインを見つけ出し、それぞれがどのクライアントかを質問します。</p>
+        <div class="mini assign num" aria-hidden="true"><i style="background:var(--c1)"></i><span>青の予定</span><b>Roux Legal、$80/時間</b><i style="background:var(--c2)"></i><span>緑の予定</span><b>Martin Studio、$80/時間</b><i style="background:var(--c3)"></i><span>@lumen-training.com</span><b>Lumen、$75/時間</b></div></li>
+      <li class="step"><h3>オートパイロットをオンにする</h3><p>スプレッドシートは1時間ごとに更新されます。毎月1日には先月を締め、合計をメールでお知らせします。</p>
+        <div class="mini" aria-hidden="true"><div class="switch"><span>1時間ごとに更新</span><span class="tog"></span></div><div class="switch" style="margin-top:8px"><span>毎月1日の8:00に月を締める</span><span class="tog"></span></div></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="features">
+  <div class="wrap">
+    <h2>請求に必要なものが、すべて Google スプレッドシートの中に</h2>
+    <p class="intro">あなたのスプレッドシートにある、ごく普通のシートです。ほかのシートと同じように、フィルタ、共有、PDF への印刷ができます。</p>
+    <div class="bento">
+      <div class="tile t-a"><h3>クライアントごとの請求明細を毎月</h3><p>各予定の日付、時刻、請求時間、金額を記載します。月を締めると固定されるため、請求した内容が後から変わることはありません。</p>
+        <div class="vis trio num" aria-hidden="true"><div class="todo"><span class="muted">Roux Legal</span><b style="font-size:22px">$1,740.00</b><span class="muted">21 h 45</span></div><div class="todo"><span class="muted">Martin Studio</span><b style="font-size:22px">$1,520.00</b><span class="muted">19 h 00</span></div><div class="todo"><span class="muted">Lumen Training</span><b style="font-size:22px">$1,012.50</b><span class="muted">13 h 30</span></div></div></div>
+      <div class="tile t-b"><h3>ダッシュボード</h3><p>実績、予定、そして月末までの見込み。</p>
+        <div class="vis bars" aria-hidden="true"><div><span style="height:55%"></span></div><div><span style="height:72%"></span></div><div><span style="height:64%"></span></div><div><span style="height:88%;opacity:.45"></span></div></div></div>
+      <div class="tile t-c"><h3>振り分け待ちの予定</h3><p>どのルールにも該当しなかった予定は、ここで待機します。ワンクリックで請求でき、その選択を記憶させることもできます。</p>
+        <div class="vis todo" aria-hidden="true"><span class="n">!</span><div><b>キックオフ</b><div class="muted">anna@newclient.com</div></div></div></div>
+      <div class="tile t-d"><h3>あなたの請求ルール</h3><p>クライアントごと、プロジェクトごとに。</p>
+        <div class="vis rules" aria-hidden="true"><span>時間単価 $80</span><span>15分単位で切り上げ</span><span>最低30分</span><span>月20時間の前払い</span><span>EUR、USD、GBP</span></div></div>
+      <div class="tile t-e"><h3>設計からプライバシー重視</h3><p>サーバーもトラッキングもありません。カレンダーを読み込み、スプレッドシートに書き込むだけで、カレンダーを編集することはありません。</p>
+        <div class="vis" aria-hidden="true"><div class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <h2>時間を正確にするための細かな配慮</h2>
+    <p class="intro">カレンダーから時間を数えるのは簡単そうに見えます。予定が深夜0時をまたいだり、2つのカレンダーに入っていたりするまでは。</p>
+    <div class="details">
+      <div><h3>その月の時間だけを集計</h3><p>深夜0時や月末をまたぐ予定は、その境目で分割します。</p></div>
+      <div><h3>重複は1回だけ</h3><p>2つのカレンダーに入っている同じ予定は、1回だけ数えます。</p></div>
+      <div><h3>辞退した予定は除外</h3><p>辞退した招待と終日の予定は除外します。「予定なし」に設定した時間も除外できます。</p></div>
+      <div><h3>端数処理と最低時間</h3><p>実際の時間のまま、または5、6、10、15、30、60分単位で切り上げます。予定ごとの最低時間も設定できます。</p></div>
+      <div><h3>前払い時間</h3><p>月ごと、または1回限りの前払い契約に対応し、80%と100%に達するとメールでお知らせします。</p></div>
+      <div><h3>メモは消えません</h3><p>手で追加した行やメモは、更新しても残ります。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pricing">
+  <div class="wrap">
+    <h2>シンプルな料金</h2>
+    <p class="intro">最初の月末の請求明細まで、最低14日間、すべての機能を無料でお試しいただけます。カードは不要です。</p>
+    <div class="plans num">
+      <div class="plan"><h3>無料</h3><div class="price">$0</div><p>任意の期間をシートにエクスポートし、色別とカレンダー別の合計も表示します。ずっと無料です。</p><a class="btn quiet" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></div>
+      <div class="plan"><h3>月額</h3><div class="price">$6.90<small> / 月</small></div><ul><li>クライアントと単価</li><li>オートパイロットと月次締め</li><li>請求明細とダッシュボード</li></ul><a class="btn quiet" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=monthly">月額を選ぶ</a></div>
+      <div class="plan pick"><span class="tag">いちばんお得</span><h3>年額</h3><div class="price">$49<small> / 年</small></div><ul><li>Pro のすべての機能</li><li>月あたり約$4.08</li><li>30日間返金可能</li></ul><a class="btn primary" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=yearly">年額を選ぶ</a></div>
+      <div class="plan"><h3>買い切り</h3><div class="price">$79<small> 1回のみ</small></div><ul><li>1回の支払いで Pro を継続</li><li>早期アクセス：先着100ライセンス</li><li>その後は$129</li></ul><a class="btn quiet" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-lifetime">買い切りを選ぶ</a></div>
+    </div>
+    <p class="meta">Gumroad による安全な決済です（ページは英語、価格は米ドル表示）。</p>
+    <p class="fine2">価格は米ドル表示です。購入時に売上税または付加価値税が加算される場合があります。30日間、理由を問わず返金します。支払い、請求書、返金は Gumroad が取り扱います。</p>
+  </div>
+</section>
+
+<section class="band alt" id="faq">
+  <div class="wrap faq">
+    <h2>よくある質問</h2>
+    <div>
+      <details open><summary>データはどこに保存されますか？</summary><p>あなたの Google アカウント内にある、あなた自身の Google スプレッドシートに保存されます。そこから外に出るのは、確認のために Gumroad に送信されるライセンスキーだけです。アクセス解析もトラッキングもありません。詳しくは<a href="/ja/privacy/">プライバシーポリシー</a>に記載しています。</p></details>
+      <details><summary>カレンダーが変更されることはありますか？</summary><p>いいえ。読み込むだけです。</p></details>
+      <details><summary>トライアルが終了するとどうなりますか？</summary><p>何も削除されません。請求明細はスプレッドシートに残り、エクスポートは引き続き無料で使えます。オートパイロット、クライアント、単価にはライセンスが必要です。</p></details>
+      <details><summary>Google が、このアプリは確認されていないと表示するのはなぜですか？</summary><p>早期アクセス期間中、Calendar Timesheet はコピーして使う既製のスプレッドシートとして提供しています。コピーはあなたのものになるため、Google は審査していないスクリプトに対する標準の警告を表示します。アプリに対する Google の確認手続きは進行中です。各画面は<a href="/ja/get-the-sheet/">手順のページ</a>で紹介しています。</p></details>
+      <details><summary>解約できますか？</summary><p>はい。Gumroad の領収書から、いつでも解約できます。Pro は、支払い済みの期間が終わるまで引き続き使えます。<a href="/ja/support/#subscription">サブスクリプションの管理</a>をご覧ください。</p></details>
+      <details><summary>Google Workspace アカウントでも使えますか？</summary><p>はい。個人の Google アカウントでも、Google Workspace アカウントでも使えます。ただし、組織でアドオンとスクリプトの使用が許可されている必要があります。</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="guides">
+  <div class="wrap">
+    <h2>Google カレンダーから請求するためのガイド（英語）</h2>
+    <p class="intro">まずは無料の方法から、数式と避けるべきミスもあわせて紹介しています。ガイドはすべて英語です。</p>
+    <div class="details">
+      <div><h3><a href="/guides/google-calendar-time-tracking/" hreflang="en">Google カレンダーで作業時間を記録する</a></h3><p>タイマーを使わずに請求可能な時間を記録します。予定を入れ、修正し、タグを付けて、数えます。</p></div>
+      <div><h3><a href="/guides/count-hours-in-google-calendar/" hreflang="en">クライアントごとに時間を数える</a></h3><p>色、カレンダー、キーワード、ゲストのドメイン、そしてその合計の出し方。</p></div>
+      <div><h3><a href="/guides/google-sheets-timesheet-template/" hreflang="en">Google スプレッドシートのタイムシート テンプレート</a></h3><p>フリーランス向けタイムシートの列と数式。端数処理も含みます。</p></div>
+      <div><h3><a href="/guides/google-calendar-timesheet/" hreflang="en">Google カレンダーをタイムシートにする</a></h3><p>手作業で、短いスクリプトで、または自動で。</p></div>
+      <div><h3><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en">Google カレンダーをスプレッドシートにエクスポートする</a></h3><p>.ics エクスポート、Apps Script、1時間ごとの同期を比較します。</p></div>
+      <div><h3><a href="/guides/bill-clients-from-google-calendar/" hreflang="en">カレンダーからクライアントに請求する</a></h3><p>単価、端数処理、最低時間、前払い契約、月末の請求明細。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final"><div class="wrap"><div class="box">
+  <h2>まずは今月から</h2>
+  <p>無料のスプレッドシートは1分でコピーできます。トライアルは最初の月末の請求明細まで続くため、お支払いの前に、1か月分の締めをすべて確認できます。</p>
+  <a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a>
+  <div class="rb" aria-hidden="true"><i style="width:40%;background:var(--c1)"></i><i style="width:35%;background:var(--c2)"></i><i style="width:25%;background:var(--c3)"></i></div>
+</div></div></section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
+      <p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p>
+    </div>
+    <nav aria-label="フッター"><a href="/guides/">ガイド（英語）</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a></nav><nav class="langs" aria-label="言語"><a href="/" hreflang="en" lang="en">English</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/" hreflang="nl" lang="nl">Nederlands</a></nav>
+  </div>
+</footer>
+</body>
+</html>

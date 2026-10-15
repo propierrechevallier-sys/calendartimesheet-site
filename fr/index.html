@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar Timesheet : heures facturables depuis Google Agenda</title>
+<meta name="description" content="Facturez chaque heure déjà dans votre Google Agenda. Module complémentaire Google Sheets : vos rendez-vous deviennent heures, montants et relevés par client.">
+<link rel="canonical" href="https://calendartimesheet.com/fr/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:title" content="Calendar Timesheet : facturez chaque heure déjà inscrite dans votre agenda">
+<meta property="og:description" content="Les rendez-vous de votre Google Agenda deviennent des heures, des montants et des relevés mensuels par client, dans votre propre feuille de calcul Google Sheets.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:url" content="https://calendartimesheet.com/fr/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calendar Timesheet","applicationCategory":"BusinessApplication","operatingSystem":"Web (Google Sheets)","inLanguage":"fr",
+"description":"Module complémentaire Google Sheets qui transforme les événements Google Agenda en heures facturables et en relevés mensuels par client.","url":"https://calendartimesheet.com/fr/",
+"offers":[{"@type":"Offer","name":"Gratuit","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Mensuel","price":"6.90","priceCurrency":"USD"},
+{"@type":"Offer","name":"Annuel","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"À vie (accès anticipé)","price":"79","priceCurrency":"USD"}]}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/","logo":"https://calendartimesheet.com/assets/apple-touch-icon.png","email":"support@calendartimesheet.com","founder":{"@type":"Person","name":"Pierre Chevallier"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Où vont mes données ?","acceptedAnswer":{"@type":"Answer","text":"Dans votre propre feuille de calcul Google Sheets, dans votre compte Google. La seule chose qui en sort est votre clé de licence, envoyée à Gumroad pour la vérifier. Aucune mesure d’audience, aucun pistage. Le détail figure dans la politique de confidentialité."}},{"@type":"Question","name":"Calendar Timesheet modifie-t-il mon agenda ?","acceptedAnswer":{"@type":"Answer","text":"Non. Il se contente de le lire."}},{"@type":"Question","name":"Que se passe-t-il à la fin de l’essai ?","acceptedAnswer":{"@type":"Answer","text":"Rien n’est supprimé. Vos relevés restent dans la feuille de calcul et l’export reste gratuit. Le pilote automatique, les clients et les taux nécessitent une licence."}},{"@type":"Question","name":"Pourquoi Google indique-t-il que l’application n’est pas validée ?","acceptedAnswer":{"@type":"Answer","text":"Pendant l’accès anticipé, Calendar Timesheet se présente sous la forme d’une feuille de calcul prête à l’emploi, que vous copiez. La copie vous appartient : Google affiche donc son avertissement habituel pour les scripts qu’il n’a pas examinés. La validation de l’application par Google est en cours. La page pas à pas montre chaque écran."}},{"@type":"Question","name":"Puis-je résilier ?","acceptedAnswer":{"@type":"Answer","text":"Oui, à tout moment, depuis votre reçu Gumroad. Pro continue de fonctionner jusqu’à la fin de la période payée. Voir la gestion de votre abonnement."}},{"@type":"Question","name":"Calendar Timesheet fonctionne-t-il avec les comptes Google Workspace ?","acceptedAnswer":{"@type":"Answer","text":"Oui, avec les comptes Google personnels comme avec les comptes Google Workspace, à condition que votre organisation autorise les modules complémentaires et les scripts."}}]}</script>
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/fr/" aria-label="Calendar Timesheet, accueil"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
+  <nav class="nav" aria-label="Principal"><a href="/fr/#how">Fonctionnement</a><a href="/fr/#features">Fonctionnalités</a><a href="/fr/#pricing">Tarifs</a><a href="/guides/">Guides (en anglais)</a><a class="btn primary sm" href="/fr/get-the-sheet/">Feuille gratuite</a></nav>
+</div></header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <span class="badge"><b>Module complémentaire Google Sheets</b>Pour les indépendants et les consultants qui facturent à l’heure</span>
+    <h1>Facturez chaque heure déjà inscrite dans votre agenda.</h1>
+    <p class="lede">Calendar Timesheet transforme les rendez-vous de votre Google Agenda en heures et en montants par client, dans votre propre feuille de calcul Google Sheets. Il se met à jour toutes les heures et, le 1er du mois, chaque client a son relevé prêt à facturer.</p>
+    <div class="cta"><a class="btn primary" href="/fr/get-the-sheet/">Obtenir la feuille gratuite</a><a class="btn quiet" href="#how">Voir le fonctionnement</a></div>
+    <p class="fine">Aucun chronomètre à lancer. Aucun compte à créer. Vos données restent dans votre compte Google.</p>
+    <p class="early">Accès anticipé : Calendar Timesheet se présente sous la forme d’une feuille de calcul prête à l’emploi, à copier dans votre compte.</p>
+  </div>
+  <div class="stage" aria-label="Exemple : un relevé client dans Google Sheets, avec le panneau Calendar Timesheet ouvert">
+    <div class="window">
+      <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">docs.google.com / Feuille de temps 2026</span></div>
+      <div class="app">
+        <div class="sheet">
+          <div class="sheetbar" aria-hidden="true"><b>Feuille de temps 2026</b><span>Fichier</span><span>Édition</span><span>Affichage</span><span>Extensions</span></div>
+          <div class="doc num">
+            <div class="dh">
+              <div><div class="cl"><i></i>Roux Legal</div><div class="sub">Relevé du mois : octobre 2026</div></div>
+              <div><div class="amt">1&nbsp;740,00&nbsp;$</div><div class="sub" style="text-align:right">21 h 45 à 80&nbsp;$ de l’heure <span class="chip">Prêt à facturer</span></div></div>
+            </div>
+            <table>
+              <thead><tr><th scope="col">Date</th><th scope="col" class="l">Événement</th><th scope="col">Début</th><th scope="col">Fin</th><th scope="col">Durée</th><th scope="col">Durée facturée</th><th scope="col">Montant</th></tr></thead>
+              <tbody>
+                <tr><td>lun. 5 oct.</td><td class="l">Revue de contrat</td><td>9:00</td><td>11:00</td><td>2:00</td><td>2:00</td><td>160,00&nbsp;$</td></tr>
+                <tr><td>mar. 6 oct.</td><td class="l">Appel avec Julia</td><td>15:00</td><td>15:35</td><td>0:35</td><td>0:45</td><td>60,00&nbsp;$</td></tr>
+                <tr><td>jeu. 8 oct.</td><td class="l">Audit préalable</td><td>9:00</td><td>11:30</td><td>2:30</td><td>2:30</td><td>200,00&nbsp;$</td></tr>
+                <tr><td>lun. 12 oct.</td><td class="l">Préparation du conseil</td><td>14:00</td><td>18:00</td><td>4:00</td><td>4:00</td><td>320,00&nbsp;$</td></tr>
+                <tr><td>mer. 14 oct.</td><td class="l">Revue de contrat</td><td>10:00</td><td>12:15</td><td>2:15</td><td>2:15</td><td>180,00&nbsp;$</td></tr>
+                <tr><td>mer. 21 oct.</td><td class="l">Réunion de négociation</td><td>14:00</td><td>17:00</td><td>3:00</td><td>3:00</td><td>240,00&nbsp;$</td></tr>
+                <tr><td>lun. 26 oct.</td><td class="l">Documents de clôture</td><td>9:00</td><td>13:00</td><td>4:00</td><td>4:00</td><td>320,00&nbsp;$</td></tr>
+                <tr class="more"><td colspan="7">5 autres événements</td></tr>
+                <tr class="tot"><td>Total</td><td class="l">12 événements</td><td></td><td></td><td>21:32</td><td>21:45</td><td>1&nbsp;740,00&nbsp;$</td></tr>
+              </tbody>
+            </table>
+            <p class="foot-note">Chaque événement est arrondi aux 15 minutes supérieures. Préparé à partir de Google Agenda avec Calendar Timesheet.</p>
+          </div>
+          <div class="tabs" aria-hidden="true"><span>Mois en cours</span><span>Tableau de bord</span><span>À trier</span><span class="on">oct. 2026 : Roux Legal</span><span>oct. 2026 : Martin Studio</span><span>Encaissements</span></div>
+        </div>
+        <div class="panel num" aria-hidden="true">
+          <div class="phead">Calendar Timesheet <span class="x">✕</span></div>
+          <div class="pbody">
+            <div class="prow"><span class="logo"><span><i></i><i></i><i></i></span></span><span class="pill">Pro</span></div>
+            <div class="prow"><span>En novembre, à ce jour</span><span>Mis à jour à 09:00</span></div>
+            <div><div class="big">787,50&nbsp;$</div><div class="muted">sur 4&nbsp;017,50&nbsp;$ prévus</div></div>
+            <div class="ribbon"><i style="width:14%;background:var(--c1)"></i><i style="width:16%;background:var(--c2)"></i><i style="width:9%;background:var(--c3)"></i></div>
+            <div class="legend"><i style="background:var(--c1)"></i><span>Roux Legal</span><span class="m">3 h 30</span><b>280&nbsp;$</b><i style="background:var(--c2)"></i><span>Martin Studio</span><span class="m">4 h</span><b>320&nbsp;$</b><i style="background:var(--c3)"></i><span>Lumen Training</span><span class="m">2 h 30</span><b>187,50&nbsp;$</b></div>
+            <div class="todo"><span class="n">2</span><div><b>2 événements à trier</b><div class="muted">Sans client pour l’instant</div></div></div>
+            <div class="navl"><span>Clients et règles</span><span>Pilote automatique</span><span>Exporter une période</span><span>Formule et licence</span><span>Mettre à jour</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="border-top:1px solid var(--line)">
+  <div class="wrap problem">
+    <h2>La fin du mois, sans Calendar Timesheet</h2>
+    <div><p>Vous ouvrez votre agenda, remontez quatre semaines en arrière et comptez les rendez-vous de chaque client. Vous recopiez les dates et les durées dans un tableur, vous les arrondissez et vous les multipliez par le taux.</p>
+      <p>Cela prend une soirée, et vous n’êtes jamais sûr de ne pas avoir oublié un appel qui a débordé. <b>Les heures étaient déjà dans votre agenda : vous les aviez notées une première fois, en planifiant le rendez-vous.</b></p></div>
+  </div>
+</section>
+
+<section class="band alt" id="how">
+  <div class="wrap">
+    <h2>À configurer une seule fois, en trois minutes environ</h2>
+    <p class="intro">L’assistant de configuration lit les 30 derniers jours de votre agenda et ne vous demande que ce qu’il ne peut pas deviner.</p>
+    <ol class="steps">
+      <li class="step"><h3>Cochez vos agendas</h3><p>Professionnel, personnel ou agenda d’équipe partagé : choisissez ceux qui contiennent du temps facturable.</p>
+        <div class="mini cal" aria-hidden="true"><label><span class="box">✓</span>Travail</label><label><span class="box">✓</span>Clients (partagé)</label><label><span class="box off"></span>Personnel</label></div></li>
+      <li class="step"><h3>Nommez vos clients</h3><p>Il repère les couleurs et les domaines d’adresse e-mail des invités que vous utilisez déjà, et vous demande à quel client chacun correspond.</p>
+        <div class="mini assign num" aria-hidden="true"><i style="background:var(--c1)"></i><span>Rendez-vous bleus</span><b>Roux Legal, 80&nbsp;$/h</b><i style="background:var(--c2)"></i><span>Rendez-vous verts</span><b>Martin Studio, 80&nbsp;$/h</b><i style="background:var(--c3)"></i><span>@lumen-training.com</span><b>Lumen, 75&nbsp;$/h</b></div></li>
+      <li class="step"><h3>Activez le pilote automatique</h3><p>La feuille de calcul se met à jour toutes les heures. Le 1er du mois, elle clôture le mois précédent et vous envoie les totaux par e-mail.</p>
+        <div class="mini" aria-hidden="true"><div class="switch"><span>Mettre à jour toutes les heures</span><span class="tog"></span></div><div class="switch" style="margin-top:8px"><span>Clôturer chaque mois, le 1er à 8 h</span><span class="tog"></span></div></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="features">
+  <div class="wrap">
+    <h2>Tout pour facturer, dans Google Sheets</h2>
+    <p class="intro">Des feuilles ordinaires, dans votre propre feuille de calcul. Filtrez-les, partagez-les, imprimez-les en PDF comme n’importe quelle autre feuille.</p>
+    <div class="bento">
+      <div class="tile t-a"><h3>Un relevé par client, chaque mois</h3><p>Chaque rendez-vous avec sa date, ses horaires, sa durée facturée et son montant. Figé à la clôture du mois : ce que vous avez facturé ne change plus.</p>
+        <div class="vis trio num" aria-hidden="true"><div class="todo"><span class="muted">Roux Legal</span><b style="font-size:22px">1&nbsp;740,00&nbsp;$</b><span class="muted">21 h 45</span></div><div class="todo"><span class="muted">Martin Studio</span><b style="font-size:22px">1&nbsp;520,00&nbsp;$</b><span class="muted">19 h 00</span></div><div class="todo"><span class="muted">Lumen Training</span><b style="font-size:22px">1&nbsp;012,50&nbsp;$</b><span class="muted">13 h 30</span></div></div></div>
+      <div class="tile t-b"><h3>Tableau de bord</h3><p>Réalisé, à venir et prévision de fin de mois.</p>
+        <div class="vis bars" aria-hidden="true"><div><span style="height:55%"></span></div><div><span style="height:72%"></span></div><div><span style="height:64%"></span></div><div><span style="height:88%;opacity:.45"></span></div></div></div>
+      <div class="tile t-c"><h3>Événements à trier</h3><p>Tout ce qu’aucune règle n’a reconnu attend ici. Un clic suffit pour le facturer, et le choix peut être retenu.</p>
+        <div class="vis todo" aria-hidden="true"><span class="n">!</span><div><b>Réunion de lancement</b><div class="muted">anna@newclient.com</div></div></div></div>
+      <div class="tile t-d"><h3>Vos règles de facturation</h3><p>Par client et par projet.</p>
+        <div class="vis rules" aria-hidden="true"><span>80&nbsp;$ de l’heure</span><span>Arrondi aux 15 min supérieures</span><span>Minimum 30 min</span><span>20 h prépayées par mois</span><span>EUR, USD, GBP</span></div></div>
+      <div class="tile t-e"><h3>Confidentiel par construction</h3><p>Aucun serveur, aucun pistage. Il lit votre agenda, écrit dans votre feuille de calcul et ne modifie jamais votre agenda.</p>
+        <div class="vis" aria-hidden="true"><div class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <h2>Les détails qui rendent les heures justes</h2>
+    <p class="intro">Compter les heures d’un agenda paraît simple, jusqu’au rendez-vous qui passe minuit ou qui figure dans deux agendas.</p>
+    <div class="details">
+      <div><h3>Seulement les heures du mois</h3><p>Un rendez-vous qui passe minuit ou la fin du mois est coupé à la limite.</p></div>
+      <div><h3>Compté une seule fois</h3><p>Le même rendez-vous présent dans deux de vos agendas ne compte qu’une fois.</p></div>
+      <div><h3>Rendez-vous refusés écartés</h3><p>Les invitations que vous avez refusées et les événements d’une journée entière sont ignorés ; les créneaux marqués « Disponible » peuvent l’être aussi.</p></div>
+      <div><h3>Arrondis et minimums</h3><p>Durée exacte, ou arrondie aux 5, 6, 10, 15, 30 ou 60 minutes supérieures, avec un minimum facultatif par rendez-vous.</p></div>
+      <div><h3>Heures prépayées</h3><p>Forfaits d’heures mensuels ou ponctuels, avec un e-mail à 80&nbsp;% et à 100&nbsp;%.</p></div>
+      <div><h3>Des notes qui restent</h3><p>Les lignes et les notes que vous ajoutez à la main sont conservées à chaque mise à jour.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pricing">
+  <div class="wrap">
+    <h2>Des tarifs simples</h2>
+    <p class="intro">Essayez tout gratuitement jusqu’à votre premier relevé de fin de mois, 14 jours au minimum. Aucune carte bancaire requise.</p>
+    <div class="plans num">
+      <div class="plan"><h3>Gratuit</h3><div class="price">0&nbsp;$</div><p>Exportez n’importe quelle période dans une feuille, avec les totaux par couleur et par agenda. Pour toujours.</p><a class="btn quiet" href="/fr/get-the-sheet/">Feuille gratuite</a></div>
+      <div class="plan"><h3>Mensuel</h3><div class="price">6,90&nbsp;$<small> / mois</small></div><ul><li>Clients et taux</li><li>Pilote automatique et clôture mensuelle</li><li>Relevés et tableau de bord</li></ul><a class="btn quiet" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=monthly">Choisir Mensuel</a></div>
+      <div class="plan pick"><span class="tag">Le plus avantageux</span><h3>Annuel</h3><div class="price">49&nbsp;$<small> / an</small></div><ul><li>Toutes les fonctions Pro</li><li>Environ 4,08&nbsp;$ par mois</li><li>Remboursable sous 30 jours</li></ul><a class="btn primary" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=yearly">Choisir Annuel</a></div>
+      <div class="plan"><h3>À vie</h3><div class="price">79&nbsp;$<small> en une fois</small></div><ul><li>Payez une fois, gardez Pro</li><li>Accès anticipé, 100 premières licences</li><li>Ensuite 129&nbsp;$</li></ul><a class="btn quiet" href="https://pierrechevallier.gumroad.com/l/calendar-timesheet-lifetime">Choisir À vie</a></div>
+    </div>
+    <p class="meta">Paiement sécurisé par Gumroad (page en anglais, prix en dollars américains).</p>
+    <p class="fine2">Prix en dollars américains ; une taxe de vente ou la TVA peut s’ajouter au paiement. Remboursement sous 30 jours, sans justification. Les paiements, les factures et les remboursements sont gérés par Gumroad.</p>
+  </div>
+</section>
+
+<section class="band alt" id="faq">
+  <div class="wrap faq">
+    <h2>Questions</h2>
+    <div>
+      <details open><summary>Où vont mes données ?</summary><p>Dans votre propre feuille de calcul Google Sheets, dans votre compte Google. La seule chose qui en sort est votre clé de licence, envoyée à Gumroad pour la vérifier. Aucune mesure d’audience, aucun pistage. Le détail figure dans la <a href="/fr/privacy/">politique de confidentialité</a>.</p></details>
+      <details><summary>Calendar Timesheet modifie-t-il mon agenda ?</summary><p>Non. Il se contente de le lire.</p></details>
+      <details><summary>Que se passe-t-il à la fin de l’essai ?</summary><p>Rien n’est supprimé. Vos relevés restent dans la feuille de calcul et l’export reste gratuit. Le pilote automatique, les clients et les taux nécessitent une licence.</p></details>
+      <details><summary>Pourquoi Google indique-t-il que l’application n’est pas validée ?</summary><p>Pendant l’accès anticipé, Calendar Timesheet se présente sous la forme d’une feuille de calcul prête à l’emploi, que vous copiez. La copie vous appartient : Google affiche donc son avertissement habituel pour les scripts qu’il n’a pas examinés. La validation de l’application par Google est en cours. La <a href="/fr/get-the-sheet/">page pas à pas</a> montre chaque écran.</p></details>
+      <details><summary>Puis-je résilier ?</summary><p>Oui, à tout moment, depuis votre reçu Gumroad. Pro continue de fonctionner jusqu’à la fin de la période payée. Voir <a href="/fr/support/#subscription">la gestion de votre abonnement</a>.</p></details>
+      <details><summary>Calendar Timesheet fonctionne-t-il avec les comptes Google Workspace ?</summary><p>Oui, avec les comptes Google personnels comme avec les comptes Google Workspace, à condition que votre organisation autorise les modules complémentaires et les scripts.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="guides">
+  <div class="wrap">
+    <h2>Guides pour facturer depuis Google Agenda (en anglais)</h2>
+    <p class="intro">Les méthodes gratuites d’abord, avec les formules et les erreurs à éviter.</p>
+    <div class="details">
+      <div><h3><a href="/guides/google-calendar-time-tracking/" hreflang="en">Suivre son temps avec Google Agenda</a></h3><p>Suivre les heures facturables sans chronomètre : planifier, corriger, étiqueter, compter.</p></div>
+      <div><h3><a href="/guides/count-hours-in-google-calendar/" hreflang="en">Compter les heures par client</a></h3><p>Couleurs, agendas, mots-clés et domaines des invités, et comment en faire le total.</p></div>
+      <div><h3><a href="/guides/google-sheets-timesheet-template/" hreflang="en">Modèle de feuille de temps Google Sheets</a></h3><p>Les colonnes et les formules d’une feuille de temps d’indépendant, arrondis compris.</p></div>
+      <div><h3><a href="/guides/google-calendar-timesheet/" hreflang="en">Transformer Google Agenda en feuille de temps</a></h3><p>À la main, avec un court script ou automatiquement.</p></div>
+      <div><h3><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en">Exporter Google Agenda vers Sheets</a></h3><p>L’export .ics, Apps Script et une synchronisation toutes les heures, comparés.</p></div>
+      <div><h3><a href="/guides/bill-clients-from-google-calendar/" hreflang="en">Facturer vos clients depuis votre agenda</a></h3><p>Taux, arrondis, minimums, forfaits d’heures et relevés de fin de mois.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final"><div class="wrap"><div class="box">
+  <h2>Commencez par ce mois-ci</h2>
+  <p>La feuille gratuite se copie en une minute. L’essai dure jusqu’à votre premier relevé de fin de mois : vous voyez un mois complet se clôturer avant de payer quoi que ce soit.</p>
+  <a class="btn primary" href="/fr/get-the-sheet/">Obtenir la feuille gratuite</a>
+  <div class="rb" aria-hidden="true"><i style="width:40%;background:var(--c1)"></i><i style="width:35%;background:var(--c2)"></i><i style="width:25%;background:var(--c3)"></i></div>
+</div></div></section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/fr/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
+      <p>Conçu en France par Pierre Chevallier, entrepreneur individuel. Ni affilié à Google, ni approuvé par Google. Google Agenda™ et Google Sheets™ sont des marques de Google LLC.</p>
+    </div>
+    <nav aria-label="Pied de page"><a href="/guides/">Guides (en anglais)</a><a href="/fr/support/">Assistance</a><a href="/fr/privacy/">Confidentialité</a><a href="/fr/terms/">Conditions</a></nav><nav class="langs" aria-label="Langue"><a href="/" hreflang="en" lang="en">English</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr" aria-current="page">Français</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/nl/" hreflang="nl" lang="nl">Nederlands</a></nav>
+  </div>
+</footer>
+</body>
+</html>
