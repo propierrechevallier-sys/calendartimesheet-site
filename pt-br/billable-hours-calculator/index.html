@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Converter horas em decimal: calculadora e tabela</title>
+<meta name="description" content="Converta horas e minutos em horas decimais, arredonde cada entrada para 6 ou 15 minutos e adicione um mínimo e um valor por hora. Grátis, com tabela.">
+<link rel="canonical" href="https://calendartimesheet.com/pt-br/billable-hours-calculator/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/billable-hours-calculator/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/billable-hours-calculator/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/billable-hours-calculator/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/billable-hours-calculator/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/billable-hours-calculator/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/billable-hours-calculator/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/billable-hours-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/billable-hours-calculator/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Converter horas em decimal: calculadora e tabela">
+<meta property="og:description" content="Converta horas e minutos em horas decimais, arredonde cada entrada para 6 ou 15 minutos e adicione um mínimo e um valor por hora. Grátis, com tabela.">
+<meta property="og:url" content="https://calendartimesheet.com/pt-br/billable-hours-calculator/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de horas faturáveis","url":"https://calendartimesheet.com/pt-br/billable-hours-calculator/","inLanguage":"pt-BR","description":"Converta horas e minutos em horas decimais, arredonde cada entrada para 6 ou 15 minutos e adicione um mínimo e um valor por hora. Grátis, com tabela.","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="top"><div class="wrap"><a class="brand" href="/pt-br/" aria-label="Calendar Timesheet, página inicial"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/pt-br/#how">Como funciona</a><a href="/pt-br/#features">Recursos</a><a href="/pt-br/#pricing">Preços</a><a href="/guides/">Guias (em inglês)</a><details class="lang"><summary aria-label="Idioma"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Português (Brasil)</span><span class="lang-short">PT</span></summary><ul><li><a href="/billable-hours-calculator/" hreflang="en" lang="en">English</a></li><li><a href="/de/billable-hours-calculator/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/billable-hours-calculator/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/billable-hours-calculator/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/billable-hours-calculator/" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</a></li><li><a href="/ja/billable-hours-calculator/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/billable-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/pt-br/get-the-sheet/">Obter a planilha grátis</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Converter horas em decimal e calcular horas faturáveis</h1>
+<p class="meta">Converta horas e minutos em horas decimais, arredonde cada entrada para cima em 6 ou 15 minutos e adicione um mínimo e um valor por hora. Grátis, no seu navegador.</p>
+
+<div class="calc" id="bill">
+  <label class="calc-area">Durações, uma por linha <span class="hint">1:30, 1h30, 45 min, 1,5 (horas) ou um intervalo como 9:00-10:35</span>
+    <textarea id="bh-lines" rows="6" spellcheck="false" autocomplete="off">0:37
+0:05
+2:10
+9:00-10:00</textarea></label>
+  <div class="calc-opts">
+    <label>Arredondar cada entrada para cima em <select id="bh-round"><option value="0">Tempo exato</option><option value="5">5 minutos</option><option value="6" selected>6 minutos (0,1 hora)</option><option value="10">10 minutos</option><option value="15">15 minutos</option><option value="30">30 minutos</option><option value="60">1 hora</option></select></label>
+    <label>Mínimo por entrada <select id="bh-min"><option value="0" selected>Nenhum</option><option value="15">15 minutos</option><option value="30">30 minutos</option><option value="60">1 hora</option></select></label>
+    <label class="wide">Valor por hora, opcional <input type="number" id="bh-rate" min="0" step="0.01" inputmode="decimal" placeholder="80"></label>
+  </div>
+  <section class="calc-result" id="bh-result" aria-live="polite">
+    <p class="muted">Digite uma duração por linha para ver o resultado.</p>
+  </section>
+  <noscript><p class="calc-error">A calculadora precisa de JavaScript. Ela funciona só no seu navegador; nada é enviado. A tabela de conversão abaixo funciona sem ele.</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>Seus compromissos já estão no Google Agenda?</b> A <a href="/pt-br/google-calendar-hours-calculator/">calculadora de horas do Google Agenda</a>, grátis, soma tudo a partir da exportação da sua agenda, e a planilha grátis do Calendar Timesheet aplica essas regras de arredondamento a cada evento, todo mês; o Pro adiciona valores por hora e demonstrativos de fim de mês.</p>
+  <p><a class="btn primary" href="/pt-br/get-the-sheet/">Obter a planilha grátis</a></p>
+</div>
+
+<h2>Como funciona o arredondamento</h2>
+<p>Cada entrada é arredondada para cima até o próximo intervalo e, depois, o mínimo se aplica: com arredondamento de 15 minutos e mínimo de 30, uma ligação de 5 minutos é faturada como 30 minutos e uma de 37 minutos, como 45. Arredondar cada entrada dá um total maior do que arredondar o mês uma vez só; a calculadora mostra os dois, para você escolher a regra do seu orçamento. O guia <a href="/guides/bill-clients-from-google-calendar/" hreflang="en">Bill clients from Google Calendar</a> (em inglês) explica qual regra combina com cada cliente.</p>
+<p>Horas decimais são os minutos divididos por 60: 37 minutos são 37 ÷ 60 = 0,62 hora. Faturar em décimos de hora, comum entre advogados e consultores, arredonda cada entrada para cima, em blocos de 6 minutos.</p>
+
+<h2>Minutos em horas decimais</h2>
+<table class="chart">
+  <thead><tr><th scope="col">Minutos</th><th scope="col">Horas</th><th scope="col">Minutos</th><th scope="col">Horas</th><th scope="col">Minutos</th><th scope="col">Horas</th><th scope="col">Minutos</th><th scope="col">Horas</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>0,02</td><td>16</td><td>0,27</td><td>31</td><td>0,52</td><td>46</td><td>0,77</td></tr>
+    <tr><td>2</td><td>0,03</td><td>17</td><td>0,28</td><td>32</td><td>0,53</td><td>47</td><td>0,78</td></tr>
+    <tr><td>3</td><td>0,05</td><td>18</td><td>0,30</td><td>33</td><td>0,55</td><td>48</td><td>0,80</td></tr>
+    <tr><td>4</td><td>0,07</td><td>19</td><td>0,32</td><td>34</td><td>0,57</td><td>49</td><td>0,82</td></tr>
+    <tr><td>5</td><td>0,08</td><td>20</td><td>0,33</td><td>35</td><td>0,58</td><td>50</td><td>0,83</td></tr>
+    <tr><td>6</td><td>0,10</td><td>21</td><td>0,35</td><td>36</td><td>0,60</td><td>51</td><td>0,85</td></tr>
+    <tr><td>7</td><td>0,12</td><td>22</td><td>0,37</td><td>37</td><td>0,62</td><td>52</td><td>0,87</td></tr>
+    <tr><td>8</td><td>0,13</td><td>23</td><td>0,38</td><td>38</td><td>0,63</td><td>53</td><td>0,88</td></tr>
+    <tr><td>9</td><td>0,15</td><td>24</td><td>0,40</td><td>39</td><td>0,65</td><td>54</td><td>0,90</td></tr>
+    <tr><td>10</td><td>0,17</td><td>25</td><td>0,42</td><td>40</td><td>0,67</td><td>55</td><td>0,92</td></tr>
+    <tr><td>11</td><td>0,18</td><td>26</td><td>0,43</td><td>41</td><td>0,68</td><td>56</td><td>0,93</td></tr>
+    <tr><td>12</td><td>0,20</td><td>27</td><td>0,45</td><td>42</td><td>0,70</td><td>57</td><td>0,95</td></tr>
+    <tr><td>13</td><td>0,22</td><td>28</td><td>0,47</td><td>43</td><td>0,72</td><td>58</td><td>0,97</td></tr>
+    <tr><td>14</td><td>0,23</td><td>29</td><td>0,48</td><td>44</td><td>0,73</td><td>59</td><td>0,98</td></tr>
+    <tr><td>15</td><td>0,25</td><td>30</td><td>0,50</td><td>45</td><td>0,75</td><td>60</td><td>1,00</td></tr>
+  </tbody>
+</table>
+
+<h2>Tabela de intervalos de 6 minutos</h2>
+<table class="chart">
+  <thead><tr><th scope="col">Minutos trabalhados</th><th scope="col">Faturado (horas)</th></tr></thead>
+  <tbody>
+    <tr><td>1–6</td><td>0,1</td></tr>
+    <tr><td>7–12</td><td>0,2</td></tr>
+    <tr><td>13–18</td><td>0,3</td></tr>
+    <tr><td>19–24</td><td>0,4</td></tr>
+    <tr><td>25–30</td><td>0,5</td></tr>
+    <tr><td>31–36</td><td>0,6</td></tr>
+    <tr><td>37–42</td><td>0,7</td></tr>
+    <tr><td>43–48</td><td>0,8</td></tr>
+    <tr><td>49–54</td><td>0,9</td></tr>
+    <tr><td>55–60</td><td>1,0</td></tr>
+  </tbody>
+</table>
+
+<h2>Perguntas</h2>
+<h3>Como converter minutos em horas decimais?</h3>
+<p>Divida os minutos por 60. 15 minutos são 0,25 hora, 20 minutos 0,33 e 45 minutos 0,75. Numa planilha, uma duração gravada como horário (1:30) vira horas decimais com <code>=A2*24</code>.</p>
+<h3>O que são intervalos de 6 minutos?</h3>
+<p>Faturar em décimos de hora: cada bloco de 6 minutos iniciado conta como 0,1 hora. Uma ligação de 7 minutos é faturada como 0,2 hora e uma de 13, como 0,3.</p>
+<h3>Devo arredondar cada entrada ou o total?</h3>
+<p>A maioria dos profissionais arredonda cada entrada e informa isso no orçamento ou no contrato. Seja qual for a regra, aplique a mesma todo mês. A tabela de resultados mostra a diferença nas suas próprias entradas.</p>
+<h3>Ela pode usar minhas horas do Google Agenda?</h3>
+<p>Esta calculadora trabalha com o que você digita. Para somar as horas que já estão na sua agenda, use a <a href="/pt-br/google-calendar-hours-calculator/">calculadora de horas do Google Agenda</a>; para que sejam arredondadas e faturadas todo mês, o <a href="/pt-br/">Calendar Timesheet</a> faz isso no Google Planilhas.</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/pt-br/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Feito na França por Pierre Chevallier, entrepreneur individuel. Não afiliado ao Google nem endossado por ele. Google Agenda™ e Google Planilhas™ são marcas comerciais da Google LLC.</p></div><nav aria-label="Rodapé"><a href="/guides/">Guias (em inglês)</a><a href="/pt-br/support/">Suporte</a><a href="/pt-br/privacy/">Privacidade</a><a href="/pt-br/terms/">Termos</a><a href="/pt-br/google-calendar-hours-calculator/">Calculadora de horas</a><a href="/pt-br/billable-hours-calculator/">Horas em decimal</a></nav><nav class="langs" aria-label="Idioma"><a href="/billable-hours-calculator/" hreflang="en" lang="en">English</a><a href="/de/billable-hours-calculator/" hreflang="de" lang="de">Deutsch</a><a href="/fr/billable-hours-calculator/" hreflang="fr" lang="fr">Français</a><a href="/es/billable-hours-calculator/" hreflang="es" lang="es">Español</a><a href="/pt-br/billable-hours-calculator/" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</a><a href="/ja/billable-hours-calculator/" hreflang="ja" lang="ja">日本語</a><a href="/nl/billable-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/billing.js" defer></script>
+<script src="/assets/js/calc/billable.js" defer></script>
+<script src="/assets/js/calc/hours.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/billui.js" defer></script>
+</body>
+</html>

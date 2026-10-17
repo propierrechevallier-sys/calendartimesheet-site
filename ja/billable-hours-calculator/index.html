@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>時間を10進数に変換（計算ツール・早見表） | Calendar Timesheet</title>
+<meta name="description" content="時間と分を10進数の時間に変換し、各記録を6分または15分単位で切り上げ、最低時間と時間単価を設定できます。無料、早見表付き。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/billable-hours-calculator/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/billable-hours-calculator/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/billable-hours-calculator/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/billable-hours-calculator/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/billable-hours-calculator/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/billable-hours-calculator/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/billable-hours-calculator/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/billable-hours-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/billable-hours-calculator/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="時間を10進数に変換（計算ツール・早見表）">
+<meta property="og:description" content="時間と分を10進数の時間に変換し、各記録を6分または15分単位で切り上げ、最低時間と時間単価を設定できます。無料、早見表付き。">
+<meta property="og:url" content="https://calendartimesheet.com/ja/billable-hours-calculator/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"請求時間の計算ツール","url":"https://calendartimesheet.com/ja/billable-hours-calculator/","inLanguage":"ja","description":"時間と分を10進数の時間に変換し、各記録を6分または15分単位で切り上げ、最低時間と時間単価を設定できます。無料、早見表付き。","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/guides/">ガイド（英語）</a><details class="lang"><summary aria-label="言語"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">日本語</span><span class="lang-short">JA</span></summary><ul><li><a href="/billable-hours-calculator/" hreflang="en" lang="en">English</a></li><li><a href="/de/billable-hours-calculator/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/billable-hours-calculator/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/billable-hours-calculator/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/billable-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/billable-hours-calculator/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li><li><a href="/nl/billable-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>時間を10進数に変換・請求時間を計算</h1>
+<p class="meta">時間と分を10進数の時間に変換し、各記録を6分または15分単位で切り上げ、最低時間と時間単価を加えます。無料、ブラウザ内で動作します。</p>
+
+<div class="calc" id="bill">
+  <label class="calc-area">時間（1 行に 1 つ） <span class="hint">1:30、1h30、45 min、1.5（時間）、または 9:00-10:35 のような時間帯</span>
+    <textarea id="bh-lines" rows="6" spellcheck="false" autocomplete="off">0:37
+0:05
+2:10
+9:00-10:00</textarea></label>
+  <div class="calc-opts">
+    <label>各記録の切り上げ単位 <select id="bh-round"><option value="0">そのまま</option><option value="5">5 分</option><option value="6" selected>6 分（0.1 時間）</option><option value="10">10 分</option><option value="15">15 分</option><option value="30">30 分</option><option value="60">1 時間</option></select></label>
+    <label>1 件あたりの最低時間 <select id="bh-min"><option value="0" selected>なし</option><option value="15">15 分</option><option value="30">30 分</option><option value="60">1 時間</option></select></label>
+    <label class="wide">時間単価（任意） <input type="number" id="bh-rate" min="0" step="0.01" inputmode="decimal" placeholder="80"></label>
+  </div>
+  <section class="calc-result" id="bh-result" aria-live="polite">
+    <p class="muted">1 行に 1 つずつ時間を入力すると、結果が表示されます。</p>
+  </section>
+  <noscript><p class="calc-error">この計算ツールには JavaScript が必要です。処理はすべてブラウザ内で行われ、何も送信されません。下の早見表は JavaScript なしでも使えます。</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>予定がすでに Google カレンダーに入っていますか？</b>無料の<a href="/ja/google-calendar-hours-calculator/">Google カレンダー時間集計ツール</a>がカレンダーのエクスポートから合計を出し、無料の Calendar Timesheet のスプレッドシートは毎月すべての予定にこの切り上げルールを適用します。Pro では時間単価と月末の明細が加わります。</p>
+  <p><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></p>
+</div>
+
+<h2>切り上げのしくみ</h2>
+<p>各記録は次の単位まで切り上げられ、そのあと最低時間が適用されます。15 分単位・最低 30 分の場合、5 分の通話は 30 分、37 分の通話は 45 分として請求されます。記録ごとに切り上げると、月の合計を一度だけ切り上げるより合計が多くなります。計算ツールは両方を表示するので、見積書に書くルールを選べます。どのクライアントにどのルールが合うかは、ガイド <a href="/guides/bill-clients-from-google-calendar/" hreflang="en">Bill clients from Google Calendar</a>（英語）で説明しています。</p>
+<p>10進数の時間は、分を 60 で割った値です。37 分は 37 ÷ 60 = 0.62 時間です。弁護士やコンサルタントに多い 0.1 時間単位の請求では、各記録を次の 6 分単位まで切り上げます。</p>
+
+<h2>分から10進数の時間への早見表</h2>
+<table class="chart">
+  <thead><tr><th scope="col">分</th><th scope="col">時間</th><th scope="col">分</th><th scope="col">時間</th><th scope="col">分</th><th scope="col">時間</th><th scope="col">分</th><th scope="col">時間</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>0.02</td><td>16</td><td>0.27</td><td>31</td><td>0.52</td><td>46</td><td>0.77</td></tr>
+    <tr><td>2</td><td>0.03</td><td>17</td><td>0.28</td><td>32</td><td>0.53</td><td>47</td><td>0.78</td></tr>
+    <tr><td>3</td><td>0.05</td><td>18</td><td>0.30</td><td>33</td><td>0.55</td><td>48</td><td>0.80</td></tr>
+    <tr><td>4</td><td>0.07</td><td>19</td><td>0.32</td><td>34</td><td>0.57</td><td>49</td><td>0.82</td></tr>
+    <tr><td>5</td><td>0.08</td><td>20</td><td>0.33</td><td>35</td><td>0.58</td><td>50</td><td>0.83</td></tr>
+    <tr><td>6</td><td>0.10</td><td>21</td><td>0.35</td><td>36</td><td>0.60</td><td>51</td><td>0.85</td></tr>
+    <tr><td>7</td><td>0.12</td><td>22</td><td>0.37</td><td>37</td><td>0.62</td><td>52</td><td>0.87</td></tr>
+    <tr><td>8</td><td>0.13</td><td>23</td><td>0.38</td><td>38</td><td>0.63</td><td>53</td><td>0.88</td></tr>
+    <tr><td>9</td><td>0.15</td><td>24</td><td>0.40</td><td>39</td><td>0.65</td><td>54</td><td>0.90</td></tr>
+    <tr><td>10</td><td>0.17</td><td>25</td><td>0.42</td><td>40</td><td>0.67</td><td>55</td><td>0.92</td></tr>
+    <tr><td>11</td><td>0.18</td><td>26</td><td>0.43</td><td>41</td><td>0.68</td><td>56</td><td>0.93</td></tr>
+    <tr><td>12</td><td>0.20</td><td>27</td><td>0.45</td><td>42</td><td>0.70</td><td>57</td><td>0.95</td></tr>
+    <tr><td>13</td><td>0.22</td><td>28</td><td>0.47</td><td>43</td><td>0.72</td><td>58</td><td>0.97</td></tr>
+    <tr><td>14</td><td>0.23</td><td>29</td><td>0.48</td><td>44</td><td>0.73</td><td>59</td><td>0.98</td></tr>
+    <tr><td>15</td><td>0.25</td><td>30</td><td>0.50</td><td>45</td><td>0.75</td><td>60</td><td>1.00</td></tr>
+  </tbody>
+</table>
+
+<h2>6 分単位の早見表</h2>
+<table class="chart">
+  <thead><tr><th scope="col">作業時間（分）</th><th scope="col">請求（時間）</th></tr></thead>
+  <tbody>
+    <tr><td>1–6</td><td>0.1</td></tr>
+    <tr><td>7–12</td><td>0.2</td></tr>
+    <tr><td>13–18</td><td>0.3</td></tr>
+    <tr><td>19–24</td><td>0.4</td></tr>
+    <tr><td>25–30</td><td>0.5</td></tr>
+    <tr><td>31–36</td><td>0.6</td></tr>
+    <tr><td>37–42</td><td>0.7</td></tr>
+    <tr><td>43–48</td><td>0.8</td></tr>
+    <tr><td>49–54</td><td>0.9</td></tr>
+    <tr><td>55–60</td><td>1.0</td></tr>
+  </tbody>
+</table>
+
+<h2>よくある質問</h2>
+<h3>分を10進数の時間に変換するには？</h3>
+<p>分を 60 で割ります。15 分は 0.25 時間、20 分は 0.33 時間、45 分は 0.75 時間です。スプレッドシートでは、時刻として保存された時間（1:30）を <code>=A2*24</code> で10進数の時間に変換できます。</p>
+<h3>6 分単位とは？</h3>
+<p>0.1 時間単位の請求のことで、始まった 6 分ごとに 0.1 時間として数えます。7 分の通話は 0.2 時間、13 分の通話は 0.3 時間として請求されます。</p>
+<h3>記録ごとに切り上げる？それとも合計を？</h3>
+<p>多くの専門職は記録ごとに切り上げ、見積書や契約書にそのルールを明記しています。どちらを選んでも、毎月同じルールを使ってください。結果の表で、ご自身の記録での差を確認できます。</p>
+<h3>Google カレンダーの時間を取り込めますか？</h3>
+<p>この計算ツールは入力した内容だけを使います。カレンダーにある時間を合計するには<a href="/ja/google-calendar-hours-calculator/">Google カレンダー時間集計ツール</a>を、毎月の切り上げと請求には Google スプレッドシートで動く <a href="/ja/">Calendar Timesheet</a> をお使いください。</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p></div><nav aria-label="フッター"><a href="/guides/">ガイド（英語）</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a><a href="/ja/google-calendar-hours-calculator/">時間集計ツール</a><a href="/ja/billable-hours-calculator/">時間の10進数変換</a></nav><nav class="langs" aria-label="言語"><a href="/billable-hours-calculator/" hreflang="en" lang="en">English</a><a href="/de/billable-hours-calculator/" hreflang="de" lang="de">Deutsch</a><a href="/fr/billable-hours-calculator/" hreflang="fr" lang="fr">Français</a><a href="/es/billable-hours-calculator/" hreflang="es" lang="es">Español</a><a href="/pt-br/billable-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/billable-hours-calculator/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/billable-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/billing.js" defer></script>
+<script src="/assets/js/calc/billable.js" defer></script>
+<script src="/assets/js/calc/hours.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/billui.js" defer></script>
+</body>
+</html>

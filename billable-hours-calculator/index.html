@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Billable hours calculator: 6-minute and 15-minute rounding</title>
+<meta name="description" content="Convert hours and minutes to decimal hours, round each entry up to 6 or 15 minutes, add a minimum and a rate. Free, with a minutes-to-decimal chart.">
+<link rel="canonical" href="https://calendartimesheet.com/billable-hours-calculator/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/billable-hours-calculator/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/billable-hours-calculator/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/billable-hours-calculator/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/billable-hours-calculator/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/billable-hours-calculator/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/billable-hours-calculator/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/billable-hours-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/billable-hours-calculator/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Billable hours calculator: 6-minute and 15-minute rounding">
+<meta property="og:description" content="Convert hours and minutes to decimal hours, round each entry up to 6 or 15 minutes, add a minimum and a rate. Free, with a minutes-to-decimal chart.">
+<meta property="og:url" content="https://calendartimesheet.com/billable-hours-calculator/">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Billable hours calculator","url":"https://calendartimesheet.com/billable-hours-calculator/","inLanguage":"en","description":"Convert hours and minutes to decimal hours, round each entry up to 6 or 15 minutes, add a minimum and a rate. Free, with a minutes-to-decimal chart.","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/guides/">Guides</a><details class="lang"><summary aria-label="Language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">English</span><span class="lang-short">EN</span></summary><ul><li><a href="/billable-hours-calculator/" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="/de/billable-hours-calculator/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/billable-hours-calculator/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/billable-hours-calculator/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/billable-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/billable-hours-calculator/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/billable-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Billable hours calculator</h1>
+<p class="meta">Convert hours and minutes to decimal hours, round each entry up to 6 or 15 minutes, add a minimum and an hourly rate. Free, in your browser.</p>
+
+<div class="calc" id="bill">
+  <label class="calc-area">Durations, one per line <span class="hint">1:30, 1h30, 45 min, 1.5 (hours), or a range such as 9:00-10:35</span>
+    <textarea id="bh-lines" rows="6" spellcheck="false" autocomplete="off">0:37
+0:05
+2:10
+9:00-10:00</textarea></label>
+  <div class="calc-opts">
+    <label>Round each entry up to <select id="bh-round"><option value="0">Exact time</option><option value="5">5 minutes</option><option value="6" selected>6 minutes (0.1 hour)</option><option value="10">10 minutes</option><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="60">1 hour</option></select></label>
+    <label>Minimum per entry <select id="bh-min"><option value="0" selected>None</option><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="60">1 hour</option></select></label>
+    <label class="wide">Hourly rate, optional <input type="number" id="bh-rate" min="0" step="0.01" inputmode="decimal" placeholder="80"></label>
+  </div>
+  <section class="calc-result" id="bh-result" aria-live="polite">
+    <p class="muted">Type one duration per line to see the result.</p>
+  </section>
+  <noscript><p class="calc-error">The calculator needs JavaScript. It runs only in your browser; nothing is sent anywhere. The conversion chart below works without it.</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>Your meetings are already in Google Calendar?</b> The free <a href="/google-calendar-hours-calculator/">Google Calendar hours calculator</a> adds them up from your calendar export, and the free Calendar Timesheet sheet applies these rounding rules to every meeting, every month; Pro adds rates and month-end statements.</p>
+  <p><a class="btn primary" href="/get-the-sheet/">Get the free sheet</a></p>
+</div>
+
+<h2>How the rounding works</h2>
+<p>Each entry is rounded up to the next step, then the minimum applies: with 15-minute rounding and a 30-minute minimum, a 5-minute call bills 30 minutes and a 37-minute call bills 45. Rounding each entry gives a higher total than rounding the month once; the calculator shows both, so you can choose the rule to write in your quote. The <a href="/guides/bill-clients-from-google-calendar/">guide to billing clients from Google Calendar</a> explains which rule fits which client.</p>
+<p>Decimal hours are minutes divided by 60: 37 minutes is 37 ÷ 60 = 0.62 hours. Billing in tenths of an hour, common with lawyers and consultants, rounds each entry up to the next 6 minutes.</p>
+
+<h2>Minutes to decimal hours</h2>
+<table class="chart">
+  <thead><tr><th scope="col">Minutes</th><th scope="col">Hours</th><th scope="col">Minutes</th><th scope="col">Hours</th><th scope="col">Minutes</th><th scope="col">Hours</th><th scope="col">Minutes</th><th scope="col">Hours</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>0.02</td><td>16</td><td>0.27</td><td>31</td><td>0.52</td><td>46</td><td>0.77</td></tr>
+    <tr><td>2</td><td>0.03</td><td>17</td><td>0.28</td><td>32</td><td>0.53</td><td>47</td><td>0.78</td></tr>
+    <tr><td>3</td><td>0.05</td><td>18</td><td>0.30</td><td>33</td><td>0.55</td><td>48</td><td>0.80</td></tr>
+    <tr><td>4</td><td>0.07</td><td>19</td><td>0.32</td><td>34</td><td>0.57</td><td>49</td><td>0.82</td></tr>
+    <tr><td>5</td><td>0.08</td><td>20</td><td>0.33</td><td>35</td><td>0.58</td><td>50</td><td>0.83</td></tr>
+    <tr><td>6</td><td>0.10</td><td>21</td><td>0.35</td><td>36</td><td>0.60</td><td>51</td><td>0.85</td></tr>
+    <tr><td>7</td><td>0.12</td><td>22</td><td>0.37</td><td>37</td><td>0.62</td><td>52</td><td>0.87</td></tr>
+    <tr><td>8</td><td>0.13</td><td>23</td><td>0.38</td><td>38</td><td>0.63</td><td>53</td><td>0.88</td></tr>
+    <tr><td>9</td><td>0.15</td><td>24</td><td>0.40</td><td>39</td><td>0.65</td><td>54</td><td>0.90</td></tr>
+    <tr><td>10</td><td>0.17</td><td>25</td><td>0.42</td><td>40</td><td>0.67</td><td>55</td><td>0.92</td></tr>
+    <tr><td>11</td><td>0.18</td><td>26</td><td>0.43</td><td>41</td><td>0.68</td><td>56</td><td>0.93</td></tr>
+    <tr><td>12</td><td>0.20</td><td>27</td><td>0.45</td><td>42</td><td>0.70</td><td>57</td><td>0.95</td></tr>
+    <tr><td>13</td><td>0.22</td><td>28</td><td>0.47</td><td>43</td><td>0.72</td><td>58</td><td>0.97</td></tr>
+    <tr><td>14</td><td>0.23</td><td>29</td><td>0.48</td><td>44</td><td>0.73</td><td>59</td><td>0.98</td></tr>
+    <tr><td>15</td><td>0.25</td><td>30</td><td>0.50</td><td>45</td><td>0.75</td><td>60</td><td>1.00</td></tr>
+  </tbody>
+</table>
+
+<h2>6-minute increments chart</h2>
+<table class="chart">
+  <thead><tr><th scope="col">Minutes worked</th><th scope="col">Billed (hours)</th></tr></thead>
+  <tbody>
+    <tr><td>1–6</td><td>0.1</td></tr>
+    <tr><td>7–12</td><td>0.2</td></tr>
+    <tr><td>13–18</td><td>0.3</td></tr>
+    <tr><td>19–24</td><td>0.4</td></tr>
+    <tr><td>25–30</td><td>0.5</td></tr>
+    <tr><td>31–36</td><td>0.6</td></tr>
+    <tr><td>37–42</td><td>0.7</td></tr>
+    <tr><td>43–48</td><td>0.8</td></tr>
+    <tr><td>49–54</td><td>0.9</td></tr>
+    <tr><td>55–60</td><td>1.0</td></tr>
+  </tbody>
+</table>
+
+<h2>Questions</h2>
+<h3>How do I convert minutes to decimal hours?</h3>
+<p>Divide the minutes by 60. 15 minutes is 0.25 hours, 20 minutes is 0.33, 45 minutes is 0.75. In a spreadsheet, a duration stored as a time (1:30) becomes decimal hours with <code>=A2*24</code>.</p>
+<h3>What are 6-minute increments?</h3>
+<p>Billing in tenths of an hour: every started block of 6 minutes counts as 0.1 hours. A 7-minute call bills 0.2 hours, a 13-minute call 0.3.</p>
+<h3>Should I round each entry or the total?</h3>
+<p>Most professionals round each entry and say so in their quote or contract. Whatever you choose, apply the same rule every month. The table above shows the difference for your own entries.</p>
+<h3>Can it take my hours from Google Calendar?</h3>
+<p>This calculator works on what you type. To total the hours already in your calendar, use the <a href="/google-calendar-hours-calculator/">Google Calendar hours calculator</a>; to have them rounded and billed every month, <a href="/">Calendar Timesheet</a> does it in Google Sheets.</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p></div><nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/google-calendar-hours-calculator/">Hours calculator</a><a href="/billable-hours-calculator/">Billable hours calculator</a><a href="/about/">About</a></nav><nav class="langs" aria-label="Language"><a href="/billable-hours-calculator/" hreflang="en" lang="en" aria-current="page">English</a><a href="/de/billable-hours-calculator/" hreflang="de" lang="de">Deutsch</a><a href="/fr/billable-hours-calculator/" hreflang="fr" lang="fr">Français</a><a href="/es/billable-hours-calculator/" hreflang="es" lang="es">Español</a><a href="/pt-br/billable-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/billable-hours-calculator/" hreflang="ja" lang="ja">日本語</a><a href="/nl/billable-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/billing.js" defer></script>
+<script src="/assets/js/calc/billable.js" defer></script>
+<script src="/assets/js/calc/hours.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/billui.js" defer></script>
+</body>
+</html>

@@ -153,6 +153,35 @@ AH.calcText = (function () {
         '{n} terugkerende afspraken gaan te ver terug om volledig te worden uitgewerkt; het totaal kan te laag zijn: {titles}.']
     }
   };
+  // Calculatrice d'heures facturables (billable.js, 2026-10-17) : mêmes langues, mêmes règles d'emplacements.
+  TEXT.en.bill = { placeholder: 'Type one duration per line to see the result.', colEntry: 'Entry', colTime: 'Time', colDecimal: 'Decimal hours',
+    colBilled: 'Billed', colAmount: 'Amount', total: 'Total', invalid: ['{n} line could not be read: {list}.', '{n} lines could not be read: {list}.'],
+    sub: '{hours} hours billed for {real} worked', subAmount: '{hours} hours billed for {real} worked · amount {amount}',
+    once: 'Rounding only the total instead: {billed} ({hours} hours).', onceAmount: 'Rounding only the total instead: {billed} ({hours} hours), {amount}.' };
+  TEXT.de.bill = { placeholder: 'Geben Sie eine Dauer pro Zeile ein, um das Ergebnis zu sehen.', colEntry: 'Eingabe', colTime: 'Dauer', colDecimal: 'Dezimalstunden',
+    colBilled: 'Abgerechnet', colAmount: 'Betrag', total: 'Summe', invalid: ['{n} Zeile konnte nicht gelesen werden: {list}.', '{n} Zeilen konnten nicht gelesen werden: {list}.'],
+    sub: '{hours} Stunden abgerechnet bei {real} Arbeitszeit', subAmount: '{hours} Stunden abgerechnet bei {real} Arbeitszeit · Betrag {amount}',
+    once: 'Wenn nur die Summe gerundet wird: {billed} ({hours} Stunden).', onceAmount: 'Wenn nur die Summe gerundet wird: {billed} ({hours} Stunden), {amount}.' };
+  TEXT.fr.bill = { placeholder: 'Tapez une durée par ligne pour voir le résultat.', colEntry: 'Saisie', colTime: 'Durée', colDecimal: 'Heures décimales',
+    colBilled: 'Facturé', colAmount: 'Montant', total: 'Total', invalid: ['{n} ligne illisible : {list}.', '{n} lignes illisibles : {list}.'],
+    sub: '{hours} h facturées pour {real} de travail', subAmount: '{hours} h facturées pour {real} de travail · montant {amount}',
+    once: 'En arrondissant seulement le total : {billed} ({hours} h).', onceAmount: 'En arrondissant seulement le total : {billed} ({hours} h), {amount}.' };
+  TEXT.es.bill = { placeholder: 'Escribe una duración por línea para ver el resultado.', colEntry: 'Entrada', colTime: 'Duración', colDecimal: 'Horas decimales',
+    colBilled: 'Facturado', colAmount: 'Importe', total: 'Total', invalid: ['No se ha podido leer {n} línea: {list}.', 'No se han podido leer {n} líneas: {list}.'],
+    sub: '{hours} horas facturadas por {real} de trabajo', subAmount: '{hours} horas facturadas por {real} de trabajo · importe {amount}',
+    once: 'Si solo redondeas el total: {billed} ({hours} horas).', onceAmount: 'Si solo redondeas el total: {billed} ({hours} horas), {amount}.' };
+  TEXT['pt-BR'].bill = { placeholder: 'Digite uma duração por linha para ver o resultado.', colEntry: 'Entrada', colTime: 'Duração', colDecimal: 'Horas decimais',
+    colBilled: 'Faturado', colAmount: 'Valor', total: 'Total', invalid: ['{n} linha não pôde ser lida: {list}.', '{n} linhas não puderam ser lidas: {list}.'],
+    sub: '{hours} horas faturadas por {real} de trabalho', subAmount: '{hours} horas faturadas por {real} de trabalho · valor {amount}',
+    once: 'Arredondando só o total: {billed} ({hours} horas).', onceAmount: 'Arredondando só o total: {billed} ({hours} horas), {amount}.' };
+  TEXT.ja.bill = { placeholder: '1 行に 1 つずつ時間を入力すると、結果が表示されます。', colEntry: '入力', colTime: '時間', colDecimal: '10進数の時間',
+    colBilled: '請求時間', colAmount: '金額', total: '合計', invalid: ['読み取れない行が {n} 行あります：{list}。', '読み取れない行が {n} 行あります：{list}。'],
+    sub: '作業時間 {real} に対して請求 {hours} 時間', subAmount: '作業時間 {real} に対して請求 {hours} 時間・金額 {amount}',
+    once: '合計だけを切り上げた場合：{billed}（{hours} 時間）。', onceAmount: '合計だけを切り上げた場合：{billed}（{hours} 時間）、{amount}。' };
+  TEXT.nl.bill = { placeholder: 'Typ één duur per regel om het resultaat te zien.', colEntry: 'Invoer', colTime: 'Duur', colDecimal: 'Decimale uren',
+    colBilled: 'Gefactureerd', colAmount: 'Bedrag', total: 'Totaal', invalid: ['{n} regel kon niet worden gelezen: {list}.', '{n} regels konden niet worden gelezen: {list}.'],
+    sub: '{hours} uur gefactureerd voor {real} werk', subAmount: '{hours} uur gefactureerd voor {real} werk · bedrag {amount}',
+    once: 'Als je alleen het totaal afrondt: {billed} ({hours} uur).', onceAmount: 'Als je alleen het totaal afrondt: {billed} ({hours} uur), {amount}.' };
   // Code de langue de la page (« de-AT » → « de ») ; l'anglais par défaut.
   function lang(code) { var c = String(code || ''); if (TEXT[c]) return c; var b = c.split('-')[0]; return TEXT[b] ? b : 'en'; }
   // Pluriel selon CLDR (Intl.PluralRules) : « one » → première forme (0 et 1 en français et en portugais du Brésil, 1 ailleurs) ;
