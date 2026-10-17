@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calendar Timesheet: billable hours from Google Calendar</title>
+<title>Calendar Timesheet: Google Calendar™ timesheet per client</title>
 <meta name="description" content="Bill every hour already in your Google Calendar. A Google Sheets add-on that turns meetings into hours, amounts and monthly statements per client.">
 <link rel="canonical" href="https://calendartimesheet.com/">
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
@@ -23,11 +23,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calendar Timesheet","applicationCategory":"BusinessApplication","operatingSystem":"Web (Google Sheets)",
 "description":"Google Sheets add-on that turns Google Calendar events into billable hours and monthly statements by client.","url":"https://calendartimesheet.com/",
-"offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Monthly","price":"6.90","priceCurrency":"USD"},
-{"@type":"Offer","name":"Yearly","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Lifetime (early access)","price":"79","priceCurrency":"USD"}]}
+"offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD","url":"https://calendartimesheet.com/get-the-sheet/"},{"@type":"Offer","name":"Monthly","price":"6.90","priceCurrency":"USD","url":"https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=monthly"},
+{"@type":"Offer","name":"Yearly","price":"49","priceCurrency":"USD","url":"https://pierrechevallier.gumroad.com/l/calendar-timesheet-pro?recurrence=yearly"},{"@type":"Offer","name":"Lifetime (early access)","price":"79","priceCurrency":"USD","url":"https://pierrechevallier.gumroad.com/l/calendar-timesheet-lifetime"}]}
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/","logo":"https://calendartimesheet.com/assets/apple-touch-icon.png","email":"support@calendartimesheet.com","founder":{"@type":"Person","name":"Pierre Chevallier"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where does my data go?","acceptedAnswer":{"@type":"Answer","text":"Into your own Google Sheet, in your Google account. The only thing that ever leaves it is your licence key, sent to Gumroad to check it. No analytics, no tracking. The privacy policy has the details."}},{"@type":"Question","name":"Does it change my calendar?","acceptedAnswer":{"@type":"Answer","text":"No. It only reads it."}},{"@type":"Question","name":"What happens when the trial ends?","acceptedAnswer":{"@type":"Answer","text":"Nothing is deleted. Your statements stay in the sheet and export keeps working for free. Autopilot, clients and rates need a licence."}},{"@type":"Question","name":"Why does Google say it hasn't verified the app?","acceptedAnswer":{"@type":"Answer","text":"During early access, Calendar Timesheet comes as a ready-made sheet that you copy. The copy belongs to you, so Google shows its standard warning for scripts it has not reviewed. Google's verification of the app is in progress. The step-by-step page shows each screen."}},{"@type":"Question","name":"Can I cancel?","acceptedAnswer":{"@type":"Answer","text":"Yes, at any time from your Gumroad receipt. Pro keeps working until the end of the period you paid for. See managing your subscription."}},{"@type":"Question","name":"Does it work with Google Workspace accounts?","acceptedAnswer":{"@type":"Answer","text":"Yes, with personal Google accounts and Google Workspace accounts, as long as your organisation allows add-ons and scripts."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where does my data go?","acceptedAnswer":{"@type":"Answer","text":"Into your own Google Sheet, in your Google account. The only thing that ever leaves it is your licence key, sent to Gumroad to check it. No analytics, no tracking. The privacy policy has the details."}},{"@type":"Question","name":"Does it change my calendar?","acceptedAnswer":{"@type":"Answer","text":"No. It only reads it."}},{"@type":"Question","name":"What happens when the trial ends?","acceptedAnswer":{"@type":"Answer","text":"Nothing is deleted. Your statements stay in the sheet and export keeps working for free. Autopilot, clients and rates need a licence."}},{"@type":"Question","name":"Why does Google say it hasn't verified the app?","acceptedAnswer":{"@type":"Answer","text":"During early access, Calendar Timesheet comes as a ready-made sheet that you copy. The copy belongs to you, so Google shows its standard warning for scripts it has not reviewed. The step-by-step page shows each screen."}},{"@type":"Question","name":"Can I cancel?","acceptedAnswer":{"@type":"Answer","text":"Yes, at any time from your Gumroad receipt. Pro keeps working until the end of the period you paid for. See managing your subscription."}},{"@type":"Question","name":"Does it work with Google Workspace accounts?","acceptedAnswer":{"@type":"Answer","text":"Yes, with personal Google accounts and Google Workspace accounts, as long as your organisation allows add-ons and scripts."}}]}</script>
 <link rel="alternate" hreflang="en" href="https://calendartimesheet.com/">
 <link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/">
 <link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/">
@@ -178,7 +178,7 @@
       <details open><summary>Where does my data go?</summary><p>Into your own Google Sheet, in your Google account. The only thing that ever leaves it is your licence key, sent to Gumroad to check it. No analytics, no tracking. The <a href="/privacy/">privacy policy</a> has the details.</p></details>
       <details><summary>Does it change my calendar?</summary><p>No. It only reads it.</p></details>
       <details><summary>What happens when the trial ends?</summary><p>Nothing is deleted. Your statements stay in the sheet and export keeps working for free. Autopilot, clients and rates need a licence.</p></details>
-      <details><summary>Why does Google say it hasn't verified the app?</summary><p>During early access, Calendar Timesheet comes as a ready-made sheet that you copy. The copy belongs to you, so Google shows its standard warning for scripts it has not reviewed. Google's verification of the app is in progress. The <a href="/get-the-sheet/">step-by-step page</a> shows each screen.</p></details>
+      <details><summary>Why does Google say it hasn't verified the app?</summary><p>During early access, Calendar Timesheet comes as a ready-made sheet that you copy. The copy belongs to you, so Google shows its standard warning for scripts it has not reviewed. The <a href="/get-the-sheet/">step-by-step page</a> shows each screen.</p></details>
       <details><summary>Can I cancel?</summary><p>Yes, at any time from your Gumroad receipt. Pro keeps working until the end of the period you paid for. See <a href="/support/#subscription">managing your subscription</a>.</p></details>
       <details><summary>Does it work with Google Workspace accounts?</summary><p>Yes, with personal Google accounts and Google Workspace accounts, as long as your organisation allows add-ons and scripts.</p></details>
     </div>
@@ -190,12 +190,15 @@
     <h2>Guides for billing from Google Calendar</h2>
     <p class="intro">Free methods first, with the formulas and the mistakes to avoid.</p>
     <div class="details">
-      <div><h3><a href="/guides/google-calendar-time-tracking/">Google Calendar time tracking</a></h3><p>Track billable hours without a timer: plan, correct, tag and count.</p></div>
-      <div><h3><a href="/guides/count-hours-in-google-calendar/">Count hours by client</a></h3><p>Colours, calendars, keywords and guest domains, and how to add them up.</p></div>
-      <div><h3><a href="/guides/google-sheets-timesheet-template/">Google Sheets timesheet template</a></h3><p>The columns and formulas of a freelance timesheet, rounding included.</p></div>
       <div><h3><a href="/guides/google-calendar-timesheet/">Turn Google Calendar into a timesheet</a></h3><p>By hand, with a short script, or automatically.</p></div>
+      <div><h3><a href="/guides/count-hours-in-google-calendar/">Count hours per client, colour or week</a></h3><p>Tag each meeting, then split the hours by client, colour, week or month.</p></div>
       <div><h3><a href="/guides/export-google-calendar-to-google-sheets/">Export Google Calendar to Sheets</a></h3><p>The .ics export, Apps Script and an hourly sync, compared.</p></div>
+      <div><h3><a href="/guides/export-google-calendar-to-excel/">Export Google Calendar to Excel or CSV</a></h3><p>Durations that add up, then a .xlsx or .csv file.</p></div>
       <div><h3><a href="/guides/bill-clients-from-google-calendar/">Bill clients from your calendar</a></h3><p>Rates, rounding, minimums, retainers and month-end statements.</p></div>
+      <div><h3><a href="/guides/google-calendar-time-tracking/">Google Calendar time tracking</a></h3><p>Track billable hours without a timer: plan, correct, tag and count.</p></div>
+      <div><h3><a href="/guides/google-sheets-timesheet-template/">Google Sheets timesheet template</a></h3><p>The columns and formulas of a freelance timesheet, rounding included.</p></div>
+      <div><h3><a href="/guides/google-calendar-time-insights-personal-account/">Time Insights on a personal account</a></h3><p>Why it is missing, what it counts, and how to get hours per client anyway.</p></div>
+      <div><h3><a href="/guides/calculate-hours-worked-from-google-calendar/">Calculate hours worked</a></h3><p>The total for a week or a month, on a computer or a phone, with one formula.</p></div>
     </div>
   </div>
 </section>
@@ -214,7 +217,7 @@
       <a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a>
       <p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p>
     </div>
-    <nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav><nav class="langs" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="page">English</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/nl/" hreflang="nl" lang="nl">Nederlands</a></nav>
+    <nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/about/">About</a></nav><nav class="langs" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="page">English</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/nl/" hreflang="nl" lang="nl">Nederlands</a></nav>
   </div>
 </footer>
 </body>
