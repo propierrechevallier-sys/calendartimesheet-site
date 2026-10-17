@@ -51,6 +51,20 @@
 <h2>Minimum charge per meeting</h2>
 <p>A five-minute call still interrupts your day. A minimum, such as 15 or 30 minutes per meeting, covers that. Apply it after rounding: a 5-minute call with 15-minute rounding and a 30-minute minimum bills 30 minutes.</p>
 
+<h2>A worked example: billable hours for one month</h2>
+<p>Client Acme, $80 an hour, each meeting rounded up to 15 minutes, with a 30-minute minimum per meeting. Four meetings in October:</p>
+<table>
+  <thead><tr><th scope="col">Meeting</th><th scope="col">Real time</th><th scope="col">Rounded up to 15 min</th><th scope="col">Billed, after the minimum</th></tr></thead>
+  <tbody>
+    <tr><td>Kick-off call</td><td>0:37</td><td>0:45</td><td>0:45</td></tr>
+    <tr><td>Quick check-in</td><td>0:05</td><td>0:15</td><td>0:30</td></tr>
+    <tr><td>Workshop</td><td>2:10</td><td>2:15</td><td>2:15</td></tr>
+    <tr><td>Review</td><td>1:00</td><td>1:00</td><td>1:00</td></tr>
+    <tr><td><b>Total</b></td><td><b>3:52</b></td><td></td><td><b>4:30</b></td></tr>
+  </tbody>
+</table>
+<p>4.5 hours at $80 is <b>$360</b>. Rounding the monthly total instead (3:52 up to 4:00) would give $320: the rule changes the invoice, which is why it belongs in the quote. In a spreadsheet, the billed time of a meeting is <code>=MAX(CEILING(D2,0.25),0.5)</code> with the real hours as a decimal number in column D; the <a href="/guides/google-sheets-timesheet-template/">Google Sheets timesheet template</a> has the full set of formulas.</p>
+
 <h2>Retainers and prepaid hours</h2>
 <p>Some clients buy a block of hours: 20 hours a month, or 40 hours to use over a quarter. Track used hours against the block, and warn the client before it runs out. An alert at 80% gives time to top up; one at 100% avoids unpaid work.</p>
 

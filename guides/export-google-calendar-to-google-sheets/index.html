@@ -30,7 +30,7 @@
 <h1>Export Google Calendar to Google Sheets automatically</h1>
 <p class="meta">Updated 17 October 2026. About 6 minutes to read.</p>
 
-<p>Google Calendar has no "export to Sheets" button. What it offers is an export of your calendars as <code>.ics</code> files, the standard calendar format, meant for moving events into another calendar app. Getting events into a spreadsheet, and keeping them there up to date, takes one of the approaches below.</p>
+<p>Google Calendar has no "export to Sheets" button. What it offers is an export of your calendars as <code>.ics</code> files, the standard calendar format, meant for moving events into another calendar app. Getting events into a spreadsheet, and keeping them there up to date, takes one of the approaches below. If all you need is a total of hours, the free <a href="/google-calendar-hours-calculator/">Google Calendar hours calculator</a> reads Google's export directly, with no spreadsheet at all.</p>
 
 <h2>Option 1: Google Calendar's own export</h2>
 <p>In Google Calendar, open <b>Settings</b>, then <b>Import &amp; export</b>, then <b>Export</b>. You download a zip with one <code>.ics</code> file per calendar (Google's <a href="https://support.google.com/calendar/answer/37111">help page</a> describes it).</p>
@@ -47,7 +47,14 @@
   <li><b>Not so good</b>: you maintain it. Re-running it rewrites the sheet, so notes you add next to the rows get misaligned. Reading several calendars, skipping declined invitations, splitting meetings across midnight and avoiding duplicates are all yours to write.</li>
 </ul>
 
-<h2>Option 3: an add-on for Google Sheets</h2>
+<h2>Option 3: an IFTTT applet</h2>
+<p>IFTTT links two services without code. Its applet <a href="https://ifttt.com/applets/AvwRrWna-add-new-google-calendar-events-to-google-sheets">"Add new Google Calendar events to Google Sheets"</a> fires every time a new event is added to your calendar and adds one row at the bottom of the first worksheet of a spreadsheet you choose. The applet page gives two limits: on IFTTT's free plan, the calendar is checked every hour (every 5 minutes on paid plans), and a new spreadsheet is created after 2000 rows.</p>
+<ul>
+  <li><b>Good</b>: free, no code, runs on its own once connected.</li>
+  <li><b>Not so good</b>: it reacts to new events only. Events that already exist are not copied, and the action only adds rows, so a meeting you move or cancel later keeps the line written when it was created. Durations and totals per client are yours to add with formulas. Connectors such as Zapier or Make work the same way; check what their free plans include.</li>
+</ul>
+
+<h2>Option 4: an add-on for Google Sheets</h2>
 <p>Add-ons install into Google Sheets in two clicks and do the reading for you. They fall into two families:</p>
 <ul>
   <li><b>Raw exporters</b> copy events into a sheet, often with a schedule. They suit people who want the data and will build their own reports.</li>
