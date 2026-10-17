@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Agenda-urencalculator: gratis, zonder upload</title>
+<meta name="description" content="Zet de export van Google Agenda neer en zie je uren per agenda, trefwoord en week. Gratis, zonder inloggen: het bestand verlaat je browser niet.">
+<link rel="canonical" href="https://calendartimesheet.com/nl/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/google-calendar-hours-calculator/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google Agenda-urencalculator: gratis, zonder upload">
+<meta property="og:description" content="Zet de export van Google Agenda neer en zie je uren per agenda, trefwoord en week. Gratis, zonder inloggen: het bestand verlaat je browser niet.">
+<meta property="og:url" content="https://calendartimesheet.com/nl/google-calendar-hours-calculator/">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Google Agenda-urencalculator","url":"https://calendartimesheet.com/nl/google-calendar-hours-calculator/","inLanguage":"nl","description":"Zet de export van Google Agenda neer en zie je uren per agenda, trefwoord en week. Gratis, zonder inloggen: het bestand verlaat je browser niet.","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top"><div class="wrap"><a class="brand" href="/nl/" aria-label="Calendar Timesheet, startpagina"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Hoofdmenu"><a href="/nl/#how">Zo werkt het</a><a href="/nl/#features">Functies</a><a href="/nl/#pricing">Prijzen</a><a href="/guides/">Handleidingen (in het Engels)</a><details class="lang"><summary aria-label="Taal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Nederlands</span><span class="lang-short">NL</span></summary><ul><li><a href="/google-calendar-hours-calculator/" hreflang="en" lang="en">English</a></li><li><a href="/de/google-calendar-hours-calculator/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/google-calendar-hours-calculator/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/google-calendar-hours-calculator/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/google-calendar-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/google-calendar-hours-calculator/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/google-calendar-hours-calculator/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></li></ul></details><a class="btn primary sm" href="/nl/get-the-sheet/">Gratis spreadsheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Uren tellen in Google Agenda</h1>
+<p class="meta">Gratis. Je agendabestand wordt door je browser gelezen en nooit geüpload: geen account, geen inloggen bij Google.</p>
+
+<div class="calc" id="calc">
+  <label class="drop" for="calc-file" id="calc-drop">
+    <b>Zet hier de export van Google Agenda neer</b>
+    <span>Het <code>.zip</code>-bestand van Google Agenda (Instellingen, Importeren en exporteren, Exporteren), of een of meer <code>.ics</code>-bestanden.</span>
+    <span class="btn quiet">Bestand kiezen</span>
+    <input type="file" id="calc-file" accept=".zip,.ics" multiple>
+  </label>
+  <ul class="calc-files" id="calc-files" aria-label="Gelezen bestanden"></ul>
+  <p class="calc-error" id="calc-error" role="alert" hidden></p>
+
+  <div class="calc-opts">
+    <label>Van <input type="date" id="calc-from"></label>
+    <label>Tot en met <input type="date" id="calc-to"></label>
+    <label class="wide">Trefwoorden in de titel <span class="hint">Gescheiden door komma's. Elke afspraak telt bij het eerste trefwoord dat in de titel staat.</span>
+      <input type="text" id="calc-kw" placeholder="Acme, Northwind, Lumen" autocomplete="off"></label>
+    <div class="calc-checks">
+      <label><input type="checkbox" id="calc-allday" checked> Afspraken van een hele dag niet meetellen</label>
+      <label><input type="checkbox" id="calc-declined" checked> Uitnodigingen die je hebt afgewezen niet meetellen</label>
+      <label><input type="checkbox" id="calc-free"> Tijd die als beschikbaar wordt weergegeven niet meetellen</label>
+    </div>
+  </div>
+
+  <section class="calc-result" id="calc-result" aria-live="polite">
+    <p class="muted">Je totalen verschijnen hier zodra een bestand is gelezen.</p>
+  </section>
+  <noscript><p class="calc-error">De calculator heeft JavaScript nodig. Hij werkt alleen in je browser; er wordt niets verstuurd.</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>Elke maand dezelfde totalen, per klant, zonder iets te exporteren?</b> De gratis spreadsheet van Calendar Timesheet leest je agenda's rechtstreeks, inclusief de kleuren van afspraken; Pro voegt tarieven, bedragen en overzichten aan het einde van de maand toe.</p>
+  <p><a class="btn primary" href="/nl/get-the-sheet/">Gratis spreadsheet ophalen</a></p>
+</div>
+
+<h2>Zo exporteer je Google Agenda</h2>
+<ol>
+  <li>Open Google Agenda op een computer. Volgens de <a href="https://support.google.com/calendar/answer/37111?hl=nl">hulp van Google</a> kun je je agenda niet exporteren vanuit de Google Agenda-app.</li>
+  <li>Klik op <b>Instellingen</b>, dan op <b>Importeren en exporteren</b> en onder Exporteren op <b>Exporteren</b>. Er wordt een <code>.zip</code>-bestand gedownload met één <code>.ics</code>-bestand per agenda.</li>
+  <li>Zet dat <code>.zip</code>-bestand hierboven neer, zonder het uit te pakken. Voor één agenda open je de pagina <b>Instellingen en delen</b> van die agenda en kies je <b>Agenda exporteren</b>.</li>
+</ol>
+<p>Je kunt een agenda exporteren als je het recht "Wijzigingen aanbrengen en opties voor delen beheren" hebt. De export bevat de hele geschiedenis van elke agenda; de calculator telt alleen de periode die je kiest.</p>
+
+<h2>Wat de calculator telt</h2>
+<ul>
+  <li><b>Elke herhaling van terugkerende afspraken</b>, rekening houdend met datums die je hebt verwijderd, verplaatst of geannuleerd.</li>
+  <li><b>Alleen het deel binnen de periode</b>: een afspraak die aan het einde van de periode of van een week over middernacht loopt, wordt gesplitst.</li>
+  <li><b>Een afspraak die in twee agenda's staat, telt één keer.</b></li>
+  <li><b>Zonder afspraken van een hele dag en afgewezen uitnodigingen</b>, tenzij je de vinkjes weghaalt. Tijd die als beschikbaar wordt weergegeven, kun je ook uitsluiten.</li>
+  <li><b>Tijden in de tijdzone van je browser</b>, vermeld bij de resultaten.</li>
+</ul>
+
+<h2>Vragen</h2>
+<h3>Wordt mijn agenda ergens naartoe geüpload?</h3>
+<p>Nee. Achter deze pagina zit geen server: je browser opent het bestand, telt de duur op en toont het resultaat. Er wordt niets opgeslagen of verstuurd, en als je het tabblad sluit, is alles weg. Het <a href="/nl/privacy/">privacybeleid</a> zegt hetzelfde.</p>
+<h3>Waarom zijn er geen totalen per kleur?</h3>
+<p>De export van Google Agenda bevat geen kleuren van afspraken, dus geen enkele tool kan ze uit het bestand lezen. Trefwoorden in de titel of één agenda per klant werken ook. Calendar Timesheet leest de kleuren rechtstreeks uit je agenda; de handleiding <a href="/guides/count-hours-in-google-calendar/" hreflang="en">How to count hours in Google Calendar per client, colour or week</a> (in het Engels) vergelijkt de methoden.</p>
+<h3>Kan ik het totaal op mijn telefoon zien?</h3>
+<p>De export van Google Agenda werkt alleen op een computer. Voor een totaal dat je overal kunt bekijken, zie de handleiding <a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en">Can Google Calendar calculate hours worked?</a> (in het Engels).</p>
+<h3>Kan ik de lijst met afspraken in Excel krijgen?</h3>
+<p>De calculator toont alleen totalen. Voor één regel per afspraak in Excel of CSV volg je de handleiding <a href="/guides/export-google-calendar-to-excel/" hreflang="en">Export Google Calendar to Excel or CSV, with durations</a> (in het Engels).</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/nl/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Gemaakt in Frankrijk door Pierre Chevallier, entrepreneur individuel. Niet gelieerd aan of goedgekeurd door Google. Google Agenda™ en Google Spreadsheets™ zijn handelsmerken van Google LLC.</p></div><nav aria-label="Voettekst"><a href="/guides/">Handleidingen (in het Engels)</a><a href="/nl/support/">Support</a><a href="/nl/privacy/">Privacy</a><a href="/nl/terms/">Voorwaarden</a><a href="/nl/google-calendar-hours-calculator/">Urencalculator</a></nav><nav class="langs" aria-label="Taal"><a href="/google-calendar-hours-calculator/" hreflang="en" lang="en">English</a><a href="/de/google-calendar-hours-calculator/" hreflang="de" lang="de">Deutsch</a><a href="/fr/google-calendar-hours-calculator/" hreflang="fr" lang="fr">Français</a><a href="/es/google-calendar-hours-calculator/" hreflang="es" lang="es">Español</a><a href="/pt-br/google-calendar-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/google-calendar-hours-calculator/" hreflang="ja" lang="ja">日本語</a><a href="/nl/google-calendar-hours-calculator/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/zone.js" defer></script>
+<script src="/assets/js/core/periods.js" defer></script>
+<script src="/assets/js/core/events.js" defer></script>
+<script src="/assets/js/core/exporter.js" defer></script>
+<script src="/assets/js/core/rules.js" defer></script>
+<script src="/assets/js/calc/ics.js" defer></script>
+<script src="/assets/js/calc/zip.js" defer></script>
+<script src="/assets/js/calc/hours.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/ui.js" defer></script>
+</body>
+</html>

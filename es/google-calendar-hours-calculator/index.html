@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcular horas en Google Calendar: calculadora gratis</title>
+<meta name="description" content="Suelta la exportación de Google Calendar y ve tus horas por calendario, palabra clave y semana. Gratis y sin iniciar sesión: el archivo no sale de tu navegador.">
+<link rel="canonical" href="https://calendartimesheet.com/es/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/google-calendar-hours-calculator/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Calcular horas en Google Calendar: calculadora gratis">
+<meta property="og:description" content="Suelta la exportación de Google Calendar y ve tus horas por calendario, palabra clave y semana. Gratis y sin iniciar sesión: el archivo no sale de tu navegador.">
+<meta property="og:url" content="https://calendartimesheet.com/es/google-calendar-hours-calculator/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de horas de Google Calendar","url":"https://calendartimesheet.com/es/google-calendar-hours-calculator/","inLanguage":"es","description":"Suelta la exportación de Google Calendar y ve tus horas por calendario, palabra clave y semana. Gratis y sin iniciar sesión: el archivo no sale de tu navegador.","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top"><div class="wrap"><a class="brand" href="/es/" aria-label="Calendar Timesheet, inicio"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/es/#how">Cómo funciona</a><a href="/es/#features">Funciones</a><a href="/es/#pricing">Precios</a><a href="/guides/">Guías (en inglés)</a><details class="lang"><summary aria-label="Idioma"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Español</span><span class="lang-short">ES</span></summary><ul><li><a href="/google-calendar-hours-calculator/" hreflang="en" lang="en">English</a></li><li><a href="/de/google-calendar-hours-calculator/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/google-calendar-hours-calculator/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/google-calendar-hours-calculator/" hreflang="es" lang="es" aria-current="page">Español</a></li><li><a href="/pt-br/google-calendar-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/google-calendar-hours-calculator/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/google-calendar-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/es/get-the-sheet/">Obtén la hoja gratis</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Calcular horas en Google Calendar</h1>
+<p class="meta">Gratis. Tu navegador lee el archivo del calendario y nunca lo sube: sin cuenta y sin iniciar sesión en Google.</p>
+
+<div class="calc" id="calc">
+  <label class="drop" for="calc-file" id="calc-drop">
+    <b>Suelta aquí la exportación de Google Calendar</b>
+    <span>El <code>.zip</code> de Google Calendar (Configuración, Importar y exportar, Exportar) o uno o varios archivos <code>.ics</code>.</span>
+    <span class="btn quiet">Elegir un archivo</span>
+    <input type="file" id="calc-file" accept=".zip,.ics" multiple>
+  </label>
+  <ul class="calc-files" id="calc-files" aria-label="Archivos leídos"></ul>
+  <p class="calc-error" id="calc-error" role="alert" hidden></p>
+
+  <div class="calc-opts">
+    <label>Desde <input type="date" id="calc-from"></label>
+    <label>Hasta <input type="date" id="calc-to"></label>
+    <label class="wide">Palabras clave en el título <span class="hint">Separadas por comas. Cada evento va a la primera palabra clave que aparece en su título.</span>
+      <input type="text" id="calc-kw" placeholder="Acme, Northwind, Lumen" autocomplete="off"></label>
+    <div class="calc-checks">
+      <label><input type="checkbox" id="calc-allday" checked> No contar los eventos de todo el día</label>
+      <label><input type="checkbox" id="calc-declined" checked> No contar las invitaciones que rechazaste</label>
+      <label><input type="checkbox" id="calc-free"> No contar el tiempo mostrado como disponible</label>
+    </div>
+  </div>
+
+  <section class="calc-result" id="calc-result" aria-live="polite">
+    <p class="muted">Tus totales aparecerán aquí en cuanto se lea un archivo.</p>
+  </section>
+  <noscript><p class="calc-error">La calculadora necesita JavaScript. Funciona solo en tu navegador; no se envía nada.</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>¿Los mismos totales cada mes, por cliente, sin exportar nada?</b> La hoja gratuita de Calendar Timesheet lee tus calendarios directamente, incluidos los colores de los eventos; Pro añade tarifas, importes y resúmenes de fin de mes.</p>
+  <p><a class="btn primary" href="/es/get-the-sheet/">Obtén la hoja gratis</a></p>
+</div>
+
+<h2>Cómo exportar tu Google Calendar</h2>
+<ol>
+  <li>Abre Google Calendar en un ordenador. La <a href="https://support.google.com/calendar/answer/37111?hl=es">ayuda de Google</a> indica que no puedes hacer exportaciones desde la aplicación Google Calendar.</li>
+  <li>Haz clic en <b>Configuración</b>, después en <b>Importar y exportar</b> y, en la sección "Exportar", en <b>Exportar</b>. Se descarga un <code>.zip</code> con un archivo <code>.ics</code> por calendario.</li>
+  <li>Suelta ese <code>.zip</code> arriba, sin descomprimirlo. Para un solo calendario, abre su página <b>Configurar y compartir</b> y elige <b>Exportar calendario</b>.</li>
+</ol>
+<p>Puedes exportar un calendario si tienes el permiso "Hacer cambios y gestionar el uso compartido". La exportación incluye todo el historial de cada calendario; la calculadora solo tiene en cuenta el periodo que elijas.</p>
+
+<h2>Qué cuenta la calculadora</h2>
+<ul>
+  <li><b>Cada repetición de los eventos periódicos</b>, teniendo en cuenta las fechas que eliminaste, moviste o cancelaste.</li>
+  <li><b>Solo la parte dentro del periodo</b>: un evento que cruza la medianoche al final del periodo, o al final de una semana, se divide.</li>
+  <li><b>Un evento que está en dos calendarios, una sola vez.</b></li>
+  <li><b>Sin los eventos de todo el día ni las invitaciones rechazadas</b>, salvo que desmarques las casillas. El tiempo mostrado como disponible también puede quedar fuera.</li>
+  <li><b>Las horas en la zona horaria de tu navegador</b>, que se indica con los resultados.</li>
+</ul>
+
+<h2>Preguntas</h2>
+<h3>¿Se sube mi calendario a algún sitio?</h3>
+<p>No. Esta página no tiene ningún servidor detrás: tu navegador abre el archivo, suma las duraciones y muestra el resultado. No se guarda ni se envía nada, y al cerrar la pestaña se borra todo. La <a href="/es/privacy/">política de privacidad</a> dice lo mismo.</p>
+<h3>¿Por qué no hay totales por color?</h3>
+<p>La exportación de Google Calendar no incluye los colores de los eventos, así que ninguna herramienta puede leerlos en el archivo. Las palabras clave en el título o un calendario por cliente sirven igual. Calendar Timesheet lee los colores directamente de tu calendario; la guía <a href="/guides/count-hours-in-google-calendar/" hreflang="en">How to count hours in Google Calendar per client, colour or week</a> (en inglés) compara los métodos.</p>
+<h3>¿Puedo ver el total en el móvil?</h3>
+<p>La exportación de Google Calendar solo funciona en un ordenador. Para un total que puedas consultar en cualquier sitio, mira la guía <a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en">Can Google Calendar calculate hours worked?</a> (en inglés).</p>
+<h3>¿Puedo tener la lista de eventos en Excel?</h3>
+<p>La calculadora solo muestra totales. Para una fila por evento en Excel o CSV, sigue la guía <a href="/guides/export-google-calendar-to-excel/" hreflang="en">Export Google Calendar to Excel or CSV, with durations</a> (en inglés).</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/es/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Hecho en Francia por Pierre Chevallier, entrepreneur individuel. Sin afiliación con Google ni respaldo de Google. Google Calendar™ y Hojas de cálculo de Google™ son marcas comerciales de Google LLC.</p></div><nav aria-label="Pie de página"><a href="/guides/">Guías (en inglés)</a><a href="/es/support/">Soporte</a><a href="/es/privacy/">Privacidad</a><a href="/es/terms/">Condiciones</a><a href="/es/google-calendar-hours-calculator/">Calculadora de horas</a></nav><nav class="langs" aria-label="Idioma"><a href="/google-calendar-hours-calculator/" hreflang="en" lang="en">English</a><a href="/de/google-calendar-hours-calculator/" hreflang="de" lang="de">Deutsch</a><a href="/fr/google-calendar-hours-calculator/" hreflang="fr" lang="fr">Français</a><a href="/es/google-calendar-hours-calculator/" hreflang="es" lang="es" aria-current="page">Español</a><a href="/pt-br/google-calendar-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/google-calendar-hours-calculator/" hreflang="ja" lang="ja">日本語</a><a href="/nl/google-calendar-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/zone.js" defer></script>
+<script src="/assets/js/core/periods.js" defer></script>
+<script src="/assets/js/core/events.js" defer></script>
+<script src="/assets/js/core/exporter.js" defer></script>
+<script src="/assets/js/core/rules.js" defer></script>
+<script src="/assets/js/calc/ics.js" defer></script>
+<script src="/assets/js/calc/zip.js" defer></script>
+<script src="/assets/js/calc/hours.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/ui.js" defer></script>
+</body>
+</html>

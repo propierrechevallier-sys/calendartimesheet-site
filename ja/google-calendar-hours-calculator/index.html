@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google カレンダーの時間集計ツール（無料・アップロード不要） | Calendar Timesheet</title>
+<meta name="description" content="Google カレンダーのエクスポートをドロップするだけで、カレンダー別・キーワード別・週別の時間を集計。無料、ログイン不要で、ファイルはブラウザの外に出ません。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/google-calendar-hours-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/google-calendar-hours-calculator/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google カレンダーの時間集計ツール（無料・アップロード不要）">
+<meta property="og:description" content="Google カレンダーのエクスポートをドロップするだけで、カレンダー別・キーワード別・週別の時間を集計。無料、ログイン不要で、ファイルはブラウザの外に出ません。">
+<meta property="og:url" content="https://calendartimesheet.com/ja/google-calendar-hours-calculator/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Google カレンダー時間集計ツール","url":"https://calendartimesheet.com/ja/google-calendar-hours-calculator/","inLanguage":"ja","description":"Google カレンダーのエクスポートをドロップするだけで、カレンダー別・キーワード別・週別の時間を集計。無料、ログイン不要で、ファイルはブラウザの外に出ません。","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/guides/">ガイド（英語）</a><details class="lang"><summary aria-label="言語"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">日本語</span><span class="lang-short">JA</span></summary><ul><li><a href="/google-calendar-hours-calculator/" hreflang="en" lang="en">English</a></li><li><a href="/de/google-calendar-hours-calculator/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/google-calendar-hours-calculator/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/google-calendar-hours-calculator/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/google-calendar-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/google-calendar-hours-calculator/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li><li><a href="/nl/google-calendar-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google カレンダーの時間を集計・計算</h1>
+<p class="meta">無料。カレンダーのファイルはブラウザ内で読み込まれ、アップロードされることはありません。アカウント登録も Google へのログインも不要です。</p>
+
+<div class="calc" id="calc">
+  <label class="drop" for="calc-file" id="calc-drop">
+    <b>Google カレンダーのエクスポートをここにドロップ</b>
+    <span>Google カレンダーの <code>.zip</code>（設定、インポート / エクスポート、エクスポート）、または 1 つ以上の <code>.ics</code> ファイル。</span>
+    <span class="btn quiet">ファイルを選択</span>
+    <input type="file" id="calc-file" accept=".zip,.ics" multiple>
+  </label>
+  <ul class="calc-files" id="calc-files" aria-label="読み込んだファイル"></ul>
+  <p class="calc-error" id="calc-error" role="alert" hidden></p>
+
+  <div class="calc-opts">
+    <label>開始日 <input type="date" id="calc-from"></label>
+    <label>終了日 <input type="date" id="calc-to"></label>
+    <label class="wide">タイトルのキーワード <span class="hint">カンマで区切って入力します。各予定は、タイトルで最初に見つかったキーワードに集計されます。</span>
+      <input type="text" id="calc-kw" placeholder="Acme, Northwind, Lumen" autocomplete="off"></label>
+    <div class="calc-checks">
+      <label><input type="checkbox" id="calc-allday" checked> 終日の予定を除く</label>
+      <label><input type="checkbox" id="calc-declined" checked> 辞退した招待を除く</label>
+      <label><input type="checkbox" id="calc-free"> 「空き時間」と表示される予定を除く</label>
+    </div>
+  </div>
+
+  <section class="calc-result" id="calc-result" aria-live="polite">
+    <p class="muted">ファイルを読み込むと、ここに合計が表示されます。</p>
+  </section>
+  <noscript><p class="calc-error">この集計ツールには JavaScript が必要です。処理はすべてブラウザ内で行われ、何も送信されません。</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>クライアントごとの月次合計を、エクスポートなしで。</b>無料の Calendar Timesheet のスプレッドシートはカレンダーを直接読み込み、予定の色も使えます。Pro では時間単価、金額、月末の明細が加わります。</p>
+  <p><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></p>
+</div>
+
+<h2>Google カレンダーをエクスポートする方法</h2>
+<ol>
+  <li>パソコンで Google カレンダーを開きます。<a href="https://support.google.com/calendar/answer/37111?hl=ja">Google のヘルプ</a>によると、Google カレンダー アプリから書き出すことはできません。</li>
+  <li><b>設定</b>、<b>インポート / エクスポート</b>の順にクリックし、「エクスポート」の欄で<b>エクスポート</b>をクリックします。カレンダーごとに 1 つの <code>.ics</code> ファイルを含む <code>.zip</code> がダウンロードされます。</li>
+  <li>その <code>.zip</code> を解凍せずに、上の枠にドロップします。1 つのカレンダーだけを書き出すには、そのカレンダーの<b>設定と共有</b>を開き、<b>カレンダーをエクスポート</b>を選びます。</li>
+</ol>
+<p>カレンダーを書き出すには「予定の変更および共有の管理」権限が必要です。エクスポートには各カレンダーの全履歴が含まれますが、集計ツールが対象にするのは選んだ期間だけです。</p>
+
+<h2>集計の対象</h2>
+<ul>
+  <li><b>定期的な予定は 1 回ずつ</b>、削除・移動・キャンセルした日付も反映して数えます。</li>
+  <li><b>期間内の部分だけ</b>：期間や週の終わりに午前 0 時をまたぐ予定は分割されます。</li>
+  <li><b>2 つのカレンダーにある同じ予定は 1 回だけ</b>数えます。</li>
+  <li><b>終日の予定と辞退した招待は除外</b>します（チェックを外すと含めます）。「空き時間」と表示される予定も除外できます。</li>
+  <li><b>時刻はブラウザのタイムゾーン</b>で表示され、結果に明記されます。</li>
+</ul>
+
+<h2>よくある質問</h2>
+<h3>カレンダーはどこかにアップロードされますか？</h3>
+<p>いいえ。このページにはサーバーがありません。ブラウザがファイルを開き、時間を合計して結果を表示するだけです。何も保存・送信されず、タブを閉じるとすべて消えます。<a href="/ja/privacy/">プライバシーポリシー</a>にも同じことが書かれています。</p>
+<h3>色別の合計がないのはなぜですか？</h3>
+<p>Google カレンダーのエクスポートには予定の色が含まれないため、どのツールでもファイルから色を読み取ることはできません。代わりに、タイトルのキーワードやクライアントごとのカレンダーを使えます。Calendar Timesheet はカレンダーから色を直接読み取ります。方法の比較はガイド <a href="/guides/count-hours-in-google-calendar/" hreflang="en">How to count hours in Google Calendar per client, colour or week</a>（英語）をご覧ください。</p>
+<h3>スマートフォンで合計を見られますか？</h3>
+<p>Google カレンダーのエクスポートはパソコンでのみ行えます。どこでも確認できる合計については、ガイド <a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en">Can Google Calendar calculate hours worked?</a>（英語）をご覧ください。</p>
+<h3>予定の一覧を Excel で取得できますか？</h3>
+<p>この集計ツールが表示するのは合計だけです。Excel や CSV で予定を 1 行ずつ取得するには、ガイド <a href="/guides/export-google-calendar-to-excel/" hreflang="en">Export Google Calendar to Excel or CSV, with durations</a>（英語）の手順に従ってください。</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p></div><nav aria-label="フッター"><a href="/guides/">ガイド（英語）</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a><a href="/ja/google-calendar-hours-calculator/">時間集計ツール</a></nav><nav class="langs" aria-label="言語"><a href="/google-calendar-hours-calculator/" hreflang="en" lang="en">English</a><a href="/de/google-calendar-hours-calculator/" hreflang="de" lang="de">Deutsch</a><a href="/fr/google-calendar-hours-calculator/" hreflang="fr" lang="fr">Français</a><a href="/es/google-calendar-hours-calculator/" hreflang="es" lang="es">Español</a><a href="/pt-br/google-calendar-hours-calculator/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/google-calendar-hours-calculator/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/google-calendar-hours-calculator/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/zone.js" defer></script>
+<script src="/assets/js/core/periods.js" defer></script>
+<script src="/assets/js/core/events.js" defer></script>
+<script src="/assets/js/core/exporter.js" defer></script>
+<script src="/assets/js/core/rules.js" defer></script>
+<script src="/assets/js/calc/ics.js" defer></script>
+<script src="/assets/js/calc/zip.js" defer></script>
+<script src="/assets/js/calc/hours.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/ui.js" defer></script>
+</body>
+</html>

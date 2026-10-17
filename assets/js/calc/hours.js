@@ -33,7 +33,7 @@ AH.hours = (function () {
     var sel = dep('events').select(events, rg, { excludeAllDay: !!o.skipAllDay, excludeDeclined: !!o.skipDeclined, excludeTransparent: !!o.skipFree }, o.calendarOrder || []);
     var kws = keywords(o.keywords), rules = R.prepare(kws.map(function (k) { return { type: 'title', value: k }; }));
     var cals = {}, calNames = [], byKw = kws.map(function (k) { return { name: k, minutes: 0, count: 0 }; });
-    var other = { name: OTHER, minutes: 0, count: 0 }, wk = weeks(o.from, rg, o.zone).map(function (w) { return Object.assign(w, { minutes: 0, count: 0 }); });
+    var other = { name: OTHER, other: true, minutes: 0, count: 0 }, wk = weeks(o.from, rg, o.zone).map(function (w) { return Object.assign(w, { minutes: 0, count: 0 }); });
     var total = { minutes: 0, count: 0 }, excluded = { allDay: 0, declined: 0, free: 0, duplicate: 0 };
     sel.excluded.forEach(function (x) { var k = REASON[x.reason]; if (k) excluded[k] += 1; });
     sel.kept.forEach(function (k) {

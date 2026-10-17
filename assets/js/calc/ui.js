@@ -1,31 +1,27 @@
 // ui.js — page « Google Calendar hours calculator » (seo/ESSAI-B.md) : fichiers déposés, période, mots-clés, résultats.
 // Tout reste dans le navigateur : lecture du fichier, décompression, calcul. Aucun envoi, aucun stockage. Les textes du
-// fichier (titres, noms d'agendas) sont affichés par textContent, jamais comme du HTML.
+// fichier (titres, noms d'agendas) sont affichés par textContent, jamais comme du HTML. Textes, nombres et dates dans la
+// langue de la page (<html lang>, src/calc/text.js).
 (function () {
   'use strict';
   if (typeof document === 'undefined' || !document.getElementById('calc')) return;
   function $(id) { return document.getElementById(id); }
+  var L = AH.calcText.lang(document.documentElement.lang);
+  function t(key, vars) { return AH.calcText.say(L, key, vars); }
   var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone) || 'UTC';
   var zoneFor = AH.ics.zones(), zone = zoneFor(tz) || zoneFor('UTC');
   // files : [{ name, cal }] lus une fois au dépôt ; expanded : rendez-vous de la période en cours, refaits si elle change.
   var files = [], expanded = null, timer = null, ticket = 0;
-  var MSG = {
-    'not-zip': 'This .zip could not be opened. Try unzipping it and dropping the .ics files.',
-    'no-inflate': 'Your browser cannot open .zip files. Unzip the export first, then drop the .ics files.',
-    'zip-method': 'This .zip uses a compression the calculator cannot read. Unzip it first, then drop the .ics files.',
-    'no-ics': 'No calendar file (.ics) was found in what you dropped.',
-    date: 'Choose a valid start date and end date.', order: 'The end date is before the start date.', tooLong: 'Choose a period of 366 days or less.'
-  };
-  var LEFT_OUT = [['allDay', 'all-day'], ['declined', 'declined'], ['free', 'marked free'], ['duplicate', 'found twice']];
+  var LEFT_OUT = ['allDay', 'declined', 'free', 'duplicate'];
   // Période proposée : le mois dernier, celui qu'on facture.
   var last = AH.periods.previousMonth(Date.now(), zone);
   $('calc-from').value = AH.zone.dateKey(last.start, zone);
   $('calc-to').value = AH.zone.dateKey(last.end - 1, zone);
-  var DAYFMT = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+  var DAYFMT = new Intl.DateTimeFormat(L === 'en' ? 'en-GB' : L, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+  var HOURS = new Intl.NumberFormat(L, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   function day(s) { var a = s.split('-').map(Number); return DAYFMT.format(new Date(Date.UTC(a[0], a[1] - 1, a[2]))); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
-  function plural(n, one) { return n + ' ' + one + (n === 1 ? '' : 's'); }
-  function error(code) { var p = $('calc-error'); if (!code) { p.hidden = true; p.textContent = ''; return; } p.textContent = MSG[code] || code; p.hidden = false; }
+  function error(code) { var p = $('calc-error'); if (!code) { p.hidden = true; p.textContent = ''; return; } p.textContent = t('msg.' + code) || code; p.hidden = false; }
   function inflateRaw(u8) {
     if (typeof DecompressionStream === 'undefined') return Promise.reject(new Error('no-inflate'));
     return new Response(new Blob([u8]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer().then(function (b) { return new Uint8Array(b); });
@@ -48,14 +44,19 @@
     if (!list || !list.length) return;
     var mine = ++ticket;
     error(null);
-    $('calc-result').replaceChildren(el('p', 'muted', 'Reading your calendar…'));
+    $('calc-result').replaceChildren(el('p', 'muted', t('reading')));
     Promise.all(Array.prototype.map.call(list, readFile)).then(function (groups) {
       if (mine !== ticket) return;
       files = [].concat.apply([], groups).map(function (f) { return { name: f.name, cal: AH.ics.parse(f.text, f.name) }; });
       expanded = null;
       if (!files.length) { error('no-ics'); render(null); return; }
       compute();
-    }, function (e) { if (mine !== ticket) return; files = []; expanded = null; error(e && e.message); render(null); });
+    }, function (e) {
+      if (mine !== ticket) return;
+      // Erreur connue (no-inflate, zip-method…) : son message ; toute autre (archive abîmée) : « ce .zip n'a pas pu être ouvert ».
+      var code = e && e.message;
+      files = []; expanded = null; error(t('msg.' + code) ? code : 'not-zip'); render(null);
+    });
   }
   // Rendez-vous de la période, gardés tant qu'elle ne change pas : mots-clés et cases ne refont que les totaux.
   function expand(from, to, range) {
@@ -78,7 +79,7 @@
     if (!rg.ok) {
       error(rg.error.replace(/^err[.]/, ''));
       renderFiles(files.map(function (f) { return { name: f.name, calendar: f.cal.calendarName, bad: !!f.cal.error, count: null }; }));
-      render(null, null, 'Choose a valid period to see your totals.');
+      render(null, null, t('invalidPeriod'));
       return;
     }
     error(null);
@@ -90,42 +91,40 @@
   }
   function renderFiles(shown) {
     $('calc-files').replaceChildren.apply($('calc-files'), shown.map(function (f) {
-      if (f.bad) return el('li', 'bad', f.name + ': not a calendar file');
-      return el('li', '', f.count == null ? f.calendar : f.calendar + ' · ' + plural(f.count, 'event') + ' in the period');
+      if (f.bad) return el('li', 'bad', t('notCalendar', { name: f.name }));
+      return el('li', '', f.count == null ? f.calendar : f.calendar + ' · ' + t('inPeriod', { n: f.count }));
     }));
   }
   function table(title, head, rows) {
-    var s = el('div', 'calc-block'), t = el('table', 'calc-table'), tr = el('tr'), th = el('thead'), tb = el('tbody');
+    var s = el('div', 'calc-block'), tb = el('table', 'calc-table'), tr = el('tr'), th = el('thead'), body = el('tbody');
     s.appendChild(el('h2', null, title));
     head.forEach(function (h) { tr.appendChild(el('th', null, h)); });
-    th.appendChild(tr); t.appendChild(th);
-    rows.forEach(function (r) { var row = el('tr'); r.forEach(function (c) { row.appendChild(el('td', null, c)); }); tb.appendChild(row); });
-    t.appendChild(tb); s.appendChild(t);
+    th.appendChild(tr); tb.appendChild(th);
+    rows.forEach(function (r) { var row = el('tr'); r.forEach(function (c) { row.appendChild(el('td', null, c)); }); body.appendChild(row); });
+    tb.appendChild(body); s.appendChild(tb);
     return s;
   }
   // Avertissement de lecture : nombre de rendez-vous concernés, puis leurs titres.
-  function warn(list, one, many, tail) {
+  function warn(list, key) {
     if (!list.length) return null;
-    return el('p', 'calc-warn', list.length + (list.length === 1 ? one : many) + tail + list.map(function (w) { return w.title || '(no title)'; }).join(', ') + '.');
+    return el('p', 'calc-warn', t(key, { n: list.length, titles: list.map(function (w) { return w.title || t('noTitle'); }).join(', ') }));
   }
   function render(r, warnings, note) {
     var box = $('calc-result'), H = AH.hours, parts = [], ws = warnings || [];
-    if (!r) { box.replaceChildren(el('p', 'muted', note || 'Your totals appear here as soon as a file is read.')); return; }
+    if (!r) { box.replaceChildren(el('p', 'muted', note || t('placeholder'))); return; }
     if (!r.ok) { error(r.error); return; }
-    var left = LEFT_OUT.filter(function (k) { return r.excluded[k[0]]; }).map(function (k) { return r.excluded[k[0]] + ' ' + k[1]; });
-    parts.push(el('p', 'muted', day($('calc-from').value) + ' to ' + day($('calc-to').value) + ' · times in ' + r.zone));
+    var left = LEFT_OUT.filter(function (k) { return r.excluded[k]; }).map(function (k) { return t('left.' + k, { n: r.excluded[k] }); });
+    parts.push(el('p', 'muted', t('heading', { from: day($('calc-from').value), to: day($('calc-to').value), zone: r.zone })));
     parts.push(el('p', 'calc-big', H.hm(r.total.minutes)));
-    parts.push(el('p', 'calc-sub', (r.total.minutes / 60).toFixed(2) + ' hours in ' + plural(r.total.count, 'event') + (left.length ? ' · left out: ' + left.join(', ') : '')));
-    function row(x) { return [x.name, H.hm(x.minutes), String(x.count)]; }
-    if (r.byKeyword) parts.push(table('By keyword', ['Keyword', 'Hours', 'Events'], r.byKeyword.map(row)));
-    parts.push(table('By calendar', ['Calendar', 'Hours', 'Events'], r.byCalendar.map(row)));
-    parts.push(table('By week', ['Week starting', 'Hours', 'Events'], r.byWeek.map(function (w) {
-      return [day(w.monday) + (w.partial ? ' (part of the week)' : ''), H.hm(w.minutes), String(w.count)];
+    parts.push(el('p', 'calc-sub', t('summary', { hours: HOURS.format(r.total.minutes / 60), n: r.total.count }) + (left.length ? ' · ' + t('leftOut', { list: left.join(', ') }) : '')));
+    function row(x) { return [x.other ? t('noKeyword') : x.name, H.hm(x.minutes), String(x.count)]; }
+    if (r.byKeyword) parts.push(table(t('byKeyword'), [t('colKeyword'), t('colHours'), t('colEvents')], r.byKeyword.map(row)));
+    parts.push(table(t('byCalendar'), [t('colCalendar'), t('colHours'), t('colEvents')], r.byCalendar.map(row)));
+    parts.push(table(t('byWeek'), [t('colWeek'), t('colHours'), t('colEvents')], r.byWeek.map(function (w) {
+      return [day(w.monday) + (w.partial ? ' ' + t('partWeek') : ''), H.hm(w.minutes), String(w.count)];
     })));
-    parts.push(warn(ws.filter(function (w) { return w.code === 'rule'; }), ' repeating event uses', ' repeating events use',
-      ' a rule this calculator cannot expand; only the first date is counted: '));
-    parts.push(warn(ws.filter(function (w) { return w.code === 'long'; }), ' repeating event goes', ' repeating events go',
-      ' back too far to be expanded in full; the total may be short: '));
+    parts.push(warn(ws.filter(function (w) { return w.code === 'rule'; }), 'warnRule'));
+    parts.push(warn(ws.filter(function (w) { return w.code === 'long'; }), 'warnLong'));
     box.replaceChildren.apply(box, parts.filter(Boolean));
   }
   // Valeur vidée après lecture : choisir de nouveau le même fichier (nouvel export du même nom) relance le calcul.
