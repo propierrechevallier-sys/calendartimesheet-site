@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Calendar to Excel and CSV converter, free</title>
+<meta name="description" content="Convert your Google Calendar export to an Excel or CSV file: one line per event, recurring events expanded, durations that add up. Free, nothing uploaded.">
+<link rel="canonical" href="https://calendartimesheet.com/google-calendar-to-excel/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google Calendar to Excel and CSV converter, free">
+<meta property="og:description" content="Convert your Google Calendar export to an Excel or CSV file: one line per event, recurring events expanded, durations that add up. Free, nothing uploaded.">
+<meta property="og:url" content="https://calendartimesheet.com/google-calendar-to-excel/">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Google Calendar to Excel converter","url":"https://calendartimesheet.com/google-calendar-to-excel/","inLanguage":"en","description":"Convert your Google Calendar export to an Excel or CSV file: one line per event, recurring events expanded, durations that add up. Free, nothing uploaded.","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/guides/">Guides</a><details class="lang"><summary aria-label="Language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">English</span><span class="lang-short">EN</span></summary><ul><li><a href="/" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google Calendar to Excel and CSV converter</h1>
+<p class="meta">Free. Your calendar file is read by your browser and the Excel file is created there too: nothing is uploaded, no account, no Google sign-in.</p>
+
+<div class="calc" id="conv">
+  <label class="drop" for="conv-file" id="conv-drop">
+    <b>Drop your Google Calendar export here</b>
+    <span>The <code>.zip</code> from Google Calendar (Settings, Import &amp; export, Export), or one or more <code>.ics</code> files.</span>
+    <span class="btn quiet">Choose a file</span>
+    <input type="file" id="conv-file" accept=".zip,.ics" multiple>
+  </label>
+  <ul class="calc-files" id="conv-files" aria-label="Files read"></ul>
+  <p class="calc-error" id="conv-error" role="alert" hidden></p>
+
+  <div class="calc-opts">
+    <label>From <input type="date" id="conv-from"></label>
+    <label>To <input type="date" id="conv-to"></label>
+    <div class="calc-checks">
+      <label><input type="checkbox" id="conv-allday" checked> Skip all-day events</label>
+      <label><input type="checkbox" id="conv-declined" checked> Skip invitations you declined</label>
+      <label><input type="checkbox" id="conv-free"> Skip time marked free</label>
+    </div>
+  </div>
+
+  <div class="conv-actions">
+    <button type="button" class="btn primary" id="conv-xlsx" disabled>Download Excel (.xlsx)</button>
+    <button type="button" class="btn quiet" id="conv-csv" disabled>Download CSV</button>
+  </div>
+
+  <section class="calc-result" id="conv-result" aria-live="polite">
+    <p class="muted">Your events appear here as soon as a file is read.</p>
+  </section>
+  <noscript><p class="calc-error">The converter needs JavaScript. It runs only in your browser; nothing is sent anywhere.</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>The same list every month, without exporting anything?</b> The free Calendar Timesheet sheet copies your calendars into Google Sheets directly, event colours included; Pro adds clients, rates and month-end statements.</p>
+  <p><a class="btn primary" href="/get-the-sheet/">Get the free sheet</a></p>
+</div>
+
+<h2>What you get</h2>
+<p>One line per event, in order of start time, with these columns:</p>
+<table>
+  <thead><tr><th scope="col">Column</th><th scope="col">What it holds</th></tr></thead>
+  <tbody>
+    <tr><td><b>Date</b></td><td>The day the event starts, as a real date that Excel can sort and filter.</td></tr>
+    <tr><td><b>Start, End</b></td><td>Times in your computer's time zone. In the Excel file they keep their full date, so <code>=C2-B2</code> still works for an event that ends after midnight.</td></tr>
+    <tr><td><b>Duration</b></td><td>Hours and minutes, formatted <code>[h]:mm</code> so that a total of 26 hours shows 26:00, not 2:00.</td></tr>
+    <tr><td><b>Hours</b></td><td>The same duration as a decimal number (1.50 for 1 h 30), ready to multiply by an hourly rate.</td></tr>
+    <tr><td><b>Title, Calendar, Location, Description</b></td><td>As written in Google Calendar.</td></tr>
+  </tbody>
+</table>
+<p>The Excel file adds a total line under the events, with <code>SUM</code> formulas. The CSV file holds the events only, so it imports cleanly into another tool.</p>
+
+<h2>What the converter takes care of</h2>
+<ul>
+  <li><b>Recurring events, one line per occurrence.</b> Google's export stores a weekly meeting once, with its repeat rule. The converter writes every date in the period, without the dates you deleted, moved or cancelled.</li>
+  <li><b>Only the period you choose.</b> Google exports the whole history of each calendar; you pick the dates. An event that crosses the start or end of the period is cut there and marked "(partial)".</li>
+  <li><b>No double counting.</b> A meeting found in two calendars appears once. Declined invitations and all-day events are left out unless you untick them.</li>
+  <li><b>A CSV that opens in columns.</b> Where your browser's language writes decimals with a comma, as in French or German, the CSV is separated by semicolons, which is what Excel expects there. It is saved in UTF-8 with a byte order mark, so accents and other alphabets come through.</li>
+  <li><b>No formula surprises.</b> In the CSV, a title that starts with = or + gets an apostrophe in front of it, so Excel shows it as text instead of running it as a formula.</li>
+</ul>
+
+<h2>How to export your Google Calendar</h2>
+<ol>
+  <li>On a computer, open Google Calendar. Google's <a href="https://support.google.com/calendar/answer/37111">help page</a> notes that the phone app cannot export.</li>
+  <li>Open <b>Settings</b>, then <b>Import &amp; export</b>, then <b>Export</b>. A <code>.zip</code> with one <code>.ics</code> file per calendar downloads.</li>
+  <li>Drop that <code>.zip</code> above. There is no need to unzip it. To export a single calendar instead, open its <b>Settings and sharing</b> page and choose <b>Export calendar</b>.</li>
+</ol>
+<p>You can export a calendar if you have the "Make changes and manage sharing" permission on it.</p>
+
+<h2>Open the file in Google Sheets</h2>
+<p>In Google Sheets, open <b>File</b>, then <b>Import</b>, then <b>Upload</b>, and choose the <code>.xlsx</code> file. Dates, times, durations and the total come through as they are. To keep a sheet up to date every month without exporting again, the <a href="/guides/export-google-calendar-to-google-sheets/">guide to exporting Google Calendar to Google Sheets</a> compares the automatic options.</p>
+
+<h2>Questions</h2>
+<h3>Is my calendar uploaded?</h3>
+<p>No. The page has no server behind it: your browser opens the export, builds the Excel or CSV file and saves it to your computer. Nothing is stored or sent, and closing the tab forgets everything. The <a href="/privacy/">privacy policy</a> says the same.</p>
+<h3>Why is there no colour column?</h3>
+<p>Google Calendar's export leaves event colours out, so no converter can read them from the file. Calendar Timesheet reads colours directly from your calendar; the guide <a href="/guides/count-hours-in-google-calendar/">how to count hours in Google Calendar per client, colour or week</a> compares the methods.</p>
+<h3>Which time zone are the times in?</h3>
+<p>Your computer's time zone, shown above the preview. Events created in another time zone are converted to it, the way Google Calendar shows them to you.</p>
+<h3>Can I export from my phone?</h3>
+<p>Google Calendar's export only works on a computer. For a total you can read anywhere, see <a href="/guides/calculate-hours-worked-from-google-calendar/">Can Google Calendar calculate hours worked?</a></p>
+<h3>I only need the total hours</h3>
+<p>The <a href="/google-calendar-hours-calculator/">Google Calendar hours calculator</a> reads the same export and adds it up by calendar, keyword and week, with no file to open. To round durations to 6 or 15 minutes and price them, use the <a href="/billable-hours-calculator/">billable hours calculator</a>.</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p></div><nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/google-calendar-hours-calculator/">Hours calculator</a><a href="/billable-hours-calculator/">Billable hours calculator</a><a href="/google-calendar-to-excel/">Excel converter</a><a href="/about/">About</a></nav><nav class="langs" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="page">English</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/nl/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/zone.js" defer></script>
+<script src="/assets/js/core/periods.js" defer></script>
+<script src="/assets/js/core/events.js" defer></script>
+<script src="/assets/js/core/exporter.js" defer></script>
+<script src="/assets/js/calc/ics.js" defer></script>
+<script src="/assets/js/calc/zip.js" defer></script>
+<script src="/assets/js/calc/files.js" defer></script>
+<script src="/assets/js/calc/convert.js" defer></script>
+<script src="/assets/js/calc/xlsx.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/convertui.js" defer></script>
+</body>
+</html>

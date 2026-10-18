@@ -182,6 +182,64 @@ AH.calcText = (function () {
     colBilled: 'Gefactureerd', colAmount: 'Bedrag', total: 'Totaal', invalid: ['{n} regel kon niet worden gelezen: {list}.', '{n} regels konden niet worden gelezen: {list}.'],
     sub: '{hours} uur gefactureerd voor {real} werk', subAmount: '{hours} uur gefactureerd voor {real} werk · bedrag {amount}',
     once: 'Als je alleen het totaal afrondt: {billed} ({hours} uur).', onceAmount: 'Als je alleen het totaal afrondt: {billed} ({hours} uur), {amount}.' };
+  // Convertisseur Excel et CSV (2026-10-19) : en-têtes repris de la feuille du module (src/core/i18n.js : col.date, col.start,
+  // col.end, export.calendar, st.total, st.partial) ; lieu et description avec les mots de Google Agenda dans chaque langue.
+  TEXT.en.conv = { placeholder: 'Your events appear here as soon as a file is read.', summary: ['{n} event · {hours} hours', '{n} events · {hours} hours'],
+    preview: 'Preview of the first {shown} lines. The downloaded file has all {n}.', none: 'No event in this period.',
+    heads: { date: 'Date', start: 'Start', end: 'End', duration: 'Duration', hours: 'Hours', title: 'Title', calendar: 'Calendar', location: 'Location', description: 'Description' },
+    sheet: 'Events', total: 'Total', part: '(partial)',
+    warnRule: ['{n} repeating event uses a rule this converter cannot expand; only its first date is listed: {titles}.',
+      '{n} repeating events use a rule this converter cannot expand; only their first date is listed: {titles}.'],
+    warnLong: ['{n} repeating event goes back too far to be expanded in full; some of its dates may be missing: {titles}.',
+      '{n} repeating events go back too far to be expanded in full; some of their dates may be missing: {titles}.'] };
+  TEXT.de.conv = { placeholder: 'Ihre Termine erscheinen hier, sobald eine Datei gelesen ist.', summary: ['{n} Termin · {hours} Stunden', '{n} Termine · {hours} Stunden'],
+    preview: 'Vorschau der ersten {shown} Zeilen. Die heruntergeladene Datei enthält alle {n}.', none: 'Keine Termine in diesem Zeitraum.',
+    heads: { date: 'Datum', start: 'Beginn', end: 'Ende', duration: 'Dauer', hours: 'Stunden', title: 'Titel', calendar: 'Kalender', location: 'Ort', description: 'Beschreibung' },
+    sheet: 'Termine', total: 'Gesamt', part: '(teilweise)',
+    warnRule: ['{n} wiederkehrender Termin nutzt eine Regel, die der Konverter nicht auflösen kann; nur das erste Datum wird aufgeführt: {titles}.',
+      '{n} wiederkehrende Termine nutzen eine Regel, die der Konverter nicht auflösen kann; nur das erste Datum wird aufgeführt: {titles}.'],
+    warnLong: ['{n} wiederkehrender Termin reicht zu weit zurück, um vollständig aufgelöst zu werden; einige Daten können fehlen: {titles}.',
+      '{n} wiederkehrende Termine reichen zu weit zurück, um vollständig aufgelöst zu werden; einige Daten können fehlen: {titles}.'] };
+  TEXT.fr.conv = { placeholder: 'Vos événements s’affichent ici dès qu’un fichier est lu.', summary: ['{n} événement · {hours} h', '{n} événements · {hours} h'],
+    preview: 'Aperçu des {shown} premières lignes. Le fichier téléchargé les contient toutes ({n}).', none: 'Aucun événement sur cette période.',
+    heads: { date: 'Date', start: 'Début', end: 'Fin', duration: 'Durée', hours: 'Heures', title: 'Titre', calendar: 'Agenda', location: 'Lieu', description: 'Description' },
+    sheet: 'Événements', total: 'Total', part: '(partiel)',
+    warnRule: ['{n} événement périodique suit une règle que le convertisseur ne sait pas développer ; seule sa première date figure dans le fichier : {titles}.',
+      '{n} événements périodiques suivent une règle que le convertisseur ne sait pas développer ; seule leur première date figure dans le fichier : {titles}.'],
+    warnLong: ['{n} événement périodique remonte trop loin pour être développé en entier ; certaines dates peuvent manquer : {titles}.',
+      '{n} événements périodiques remontent trop loin pour être développés en entier ; certaines dates peuvent manquer : {titles}.'] };
+  TEXT.es.conv = { placeholder: 'Tus eventos aparecen aquí en cuanto se lee un archivo.', summary: ['{n} evento · {hours} horas', '{n} eventos · {hours} horas'],
+    preview: 'Vista previa de las primeras {shown} filas. El archivo descargado las incluye todas ({n}).', none: 'No hay eventos en este periodo.',
+    heads: { date: 'Fecha', start: 'Inicio', end: 'Fin', duration: 'Duración', hours: 'Horas', title: 'Título', calendar: 'Calendario', location: 'Ubicación', description: 'Descripción' },
+    sheet: 'Eventos', total: 'Total', part: '(parcial)',
+    warnRule: ['{n} evento periódico usa una regla que el conversor no sabe desarrollar; solo aparece su primera fecha: {titles}.',
+      '{n} eventos periódicos usan una regla que el conversor no sabe desarrollar; solo aparece su primera fecha: {titles}.'],
+    warnLong: ['{n} evento periódico se remonta demasiado atrás para desarrollarlo entero; pueden faltar fechas: {titles}.',
+      '{n} eventos periódicos se remontan demasiado atrás para desarrollarlos enteros; pueden faltar fechas: {titles}.'] };
+  TEXT['pt-BR'].conv = { placeholder: 'Seus eventos aparecem aqui assim que um arquivo é lido.', summary: ['{n} evento · {hours} horas', '{n} eventos · {hours} horas'],
+    preview: 'Prévia das primeiras {shown} linhas. O arquivo baixado tem todas as {n}.', none: 'Nenhum evento neste período.',
+    heads: { date: 'Data', start: 'Início', end: 'Fim', duration: 'Duração', hours: 'Horas', title: 'Título', calendar: 'Agenda', location: 'Local', description: 'Descrição' },
+    sheet: 'Eventos', total: 'Total', part: '(parcial)',
+    warnRule: ['{n} evento recorrente usa uma regra que o conversor não consegue expandir; só a primeira data aparece: {titles}.',
+      '{n} eventos recorrentes usam uma regra que o conversor não consegue expandir; só a primeira data aparece: {titles}.'],
+    warnLong: ['{n} evento recorrente começa há tempo demais para ser expandido por completo; algumas datas podem faltar: {titles}.',
+      '{n} eventos recorrentes começam há tempo demais para serem expandidos por completo; algumas datas podem faltar: {titles}.'] };
+  TEXT.ja.conv = { placeholder: 'ファイルを読み込むと、ここに予定が表示されます。', summary: ['{n} 件の予定・{hours} 時間', '{n} 件の予定・{hours} 時間'],
+    preview: '最初の {shown} 行のプレビューです。ダウンロードしたファイルには {n} 行すべてが含まれます。', none: 'この期間に予定はありません。',
+    heads: { date: '日付', start: '開始', end: '終了', duration: '時間', hours: '10進数の時間', title: 'タイトル', calendar: 'カレンダー', location: '場所', description: '説明' },
+    sheet: '予定', total: '合計', part: '（一部）',
+    warnRule: ['定期的な予定 {n} 件は、このツールでは展開できないルールを使っています。最初の日付のみを出力しています：{titles}。',
+      '定期的な予定 {n} 件は、このツールでは展開できないルールを使っています。最初の日付のみを出力しています：{titles}。'],
+    warnLong: ['定期的な予定 {n} 件は開始日が古すぎるため、すべてを展開できません。一部の日付が欠けている可能性があります：{titles}。',
+      '定期的な予定 {n} 件は開始日が古すぎるため、すべてを展開できません。一部の日付が欠けている可能性があります：{titles}。'] };
+  TEXT.nl.conv = { placeholder: 'Je afspraken verschijnen hier zodra een bestand is gelezen.', summary: ['{n} afspraak · {hours} uur', '{n} afspraken · {hours} uur'],
+    preview: 'Voorbeeld van de eerste {shown} regels. Het gedownloade bestand bevat ze alle {n}.', none: 'Geen afspraken in deze periode.',
+    heads: { date: 'Datum', start: 'Begin', end: 'Einde', duration: 'Duur', hours: 'Uren', title: 'Titel', calendar: 'Agenda', location: 'Locatie', description: 'Beschrijving' },
+    sheet: 'Afspraken', total: 'Totaal', part: '(gedeeltelijk)',
+    warnRule: ['{n} terugkerende afspraak gebruikt een regel die de converter niet kan uitwerken; alleen de eerste datum staat erin: {titles}.',
+      '{n} terugkerende afspraken gebruiken een regel die de converter niet kan uitwerken; alleen de eerste datum staat erin: {titles}.'],
+    warnLong: ['{n} terugkerende afspraak gaat te ver terug om volledig te worden uitgewerkt; sommige datums kunnen ontbreken: {titles}.',
+      '{n} terugkerende afspraken gaan te ver terug om volledig te worden uitgewerkt; sommige datums kunnen ontbreken: {titles}.'] };
   // Code de langue de la page (« de-AT » → « de ») ; l'anglais par défaut.
   function lang(code) { var c = String(code || ''); if (TEXT[c]) return c; var b = c.split('-')[0]; return TEXT[b] ? b : 'en'; }
   // Pluriel selon CLDR (Intl.PluralRules) : « one » → première forme (0 et 1 en français et en portugais du Brésil, 1 ailleurs) ;

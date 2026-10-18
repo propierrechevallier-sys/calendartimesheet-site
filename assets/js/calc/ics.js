@@ -188,10 +188,12 @@ AH.ics = (function () {
     // ce qui évite des milliers d'appels pour un rendez-vous répété depuis des années.
     var winStart = Math.floor(range.start / DAY) - 2, winEnd = Math.floor(range.end / DAY) + 2;
     function dayNum(d) { return Date.UTC(d[0], d[1] - 1, d[2]) / DAY; }
+    // Texte d'une propriété (titre, lieu, description), caractères échappés rendus ; vide si absente.
+    function txt(ev, name) { var p = prop(ev, name); return p ? unescape(p.value) : ''; }
     function base(ev) {
       var att = (ev.ATTENDEE || []).filter(function (a) { return cal.owners.indexOf(String(a.value).replace(/^mailto:/i, '').trim().toLowerCase()) >= 0; })[0];
       var tr = prop(ev, 'TRANSP');
-      return { id: uid(ev), calendarId: cal.calendarId, calendarName: cal.calendarName, title: prop(ev, 'SUMMARY') ? unescape(prop(ev, 'SUMMARY').value) : '',
+      return { id: uid(ev), calendarId: cal.calendarId, calendarName: cal.calendarName, title: txt(ev, 'SUMMARY'), location: txt(ev, 'LOCATION'), description: txt(ev, 'DESCRIPTION'),
         myStatus: att ? (STATUS[String(att.params.PARTSTAT || '').toUpperCase()] || 'INVITED') : 'OWNER',
         transparency: tr && String(tr.value).toUpperCase() === 'TRANSPARENT' ? 'transparent' : 'opaque' };
     }

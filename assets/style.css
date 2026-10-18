@@ -247,6 +247,12 @@ code, kbd { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; fon
 .calc-scroll { max-width: 100%; overflow-x: auto; margin-top: 18px; }
 .calc-scroll .calc-table td:nth-child(n+2), .calc-scroll .calc-table th:nth-child(n+2) { width: auto; }
 .calc-scroll .calc-table th:nth-child(n+2) { white-space: normal; }
+/* Convertisseur Excel et CSV (2026-10-19) : boutons de téléchargement, actifs dès qu un fichier donne des lignes. */
+.conv-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+.calc-scroll .conv-table td:nth-child(n+5), .calc-scroll .conv-table th:nth-child(n+5) { text-align: left; white-space: normal; min-width: 9em; }
+.conv-more { margin-top: 10px !important; }
+.calc-scroll .conv-table td:first-child { white-space: nowrap; overflow-wrap: normal; }
 .page table.chart { font-variant-numeric: tabular-nums; }
 .page table.chart td, .page table.chart th { text-align: right; }
 

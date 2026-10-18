@@ -22,23 +22,8 @@
   function day(s) { var a = s.split('-').map(Number); return DAYFMT.format(new Date(Date.UTC(a[0], a[1] - 1, a[2]))); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function error(code) { var p = $('calc-error'); if (!code) { p.hidden = true; p.textContent = ''; return; } p.textContent = t('msg.' + code) || code; p.hidden = false; }
-  function inflateRaw(u8) {
-    if (typeof DecompressionStream === 'undefined') return Promise.reject(new Error('no-inflate'));
-    return new Response(new Blob([u8]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer().then(function (b) { return new Uint8Array(b); });
-  }
-  function decode(u8) { return new TextDecoder('utf-8').decode(u8); }
-  // Un fichier déposé → [{ name, text }] : les .ics d'un .zip, ou le fichier lui-même.
-  function readFile(f) {
-    return f.arrayBuffer().then(function (buf) {
-      var u8 = new Uint8Array(buf);
-      if (AH.zip.isZip(u8)) {
-        return AH.zip.read(u8, inflateRaw).then(function (list) {
-          return list.filter(function (e) { return /[.]ics$/i.test(e.name); }).map(function (e) { return { name: e.name.split('/').pop(), text: decode(e.bytes) }; });
-        });
-      }
-      return [{ name: f.name, text: decode(u8) }];
-    });
-  }
+  // Lecture des fichiers déposés : brique commune aux outils du site (src/calc/files.js).
+  var readFile = AH.calcFiles.read;
   // Seul le dernier dépôt compte : un dépôt plus ancien qui finit après lui est ignoré.
   function take(list) {
     if (!list || !list.length) return;
