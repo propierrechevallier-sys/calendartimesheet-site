@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kan Google Agenda gewerkte uren berekenen?</title>
+<meta name="description" content="Google Agenda telt geen uren op en Werktijden is alleen beschikbaarheid. Zo zie je je totaal op elk apparaat, met de formules voor Google Spreadsheets.">
+<link rel="canonical" href="https://calendartimesheet.com/nl/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Kan Google Agenda gewerkte uren berekenen?">
+<meta property="og:description" content="Google Agenda telt geen uren op en Werktijden is alleen beschikbaarheid. Zo zie je je totaal op elk apparaat, met de formules voor Google Spreadsheets.">
+<meta property="og:url" content="https://calendartimesheet.com/nl/guides/calculate-hours-worked-from-google-calendar/">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/nl/"},{"@type":"ListItem","position":2,"name":"Kan Google Agenda gewerkte uren berekenen?","item":"https://calendartimesheet.com/nl/guides/calculate-hours-worked-from-google-calendar/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Kan Google Agenda gewerkte uren berekenen?","description":"Google Agenda telt geen uren op en Werktijden is alleen beschikbaarheid. Zo zie je je totaal op elk apparaat, met de formules voor Google Spreadsheets.","inLanguage":"nl","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/nl/guides/calculate-hours-worked-from-google-calendar/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top"><div class="wrap"><a class="brand" href="/nl/" aria-label="Calendar Timesheet, startpagina"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Hoofdmenu"><a href="/nl/#how">Zo werkt het</a><a href="/nl/#features">Functies</a><a href="/nl/#pricing">Prijzen</a><a href="/nl/guides/">Handleidingen</a><details class="lang"><summary aria-label="Taal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Nederlands</span><span class="lang-short">NL</span></summary><ul><li><a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/calculate-hours-worked-from-google-calendar/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/calculate-hours-worked-from-google-calendar/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/calculate-hours-worked-from-google-calendar/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/calculate-hours-worked-from-google-calendar/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/calculate-hours-worked-from-google-calendar/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/calculate-hours-worked-from-google-calendar/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></li></ul></details><a class="btn primary sm" href="/nl/get-the-sheet/">Gratis spreadsheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Kan Google Agenda gewerkte uren berekenen?</h1>
+<p class="meta">Bijgewerkt op 19 oktober 2026. Ongeveer 6 minuten leestijd.</p>
+
+<p>Nee. Google Agenda zet afspraken in een raster, maar telt hun duur nooit op, en onder een week staat geen totaal. De instelling Werktijden telt ook niets. Om te weten hoeveel uur je hebt gewerkt, moet de duur ergens anders worden opgeteld: in je hoofd, in Google Spreadsheets of door een tool die de agenda voor je leest. Deze handleiding gaat over het totaal; hoe je het verdeelt over klanten, kleuren of weken, lees je in <a href="/nl/guides/count-hours-in-google-calendar/">Uren tellen in Google Agenda: per klant, kleur of week</a>.</p>
+
+<h2>Werktijden is beschikbaarheid, geen telling</h2>
+<p>Op een werk- of schoolaccount laat de instelling <a href="https://support.google.com/calendar/answer/7638168?hl=nl">Werktijden</a> anderen zien wanneer je beschikbaar bent, zodat ze vergaderingen op redelijke tijden plannen. Google beschrijft het als een terugkerende weekplanning: bijvoorbeeld maandag tot en met vrijdag, van 9:00 tot 17:00. Het zegt niets over wat je echt hebt gedaan. Een dag met drie uur klantwerk en een dag met tien tonen allebei dezelfde werktijden.</p>
+
+<h2>Totaal aantal uren zien in Google Agenda op een computer, iPhone of Android</h2>
+<ul>
+  <li><b>Op een computer</b>: geen enkele agendaweergave toont een totaal. Op een werk- of schoolaccount laat <b>Tijdsinzichten</b> de tijd in vergaderingen zien, maar volgens de <a href="https://support.google.com/calendar/answer/10738043?hl=nl">Help-pagina</a> van Google alleen op een computer en alleen voor je primaire agenda. Persoonlijke accounts hebben het niet: zie <a href="/nl/guides/google-calendar-time-insights-personal-account/">Geen Tijdsinzichten in Google Agenda? Waar en waarom</a>.</li>
+  <li><b>Op iPhone en Android</b>: de Google Agenda-app toont geen totaal en geen Tijdsinzichten. Op een telefoon lees je je uren af in een spreadsheet die het totaal al bevat: open die in de Google Spreadsheets-app.</li>
+</ul>
+<p>Voor een totaal in een minuut, zonder spreadsheet: exporteer je agenda op een computer en sleep het bestand naar de gratis <a href="/nl/google-calendar-hours-calculator/">urencalculator voor Google Agenda</a>. Die telt elke periode op in je browser, per agenda, trefwoord en week.</p>
+
+<h2>Methode 1: lees de uren af in de agenda</h2>
+<p>Voor een handvol afspraken is de weekweergave genoeg: tel de blokken een voor een op en schrijf het totaal op. Vanaf tien afspraken, of zodra je een totaal per klant nodig hebt, wordt dit traag en maak je makkelijk fouten.</p>
+
+<h2>Methode 2: formules in Google Spreadsheets</h2>
+<p>Zet één afspraak per regel, met de datum in kolom A, de begintijd in kolom B en de eindtijd in kolom C. Google Spreadsheets slaat een tijd op als een deel van een dag; dat verklaart de formules hieronder, geschreven zoals Google Spreadsheets ze in het Nederlands toont.</p>
+<table>
+  <thead><tr><th scope="col">Je wilt</th><th scope="col">Formule in kolom D</th></tr></thead>
+  <tbody>
+    <tr><td><b>Uren als decimaal getal</b> (1,5 voor 1 uur en 30 minuten)</td><td><code>=(C2-B2)*24</code>, met kolom D opgemaakt als getal</td></tr>
+    <tr><td><b>Een afspraak die na middernacht eindigt</b></td><td><code>=REST(C2-B2; 1)*24</code></td></tr>
+    <tr><td><b>Omhoog afgerond op het volgende kwartier</b></td><td><code>=AFRONDEN.BOVEN((C2-B2)*24; 0,25)</code></td></tr>
+    <tr><td><b>Het totaal van de kolom</b></td><td><code>=SOM(D2:D200)</code></td></tr>
+  </tbody>
+</table>
+<p>Wil je de duur liever als tijd houden (1:30 in plaats van 1,5), gebruik dan <code>=C2-B2</code> en geef het totaal de aangepaste getalnotatie <code>[h]:mm</code> (Notatie, Getal, Aangepaste getalnotatie). Zonder de vierkante haken wordt een totaal van 26 uur getoond als 2:00, omdat de weergave elke 24 uur opnieuw begint.</p>
+<p>De formules hebben de afspraken eerst in de spreadsheet nodig. De handleiding <a href="/nl/guides/google-calendar-timesheet/">Zo maak je van Google Agenda een urenstaat</a> bevat een kort script dat ze voor elke periode kopieert, en de handleiding <a href="/nl/guides/google-sheets-timesheet-template/">Urenregistratie-template in Google Spreadsheets voor zzp'ers</a> voegt minimums, bedragen en maandtotalen per klant toe.</p>
+
+<h2>Een maandtotaal met één formule</h2>
+<p>Met de datums in kolom A en de decimale uren in kolom D telt deze formule elk uur van oktober 2026 op, waar de regels ook in de lijst staan:</p>
+<p><code>=SOMMEN.ALS(D:D; A:A; "&gt;="&amp;DATUM(2026;10;1); A:A; "&lt;"&amp;DATUM(2026;11;1))</code></p>
+<p>Verander de twee datums voor een andere maand, of voor een week. De tweede datum is de eerste dag na de periode, zodat de laatste dag volledig meetelt, tot middernacht.</p>
+
+<h2>Methode 3: laat een tool de agenda lezen</h2>
+<p><a href="/nl/">Calendar Timesheet</a> doet het kopiëren en het rekenwerk in je eigen Google-spreadsheet: één regel per afspraak met datum, begin, einde en uren, en daarna totalen per klant, herkend aan kleur, agenda, een woord in de titel of het e-maildomein van de gast. Met de autopiloot wordt de spreadsheet elk uur bijgewerkt en wordt elke maand vanzelf afgesloten.</p>
+
+<h2>Vier dingen die het totaal onjuist maken</h2>
+<ul>
+  <li><b>Afspraken van een hele dag.</b> Een feestdag of een deadline die als hele dag is gemarkeerd, is geen 24 uur werk. Laat ze weg.</li>
+  <li><b>Geweigerde uitnodigingen.</b> Die blijven in veel agenda's staan. Tel alleen waar je echt bij was.</li>
+  <li><b>Dezelfde vergadering in twee agenda's.</b> Gekopieerde of gedeelde afspraken kunnen twee keer verschijnen. Tel elke afspraak één keer.</li>
+  <li><b>Wat gepland was in plaats van wat er gebeurde.</b> Liep een gesprek 20 minuten uit, verschuif dan het einde van de afspraak voordat je telt.</li>
+</ul>
+
+<div class="cta-end">
+  <p><b>Stop met optellen met de hand.</b> De gratis export van Calendar Timesheet geeft je de uren voor elke periode, per kleur en per agenda; Pro voegt klanten, tarieven en de autopiloot toe.</p>
+  <p><a class="btn primary" href="/nl/get-the-sheet/">Gratis spreadsheet ophalen</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Meer handleidingen</h2><ul class="guide-list"><li><a href="/nl/guides/google-calendar-timesheet/">Zo maak je van Google Agenda een urenstaat</a><p>Drie manieren om van Google Agenda een urenstaat te maken: met de hand, met een formule in Google Spreadsheets of automatisch. Stap voor stap, met valkuilen.</p></li><li><a href="/nl/guides/count-hours-in-google-calendar/">Uren tellen in Google Agenda: per klant, kleur of week</a><p>Google Agenda toont geen totalen. Zo verdeel je je uren per klant, kleur, week of maand met kleuren, agenda's en trefwoorden, gratis of automatisch.</p></li><li><a href="/nl/guides/export-google-calendar-to-google-sheets/">Google Agenda automatisch exporteren naar Spreadsheets</a><p>Afspraken uit Google Agenda exporteren naar Google Spreadsheets: de .ics-export, Apps Script en een automatische synchronisatie per uur, eerlijk vergeleken.</p></li><li><a href="/nl/guides/export-google-calendar-to-excel/">Google Agenda exporteren naar Excel of CSV, met de duur</a><p>Google Agenda heeft geen export naar Excel of CSV. Zet je afspraken in Google Spreadsheets, voeg een duur toe die optelt en download een .xlsx- of .csv-bestand.</p></li><li><a href="/nl/guides/bill-clients-from-google-calendar/">Uren factureren uit Google Agenda: tarief, afronding, minima</a><p>Zo factureren zzp'ers en freelancers vanuit hun agenda: uurtarieven per klant, afrondingsregels, een minimum per afspraak, urenbundels en maandoverzichten.</p></li><li><a href="/nl/guides/google-calendar-time-tracking/">Urenregistratie met Google Agenda: uren zonder timer</a><p>Houd declarabele uren bij met Google Agenda in plaats van een timer: plannen, corrigeren, toewijzen, tellen. Wat de agenda niet kan, en 5 veelgemaakte fouten.</p></li><li><a href="/nl/guides/google-sheets-timesheet-template/">Urenregistratie-template in Google Spreadsheets voor zzp'ers</a><p>Een urenstaat voor zzp'ers in Google Spreadsheets: de kolommen, de formules voor de duur, afronden op 15 minuten, minima, bedragen en maandtotalen per klant.</p></li><li><a href="/nl/guides/google-calendar-time-insights-personal-account/">Geen Tijdsinzichten in Google Agenda? Waar en waarom</a><p>Tijdsinzichten zit alleen in sommige Google Workspace-versies. Waar het staat, waarom het ontbreekt, wat het telt en hoe je je uren gratis ziet op elk account.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/nl/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Gemaakt in Frankrijk door Pierre Chevallier, entrepreneur individuel. Niet gelieerd aan of goedgekeurd door Google. Google Agenda™ en Google Spreadsheets™ zijn handelsmerken van Google LLC.</p></div><nav aria-label="Voettekst"><a href="/nl/guides/">Handleidingen</a><a href="/nl/support/">Support</a><a href="/nl/privacy/">Privacy</a><a href="/nl/terms/">Voorwaarden</a><a href="/nl/google-calendar-hours-calculator/">Urencalculator</a><a href="/nl/billable-hours-calculator/">Uren naar decimalen</a><a href="/nl/google-calendar-to-excel/">Excel-converter</a></nav><nav class="langs" aria-label="Taal"><a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en" lang="en">English</a><a href="/de/guides/calculate-hours-worked-from-google-calendar/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/calculate-hours-worked-from-google-calendar/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/calculate-hours-worked-from-google-calendar/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/calculate-hours-worked-from-google-calendar/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/calculate-hours-worked-from-google-calendar/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/calculate-hours-worked-from-google-calendar/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></nav></div></footer>
+</body>
+</html>

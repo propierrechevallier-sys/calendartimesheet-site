@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google カレンダーで工数管理：タイマーなしで作業時間を記録 | Calendar Timesheet</title>
+<meta name="description" content="タイマーの代わりに Google カレンダーで請求対象の時間を記録する方法。予定を入れ、修正し、クライアントのタグを付けて集計。カレンダーにできないことと、よくある 5 つのミスも。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/guides/google-calendar-time-tracking/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/google-calendar-time-tracking/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/google-calendar-time-tracking/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/google-calendar-time-tracking/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/google-calendar-time-tracking/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/google-calendar-time-tracking/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/google-calendar-time-tracking/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/google-calendar-time-tracking/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/google-calendar-time-tracking/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google カレンダーで工数管理：タイマーなしで作業時間を記録">
+<meta property="og:description" content="タイマーの代わりに Google カレンダーで請求対象の時間を記録する方法。予定を入れ、修正し、クライアントのタグを付けて集計。カレンダーにできないことと、よくある 5 つのミスも。">
+<meta property="og:url" content="https://calendartimesheet.com/ja/guides/google-calendar-time-tracking/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/ja/"},{"@type":"ListItem","position":2,"name":"Google カレンダーで工数管理：タイマーなしで作業時間を記録","item":"https://calendartimesheet.com/ja/guides/google-calendar-time-tracking/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google カレンダーで工数管理：タイマーなしで作業時間を記録","description":"タイマーの代わりに Google カレンダーで請求対象の時間を記録する方法。予定を入れ、修正し、クライアントのタグを付けて集計。カレンダーにできないことと、よくある 5 つのミスも。","inLanguage":"ja","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/ja/guides/google-calendar-time-tracking/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/ja/guides/">ガイド</a><details class="lang"><summary aria-label="言語"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">日本語</span><span class="lang-short">JA</span></summary><ul><li><a href="/guides/google-calendar-time-tracking/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/google-calendar-time-tracking/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/google-calendar-time-tracking/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/google-calendar-time-tracking/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/google-calendar-time-tracking/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/google-calendar-time-tracking/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li><li><a href="/nl/guides/google-calendar-time-tracking/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google カレンダーで作業時間を記録する：タイマーを使わずに請求対象の時間を把握</h1>
+<p class="meta">2026年10月19日更新。約 7 分で読めます。</p>
+
+<p>多くのタイムトラッキング ツールでは、開始と停止のボタンを押す必要があります。多くのフリーランスはそれを忘れ、金曜日に記憶を頼りに 1 週間を組み立て直します。仕事がすでに Google カレンダーに入っているなら、もっと簡単な習慣があります。カレンダーに時間を予定として入れ、会議が終わったら修正し、カレンダーから数えるのです。このガイドでは、その方法、Google カレンダーだけでできることとできないこと、合計を狂わせるミスを説明します。</p>
+
+<h2>Google カレンダーが記録すること、しないこと</h2>
+<p>Google カレンダーは予定の開始と終了を記録します。個人の Google アカウントでは、その所要時間を合計してはくれません。次の 2 つの設定は、よく時間の記録と混同されます。</p>
+<ul>
+  <li><b>業務時間</b>（[設定]、[全般]、[業務時間と勤務場所]）は、あなたがいつ対応できるかを他のユーザーに知らせるものです。何かを測定するわけではありません。</li>
+  <li><b>時間の分析情報</b>は、会議とサイレント モードの時間の内訳を表示しますが、使えるのは一部の Google Workspace のビジネス、エンタープライズ、教育機関向けエディションだけで、対象も自分のカレンダーに限られます。</li>
+</ul>
+<p>つまり、カレンダーには素材がそろっています。そこから請求するには、各予定がどのクライアントのものかを示す方法と、時間を合計する方法が必要です。</p>
+
+<h2>カレンダー中心の方法：4 つのステップ</h2>
+<h3>1. 仕事を予定として入れる</h3>
+<p>クライアントの仕事は、行う前にカレンダーに入れます。電話やワークショップだけでなく、クライアントのために執筆、デザイン、コーディングに集中する時間枠も含めます。開始、終了、わかりやすいタイトルのある予定は、それだけで 1 件の時間記録です。</p>
+<h3>2. 終わったら予定を修正する</h3>
+<p>会議は長引き、作業の時間枠は短く切り上げられます。まだ覚えているうちに、または毎日の終わりに、予定の終わりを実際の終了時刻までドラッグします。この 1 つの習慣がタイマーの代わりになります。カレンダーには、予定していたことだけでなく、実際に起きたことが残ります。</p>
+<h3>3. 各予定にクライアントのタグを付ける</h3>
+<p>方法を 1 つ選び、それを続けます。</p>
+<table>
+  <thead><tr><th scope="col">タグ</th><th scope="col">うまくいくケース</th><th scope="col">制限</th></tr></thead>
+  <tbody>
+    <tr><td><b>クライアントごとに 1 つの予定の色</b></td><td>クライアントが少なく、見た目で予定を立てる場合。</td><td>Google の予定の色は 11 色です。</td></tr>
+    <tr><td><b>クライアントごとに 1 つのカレンダー</b></td><td>クライアントが多い場合や、1 社とカレンダーを共有する場合。</td><td>表示しておくカレンダーが増えます。</td></tr>
+    <tr><td><b>タイトルの単語</b>（例：「Acme：レビュー」）</td><td>スマートフォンから予定を追加する場合。</td><td>入力ミスがあると予定が漏れます。</td></tr>
+    <tr><td><b>ゲストのメールドメイン</b></td><td>クライアントとの会議に招待が付いている場合。</td><td>1 人での作業にはゲストがいません。</td></tr>
+  </tbody>
+</table>
+<p>4 つの方法の詳しい比較は、ガイド「<a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーの時間をクライアント別・色別・週別に集計する方法</a>」をご覧ください。</p>
+<h3>4. 月末に時間を数える</h3>
+<p>手作業でも、Google スプレッドシートの数式でも、自動でも数えられます。ガイド「<a href="/ja/guides/google-calendar-timesheet/">Google カレンダーをタイムシートにする方法</a>」で、最初の 2 つを手順を追って説明しています。どの方法でも、カレンダーから数えるのは決まったタイミングで 1 回だけにしましょう。そうすれば、請求した後に合計が変わりません。</p>
+
+<h2>カレンダーの合計を狂わせる 5 つのミス</h2>
+<ol>
+  <li><b>辞退した招待とキャンセルされた招待。</b>カレンダーに表示されたまま残ることがあります。集計から除外しましょう。</li>
+  <li><b>終日の予定。</b>終日として登録した休日や締め切りは、24 時間分の請求対象の時間ではありません。</li>
+  <li><b>2 つのカレンダーにある同じ会議。</b>仕事用カレンダーとクライアントの共有カレンダーの両方にある会議は、1 回だけ数えます。</li>
+  <li><b>深夜 0 時や月末をまたぐ予定。</b>その月の請求書に入れるのは、月内の部分だけです。</li>
+  <li><b>請求後に過去の予定を変更すること。</b>各月は一度だけ締めてその版を保存し、後からの修正は追加分として記録します。</li>
+</ol>
+
+<h2>タイマー アプリかカレンダーか</h2>
+<table>
+  <thead><tr><th scope="col"></th><th scope="col">タイマー アプリ</th><th scope="col">カレンダー中心</th></tr></thead>
+  <tbody>
+    <tr><td>毎日の手間</td><td>タスクごとに開始と停止</td><td>予定の終わりを調整</td></tr>
+    <tr><td>記録漏れ</td><td>よくある（タイマーを開始し忘れる）</td><td>まれ（仕事は予定済み）</td></tr>
+    <tr><td>短いタスクと中断</td><td>分単位で正確</td><td>通常は時間枠に丸められる</td></tr>
+    <tr><td>データの保存先</td><td>タイマーのサービス内</td><td>自分のカレンダーとスプレッドシート</td></tr>
+  </tbody>
+</table>
+<p>1 時間のうちに多くの小さなタスクを切り替えるなら、タイマーのほうが正確です。請求する仕事の大半が会議と予定した作業時間なら、カレンダーにはタイマーに入力するよりも正確なデータがすでにあります。</p>
+
+<h2>よくある質問</h2>
+<h3>無料の Gmail アカウントでも使えますか？</h3>
+<p>はい。予定、色、カレンダー、ゲストは、個人の Google アカウントでも Google Workspace でも同じように機能します。一部の Workspace エディションに限られるのは、時間の分析情報だけです。</p>
+<h3>予定はどのくらい正確にすべきですか？</h3>
+<p>請求する精度と同じで十分です。各会議を 15 分単位で切り上げるなら、終了時刻は 5 分単位で修正すれば足ります。端数処理と最低請求時間については、ガイド「<a href="/ja/guides/bill-clients-from-google-calendar/">Google カレンダーからクライアントに請求する：時間単価、端数処理、最低時間</a>」で解説しています。</p>
+<h3>時間を自動でスプレッドシートに取り込めますか？</h3>
+<p>はい。ガイド「<a href="/ja/guides/export-google-calendar-to-google-sheets/">Google カレンダーの予定を Google スプレッドシートに自動で書き出す</a>」で、標準のエクスポート、小さなスクリプト、1 時間ごとにスプレッドシートを更新するアドオンを比較しています。</p>
+
+<div class="cta-end">
+  <h2>カレンダーからすべての時間を自動で数える</h2>
+  <p>Calendar Timesheet は、上記の方法をあなたの代わりに実行します。1 時間ごとにカレンダーを読み込み、色、カレンダー、単語、ゲストのドメインでクライアントを判別し、辞退した予定と終日の予定を除外して、毎月クライアントごとの請求明細にまとめて締めます。</p>
+  <p><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">その他のガイド</h2><ul class="guide-list"><li><a href="/ja/guides/google-calendar-timesheet/">Google カレンダーをタイムシートにする 3 つの方法</a><p>Google カレンダーをタイムシートにする 3 つの方法を手順ごとに解説。手作業、Google スプレッドシートの短いスクリプト、自動化と、合計を狂わせる落とし穴。</p></li><li><a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーで時間を集計：クライアント別・色別・週別</a><p>Google カレンダーには合計が表示されません。色、カレンダー、キーワードで、時間をクライアント別・色別・週別・月別に集計する方法を、無料と自動の両方で紹介。</p></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/">Google カレンダーをスプレッドシートに自動で書き出す・同期する</a><p>Google カレンダーの予定を Google スプレッドシートに書き出す方法を比較。.ics エクスポート、Apps Script、1 時間ごとの自動同期の長所と短所を率直に紹介します。</p></li><li><a href="/ja/guides/export-google-calendar-to-excel/">Google カレンダーをエクセルにエクスポートする方法（CSV 対応）</a><p>Google カレンダーには Excel・CSV への出力機能がありません。予定を Google スプレッドシートに入れ、合計できる所要時間を加えて、.xlsx や .csv でダウンロードする方法。</p></li><li><a href="/ja/guides/bill-clients-from-google-calendar/">Google カレンダーから請求：時間単価・端数処理・最低時間</a><p>フリーランスがカレンダーから請求する方法。クライアントごとの時間単価、端数処理のルール、最低請求時間、前払い契約、月末の請求明細を解説します。</p></li><li><a href="/ja/guides/google-sheets-timesheet-template/">スプレッドシートのタイムシート テンプレート：フリーランス向け</a><p>Google スプレッドシートで作るフリーランスのタイムシート。列の構成と、所要時間、15 分単位の切り上げ、最低時間、金額、クライアント別の月次合計の数式。</p></li><li><a href="/ja/guides/google-calendar-time-insights-personal-account/">Google カレンダーの時間の分析情報が表示されない理由</a><p>時間の分析情報（Time Insights）は一部の Google Workspace エディション専用です。場所、表示されない理由、集計の対象、どのアカウントでも時間を確認できる無料の方法。</p></li><li><a href="/ja/guides/calculate-hours-worked-from-google-calendar/">Google カレンダーで稼働時間・勤務時間を計算する方法</a><p>Google カレンダーは時間を合計せず、業務時間の設定は空き状況を示すだけです。どの端末でも合計時間を確認する方法と、Google スプレッドシートの数式を紹介します。</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p></div><nav aria-label="フッター"><a href="/ja/guides/">ガイド</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a><a href="/ja/google-calendar-hours-calculator/">時間集計ツール</a><a href="/ja/billable-hours-calculator/">時間の10進数変換</a><a href="/ja/google-calendar-to-excel/">Excel 変換</a></nav><nav class="langs" aria-label="言語"><a href="/guides/google-calendar-time-tracking/" hreflang="en" lang="en">English</a><a href="/de/guides/google-calendar-time-tracking/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/google-calendar-time-tracking/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/google-calendar-time-tracking/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/google-calendar-time-tracking/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/google-calendar-time-tracking/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/guides/google-calendar-time-tracking/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

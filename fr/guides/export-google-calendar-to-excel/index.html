@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exporter Google Agenda en Excel ou CSV, avec les durées</title>
+<meta name="description" content="Google Agenda n’exporte ni en Excel ni en CSV. Passez par Google Sheets, ajoutez des durées qui s’additionnent, puis téléchargez un fichier .xlsx ou .csv.">
+<link rel="canonical" href="https://calendartimesheet.com/fr/guides/export-google-calendar-to-excel/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/export-google-calendar-to-excel/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/export-google-calendar-to-excel/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/export-google-calendar-to-excel/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/export-google-calendar-to-excel/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/export-google-calendar-to-excel/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/export-google-calendar-to-excel/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/export-google-calendar-to-excel/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/export-google-calendar-to-excel/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Exporter Google Agenda en Excel ou CSV, avec les durées">
+<meta property="og:description" content="Google Agenda n’exporte ni en Excel ni en CSV. Passez par Google Sheets, ajoutez des durées qui s’additionnent, puis téléchargez un fichier .xlsx ou .csv.">
+<meta property="og:url" content="https://calendartimesheet.com/fr/guides/export-google-calendar-to-excel/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/fr/"},{"@type":"ListItem","position":2,"name":"Exporter Google Agenda en Excel ou CSV, avec les durées","item":"https://calendartimesheet.com/fr/guides/export-google-calendar-to-excel/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Exporter Google Agenda en Excel ou CSV, avec les durées","description":"Google Agenda n’exporte ni en Excel ni en CSV. Passez par Google Sheets, ajoutez des durées qui s’additionnent, puis téléchargez un fichier .xlsx ou .csv.","inLanguage":"fr","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/fr/guides/export-google-calendar-to-excel/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top"><div class="wrap"><a class="brand" href="/fr/" aria-label="Calendar Timesheet, accueil"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/fr/#how">Fonctionnement</a><a href="/fr/#features">Fonctionnalités</a><a href="/fr/#pricing">Tarifs</a><a href="/fr/guides/">Guides</a><details class="lang"><summary aria-label="Langue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Français</span><span class="lang-short">FR</span></summary><ul><li><a href="/guides/export-google-calendar-to-excel/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/export-google-calendar-to-excel/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/export-google-calendar-to-excel/" hreflang="fr" lang="fr" aria-current="page">Français</a></li><li><a href="/es/guides/export-google-calendar-to-excel/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/export-google-calendar-to-excel/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/export-google-calendar-to-excel/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/export-google-calendar-to-excel/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/fr/get-the-sheet/">Feuille gratuite</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Exporter Google Agenda en Excel ou CSV, avec les durées</h1>
+<p class="meta">Mis à jour le 19 octobre 2026. Environ 5 minutes de lecture.</p>
+
+<p>Google Agenda n’a aucun bouton pour enregistrer vos événements dans un fichier Excel ou CSV. Son propre export produit des fichiers <code>.ics</code>, le format que les applications d’agenda utilisent pour échanger des événements, et Excel ne sait pas les lire comme une liste. Le plus rapide est le <a href="/fr/google-calendar-to-excel/">convertisseur Google Agenda vers Excel</a>, gratuit : déposez-y l’export de Google et téléchargez un fichier <code>.xlsx</code> ou <code>.csv</code> avec une ligne par événement et des durées qui s’additionnent, sans rien envoyer. Si vous préférez travailler dans votre compte Google, passez par Google Sheets : mettez les événements dans une feuille, ajoutez une colonne de durée, puis téléchargez la feuille de calcul au format <code>.xlsx</code> ou <code>.csv</code>.</p>
+
+<h2>Ce que donne l’export intégré de Google Agenda</h2>
+<p>Sur un ordinateur, <b>Paramètres</b>, puis <b>Importer et exporter</b>, puis <b>Exporter</b> télécharge un fichier <code>.zip</code> contenant un fichier <code>.ics</code> par agenda ; un seul agenda peut être exporté depuis sa propre page <b>Paramètres et partage</b>. La <a href="https://support.google.com/calendar/answer/37111?hl=fr">page d’aide</a> de Google ajoute deux limites : on ne peut pas exporter depuis l’application Google Agenda sur un téléphone, et il faut l’autorisation « Apporter des modifications et gérer le partage » sur un agenda pour l’exporter.</p>
+<p>Ce fichier est fait pour une autre application d’agenda, pas pour compter : une réunion hebdomadaire y figure une seule fois, avec sa règle de répétition, au lieu d’une fois par semaine. Le guide <a href="/fr/guides/export-google-calendar-to-google-sheets/">Exporter Google Agenda vers Google Sheets automatiquement</a> compare cet export avec les autres options.</p>
+
+<p>Si vous n’avez besoin que du nombre total d’heures, passez-vous du tableur : la <a href="/fr/google-calendar-hours-calculator/">calculatrice d’heures Google Agenda</a>, gratuite, lit ce même export dans votre navigateur et l’additionne par agenda, par mot-clé et par semaine.</p>
+
+<h2>Étape 1 : mettre les événements dans Google Sheets</h2>
+<p>Deux méthodes gratuites, toutes deux dans votre propre compte Google :</p>
+<ul>
+  <li><b>Un court script.</b> Le guide <a href="/fr/guides/google-calendar-timesheet/">Transformer Google Agenda en feuille de temps</a> propose un script Apps Script de dix lignes qui écrit une ligne par événement de votre agenda principal pour le mois choisi : date, début, fin, heures, titre et couleur. Chaque occurrence d’une réunion périodique a sa propre ligne.</li>
+  <li><b>L’export gratuit de Calendar Timesheet.</b> Choisissez n’importe quelle période jusqu’à un an et les agendas à lire. Il écrit une ligne par événement (date, début, fin, durée, titre, agenda, couleur) dans une feuille <b>Export</b>, avec les totaux par couleur et par agenda.</li>
+</ul>
+
+<h2>Étape 2 : obtenir des durées qui s’additionnent</h2>
+<p>Avec l’heure de début dans la colonne B et l’heure de fin dans la colonne C :</p>
+<table>
+  <thead><tr><th scope="col">Vous voulez</th><th scope="col">Formule</th><th scope="col">Format de la colonne</th></tr></thead>
+  <tbody>
+    <tr><td><b>Des heures en nombre décimal</b> (1,5 pour 1 h 30)</td><td><code>=(C2-B2)*24</code></td><td>Nombre</td></tr>
+    <tr><td><b>Des heures au format horaire</b> (1:30)</td><td><code>=C2-B2</code></td><td>Format de nombre personnalisé <code>[h]:mm</code></td></tr>
+  </tbody>
+</table>
+<p>Les heures décimales sont le choix le plus sûr pour un fichier que vous transmettez : elles restent de simples nombres dans Excel et en CSV, et la multiplication par un taux horaire est directe. Si vous gardez le format horaire, les crochets de <code>[h]:mm</code> empêchent un total de 26 heures de s’afficher 2:00. Le guide <a href="/fr/guides/calculate-hours-worked-from-google-calendar/">Google Agenda peut-il calculer les heures travaillées ?</a> donne les formules pour les événements qui se terminent après minuit et pour l’arrondi supérieur.</p>
+
+<h2>Étape 3 : télécharger en Excel ou en CSV</h2>
+<p>Dans Google Sheets, ouvrez <b>Fichier</b>, puis <b>Télécharger</b> :</p>
+<ul>
+  <li><b>Le format Microsoft Excel (.xlsx)</b> enregistre toute la feuille de calcul, toutes ses feuilles, avec les formules et les formats de nombre.</li>
+  <li><b>Le format CSV (.csv), valeurs séparées par des virgules,</b> n’enregistre que la feuille ouverte, en texte brut : les valeurs seulement, sans formules ni mise en forme. Ouvrez la feuille voulue avant de télécharger.</li>
+</ul>
+
+<table>
+  <thead><tr><th scope="col"></th><th scope="col">.xlsx</th><th scope="col">.csv</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Plusieurs feuilles dans un fichier</th><td>Oui</td><td>Non, une feuille par fichier</td></tr>
+    <tr><th scope="row">Formules et totaux</th><td>Conservés</td><td>Valeurs seulement</td></tr>
+    <tr><th scope="row">Idéal pour</th><td>Un fichier qu’une personne ouvrira</td><td>L’import dans un autre outil</td></tr>
+  </tbody>
+</table>
+
+<h2>Trois vérifications avant d’envoyer le fichier</h2>
+<ul>
+  <li><b>Les dates dans un CSV.</b> Un CSV enregistre les dates sous forme de texte, écrites comme la feuille les affiche, et Excel lit ce texte selon les paramètres régionaux de l’ordinateur : 05/10/2026 peut devenir le 5 octobre ou le 10 mai. Mettez la colonne des dates au format <code>2026-10-05</code> (Format, Nombre, Date et heure personnalisées) avant de télécharger, et chaque ordinateur lira le même jour.</li>
+  <li><b>Le fuseau horaire.</b> Les heures s’affichent dans le fuseau horaire de la feuille de calcul (Fichier, Paramètres), qui n’est pas toujours celui de votre agenda. Réglez la feuille de calcul sur le fuseau dans lequel vous facturez avant d’exporter.</li>
+  <li><b>Les événements qui ne doivent pas compter.</b> Les événements d’une journée entière, les invitations refusées et un rendez-vous copié dans deux agendas gonflent tous un total. Le guide <a href="/fr/guides/google-calendar-timesheet/">Transformer Google Agenda en feuille de temps</a> liste les pièges qui faussent les totaux d’un agenda, avec leurs corrections.</li>
+</ul>
+
+<div class="cta-end">
+  <p><b>Évitez la recopie.</b> L’export gratuit de Calendar Timesheet place n’importe quelle période de vos agendas dans une feuille, avec les durées et les totaux par couleur et par agenda, prête à télécharger en Excel ou en CSV.</p>
+  <p><a class="btn primary" href="/fr/get-the-sheet/">Obtenir la feuille gratuite</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Autres guides</h2><ul class="guide-list"><li><a href="/fr/guides/google-calendar-timesheet/">Transformer Google Agenda en feuille de temps</a><p>Trois façons de transformer Google Agenda en feuille de temps : à la main, avec une formule dans Google Sheets ou automatiquement. Pas à pas, avec les pièges.</p></li><li><a href="/fr/guides/count-hours-in-google-calendar/">Compter ses heures Google Agenda : client, couleur, semaine</a><p>Google Agenda n’affiche aucun total. Répartissez vos heures par client, couleur ou semaine grâce aux couleurs, aux agendas et aux mots du titre.</p></li><li><a href="/fr/guides/export-google-calendar-to-google-sheets/">Exporter Google Agenda vers Google Sheets automatiquement</a><p>Exporter vos événements Google Agenda vers Google Sheets : export .ics, Apps Script et synchronisation automatique toutes les heures, comparés honnêtement.</p></li><li><a href="/fr/guides/bill-clients-from-google-calendar/">Facturer depuis Google Agenda : taux, arrondis, minimums</a><p>Comment les indépendants facturent depuis leur agenda : taux horaire par client, règles d’arrondi, minimums facturés, forfaits et relevés de fin de mois.</p></li><li><a href="/fr/guides/google-calendar-time-tracking/">Suivi du temps avec Google Agenda : heures sans chronomètre</a><p>Suivez vos heures facturables dans Google Agenda sans chronomètre : planifier, corriger, étiqueter, compter. Ses limites et 5 erreurs courantes à éviter.</p></li><li><a href="/fr/guides/google-sheets-timesheet-template/">Modèle de feuille de temps Google Sheets pour indépendants</a><p>Feuille de temps d’indépendant dans Google Sheets : colonnes, formules de durée, arrondi au quart d’heure, minimums, montants et totaux mensuels par client.</p></li><li><a href="/fr/guides/google-calendar-time-insights-personal-account/">Utilisation du temps Google Agenda : où et pourquoi absente</a><p>L’utilisation du temps de Google Agenda est réservée à certaines éditions Workspace. Où la trouver, pourquoi elle manque, comment compter vos heures sans elle.</p></li><li><a href="/fr/guides/calculate-hours-worked-from-google-calendar/">Google Agenda peut-il calculer les heures travaillées ?</a><p>Google Agenda ne totalise pas les heures, et ses heures de travail ne sont qu’une disponibilité. Votre total sur tout appareil, avec les formules Google Sheets.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/fr/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Conçu en France par Pierre Chevallier, entrepreneur individuel. Ni affilié à Google, ni approuvé par Google. Google Agenda™ et Google Sheets™ sont des marques de Google LLC.</p></div><nav aria-label="Pied de page"><a href="/fr/guides/">Guides</a><a href="/fr/support/">Assistance</a><a href="/fr/privacy/">Confidentialité</a><a href="/fr/terms/">Conditions</a><a href="/fr/google-calendar-hours-calculator/">Calculatrice d’heures</a><a href="/fr/billable-hours-calculator/">Heures en décimal</a><a href="/fr/google-calendar-to-excel/">Export vers Excel</a></nav><nav class="langs" aria-label="Langue"><a href="/guides/export-google-calendar-to-excel/" hreflang="en" lang="en">English</a><a href="/de/guides/export-google-calendar-to-excel/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/export-google-calendar-to-excel/" hreflang="fr" lang="fr" aria-current="page">Français</a><a href="/es/guides/export-google-calendar-to-excel/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/export-google-calendar-to-excel/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/export-google-calendar-to-excel/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/export-google-calendar-to-excel/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

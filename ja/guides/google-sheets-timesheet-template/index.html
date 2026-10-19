@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スプレッドシートのタイムシート テンプレート：フリーランス向け | Calendar Timesheet</title>
+<meta name="description" content="Google スプレッドシートで作るフリーランスのタイムシート。列の構成と、所要時間、15 分単位の切り上げ、最低時間、金額、クライアント別の月次合計の数式。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/google-sheets-timesheet-template/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="スプレッドシートのタイムシート テンプレート：フリーランス向け">
+<meta property="og:description" content="Google スプレッドシートで作るフリーランスのタイムシート。列の構成と、所要時間、15 分単位の切り上げ、最低時間、金額、クライアント別の月次合計の数式。">
+<meta property="og:url" content="https://calendartimesheet.com/ja/guides/google-sheets-timesheet-template/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/ja/"},{"@type":"ListItem","position":2,"name":"スプレッドシートのタイムシート テンプレート：フリーランス向け","item":"https://calendartimesheet.com/ja/guides/google-sheets-timesheet-template/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"スプレッドシートのタイムシート テンプレート：フリーランス向け","description":"Google スプレッドシートで作るフリーランスのタイムシート。列の構成と、所要時間、15 分単位の切り上げ、最低時間、金額、クライアント別の月次合計の数式。","inLanguage":"ja","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/ja/guides/google-sheets-timesheet-template/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/ja/guides/">ガイド</a><details class="lang"><summary aria-label="言語"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">日本語</span><span class="lang-short">JA</span></summary><ul><li><a href="/guides/google-sheets-timesheet-template/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/google-sheets-timesheet-template/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/google-sheets-timesheet-template/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/google-sheets-timesheet-template/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/google-sheets-timesheet-template/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/google-sheets-timesheet-template/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li><li><a href="/nl/guides/google-sheets-timesheet-template/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>フリーランス向け Google スプレッドシートのタイムシート テンプレート（数式付き）</h1>
+<p class="meta">2026年10月19日更新。約 7 分で読めます。</p>
+
+<p>請求用のタイムシートには、時間だけでは足りません。クライアント、単価、取り決めた端数処理、クライアントごとの月次合計が必要です。以下では、多くのフリーランスやコンサルタントに合うレイアウト、Google スプレッドシートに入力する正確な数式、合計を狂わせる落とし穴を紹介します。最後に、Google カレンダーから自動で入力される既製のスプレッドシートも紹介します。</p>
+
+<h2>請求用タイムシートに必要な列</h2>
+<table>
+  <thead><tr><th scope="col">列</th><th scope="col">内容</th><th scope="col">表示形式</th></tr></thead>
+  <tbody>
+    <tr><td>A</td><td>日付</td><td>日付</td></tr>
+    <tr><td>B</td><td>開始</td><td>時刻</td></tr>
+    <tr><td>C</td><td>終了</td><td>時刻</td></tr>
+    <tr><td>D</td><td>所要時間</td><td>時間の長さ、<code>[h]:mm</code></td></tr>
+    <tr><td>E</td><td>端数処理後の請求時間</td><td>時間の長さ、<code>[h]:mm</code></td></tr>
+    <tr><td>F</td><td>クライアント</td><td>テキスト</td></tr>
+    <tr><td>G</td><td>時間単価</td><td>通貨</td></tr>
+    <tr><td>H</td><td>金額</td><td>通貨</td></tr>
+    <tr><td>I</td><td>メモ</td><td>テキスト</td></tr>
+  </tbody>
+</table>
+<p>会議や作業の時間枠ごとに 1 行にします。合計は別のシートに置けば、行を並べ替えたりフィルタしたりしても壊れません。</p>
+
+<h2>行ごとの数式</h2>
+<p>以下の数式は 2 行目に入力し、下の行にコピーして使えます。Google スプレッドシートは時刻を 1 日の割合として保存するため、24 を掛ける数式があります。</p>
+<ul>
+  <li><b>所要時間</b>（D2）：<code>=MOD(C2-B2, 1)</code>。<code>MOD</code> によって、作業が深夜 0 時を過ぎても結果が正しくなります。</li>
+  <li><b>15 分単位で切り上げた請求時間</b>（E2）：<code>=CEILING(D2, TIME(0, 15, 0))</code>。0.1 時間単位にするには <code>TIME(0, 6, 0)</code> を使います。</li>
+  <li><b>最低時間を 30 分にする場合</b>、E2 は <code>=MAX(CEILING(D2, TIME(0, 15, 0)), TIME(0, 30, 0))</code> になります。</li>
+  <li><b>金額</b>（H2）：<code>=E2*24*G2</code>。<code>*24</code> がないと、単価 80 で 2 時間の会議が 6.67 と請求されてしまいます。</li>
+  <li><b>10 進数の時間</b>（2:15 ではなく 2.25 と記載する請求書の場合）：<code>=E2*24</code>。</li>
+</ul>
+<p>スプレッドシートのロケール（地域）がヨーロッパの国に設定されている場合、数式ではカンマの代わりにセミコロンを使います：<code>=CEILING(D2; TIME(0; 15; 0))</code>。</p>
+
+<h2>クライアント別・月別の合計</h2>
+<p>別のシートに、クライアントごとに 1 行を作ります。</p>
+<ul>
+  <li><b>2026年10月の Acme の時間</b>：<code>=SUMIFS(Lines!E:E, Lines!F:F, "Acme", Lines!A:A, "&gt;="&amp;DATE(2026,10,1), Lines!A:A, "&lt;"&amp;DATE(2026,11,1))</code>、表示形式は <code>[h]:mm</code>。</li>
+  <li><b>10月の Acme の金額</b>：同じ数式を H 列に対して使います。</li>
+</ul>
+<p>月の範囲は、初日を <code>&gt;=</code>、翌月の初日を <code>&lt;</code> で指定します。こうすれば、最後の会議が何時であっても、最終日が切り捨てられることはありません。</p>
+
+<h2>タイムシートを壊す 4 つの落とし穴</h2>
+<ol>
+  <li><b>24 時間で一周する合計の表示。</b><code>h:mm</code> 形式では、26 時間が 2:00 と表示されます。所要時間には必ず <code>[h]:mm</code> を使いましょう。</li>
+  <li><b>テキストとして入力された時刻。</b>メールから貼り付けた時刻はテキストになっていることがあります。セルの左側に寄り、合計では無視されます。入力し直すか、<code>=TIMEVALUE()</code> で囲みます。</li>
+  <li><b>行ごとではなく合計を端数処理すること。</b>15 分単位の切り上げで 20 分の会議が 4 件ある場合、行ごとに切り上げれば 2:00、合計を切り上げれば 1:30 の請求になります。どちらにするかを見積書に書き、毎月同じように適用しましょう。</li>
+  <li><b>請求後に前月を編集すること。</b>請求したら各月の合計を締めたシートにコピーし、後から行を変更しても送付済みの請求書が変わらないようにします。</li>
+</ol>
+
+<h2>Google カレンダーからテンプレートに入力する</h2>
+<p>会議をカレンダーとスプレッドシートに 1 回ずつ、計 2 回入力することが、タイムシートが狂う最大の原因です。会議が Google カレンダーにあるなら、代わりにエクスポートしましょう。ガイド「<a href="/ja/guides/export-google-calendar-to-google-sheets/">Google カレンダーの予定を Google スプレッドシートに自動で書き出す</a>」で、標準のエクスポート、小さなスクリプト、アドオンを比較しています。各行にクライアントのタグを付ける方法は、ガイド「<a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーの時間をクライアント別・色別・週別に集計する方法</a>」で、色、カレンダー、タイトルの単語、ゲストのドメインに分けて説明しています。</p>
+
+<div class="cta-end">
+  <h2>自動で入力されるテンプレート</h2>
+  <p>無料の Calendar Timesheet のスプレッドシートが、この作業を代わりに行います。無料エクスポートでは、カレンダーの任意の期間を 1 件 1 行でシートに書き出し、色別・カレンダー別の合計を付けます。Pro のトライアルでは、クライアント、単価、端数処理、最低時間が加わり、これらの列が 1 時間ごとに入力され、毎月クライアントごとの請求明細にまとめて締めます。</p>
+  <p><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">その他のガイド</h2><ul class="guide-list"><li><a href="/ja/guides/google-calendar-timesheet/">Google カレンダーをタイムシートにする 3 つの方法</a><p>Google カレンダーをタイムシートにする 3 つの方法を手順ごとに解説。手作業、Google スプレッドシートの短いスクリプト、自動化と、合計を狂わせる落とし穴。</p></li><li><a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーで時間を集計：クライアント別・色別・週別</a><p>Google カレンダーには合計が表示されません。色、カレンダー、キーワードで、時間をクライアント別・色別・週別・月別に集計する方法を、無料と自動の両方で紹介。</p></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/">Google カレンダーをスプレッドシートに自動で書き出す・同期する</a><p>Google カレンダーの予定を Google スプレッドシートに書き出す方法を比較。.ics エクスポート、Apps Script、1 時間ごとの自動同期の長所と短所を率直に紹介します。</p></li><li><a href="/ja/guides/export-google-calendar-to-excel/">Google カレンダーをエクセルにエクスポートする方法（CSV 対応）</a><p>Google カレンダーには Excel・CSV への出力機能がありません。予定を Google スプレッドシートに入れ、合計できる所要時間を加えて、.xlsx や .csv でダウンロードする方法。</p></li><li><a href="/ja/guides/bill-clients-from-google-calendar/">Google カレンダーから請求：時間単価・端数処理・最低時間</a><p>フリーランスがカレンダーから請求する方法。クライアントごとの時間単価、端数処理のルール、最低請求時間、前払い契約、月末の請求明細を解説します。</p></li><li><a href="/ja/guides/google-calendar-time-tracking/">Google カレンダーで工数管理：タイマーなしで作業時間を記録</a><p>タイマーの代わりに Google カレンダーで請求対象の時間を記録する方法。予定を入れ、修正し、クライアントのタグを付けて集計。カレンダーにできないことと、よくある 5 つのミスも。</p></li><li><a href="/ja/guides/google-calendar-time-insights-personal-account/">Google カレンダーの時間の分析情報が表示されない理由</a><p>時間の分析情報（Time Insights）は一部の Google Workspace エディション専用です。場所、表示されない理由、集計の対象、どのアカウントでも時間を確認できる無料の方法。</p></li><li><a href="/ja/guides/calculate-hours-worked-from-google-calendar/">Google カレンダーで稼働時間・勤務時間を計算する方法</a><p>Google カレンダーは時間を合計せず、業務時間の設定は空き状況を示すだけです。どの端末でも合計時間を確認する方法と、Google スプレッドシートの数式を紹介します。</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p></div><nav aria-label="フッター"><a href="/ja/guides/">ガイド</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a><a href="/ja/google-calendar-hours-calculator/">時間集計ツール</a><a href="/ja/billable-hours-calculator/">時間の10進数変換</a><a href="/ja/google-calendar-to-excel/">Excel 変換</a></nav><nav class="langs" aria-label="言語"><a href="/guides/google-sheets-timesheet-template/" hreflang="en" lang="en">English</a><a href="/de/guides/google-sheets-timesheet-template/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/google-sheets-timesheet-template/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/google-sheets-timesheet-template/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/google-sheets-timesheet-template/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/google-sheets-timesheet-template/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/guides/google-sheets-timesheet-template/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

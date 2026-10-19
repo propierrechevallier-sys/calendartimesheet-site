@@ -143,7 +143,7 @@ AH.calcText = (function () {
       invalidPeriod: 'Kies een geldige periode om je totalen te zien.', notCalendar: '{name}: geen agendabestand',
       inPeriod: ['{n} afspraak in de periode', '{n} afspraken in de periode'], heading: '{from} t/m {to} · tijden in {zone}',
       summary: ['{hours} uur in {n} afspraak', '{hours} uur in {n} afspraken'], leftOut: 'niet meegeteld: {list}',
-      left: { allDay: ['{n} (hele dag)', '{n} (hele dag)'], declined: ['{n} (afgewezen)', '{n} (afgewezen)'], free: ['{n} (weergegeven als beschikbaar)', '{n} (weergegeven als beschikbaar)'], duplicate: ['{n} (dubbel)', '{n} (dubbel)'] },
+      left: { allDay: ['{n} (hele dag)', '{n} (hele dag)'], declined: ['{n} (geweigerd)', '{n} (geweigerd)'], free: ['{n} (weergegeven als beschikbaar)', '{n} (weergegeven als beschikbaar)'], duplicate: ['{n} (dubbel)', '{n} (dubbel)'] },
       byKeyword: 'Per trefwoord', byCalendar: 'Per agenda', byWeek: 'Per week',
       colKeyword: 'Trefwoord', colCalendar: 'Agenda', colWeek: 'Week vanaf', colHours: 'Uren', colEvents: 'Afspraken',
       partWeek: '(deel van de week)', noKeyword: 'Zonder trefwoord', noTitle: '(geen titel)',

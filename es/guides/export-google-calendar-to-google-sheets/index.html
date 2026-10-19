@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exportar Google Calendar a Hojas de cálculo de Google</title>
+<meta name="description" content="Exporta los eventos de Google Calendar a Hojas de cálculo de Google: la exportación .ics, Apps Script y una sincronización automática cada hora, comparados.">
+<link rel="canonical" href="https://calendartimesheet.com/es/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Exportar Google Calendar a Hojas de cálculo de Google">
+<meta property="og:description" content="Exporta los eventos de Google Calendar a Hojas de cálculo de Google: la exportación .ics, Apps Script y una sincronización automática cada hora, comparados.">
+<meta property="og:url" content="https://calendartimesheet.com/es/guides/export-google-calendar-to-google-sheets/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/es/"},{"@type":"ListItem","position":2,"name":"Exportar Google Calendar a Hojas de cálculo de Google","item":"https://calendartimesheet.com/es/guides/export-google-calendar-to-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Exportar Google Calendar a Hojas de cálculo de Google","description":"Exporta los eventos de Google Calendar a Hojas de cálculo de Google: la exportación .ics, Apps Script y una sincronización automática cada hora, comparados.","inLanguage":"es","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/es/guides/export-google-calendar-to-google-sheets/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top"><div class="wrap"><a class="brand" href="/es/" aria-label="Calendar Timesheet, inicio"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/es/#how">Cómo funciona</a><a href="/es/#features">Funciones</a><a href="/es/#pricing">Precios</a><a href="/es/guides/">Guías</a><details class="lang"><summary aria-label="Idioma"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Español</span><span class="lang-short">ES</span></summary><ul><li><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es" aria-current="page">Español</a></li><li><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/es/get-the-sheet/">Obtén la hoja gratis</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Exportar Google Calendar a Hojas de cálculo de Google automáticamente</h1>
+<p class="meta">Actualizado el 19 de octubre de 2026. Lectura de unos 6 minutos.</p>
+
+<p>Google Calendar no tiene un botón para "exportar a Hojas de cálculo". Lo que ofrece es exportar tus calendarios como archivos <code>.ics</code>, el formato estándar de calendario, pensado para pasar eventos a otra aplicación de calendario. Para llevar los eventos a una hoja de cálculo, y mantenerlos ahí al día, hace falta uno de los métodos siguientes. Si solo necesitas un total de horas, la <a href="/es/google-calendar-hours-calculator/">calculadora de horas de Google Calendar</a>, gratuita, lee directamente la exportación de Google, sin ninguna hoja de cálculo.</p>
+
+<h2>Opción 1: la exportación de Google Calendar</h2>
+<p>En Google Calendar, abre <b>Configuración</b>, luego <b>Importar y exportar</b> y después <b>Exportar</b>. Descargas un zip con un archivo <code>.ics</code> por calendario (la <a href="https://support.google.com/calendar/answer/37111?hl=es">página de ayuda</a> de Google lo describe).</p>
+<ul>
+  <li><b>Ventajas</b>: es completa, oficial y funciona con cualquier cuenta.</li>
+  <li><b>Inconvenientes</b>: Hojas de cálculo de Google no puede abrir archivos <code>.ics</code>, así que necesitas un conversor. Muchos escriben una fila por serie de eventos, con la regla de repetición en lugar de las fechas reales; el <a href="/es/google-calendar-to-excel/">conversor de Google Calendar a Excel</a> gratuito de este sitio escribe una fila por repetición, y su archivo <code>.xlsx</code> se importa en Hojas de cálculo de Google (Archivo, Importar). Sigue siendo una foto fija: la semana que viene, vuelves a hacerlo.</li>
+</ul>
+<p>Si el archivo tiene que acabar en Excel o en CSV, consulta <a href="/es/guides/export-google-calendar-to-excel/">Exportar Google Calendar a Excel o CSV, con duraciones</a>.</p>
+
+<h2>Opción 2: un script con temporizador</h2>
+<p>Apps Script, integrado en Hojas de cálculo de Google, puede leer tu calendario y escribir filas, y un activador basado en el tiempo puede ejecutarlo cada hora. Parte del script corto de la guía <a href="/es/guides/google-calendar-timesheet/">Cómo convertir Google Calendar en un registro de horas</a> y, en el editor de Apps Script, abre <b>Activadores</b>, haz clic en <b>Agregar activador</b> y elige tu función, un activador basado en el tiempo y una frecuencia de cada hora.</p>
+<ul>
+  <li><b>Ventajas</b>: es gratis, hace exactamente lo que quieres y se queda en tu cuenta.</li>
+  <li><b>Inconvenientes</b>: el mantenimiento es cosa tuya. Al volver a ejecutarlo, reescribe la hoja, así que las notas que añades junto a las filas se desalinean. Leer varios calendarios, omitir las invitaciones rechazadas, dividir las reuniones que cruzan la medianoche y evitar los duplicados: todo eso tienes que programarlo tú.</li>
+</ul>
+
+<h2>Opción 3: un applet de IFTTT</h2>
+<p>IFTTT conecta dos servicios sin código. Su applet <a href="https://ifttt.com/applets/AvwRrWna-add-new-google-calendar-events-to-google-sheets">"Add new Google Calendar events to Google Sheets"</a> se activa cada vez que se añade un evento nuevo a tu calendario y añade una fila al final de la primera hoja de la hoja de cálculo que elijas. La página del applet indica dos límites: con el plan gratuito de IFTTT, el calendario se comprueba cada hora (cada 5 minutos en los planes de pago), y al llegar a 2000 filas se crea una hoja de cálculo nueva.</p>
+<ul>
+  <li><b>Ventajas</b>: es gratis, no requiere código y funciona solo una vez conectado.</li>
+  <li><b>Inconvenientes</b>: solo reacciona a los eventos nuevos. Los eventos que ya existen no se copian, y la acción solo añade filas, así que una reunión que mueves o cancelas después conserva la fila que se escribió al crearla. Las duraciones y los totales por cliente tienes que añadirlos tú con fórmulas. Conectores como Zapier o Make funcionan igual; comprueba qué incluyen sus planes gratuitos.</li>
+</ul>
+
+<h2>Opción 4: un complemento para Hojas de cálculo de Google</h2>
+<p>Los complementos se instalan en Hojas de cálculo de Google en dos clics y hacen la lectura por ti. Hay dos familias:</p>
+<ul>
+  <li><b>Los exportadores en bruto</b> copian los eventos en una hoja, a menudo de forma programada. Son para quien quiere los datos y va a crear sus propios informes.</li>
+  <li><b>Los complementos de registro de horas</b> van más allá: convierten los eventos en horas por cliente o por proyecto, con totales. <a href="/es/">Calendar Timesheet</a> es uno de ellos, y es nuestro.</li>
+</ul>
+<p>Antes de instalar cualquier complemento, mira qué te pide Google que permitas. Una herramienta que solo lee debería pedir <i>ver</i> tus calendarios, no modificarlos, y acceder solo a la hoja de cálculo en la que la usas.</p>
+
+<h2>Comparación</h2>
+<table>
+  <thead><tr><th scope="col"></th><th scope="col">Exportación .ics</th><th scope="col">Script con temporizador</th><th scope="col">Calendar Timesheet</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Se abre en Hojas de cálculo</th><td>No, necesita un conversor</td><td>Sí</td><td>Sí</td></tr>
+    <tr><th scope="row">Se mantiene al día</th><td>No</td><td>Sí, cada hora</td><td>Sí, cada hora</td></tr>
+    <tr><th scope="row">Varios calendarios</th><td>Un archivo por calendario</td><td>Si lo programas</td><td>Sí</td></tr>
+    <tr><th scope="row">Repeticiones reales de los eventos periódicos</th><td>No, reglas de la serie</td><td>Sí</td><td>Sí</td></tr>
+    <tr><th scope="row">Conserva tus notas junto a las filas</th><td>No</td><td>No por defecto</td><td>Sí</td></tr>
+    <tr><th scope="row">Totales por cliente, importes</th><td>No</td><td>Si lo programas</td><td>Sí (Pro)</td></tr>
+    <tr><th scope="row">Coste</th><td>Gratis</td><td>Gratis, más tu tiempo</td><td>Exportación gratis; Pro desde 49 US$ al año</td></tr>
+  </tbody>
+</table>
+
+<h2>La exportación gratuita de Calendar Timesheet</h2>
+<p>La exportación de Calendar Timesheet es gratis y sin límite de tiempo: elige cualquier periodo de hasta un año y los calendarios que quieres leer, y escribe una fila por evento (fecha, inicio, fin, duración, título, calendario, color) en una pestaña <b>Exportación</b>, con totales por color y por calendario. Nunca modifica tu calendario y no envía nada fuera de tu cuenta de Google.</p>
+
+<div class="cta-end">
+  <p><a class="btn primary" href="/es/get-the-sheet/">Obtén la hoja gratis</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Más guías</h2><ul class="guide-list"><li><a href="/es/guides/google-calendar-timesheet/">Cómo convertir Google Calendar en un registro de horas</a><p>Tres formas de convertir Google Calendar en un registro de horas: a mano, con un script en Hojas de cálculo de Google o automáticamente. Con sus trampas.</p></li><li><a href="/es/guides/count-hours-in-google-calendar/">Contar horas en Google Calendar por cliente, color o semana</a><p>Google Calendar no da totales. Cómo repartir tus horas por cliente, color, semana o mes con colores, calendarios y palabras clave, gratis o automáticamente.</p></li><li><a href="/es/guides/export-google-calendar-to-excel/">Exportar Google Calendar a Excel o CSV, con duraciones</a><p>Google Calendar no exporta a Excel ni a CSV. Lleva tus eventos a Hojas de cálculo de Google, añade duraciones que se puedan sumar y descarga un .xlsx o .csv.</p></li><li><a href="/es/guides/bill-clients-from-google-calendar/">Facturar por horas desde Google Calendar: tarifas y redondeo</a><p>Cómo facturan los freelancers desde su calendario: tarifas por hora para cada cliente, reglas de redondeo, mínimos, bolsas de horas e informes de fin de mes.</p></li><li><a href="/es/guides/google-calendar-time-tracking/">Control de horas con Google Calendar, sin cronómetro</a><p>Controla las horas facturables con Google Calendar, sin cronómetro: planifica, corrige, etiqueta y cuenta. Lo que el calendario no hace y 5 errores habituales.</p></li><li><a href="/es/guides/google-sheets-timesheet-template/">Plantilla de registro de horas en Hojas de cálculo de Google</a><p>Registro de horas de freelancer en Hojas de cálculo de Google: columnas, fórmulas, redondeo a 15 minutos, mínimos, importes y totales mensuales por cliente.</p></li><li><a href="/es/guides/google-calendar-time-insights-personal-account/">Estadísticas de tiempo de Google Calendar: por qué faltan</a><p>Estadísticas de tiempo solo está en algunas ediciones de Workspace. Dónde está, por qué falta, qué cuenta y cómo ver gratis tus horas con cualquier cuenta.</p></li><li><a href="/es/guides/calculate-hours-worked-from-google-calendar/">Calcular horas trabajadas con Google Calendar</a><p>Google Calendar no suma horas y el horario laboral solo indica disponibilidad. Cómo ver tu total de horas trabajadas en cualquier dispositivo, con las fórmulas.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/es/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Hecho en Francia por Pierre Chevallier, entrepreneur individuel. Sin afiliación con Google ni respaldo de Google. Google Calendar™ y Hojas de cálculo de Google™ son marcas comerciales de Google LLC.</p></div><nav aria-label="Pie de página"><a href="/es/guides/">Guías</a><a href="/es/support/">Soporte</a><a href="/es/privacy/">Privacidad</a><a href="/es/terms/">Condiciones</a><a href="/es/google-calendar-hours-calculator/">Calculadora de horas</a><a href="/es/billable-hours-calculator/">Horas a decimales</a><a href="/es/google-calendar-to-excel/">Conversor a Excel</a></nav><nav class="langs" aria-label="Idioma"><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es" aria-current="page">Español</a><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google カレンダーをタイムシートにする 3 つの方法 | Calendar Timesheet</title>
+<meta name="description" content="Google カレンダーをタイムシートにする 3 つの方法を手順ごとに解説。手作業、Google スプレッドシートの短いスクリプト、自動化と、合計を狂わせる落とし穴。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/google-calendar-timesheet/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google カレンダーをタイムシートにする 3 つの方法">
+<meta property="og:description" content="Google カレンダーをタイムシートにする 3 つの方法を手順ごとに解説。手作業、Google スプレッドシートの短いスクリプト、自動化と、合計を狂わせる落とし穴。">
+<meta property="og:url" content="https://calendartimesheet.com/ja/guides/google-calendar-timesheet/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/ja/"},{"@type":"ListItem","position":2,"name":"Google カレンダーをタイムシートにする 3 つの方法","item":"https://calendartimesheet.com/ja/guides/google-calendar-timesheet/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google カレンダーをタイムシートにする 3 つの方法","description":"Google カレンダーをタイムシートにする 3 つの方法を手順ごとに解説。手作業、Google スプレッドシートの短いスクリプト、自動化と、合計を狂わせる落とし穴。","inLanguage":"ja","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/ja/guides/google-calendar-timesheet/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/ja/guides/">ガイド</a><details class="lang"><summary aria-label="言語"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">日本語</span><span class="lang-short">JA</span></summary><ul><li><a href="/guides/google-calendar-timesheet/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/google-calendar-timesheet/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/google-calendar-timesheet/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/google-calendar-timesheet/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/google-calendar-timesheet/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/google-calendar-timesheet/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li><li><a href="/nl/guides/google-calendar-timesheet/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google カレンダーをタイムシートにする方法</h1>
+<p class="meta">2026年10月19日更新。約 7 分で読めます。</p>
+
+<p>クライアントの仕事をすでに Google カレンダーに入れているなら、タイムシートの大部分はもうそろっています。足りないのは、日付と所要時間の一覧と、クライアントごとの合計です。Google カレンダーはそれを作ってくれません。エクスポートで得られるのはカレンダーのファイルであって、表ではないからです。ここでは、無料の手作業から完全な自動化まで 3 つの方法と、気づかないうちに合計を狂わせる細かな点を紹介します。</p>
+
+<h2>方法 1：スプレッドシートに手で入力する</h2>
+<p>Google カレンダーを週ビューで開き、その横で空の Google スプレッドシートを開いて、会議ごとに 1 行ずつ、日付、開始、終了、クライアントを入力します。時間を出すために <code>=(C2-B2)*24</code> の列を追加し、いちばん下に合計を入れます。</p>
+<p>費用はかからず、週に数件の会議なら十分です。それを超えると毎週時間がかかり、入力ミスも目に見えません。入力した 14:30 をカレンダーと照らし合わせて確認し直す人はいないからです。</p>
+
+<h2>方法 2：Google スプレッドシートの短いスクリプト</h2>
+<p>Google スプレッドシートは、Google に組み込まれたスクリプト機能である Apps Script を使ってカレンダーを読み込めます。新しいスプレッドシートで <b>拡張機能</b>、<b>Apps Script</b> の順に開き、以下を貼り付けて 2 つの日付を調整し、<code>listMonth</code> を実行します。自分で作ったスクリプトの承認を Google から求められます。</p>
+<pre><code>function listMonth() {
+  var cal = CalendarApp.getDefaultCalendar();
+  var start = new Date(2026, 9, 1), end = new Date(2026, 10, 1); // October 2026
+  var rows = [['Date', 'Start', 'End', 'Hours', 'Title', 'Colour']];
+  cal.getEvents(start, end).forEach(function (e) {
+    if (e.isAllDayEvent()) return;
+    var hours = (e.getEndTime() - e.getStartTime()) / 3600000;
+    rows.push([e.getStartTime(), e.getStartTime(), e.getEndTime(), hours, e.getTitle(), e.getColor()]);
+  });
+  var sheet = SpreadsheetApp.getActiveSheet();
+  sheet.clear();
+  sheet.getRange(1, 1, rows.length, rows[0].length).setValues(rows);
+}</code></pre>
+<p>Apps Script の月は 0 から数えるため、<code>new Date(2026, 9, 1)</code> は 10月1日です。予定ごとに 1 行、所要時間と色番号が入ります。あとはピボット テーブルや <code>SUMIF</code> で合計が出せます（数式はガイド「<a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーの時間をクライアント別・色別・週別に集計する方法</a>」で紹介しています）。</p>
+<p>少しのコードに抵抗がなければ、よい無料の選択肢です。読み込むのはメインのカレンダーだけで、以下に挙げる落とし穴は、自分で対処しない限りすべてそのまま残ります。</p>
+
+<h2>方法 3：アドオンで自動化する</h2>
+<p>アドオンを使えば、同じ読み込みを決まった間隔で代わりに行ってくれます。私たちが開発している <a href="/ja/">Calendar Timesheet</a> は、選んだカレンダーを 1 時間ごとに読み込み、色、カレンダー、タイトルの単語、ゲストのメールドメインで各会議をクライアントに振り分け、<b>今月</b> シートを常に最新の状態に保ちます。毎月 1 日には前月を締めてクライアントごとの請求明細を作り、概要をメールでお知らせします。任意の期間のエクスポートは無料です。クライアント、単価、オートパイロットは Pro の機能で、最初の月末まで使えるトライアルがあります。</p>
+<p>ほかのアドオンには、予定をそのままシートに書き出すものもあり、自分でレポートを作りたい人に向いています。以下の落とし穴こそが、単なるエクスポートと、そのまま請求に使えるタイムシートとの違いです。</p>
+
+<h2>合計を狂わせる落とし穴</h2>
+<h3>境目をまたぐ会議</h3>
+<p>10月31日の 22:00 から 01:00 までのワークショップは、2 か月にまたがります。全体を 10月に数えると 10月は請求しすぎになり、11月は不足します。期間内の部分だけを数えるべきです。</p>
+<h3>辞退した招待と未回答の招待</h3>
+<p>カレンダーのスクリプトは、辞退した予定も返します。誰かに招待された会議を断っても、単純なエクスポートにはそのまま入ってしまいます。自分の回答で絞り込みましょう。</p>
+<h3>終日の予定と「予定なし」の時間</h3>
+<p>休日、移動日、リマインダーは、終日の予定になっていたり「予定なし」に設定されていたりすることがよくあります。これらは作業時間ではありません。終日の予定を 24 時間として読み込むと、合計が大きく狂います。</p>
+<h3>2 つのカレンダーにある同じ会議</h3>
+<p>クライアントから招待され、その会議を自分の仕事用カレンダーにもコピーした場合、両方のカレンダーをエクスポートすると 2 回数えられます。予定には共通の識別子（iCalUID）があり、それを使えば 1 つだけ残せます。</p>
+<h3>例外のある定期的な会議</h3>
+<p>ある週は移動し、別の週はキャンセルした毎週の電話会議は、シリーズの設定どおりではなく、実際に行われたとおりに数える必要があります。シリーズではなく、展開した個々の回を読み込みましょう。</p>
+<h3>タイムゾーン</h3>
+<p>スプレッドシートとカレンダーのタイムゾーンが違うと、開始時刻がずれます。タイムシートには 1 つのタイムゾーンを使いましょう。通常はスプレッドシートのタイムゾーンです。</p>
+
+<h2>信頼できるタイムシートのためのチェックリスト</h2>
+<ol>
+  <li>クライアントの見分け方（色、カレンダー、タイトルの単語、ゲストのドメイン）を 1 つ決めて、それを守ります。</li>
+  <li>各会議のうち、期間内の部分だけを数えます。</li>
+  <li>辞退した招待、終日の予定、「予定なし」に設定した時間は除外します。</li>
+  <li>2 つのカレンダーにある会議は 1 回だけ数えます。</li>
+  <li>請求した月はその時点で固定し、後でカレンダーを編集しても送付済みの内容が変わらないようにします。</li>
+</ol>
+
+<div class="cta-end">
+  <p><b>1 時間ごとに自動で任せたいですか？</b>Calendar Timesheet は、このチェックリストの各項目を、あなた自身の Google スプレッドシートで、アカウントの作成なしで処理します。</p>
+  <p><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">その他のガイド</h2><ul class="guide-list"><li><a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーで時間を集計：クライアント別・色別・週別</a><p>Google カレンダーには合計が表示されません。色、カレンダー、キーワードで、時間をクライアント別・色別・週別・月別に集計する方法を、無料と自動の両方で紹介。</p></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/">Google カレンダーをスプレッドシートに自動で書き出す・同期する</a><p>Google カレンダーの予定を Google スプレッドシートに書き出す方法を比較。.ics エクスポート、Apps Script、1 時間ごとの自動同期の長所と短所を率直に紹介します。</p></li><li><a href="/ja/guides/export-google-calendar-to-excel/">Google カレンダーをエクセルにエクスポートする方法（CSV 対応）</a><p>Google カレンダーには Excel・CSV への出力機能がありません。予定を Google スプレッドシートに入れ、合計できる所要時間を加えて、.xlsx や .csv でダウンロードする方法。</p></li><li><a href="/ja/guides/bill-clients-from-google-calendar/">Google カレンダーから請求：時間単価・端数処理・最低時間</a><p>フリーランスがカレンダーから請求する方法。クライアントごとの時間単価、端数処理のルール、最低請求時間、前払い契約、月末の請求明細を解説します。</p></li><li><a href="/ja/guides/google-calendar-time-tracking/">Google カレンダーで工数管理：タイマーなしで作業時間を記録</a><p>タイマーの代わりに Google カレンダーで請求対象の時間を記録する方法。予定を入れ、修正し、クライアントのタグを付けて集計。カレンダーにできないことと、よくある 5 つのミスも。</p></li><li><a href="/ja/guides/google-sheets-timesheet-template/">スプレッドシートのタイムシート テンプレート：フリーランス向け</a><p>Google スプレッドシートで作るフリーランスのタイムシート。列の構成と、所要時間、15 分単位の切り上げ、最低時間、金額、クライアント別の月次合計の数式。</p></li><li><a href="/ja/guides/google-calendar-time-insights-personal-account/">Google カレンダーの時間の分析情報が表示されない理由</a><p>時間の分析情報（Time Insights）は一部の Google Workspace エディション専用です。場所、表示されない理由、集計の対象、どのアカウントでも時間を確認できる無料の方法。</p></li><li><a href="/ja/guides/calculate-hours-worked-from-google-calendar/">Google カレンダーで稼働時間・勤務時間を計算する方法</a><p>Google カレンダーは時間を合計せず、業務時間の設定は空き状況を示すだけです。どの端末でも合計時間を確認する方法と、Google スプレッドシートの数式を紹介します。</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p></div><nav aria-label="フッター"><a href="/ja/guides/">ガイド</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a><a href="/ja/google-calendar-hours-calculator/">時間集計ツール</a><a href="/ja/billable-hours-calculator/">時間の10進数変換</a><a href="/ja/google-calendar-to-excel/">Excel 変換</a></nav><nav class="langs" aria-label="言語"><a href="/guides/google-calendar-timesheet/" hreflang="en" lang="en">English</a><a href="/de/guides/google-calendar-timesheet/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/google-calendar-timesheet/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/google-calendar-timesheet/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/google-calendar-timesheet/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/google-calendar-timesheet/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/guides/google-calendar-timesheet/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

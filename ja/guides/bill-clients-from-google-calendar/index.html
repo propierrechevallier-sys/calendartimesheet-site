@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google カレンダーから請求：時間単価・端数処理・最低時間 | Calendar Timesheet</title>
+<meta name="description" content="フリーランスがカレンダーから請求する方法。クライアントごとの時間単価、端数処理のルール、最低請求時間、前払い契約、月末の請求明細を解説します。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/bill-clients-from-google-calendar/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google カレンダーから請求：時間単価・端数処理・最低時間">
+<meta property="og:description" content="フリーランスがカレンダーから請求する方法。クライアントごとの時間単価、端数処理のルール、最低請求時間、前払い契約、月末の請求明細を解説します。">
+<meta property="og:url" content="https://calendartimesheet.com/ja/guides/bill-clients-from-google-calendar/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/ja/"},{"@type":"ListItem","position":2,"name":"Google カレンダーから請求：時間単価・端数処理・最低時間","item":"https://calendartimesheet.com/ja/guides/bill-clients-from-google-calendar/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google カレンダーから請求：時間単価・端数処理・最低時間","description":"フリーランスがカレンダーから請求する方法。クライアントごとの時間単価、端数処理のルール、最低請求時間、前払い契約、月末の請求明細を解説します。","inLanguage":"ja","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/ja/guides/bill-clients-from-google-calendar/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/ja/guides/">ガイド</a><details class="lang"><summary aria-label="言語"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">日本語</span><span class="lang-short">JA</span></summary><ul><li><a href="/guides/bill-clients-from-google-calendar/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/bill-clients-from-google-calendar/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/bill-clients-from-google-calendar/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/bill-clients-from-google-calendar/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/bill-clients-from-google-calendar/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/bill-clients-from-google-calendar/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li><li><a href="/nl/guides/bill-clients-from-google-calendar/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google カレンダーからクライアントに請求する：時間単価、端数処理、最低時間</h1>
+<p class="meta">2026年10月19日更新。約 7 分で読めます。一般的な情報であり、法律や税務に関する助言ではありません。</p>
+
+<p>カレンダーにクライアントの仕事がすでに入っていれば、請求はルールの問題です。どの会議を数えるのか、単価はいくらか、どう端数処理するのか、いつ月を確定するのか。こうしたルールを一度書き出し、毎月同じように適用することで、根拠を説明しやすい請求書になります。</p>
+
+<h2>単価：クライアントごとに、ときにはプロジェクトごとに</h2>
+<p>多くのフリーランスはクライアントごとに 1 つの時間単価を設定し、特定のプロジェクトには別の単価を設けることもあります（たとえば、電話会議より高く請求するワークショップなど）。単価は頭の中ではなくクライアントの横に記録し、円建てとドル建てのクライアントがいる場合は、そのクライアントの通貨で記録しましょう。単価が変わったら、何月から適用するかを記録します。送付済みの請求書は変わるべきではありません。</p>
+
+<h2>端数処理：ルールを 1 つ決めて伝える</h2>
+<p>端数処理によって、実際の分数が請求時間に変わります。よく使われるルールは次のとおりです。</p>
+<table>
+  <thead><tr><th scope="col">ルール</th><th scope="col">主な利用者</th><th scope="col">37 分の電話は</th></tr></thead>
+  <tbody>
+    <tr><td>実際の時間</td><td>分単位で請求する人</td><td>37 分</td></tr>
+    <tr><td>6 分（0.1 時間）単位で切り上げ</td><td>弁護士、多くのコンサルタント</td><td>42 分（0.7 時間）</td></tr>
+    <tr><td>15 分単位で切り上げ</td><td>コーチ、研修講師、代理店</td><td>45 分</td></tr>
+    <tr><td>30 分単位で切り上げ</td><td>現地での作業、短時間の対応</td><td>60 分</td></tr>
+  </tbody>
+</table>
+<p>端数処理は月の合計ではなく会議ごとに行い、最初の請求の前にクライアントが知っておけるよう、見積書や契約書にルールを明記しましょう。</p>
+
+<h2>会議ごとの最低請求時間</h2>
+<p>5 分の電話でも、1 日の流れは中断されます。会議ごとに 15 分や 30 分などの最低時間を設ければ、その分をカバーできます。最低時間は端数処理の後に適用します。15 分単位の切り上げと 30 分の最低時間がある場合、5 分の電話は 30 分として請求されます。</p>
+
+<h2>具体例：1 か月分の請求時間</h2>
+<p>クライアントは Acme、時間単価は 8,000 円、各会議を 15 分単位で切り上げ、会議ごとの最低時間は 30 分です。10月の会議は 4 件でした。</p>
+<table>
+  <thead><tr><th scope="col">会議</th><th scope="col">実際の時間</th><th scope="col">15 分単位で切り上げ</th><th scope="col">最低時間を適用した請求時間</th></tr></thead>
+  <tbody>
+    <tr><td>キックオフの電話</td><td>0:37</td><td>0:45</td><td>0:45</td></tr>
+    <tr><td>短い確認</td><td>0:05</td><td>0:15</td><td>0:30</td></tr>
+    <tr><td>ワークショップ</td><td>2:10</td><td>2:15</td><td>2:15</td></tr>
+    <tr><td>レビュー</td><td>1:00</td><td>1:00</td><td>1:00</td></tr>
+    <tr><td><b>合計</b></td><td><b>3:52</b></td><td></td><td><b>4:30</b></td></tr>
+  </tbody>
+</table>
+<p>8,000 円で 4.5 時間なら <b>36,000 円</b> です。代わりに月の合計を端数処理すると（3:52 を 4:00 に切り上げ）32,000 円になります。ルールによって請求額が変わるため、見積書に書いておくべきなのです。スプレッドシートでは、D 列に実際の時間を 10 進数で入れた場合、会議の請求時間は <code>=MAX(CEILING(D2,0.25),0.5)</code> で求められます。数式一式は <a href="/ja/guides/google-sheets-timesheet-template/">フリーランス向け Google スプレッドシートのタイムシート テンプレート（数式付き）</a>にあります。自分の時間でルールを試すには、無料の <a href="/ja/billable-hours-calculator/">請求時間の計算ツール</a>に貼り付けてください。</p>
+
+<h2>前払い契約と前払い時間</h2>
+<p>時間をまとめて購入するクライアントもいます。月 20 時間、あるいは四半期で使う 40 時間などです。使用した時間をその枠と照らし合わせて管理し、使い切る前にクライアントに知らせましょう。80% で知らせれば追加購入の時間が取れ、100% で知らせれば無償の作業を防げます。</p>
+
+<h2>数えないもの</h2>
+<p>一度決めておきましょう。辞退した招待、社内の事務作業、移動（請求するかどうか）、終日の予定。請求対象外の時間には専用の色やカレンダーを使い、クライアントの合計に紛れ込まないようにします。</p>
+
+<h2>月を締めてから請求する</h2>
+<p>カレンダーは変わり続けます。会議は後から移動され、キャンセルされ、名前が変わります。ある月を請求したら、その数字を固定しましょう。後でカレンダーを編集しても、送付済みの請求書が変わってはいけません。本当に誤りがあった場合は、意図的に再計算して訂正を発行します。</p>
+<p>クライアントごとの月次の請求明細には、会議ごとに日付、開始と終了、タイトルまたは説明、実際の所要時間、請求時間、金額を記載します。クライアントは、1 つの数字よりも詳しい一覧を信頼します。</p>
+
+<h2>入金を管理する</h2>
+<p>各請求明細をいつ請求し、いつ入金されたかを記録します。30 日を過ぎても未払いのものには催促を送りましょう。月に一度、期限を過ぎた請求明細の一覧を確認すれば、十分に把握できます。</p>
+
+<h2>同じルールを自動で適用する</h2>
+<p><a href="/ja/">Calendar Timesheet</a> は、あなた自身の Google スプレッドシートでこれらのルールを適用します。クライアントごと・プロジェクトごとの単価と通貨、5、6、10、15、30、60 分単位の切り上げ、会議ごとの任意の最低時間、80% と 100% で通知する前払い時間、辞退した予定と終日の予定の除外、締めた月の固定です。毎月 1 日には、クライアントごとの請求明細と、合計と 30 日を過ぎた未払いをまとめたメールが届きます。</p>
+<p>請求書作成ツールではありません。数字と明細を用意するもので、請求書はいつものソフトウェアやテンプレートで作成します。</p>
+
+<div class="cta-end">
+  <p><b>自分のカレンダーで試してみましょう。</b>Pro のトライアルは、最初の月末の請求明細まで、最低 14 日間続きます。カードは不要です。</p>
+  <p><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">その他のガイド</h2><ul class="guide-list"><li><a href="/ja/guides/google-calendar-timesheet/">Google カレンダーをタイムシートにする 3 つの方法</a><p>Google カレンダーをタイムシートにする 3 つの方法を手順ごとに解説。手作業、Google スプレッドシートの短いスクリプト、自動化と、合計を狂わせる落とし穴。</p></li><li><a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーで時間を集計：クライアント別・色別・週別</a><p>Google カレンダーには合計が表示されません。色、カレンダー、キーワードで、時間をクライアント別・色別・週別・月別に集計する方法を、無料と自動の両方で紹介。</p></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/">Google カレンダーをスプレッドシートに自動で書き出す・同期する</a><p>Google カレンダーの予定を Google スプレッドシートに書き出す方法を比較。.ics エクスポート、Apps Script、1 時間ごとの自動同期の長所と短所を率直に紹介します。</p></li><li><a href="/ja/guides/export-google-calendar-to-excel/">Google カレンダーをエクセルにエクスポートする方法（CSV 対応）</a><p>Google カレンダーには Excel・CSV への出力機能がありません。予定を Google スプレッドシートに入れ、合計できる所要時間を加えて、.xlsx や .csv でダウンロードする方法。</p></li><li><a href="/ja/guides/google-calendar-time-tracking/">Google カレンダーで工数管理：タイマーなしで作業時間を記録</a><p>タイマーの代わりに Google カレンダーで請求対象の時間を記録する方法。予定を入れ、修正し、クライアントのタグを付けて集計。カレンダーにできないことと、よくある 5 つのミスも。</p></li><li><a href="/ja/guides/google-sheets-timesheet-template/">スプレッドシートのタイムシート テンプレート：フリーランス向け</a><p>Google スプレッドシートで作るフリーランスのタイムシート。列の構成と、所要時間、15 分単位の切り上げ、最低時間、金額、クライアント別の月次合計の数式。</p></li><li><a href="/ja/guides/google-calendar-time-insights-personal-account/">Google カレンダーの時間の分析情報が表示されない理由</a><p>時間の分析情報（Time Insights）は一部の Google Workspace エディション専用です。場所、表示されない理由、集計の対象、どのアカウントでも時間を確認できる無料の方法。</p></li><li><a href="/ja/guides/calculate-hours-worked-from-google-calendar/">Google カレンダーで稼働時間・勤務時間を計算する方法</a><p>Google カレンダーは時間を合計せず、業務時間の設定は空き状況を示すだけです。どの端末でも合計時間を確認する方法と、Google スプレッドシートの数式を紹介します。</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p></div><nav aria-label="フッター"><a href="/ja/guides/">ガイド</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a><a href="/ja/google-calendar-hours-calculator/">時間集計ツール</a><a href="/ja/billable-hours-calculator/">時間の10進数変換</a><a href="/ja/google-calendar-to-excel/">Excel 変換</a></nav><nav class="langs" aria-label="言語"><a href="/guides/bill-clients-from-google-calendar/" hreflang="en" lang="en">English</a><a href="/de/guides/bill-clients-from-google-calendar/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/bill-clients-from-google-calendar/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/bill-clients-from-google-calendar/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/bill-clients-from-google-calendar/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/bill-clients-from-google-calendar/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/guides/bill-clients-from-google-calendar/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

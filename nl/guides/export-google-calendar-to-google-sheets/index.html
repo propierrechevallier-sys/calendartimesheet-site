@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Agenda automatisch exporteren naar Spreadsheets</title>
+<meta name="description" content="Afspraken uit Google Agenda exporteren naar Google Spreadsheets: de .ics-export, Apps Script en een automatische synchronisatie per uur, eerlijk vergeleken.">
+<link rel="canonical" href="https://calendartimesheet.com/nl/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google Agenda automatisch exporteren naar Spreadsheets">
+<meta property="og:description" content="Afspraken uit Google Agenda exporteren naar Google Spreadsheets: de .ics-export, Apps Script en een automatische synchronisatie per uur, eerlijk vergeleken.">
+<meta property="og:url" content="https://calendartimesheet.com/nl/guides/export-google-calendar-to-google-sheets/">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/nl/"},{"@type":"ListItem","position":2,"name":"Google Agenda automatisch exporteren naar Spreadsheets","item":"https://calendartimesheet.com/nl/guides/export-google-calendar-to-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google Agenda automatisch exporteren naar Spreadsheets","description":"Afspraken uit Google Agenda exporteren naar Google Spreadsheets: de .ics-export, Apps Script en een automatische synchronisatie per uur, eerlijk vergeleken.","inLanguage":"nl","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/nl/guides/export-google-calendar-to-google-sheets/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top"><div class="wrap"><a class="brand" href="/nl/" aria-label="Calendar Timesheet, startpagina"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Hoofdmenu"><a href="/nl/#how">Zo werkt het</a><a href="/nl/#features">Functies</a><a href="/nl/#pricing">Prijzen</a><a href="/nl/guides/">Handleidingen</a><details class="lang"><summary aria-label="Taal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Nederlands</span><span class="lang-short">NL</span></summary><ul><li><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></li></ul></details><a class="btn primary sm" href="/nl/get-the-sheet/">Gratis spreadsheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google Agenda automatisch exporteren naar Google Spreadsheets</h1>
+<p class="meta">Bijgewerkt op 19 oktober 2026. Ongeveer 6 minuten leestijd.</p>
+
+<p>Google Agenda heeft geen knop "exporteren naar Spreadsheets". Wat het wel biedt, is een export van je agenda's als <code>.ics</code>-bestanden, het standaardformaat voor agenda's, bedoeld om afspraken naar een andere agenda-app over te zetten. Om afspraken in een spreadsheet te krijgen, en ze daar actueel te houden, heb je een van de manieren hieronder nodig. Heb je alleen een totaal aantal uren nodig, dan leest de gratis <a href="/nl/google-calendar-hours-calculator/">urencalculator voor Google Agenda</a> de export van Google rechtstreeks, helemaal zonder spreadsheet.</p>
+
+<h2>Optie 1: de eigen export van Google Agenda</h2>
+<p>Open in Google Agenda <b>Instellingen</b>, dan <b>Importeren en exporteren</b> en dan <b>Exporteren</b>. Je downloadt een zip-bestand met één <code>.ics</code>-bestand per agenda (de <a href="https://support.google.com/calendar/answer/37111?hl=nl">Help-pagina van Google</a> beschrijft het).</p>
+<ul>
+  <li><b>Goed</b>: volledig, officieel, werkt voor elk account.</li>
+  <li><b>Minder goed</b>: Google Spreadsheets kan geen <code>.ics</code>-bestanden openen, dus je hebt een converter nodig. Veel converters schrijven één regel per reeks, met de herhaalregel in plaats van de echte datums; de gratis <a href="/nl/google-calendar-to-excel/">Google Agenda naar Excel-converter</a> op deze site schrijft één regel per herhaling, en het <code>.xlsx</code>-bestand kun je importeren in Google Spreadsheets (Bestand, Importeren). Het blijft een momentopname: volgende week doe je het opnieuw.</li>
+</ul>
+<p>Moet het bestand in Excel of als CSV terechtkomen, lees dan <a href="/nl/guides/export-google-calendar-to-excel/">Google Agenda exporteren naar Excel of CSV, met de duur</a>.</p>
+
+<h2>Optie 2: een script met een timer</h2>
+<p>Apps Script, ingebouwd in Google Spreadsheets, kan je agenda lezen en rijen schrijven, en een tijdgestuurde trigger kan het script elk uur uitvoeren. Begin met het korte script uit <a href="/nl/guides/google-calendar-timesheet/">Zo maak je van Google Agenda een urenstaat</a>. Open daarna in de Apps Script-editor het overzicht van de triggers, voeg een trigger toe en kies je functie, een tijdgestuurde trigger en een timer die elk uur afgaat.</p>
+<ul>
+  <li><b>Goed</b>: gratis, precies wat je wilt, blijft in je account.</li>
+  <li><b>Minder goed</b>: je onderhoudt het zelf. Opnieuw uitvoeren herschrijft het blad, dus notities die je naast de rijen zet, raken verschoven. Meerdere agenda's lezen, geweigerde uitnodigingen overslaan, afspraken over middernacht splitsen en dubbele regels voorkomen: dat moet je allemaal zelf schrijven.</li>
+</ul>
+
+<h2>Optie 3: een IFTTT-applet</h2>
+<p>IFTTT koppelt twee diensten zonder code. De applet <a href="https://ifttt.com/applets/AvwRrWna-add-new-google-calendar-events-to-google-sheets">"Add new Google Calendar events to Google Sheets"</a> start elke keer dat er een nieuwe afspraak aan je agenda wordt toegevoegd, en zet dan één rij onderaan het eerste blad van een spreadsheet die je kiest. De pagina van de applet noemt twee grenzen: met het gratis abonnement van IFTTT wordt de agenda elk uur gecontroleerd (elke 5 minuten met een betaald abonnement), en na 2.000 rijen wordt een nieuwe spreadsheet gemaakt.</p>
+<ul>
+  <li><b>Goed</b>: gratis, zonder code, werkt vanzelf zodra het is gekoppeld.</li>
+  <li><b>Minder goed</b>: het reageert alleen op nieuwe afspraken. Bestaande afspraken worden niet gekopieerd, en de actie voegt alleen rijen toe, dus een afspraak die je later verplaatst of annuleert, houdt de regel die bij het aanmaken is geschreven. Duur en totalen per klant moet je zelf met formules toevoegen. Koppelingen zoals Zapier of Make werken op dezelfde manier; kijk wat hun gratis abonnementen bevatten.</li>
+</ul>
+
+<h2>Optie 4: een add-on voor Google Spreadsheets</h2>
+<p>Add-ons installeer je in twee klikken in Google Spreadsheets, en ze doen het leeswerk voor je. Er zijn twee soorten:</p>
+<ul>
+  <li><b>Ruwe exporters</b> kopiëren afspraken naar een spreadsheet, vaak volgens een schema. Ze passen bij wie de gegevens wil hebben en zelf rapporten bouwt.</li>
+  <li><b>Add-ons voor urenstaten</b> gaan verder: ze zetten afspraken om in uren per klant of project, met totalen. <a href="/nl/">Calendar Timesheet</a> is er een van, en het is van ons.</li>
+</ul>
+<p>Kijk voordat je een add-on installeert wat Google je vraagt toe te staan. Een tool die alleen leest, hoort te vragen om je agenda's te <i>bekijken</i>, niet om ze te bewerken, en alleen om toegang tot de spreadsheet waarin je hem gebruikt.</p>
+
+<h2>Naast elkaar</h2>
+<table>
+  <thead><tr><th scope="col"></th><th scope="col">.ics-export</th><th scope="col">Script met timer</th><th scope="col">Calendar Timesheet</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Opent in Spreadsheets</th><td>Nee, converter nodig</td><td>Ja</td><td>Ja</td></tr>
+    <tr><th scope="row">Blijft actueel</th><td>Nee</td><td>Ja, elk uur</td><td>Ja, elk uur</td></tr>
+    <tr><th scope="row">Meerdere agenda's</th><td>Eén bestand per agenda</td><td>Als je het programmeert</td><td>Ja</td></tr>
+    <tr><th scope="row">Echte herhalingen van terugkerende afspraken</th><td>Nee, regels van de reeks</td><td>Ja</td><td>Ja</td></tr>
+    <tr><th scope="row">Houdt je notities naast de rijen</th><td>Nee</td><td>Niet standaard</td><td>Ja</td></tr>
+    <tr><th scope="row">Totalen per klant, bedragen</th><td>Nee</td><td>Als je het programmeert</td><td>Ja (Pro)</td></tr>
+    <tr><th scope="row">Kosten</th><td>Gratis</td><td>Gratis, plus je eigen tijd</td><td>Export gratis; Pro vanaf $&nbsp;49 per jaar</td></tr>
+  </tbody>
+</table>
+
+<h2>De gratis export in Calendar Timesheet</h2>
+<p>De export van Calendar Timesheet is gratis, zonder tijdslimiet: kies een periode tot een jaar en de agenda's die gelezen moeten worden, en hij schrijft één regel per afspraak (datum, begin, einde, duur, titel, agenda, kleur) naar een blad <b>Export</b>, met totalen per kleur en per agenda. Hij wijzigt je agenda nooit en stuurt niets buiten je Google-account.</p>
+
+<div class="cta-end">
+  <p><a class="btn primary" href="/nl/get-the-sheet/">Gratis spreadsheet ophalen</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Meer handleidingen</h2><ul class="guide-list"><li><a href="/nl/guides/google-calendar-timesheet/">Zo maak je van Google Agenda een urenstaat</a><p>Drie manieren om van Google Agenda een urenstaat te maken: met de hand, met een formule in Google Spreadsheets of automatisch. Stap voor stap, met valkuilen.</p></li><li><a href="/nl/guides/count-hours-in-google-calendar/">Uren tellen in Google Agenda: per klant, kleur of week</a><p>Google Agenda toont geen totalen. Zo verdeel je je uren per klant, kleur, week of maand met kleuren, agenda's en trefwoorden, gratis of automatisch.</p></li><li><a href="/nl/guides/export-google-calendar-to-excel/">Google Agenda exporteren naar Excel of CSV, met de duur</a><p>Google Agenda heeft geen export naar Excel of CSV. Zet je afspraken in Google Spreadsheets, voeg een duur toe die optelt en download een .xlsx- of .csv-bestand.</p></li><li><a href="/nl/guides/bill-clients-from-google-calendar/">Uren factureren uit Google Agenda: tarief, afronding, minima</a><p>Zo factureren zzp'ers en freelancers vanuit hun agenda: uurtarieven per klant, afrondingsregels, een minimum per afspraak, urenbundels en maandoverzichten.</p></li><li><a href="/nl/guides/google-calendar-time-tracking/">Urenregistratie met Google Agenda: uren zonder timer</a><p>Houd declarabele uren bij met Google Agenda in plaats van een timer: plannen, corrigeren, toewijzen, tellen. Wat de agenda niet kan, en 5 veelgemaakte fouten.</p></li><li><a href="/nl/guides/google-sheets-timesheet-template/">Urenregistratie-template in Google Spreadsheets voor zzp'ers</a><p>Een urenstaat voor zzp'ers in Google Spreadsheets: de kolommen, de formules voor de duur, afronden op 15 minuten, minima, bedragen en maandtotalen per klant.</p></li><li><a href="/nl/guides/google-calendar-time-insights-personal-account/">Geen Tijdsinzichten in Google Agenda? Waar en waarom</a><p>Tijdsinzichten zit alleen in sommige Google Workspace-versies. Waar het staat, waarom het ontbreekt, wat het telt en hoe je je uren gratis ziet op elk account.</p></li><li><a href="/nl/guides/calculate-hours-worked-from-google-calendar/">Kan Google Agenda gewerkte uren berekenen?</a><p>Google Agenda telt geen uren op en Werktijden is alleen beschikbaarheid. Zo zie je je totaal op elk apparaat, met de formules voor Google Spreadsheets.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/nl/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Gemaakt in Frankrijk door Pierre Chevallier, entrepreneur individuel. Niet gelieerd aan of goedgekeurd door Google. Google Agenda™ en Google Spreadsheets™ zijn handelsmerken van Google LLC.</p></div><nav aria-label="Voettekst"><a href="/nl/guides/">Handleidingen</a><a href="/nl/support/">Support</a><a href="/nl/privacy/">Privacy</a><a href="/nl/terms/">Voorwaarden</a><a href="/nl/google-calendar-hours-calculator/">Urencalculator</a><a href="/nl/billable-hours-calculator/">Uren naar decimalen</a><a href="/nl/google-calendar-to-excel/">Excel-converter</a></nav><nav class="langs" aria-label="Taal"><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></nav></div></footer>
+</body>
+</html>

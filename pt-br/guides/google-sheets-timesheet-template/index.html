@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modelo de planilha de horas no Planilhas Google</title>
+<meta name="description" content="Planilha de horas de freelancer no Planilhas Google: as colunas, as fórmulas de duração, arredondamento para 15 minutos, mínimos, valores e totais por cliente.">
+<link rel="canonical" href="https://calendartimesheet.com/pt-br/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/google-sheets-timesheet-template/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Modelo de planilha de horas no Planilhas Google">
+<meta property="og:description" content="Planilha de horas de freelancer no Planilhas Google: as colunas, as fórmulas de duração, arredondamento para 15 minutos, mínimos, valores e totais por cliente.">
+<meta property="og:url" content="https://calendartimesheet.com/pt-br/guides/google-sheets-timesheet-template/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/pt-br/"},{"@type":"ListItem","position":2,"name":"Modelo de planilha de horas no Planilhas Google","item":"https://calendartimesheet.com/pt-br/guides/google-sheets-timesheet-template/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Modelo de planilha de horas no Planilhas Google","description":"Planilha de horas de freelancer no Planilhas Google: as colunas, as fórmulas de duração, arredondamento para 15 minutos, mínimos, valores e totais por cliente.","inLanguage":"pt-BR","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/pt-br/guides/google-sheets-timesheet-template/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="top"><div class="wrap"><a class="brand" href="/pt-br/" aria-label="Calendar Timesheet, página inicial"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/pt-br/#how">Como funciona</a><a href="/pt-br/#features">Recursos</a><a href="/pt-br/#pricing">Preços</a><a href="/pt-br/guides/">Guias</a><details class="lang"><summary aria-label="Idioma"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Português (Brasil)</span><span class="lang-short">PT</span></summary><ul><li><a href="/guides/google-sheets-timesheet-template/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/google-sheets-timesheet-template/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/google-sheets-timesheet-template/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/google-sheets-timesheet-template/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/google-sheets-timesheet-template/" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</a></li><li><a href="/ja/guides/google-sheets-timesheet-template/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/google-sheets-timesheet-template/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/pt-br/get-the-sheet/">Obter a planilha grátis</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Modelo de planilha de horas para freelancers no Planilhas Google, com fórmulas</h1>
+<p class="meta">Atualizado em 19 de outubro de 2026. Leitura de cerca de 7 minutos.</p>
+
+<p>Uma planilha de horas para faturar precisa de mais do que horas: precisa do cliente, do valor por hora, do arredondamento combinado e de um total por cliente por mês. Abaixo estão a estrutura que funciona para a maioria dos freelancers e consultores, as fórmulas exatas para digitar no Planilhas Google e as armadilhas que quebram os totais. No fim, uma planilha pronta que se preenche sozinha a partir do Google Agenda.</p>
+
+<h2>As colunas de que uma planilha de horas para faturar precisa</h2>
+<table>
+  <thead><tr><th scope="col">Coluna</th><th scope="col">Conteúdo</th><th scope="col">Formato</th></tr></thead>
+  <tbody>
+    <tr><td>A</td><td>Data</td><td>Data</td></tr>
+    <tr><td>B</td><td>Início</td><td>Hora</td></tr>
+    <tr><td>C</td><td>Fim</td><td>Hora</td></tr>
+    <tr><td>D</td><td>Duração</td><td>Duração, <code>[h]:mm</code></td></tr>
+    <tr><td>E</td><td>Duração faturada, depois do arredondamento</td><td>Duração, <code>[h]:mm</code></td></tr>
+    <tr><td>F</td><td>Cliente</td><td>Texto</td></tr>
+    <tr><td>G</td><td>Valor por hora</td><td>Moeda</td></tr>
+    <tr><td>H</td><td>Valor</td><td>Moeda</td></tr>
+    <tr><td>I</td><td>Observações</td><td>Texto</td></tr>
+  </tbody>
+</table>
+<p>Mantenha uma linha por reunião ou por bloco de trabalho. Os totais ficam numa página separada, para que ordenar e filtrar as linhas nunca os quebre.</p>
+
+<h2>As fórmulas, linha por linha</h2>
+<p>Elas vão na linha 2 e podem ser arrastadas para baixo. O Planilhas Google guarda os horários como frações de um dia, e é por isso que algumas fórmulas multiplicam por 24.</p>
+<ul>
+  <li><b>Duração</b> em D2: <code>=MOD(C2-B2; 1)</code>. O <code>MOD</code> mantém o resultado certo quando uma sessão passa da meia-noite.</li>
+  <li><b>Duração faturada arredondada para cima em frações de 15 minutos</b> em E2: <code>=TETO(D2; TEMPO(0; 15; 0))</code>. Use <code>TEMPO(0; 6; 0)</code> para décimos de hora.</li>
+  <li><b>Com um mínimo de 30 minutos</b>, E2 fica assim: <code>=MÁXIMO(TETO(D2; TEMPO(0; 15; 0)); TEMPO(0; 30; 0))</code>.</li>
+  <li><b>Valor</b> em H2: <code>=E2*24*G2</code>. Sem o <code>*24</code>, uma reunião de duas horas a 80 seria faturada como 6,67.</li>
+  <li><b>Horas em decimal</b>, para faturas que pedem 2,25 em vez de 2:15: <code>=E2*24</code>.</li>
+</ul>
+<p>As fórmulas acima estão escritas como o Planilhas Google as mostra em português do Brasil. Se a localidade da planilha (Arquivo, Configurações) for, por exemplo, a dos Estados Unidos, as fórmulas usam vírgula entre os argumentos e ponto como separador decimal; e, se a opção "Sempre usar os nomes de funções em inglês" estiver marcada, os nomes também ficam em inglês. Nesse caso, a fórmula de E2 fica assim: <code>=CEILING(D2, TIME(0, 15, 0))</code>.</p>
+
+<h2>Totais por cliente e por mês</h2>
+<p>Numa página separada, uma linha por cliente:</p>
+<ul>
+  <li><b>Horas da Acme em outubro de 2026</b>: <code>=SOMASES(Linhas!E:E; Linhas!F:F; "Acme"; Linhas!A:A; "&gt;="&amp;DATA(2026;10;1); Linhas!A:A; "&lt;"&amp;DATA(2026;11;1))</code>, com o formato <code>[h]:mm</code>.</li>
+  <li><b>Valor da Acme em outubro</b>: a mesma fórmula sobre a coluna H.</li>
+</ul>
+<p>Escreva os limites do mês como <code>&gt;=</code> o primeiro dia e <code>&lt;</code> o primeiro dia do mês seguinte. Assim, o último dia nunca é cortado, seja qual for o horário da última reunião.</p>
+
+<h2>Quatro armadilhas que quebram uma planilha de horas</h2>
+<ol>
+  <li><b>Totais mostrados em módulo de 24 horas.</b> Com o formato <code>h:mm</code>, 26 horas aparecem como 2:00. Use sempre <code>[h]:mm</code> para durações.</li>
+  <li><b>Horários digitados como texto.</b> Um horário colado de um e-mail pode ser texto: ele fica à esquerda da célula e é ignorado pelas somas. Digite-o de novo ou envolva-o em <code>=VALOR.TEMPO()</code>.</li>
+  <li><b>Arredondar o total em vez de cada linha.</b> Com arredondamento para cima em frações de 15 minutos, 4 reuniões de 20 minutos são faturadas como 2:00 se você arredondar cada linha, ou 1:30 se arredondar o total. Diga qual no seu orçamento e aplique do mesmo jeito todo mês.</li>
+  <li><b>Editar o mês passado depois de faturar.</b> Copie os totais de cada mês para uma página fechada depois de faturar, para que uma mudança tardia numa linha não altere uma fatura enviada.</li>
+</ol>
+
+<h2>Preencher o modelo a partir do Google Agenda</h2>
+<p>Digitar cada reunião duas vezes, uma na agenda e outra na planilha, é onde a maioria das planilhas de horas dá errado. Se as suas reuniões estão no Google Agenda, exporte-as: o guia <a href="/pt-br/guides/export-google-calendar-to-google-sheets/">Exportar o Google Agenda para o Planilhas Google</a> compara a exportação integrada, um pequeno script e um complemento. Para marcar cada linha com o cliente, o guia <a href="/pt-br/guides/count-hours-in-google-calendar/">Contar horas no Google Agenda por cliente, cor ou semana</a> explica cores, agendas, palavras no título e domínios de convidados.</p>
+
+<div class="cta-end">
+  <h2>Um modelo que se preenche sozinho</h2>
+  <p>A planilha grátis do Calendar Timesheet faz esse trabalho por você. A exportação grátis dela grava qualquer período da sua agenda numa página, uma linha por evento, com totais por cor e por agenda. O teste do Pro adiciona clientes, valores por hora, arredondamento e mínimos, preenche essas colunas a cada hora e fecha cada mês em um demonstrativo por cliente.</p>
+  <p><a class="btn primary" href="/pt-br/get-the-sheet/">Obter a planilha grátis</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Mais guias</h2><ul class="guide-list"><li><a href="/pt-br/guides/google-calendar-timesheet/">Como transformar o Google Agenda em planilha de horas</a><p>Três jeitos de transformar o Google Agenda em planilha de horas: à mão, com um script no Planilhas Google ou automaticamente. Passo a passo, com as armadilhas.</p></li><li><a href="/pt-br/guides/count-hours-in-google-calendar/">Contar horas no Google Agenda por cliente, cor ou semana</a><p>O Google Agenda não mostra totais. Como dividir suas horas por cliente, cor, semana ou mês com cores, agendas e palavras-chave, grátis ou automaticamente.</p></li><li><a href="/pt-br/guides/export-google-calendar-to-google-sheets/">Exportar o Google Agenda para o Planilhas Google</a><p>Exportar eventos do Google Agenda para o Planilhas Google: exportação .ics, Apps Script e sincronização automática a cada hora, comparados com franqueza.</p></li><li><a href="/pt-br/guides/export-google-calendar-to-excel/">Exportar o Google Agenda para Excel ou CSV, com durações</a><p>O Google Agenda não exporta para Excel nem CSV. Leve seus eventos ao Planilhas Google, adicione durações que somam certo e baixe um arquivo .xlsx ou .csv.</p></li><li><a href="/pt-br/guides/bill-clients-from-google-calendar/">Cobrar por hora pelo Google Agenda: arredondamento e mínimos</a><p>Como freelancers cobram por hora a partir da agenda: valor por hora por cliente, regras de arredondamento, mínimos, pacotes de horas e demonstrativos mensais.</p></li><li><a href="/pt-br/guides/google-calendar-time-tracking/">Controle de horas com o Google Agenda, sem cronômetro</a><p>Controle horas faturáveis com o Google Agenda em vez de um cronômetro: planeje, corrija, marque cada cliente e conte. O que a agenda não faz e 5 erros comuns.</p></li><li><a href="/pt-br/guides/google-calendar-time-insights-personal-account/">Estatísticas de uso do tempo no Google Agenda: onde ficam</a><p>As Estatísticas de uso do tempo só existem em algumas edições do Workspace. Onde ficam, por que faltam, o que contam e como ver suas horas em qualquer conta.</p></li><li><a href="/pt-br/guides/calculate-hours-worked-from-google-calendar/">Calcular horas trabalhadas com o Google Agenda</a><p>O Google Agenda não soma horas, e o horário de trabalho é só disponibilidade. Veja o total de horas trabalhadas em qualquer aparelho, com as fórmulas.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/pt-br/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Feito na França por Pierre Chevallier, entrepreneur individuel. Não afiliado ao Google nem endossado por ele. Google Agenda™ e Planilhas Google™ são marcas comerciais da Google LLC.</p></div><nav aria-label="Rodapé"><a href="/pt-br/guides/">Guias</a><a href="/pt-br/support/">Suporte</a><a href="/pt-br/privacy/">Privacidade</a><a href="/pt-br/terms/">Termos</a><a href="/pt-br/google-calendar-hours-calculator/">Calculadora de horas</a><a href="/pt-br/billable-hours-calculator/">Horas em decimal</a><a href="/pt-br/google-calendar-to-excel/">Conversor para Excel</a></nav><nav class="langs" aria-label="Idioma"><a href="/guides/google-sheets-timesheet-template/" hreflang="en" lang="en">English</a><a href="/de/guides/google-sheets-timesheet-template/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/google-sheets-timesheet-template/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/google-sheets-timesheet-template/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/google-sheets-timesheet-template/" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</a><a href="/ja/guides/google-sheets-timesheet-template/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/google-sheets-timesheet-template/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

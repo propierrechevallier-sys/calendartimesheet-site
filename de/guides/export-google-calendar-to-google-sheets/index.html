@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Kalender automatisch in Google Tabellen exportieren</title>
+<meta name="description" content="Termine aus Google Kalender in Google Tabellen exportieren: der .ics-Export, Apps Script und eine automatische stündliche Synchronisierung, ehrlich verglichen.">
+<link rel="canonical" href="https://calendartimesheet.com/de/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google Kalender automatisch in Google Tabellen exportieren">
+<meta property="og:description" content="Termine aus Google Kalender in Google Tabellen exportieren: der .ics-Export, Apps Script und eine automatische stündliche Synchronisierung, ehrlich verglichen.">
+<meta property="og:url" content="https://calendartimesheet.com/de/guides/export-google-calendar-to-google-sheets/">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/de/"},{"@type":"ListItem","position":2,"name":"Google Kalender automatisch in Google Tabellen exportieren","item":"https://calendartimesheet.com/de/guides/export-google-calendar-to-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google Kalender automatisch in Google Tabellen exportieren","description":"Termine aus Google Kalender in Google Tabellen exportieren: der .ics-Export, Apps Script und eine automatische stündliche Synchronisierung, ehrlich verglichen.","inLanguage":"de","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/de/guides/export-google-calendar-to-google-sheets/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top"><div class="wrap"><a class="brand" href="/de/" aria-label="Calendar Timesheet, Startseite"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Hauptmenü"><a href="/de/#how">So funktioniert es</a><a href="/de/#features">Funktionen</a><a href="/de/#pricing">Preise</a><a href="/de/guides/">Ratgeber</a><details class="lang"><summary aria-label="Sprache"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Deutsch</span><span class="lang-short">DE</span></summary><ul><li><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de" aria-current="page">Deutsch</a></li><li><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/de/get-the-sheet/">Kostenlose Tabelle</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google Kalender automatisch in Google Tabellen exportieren</h1>
+<p class="meta">Aktualisiert am 19. Oktober 2026. Etwa 6 Minuten Lesezeit.</p>
+
+<p>Google Kalender hat keine Schaltfläche, die nach Google Tabellen (Google Sheets) exportiert. Angeboten wird ein Export Ihrer Kalender im Standardformat für Kalender, als <code>.ics</code>-Dateien, gedacht, um Termine in eine andere Kalender-App zu übertragen. Um Termine in eine Tabelle zu bringen und dort aktuell zu halten, brauchen Sie eine der folgenden Methoden. Wenn Sie nur eine Stundensumme brauchen, liest der kostenlose <a href="/de/google-calendar-hours-calculator/">Stundenrechner für Google Kalender</a> den Export von Google direkt, ganz ohne Tabelle.</p>
+
+<h2>Option 1: der eigene Export von Google Kalender</h2>
+<p>Öffnen Sie in Google Kalender <b>Einstellungen</b>, dann <b>Importieren &amp; Exportieren</b> und dann <b>Exportieren</b>. Sie laden eine ZIP-Datei mit einer <code>.ics</code>-Datei pro Kalender herunter (die <a href="https://support.google.com/calendar/answer/37111?hl=de">Hilfeseite von Google</a> beschreibt den Ablauf).</p>
+<ul>
+  <li><b>Vorteile</b>: vollständig, offiziell, funktioniert mit jedem Konto.</li>
+  <li><b>Nachteile</b>: Google Tabellen kann <code>.ics</code>-Dateien nicht öffnen, Sie brauchen also einen Konverter. Viele Konverter schreiben eine Zeile pro Terminserie, mit der Wiederholungsregel statt der tatsächlichen Daten; der kostenlose <a href="/de/google-calendar-to-excel/">Excel- und CSV-Konverter für Google Kalender</a> auf dieser Website schreibt eine Zeile pro Vorkommen, und seine <code>.xlsx</code>-Datei lässt sich in Google Tabellen importieren (Datei, Importieren). Es bleibt eine Momentaufnahme: Nächste Woche machen Sie es noch einmal.</li>
+</ul>
+<p>Wenn die Datei in Excel oder als CSV landen soll, lesen Sie den Ratgeber <a href="/de/guides/export-google-calendar-to-excel/">Google Kalender exportieren: Excel oder CSV mit Dauern</a>.</p>
+
+<h2>Option 2: ein Skript mit Timer</h2>
+<p>Apps Script, in Google Tabellen integriert, kann Ihren Kalender lesen und Zeilen schreiben, und ein zeitgesteuerter Trigger kann es jede Stunde ausführen. Beginnen Sie mit dem kurzen Skript aus dem Ratgeber <a href="/de/guides/google-calendar-timesheet/">Stundenzettel aus Google Kalender erstellen</a>; öffnen Sie dann im Apps Script-Editor <b>Trigger</b>, klicken Sie auf <b>Trigger hinzufügen</b> und wählen Sie Ihre Funktion, eine zeitgesteuerte Auslösung und einen stündlichen Timer.</p>
+<ul>
+  <li><b>Vorteile</b>: kostenlos, genau das, was Sie wollen, bleibt in Ihrem Konto.</li>
+  <li><b>Nachteile</b>: Sie müssen es pflegen. Bei jedem neuen Durchlauf wird das Tabellenblatt neu geschrieben, sodass Notizen, die Sie neben die Zeilen schreiben, verrutschen. Mehrere Kalender lesen, abgelehnte Einladungen überspringen, Termine über Mitternacht aufteilen und Duplikate vermeiden: All das müssen Sie selbst programmieren.</li>
+</ul>
+
+<h2>Option 3: ein IFTTT-Applet</h2>
+<p>IFTTT verbindet zwei Dienste ohne Code. Sein Applet <a href="https://ifttt.com/applets/AvwRrWna-add-new-google-calendar-events-to-google-sheets">„Add new Google Calendar events to Google Sheets“</a> wird jedes Mal ausgelöst, wenn ein neuer Termin in Ihren Kalender eingetragen wird, und fügt eine Zeile am Ende des ersten Tabellenblatts einer Tabelle Ihrer Wahl hinzu. Die Seite des Applets nennt zwei Grenzen: Im kostenlosen Tarif von IFTTT wird der Kalender jede Stunde geprüft (in den kostenpflichtigen Tarifen alle 5 Minuten), und nach 2.000 Zeilen wird eine neue Tabelle angelegt.</p>
+<ul>
+  <li><b>Vorteile</b>: kostenlos, ohne Code, läuft nach dem Verbinden von selbst.</li>
+  <li><b>Nachteile</b>: Es reagiert nur auf neue Termine. Bestehende Termine werden nicht kopiert, und die Aktion fügt nur Zeilen hinzu: Ein Termin, den Sie später verschieben oder absagen, behält die Zeile, die beim Anlegen geschrieben wurde. Dauern und Summen pro Kunde müssen Sie selbst mit Formeln ergänzen. Automatisierungsdienste wie Zapier oder Make funktionieren genauso; prüfen Sie, was ihre kostenlosen Tarife enthalten.</li>
+</ul>
+
+<h2>Option 4: ein Add-on für Google Tabellen</h2>
+<p>Add-ons lassen sich mit zwei Klicks in Google Tabellen installieren und übernehmen das Lesen für Sie. Es gibt zwei Familien:</p>
+<ul>
+  <li><b>Rohdaten-Exporter</b> kopieren Termine in eine Tabelle, oft nach Zeitplan. Sie passen zu allen, die die Daten wollen und ihre Berichte selbst bauen.</li>
+  <li><b>Stundenzettel-Add-ons</b> gehen weiter: Sie machen aus Terminen Stunden pro Kunde oder Projekt, mit Summen. <a href="/de/">Calendar Timesheet</a> ist eines davon, und es ist unseres.</li>
+</ul>
+<p>Bevor Sie ein Add-on installieren, prüfen Sie, wozu Google Ihre Zustimmung verlangt. Ein Tool, das nur liest, sollte darum bitten, Ihre Kalender <i>anzusehen</i>, nicht sie zu bearbeiten, und nur auf die Tabelle zuzugreifen, in der Sie es verwenden.</p>
+
+<h2>Im Vergleich</h2>
+<table>
+  <thead><tr><th scope="col"></th><th scope="col">.ics-Export</th><th scope="col">Skript mit Timer</th><th scope="col">Calendar Timesheet</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Öffnet sich in Google Tabellen</th><td>Nein, braucht einen Konverter</td><td>Ja</td><td>Ja</td></tr>
+    <tr><th scope="row">Bleibt aktuell</th><td>Nein</td><td>Ja, stündlich</td><td>Ja, stündlich</td></tr>
+    <tr><th scope="row">Mehrere Kalender</th><td>Eine Datei pro Kalender</td><td>Wenn Sie es programmieren</td><td>Ja</td></tr>
+    <tr><th scope="row">Echte Vorkommen wiederkehrender Termine</th><td>Nein, Serienregeln</td><td>Ja</td><td>Ja</td></tr>
+    <tr><th scope="row">Behält Ihre Notizen neben den Zeilen</th><td>Nein</td><td>Nicht standardmäßig</td><td>Ja</td></tr>
+    <tr><th scope="row">Summen pro Kunde, Beträge</th><td>Nein</td><td>Wenn Sie es programmieren</td><td>Ja (Pro)</td></tr>
+    <tr><th scope="row">Kosten</th><td>Kostenlos</td><td>Kostenlos, plus Ihre Zeit</td><td>Export kostenlos; Pro ab 49&nbsp;$ pro Jahr</td></tr>
+  </tbody>
+</table>
+
+<h2>Der kostenlose Export in Calendar Timesheet</h2>
+<p>Der Export von Calendar Timesheet ist ohne zeitliche Begrenzung kostenlos: Wählen Sie einen beliebigen Zeitraum bis zu einem Jahr und die Kalender, die gelesen werden sollen, und er schreibt eine Zeile pro Termin (Datum, Beginn, Ende, Dauer, Titel, Kalender, Farbe) in ein Tabellenblatt <b>Export</b>, mit Summen nach Farbe und nach Kalender. Er ändert nie Ihren Kalender und sendet nichts aus Ihrem Google-Konto heraus.</p>
+
+<div class="cta-end">
+  <p><a class="btn primary" href="/de/get-the-sheet/">Kostenlose Tabelle holen</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Weitere Ratgeber</h2><ul class="guide-list"><li><a href="/de/guides/google-calendar-timesheet/">Stundenzettel aus Google Kalender erstellen</a><p>Drei Wege zum Stundenzettel aus Google Kalender: von Hand, mit einem Skript in Google Tabellen oder automatisch. Schritt für Schritt, mit den Fallen.</p></li><li><a href="/de/guides/count-hours-in-google-calendar/">Stunden in Google Kalender zählen: pro Kunde, Farbe, Woche</a><p>Google Kalender zeigt keine Summen. So zählen Sie Ihre Stunden pro Kunde, Farbe, Woche oder Monat, kostenlos in Google Tabellen oder automatisch.</p></li><li><a href="/de/guides/export-google-calendar-to-excel/">Google Kalender exportieren: Excel oder CSV mit Dauern</a><p>Google Kalender hat keinen Excel- oder CSV-Export. Termine in Google Tabellen bringen, Dauern ergänzen, dann eine .xlsx- oder .csv-Datei herunterladen.</p></li><li><a href="/de/guides/bill-clients-from-google-calendar/">Kunden aus Google Kalender abrechnen: Stundensatz, Rundung</a><p>So rechnen Freiberufler aus dem Kalender ab: Stundensatz pro Kunde, Rundungsregeln, Mindestabrechnung, Stundenkontingente und Stundennachweise zum Monatsende.</p></li><li><a href="/de/guides/google-calendar-time-tracking/">Zeiterfassung mit Google Kalender: Stunden ohne Timer</a><p>Abrechenbare Stunden mit Google Kalender statt Timer erfassen: planen, korrigieren, Kunden zuordnen, zählen. Was der Kalender nicht kann, und 5 häufige Fehler.</p></li><li><a href="/de/guides/google-sheets-timesheet-template/">Stundenzettel-Vorlage für Freiberufler in Google Tabellen</a><p>Ein Stundenzettel für Freiberufler in Google Tabellen: Spalten, Formeln für Dauer, Aufrundung auf 15 Minuten, Mindestdauer, Beträge und Monatssummen pro Kunde.</p></li><li><a href="/de/guides/google-calendar-time-insights-personal-account/">„Ihre Zeit im Blick“ fehlt in Google Kalender? Wo und warum</a><p>Nur einige Workspace-Versionen haben „Ihre Zeit im Blick“: wo die Funktion ist, warum sie fehlt, was sie zählt und kostenlose Alternativen für jedes Konto.</p></li><li><a href="/de/guides/calculate-hours-worked-from-google-calendar/">Arbeitszeit in Google Kalender: Stunden berechnen</a><p>Google Kalender zählt keine Stunden, die Arbeitszeit ist nur Verfügbarkeit. So kommen Sie am Computer und auf dem Smartphone an Ihre Gesamtstunden.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/de/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Entwickelt in Frankreich von Pierre Chevallier, entrepreneur individuel. Nicht mit Google verbunden und von Google nicht gebilligt. Google Kalender™ und Google Tabellen™ sind Marken von Google LLC.</p></div><nav aria-label="Fußzeile"><a href="/de/guides/">Ratgeber</a><a href="/de/support/">Support</a><a href="/de/privacy/">Datenschutz</a><a href="/de/terms/">Nutzungsbedingungen</a><a href="/de/google-calendar-hours-calculator/">Stundenrechner</a><a href="/de/billable-hours-calculator/">Dezimalstunden-Rechner</a><a href="/de/google-calendar-to-excel/">Excel-Konverter</a></nav><nav class="langs" aria-label="Sprache"><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de" aria-current="page">Deutsch</a><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stundenzettel aus Google Kalender erstellen</title>
+<meta name="description" content="Drei Wege zum Stundenzettel aus Google Kalender: von Hand, mit einem Skript in Google Tabellen oder automatisch. Schritt für Schritt, mit den Fallen.">
+<link rel="canonical" href="https://calendartimesheet.com/de/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/google-calendar-timesheet/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/google-calendar-timesheet/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Stundenzettel aus Google Kalender erstellen">
+<meta property="og:description" content="Drei Wege zum Stundenzettel aus Google Kalender: von Hand, mit einem Skript in Google Tabellen oder automatisch. Schritt für Schritt, mit den Fallen.">
+<meta property="og:url" content="https://calendartimesheet.com/de/guides/google-calendar-timesheet/">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/de/"},{"@type":"ListItem","position":2,"name":"Stundenzettel aus Google Kalender erstellen","item":"https://calendartimesheet.com/de/guides/google-calendar-timesheet/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Stundenzettel aus Google Kalender erstellen","description":"Drei Wege zum Stundenzettel aus Google Kalender: von Hand, mit einem Skript in Google Tabellen oder automatisch. Schritt für Schritt, mit den Fallen.","inLanguage":"de","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/de/guides/google-calendar-timesheet/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top"><div class="wrap"><a class="brand" href="/de/" aria-label="Calendar Timesheet, Startseite"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Hauptmenü"><a href="/de/#how">So funktioniert es</a><a href="/de/#features">Funktionen</a><a href="/de/#pricing">Preise</a><a href="/de/guides/">Ratgeber</a><details class="lang"><summary aria-label="Sprache"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Deutsch</span><span class="lang-short">DE</span></summary><ul><li><a href="/guides/google-calendar-timesheet/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/google-calendar-timesheet/" hreflang="de" lang="de" aria-current="page">Deutsch</a></li><li><a href="/fr/guides/google-calendar-timesheet/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/google-calendar-timesheet/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/google-calendar-timesheet/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/google-calendar-timesheet/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/google-calendar-timesheet/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/de/get-the-sheet/">Kostenlose Tabelle</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>So wird aus Google Kalender ein Stundenzettel</h1>
+<p class="meta">Aktualisiert am 19. Oktober 2026. Etwa 7 Minuten Lesezeit.</p>
+
+<p>Wenn Ihre Arbeit für Kunden schon in Google Kalender steht, haben Sie den größten Teil eines Stundenzettels. Was fehlt, ist eine Liste mit Daten und Dauern und mit Summen pro Kunde. Google Kalender erstellt keine: Sein Export ist eine Kalenderdatei, keine Tabelle. Hier sind drei Wege dorthin, von kostenlos und von Hand bis vollautomatisch, und die Details, die Summen unbemerkt verfälschen.</p>
+
+<h2>Methode 1: von Hand, in einer Tabelle</h2>
+<p>Öffnen Sie Google Kalender in der Wochenansicht und daneben eine leere Tabelle in Google Tabellen, und tippen Sie eine Zeile pro Termin ab: Datum, Beginn, Ende, Kunde. Fügen Sie eine Spalte mit <code>=(C2-B2)*24</code> für die Stunden hinzu und unten eine Summe.</p>
+<p>Das kostet nichts und funktioniert für eine Handvoll Termine pro Woche. Darüber hinaus kostet es jede Woche Zeit, und Tippfehler bleiben unsichtbar: Niemand prüft ein getipptes 14:30 noch einmal gegen den Kalender.</p>
+
+<h2>Methode 2: ein kurzes Skript in Google Tabellen</h2>
+<p>Google Tabellen kann Ihren Kalender mit Apps Script lesen, der integrierten Skriptumgebung von Google. Öffnen Sie in einer neuen Tabelle <b>Erweiterungen</b> und dann <b>Apps Script</b>, fügen Sie das folgende Skript ein, passen Sie die beiden Daten an und führen Sie <code>listMonth</code> aus. Google bittet Sie, Ihr eigenes Skript zu autorisieren.</p>
+<pre><code>function listMonth() {
+  var cal = CalendarApp.getDefaultCalendar();
+  var start = new Date(2026, 9, 1), end = new Date(2026, 10, 1); // October 2026
+  var rows = [['Date', 'Start', 'End', 'Hours', 'Title', 'Colour']];
+  cal.getEvents(start, end).forEach(function (e) {
+    if (e.isAllDayEvent()) return;
+    var hours = (e.getEndTime() - e.getStartTime()) / 3600000;
+    rows.push([e.getStartTime(), e.getStartTime(), e.getEndTime(), hours, e.getTitle(), e.getColor()]);
+  });
+  var sheet = SpreadsheetApp.getActiveSheet();
+  sheet.clear();
+  sheet.getRange(1, 1, rows.length, rows[0].length).setValues(rows);
+}</code></pre>
+<p>In Apps Script beginnen die Monate bei 0, daher ist <code>new Date(2026, 9, 1)</code> der 1. Oktober. Sie erhalten eine Zeile pro Termin mit seiner Dauer und seiner Farbnummer. Daraus liefern eine Pivot-Tabelle oder <code>SUMMEWENN</code> die Summen (der Ratgeber <a href="/de/guides/count-hours-in-google-calendar/">Stunden in Google Kalender zählen: pro Kunde, Farbe, Woche</a> zeigt die Formeln).</p>
+<p>Das ist eine gute kostenlose Lösung, wenn Ihnen ein wenig Code nichts ausmacht. Das Skript liest nur Ihren Hauptkalender und tappt in jede der unten aufgeführten Fallen, wenn Sie sich nicht selbst darum kümmern.</p>
+
+<h2>Methode 3: automatisch, mit einem Add-on</h2>
+<p>Ein Add-on übernimmt dasselbe Lesen für Sie, nach Zeitplan. <a href="/de/">Calendar Timesheet</a>, das wir entwickeln, liest die von Ihnen gewählten Kalender jede Stunde, ordnet jeden Termin einem Kunden zu, nach Farbe, Kalender, einem Wort im Titel oder der E-Mail-Domain der Gäste, und hält ein Tabellenblatt <b>Dieser Monat</b> aktuell. Am 1. jedes Monats schließt es den Vormonat mit einem Stundennachweis pro Kunde ab und schickt Ihnen eine Zusammenfassung per E-Mail. Der Export beliebiger Zeiträume ist kostenlos; Kunden, Stundensätze und der Autopilot gehören zu Pro, mit einer Testphase, die bis zu Ihrem ersten Monatsende dauert.</p>
+<p>Andere Add-ons exportieren die Termine als Rohdaten in eine Tabelle; das passt zu allen, die ihren eigenen Bericht bauen möchten. Die folgenden Fallen machen den Unterschied zwischen einem Rohexport und einem Stundenzettel, nach dem Sie abrechnen können.</p>
+
+<h2>Die Fallen, die Summen verfälschen</h2>
+<h3>Termine über die Grenze eines Zeitraums hinweg</h3>
+<p>Ein Workshop am 31. Oktober von 22:00 bis 01:00 Uhr gehört zu zwei Monaten. Wird er ganz im Oktober gezählt, wird der Oktober zu hoch abgerechnet und dem November fehlt etwas. Nur der Teil innerhalb des Zeitraums sollte zählen.</p>
+<h3>Abgelehnte und unbeantwortete Einladungen</h3>
+<p>Kalenderskripte liefern auch Termine, die Sie abgelehnt haben. Lädt Sie jemand zu einer Besprechung ein, die Sie abgelehnt haben, landet sie trotzdem in einem naiven Export. Filtern Sie nach Ihrer eigenen Antwort.</p>
+<h3>Ganztägige Termine und als verfügbar markierte Zeit</h3>
+<p>Urlaub, Reisetage und Erinnerungen sind oft ganztägige Termine oder als verfügbar markiert. Sie sind keine Arbeitszeit, und ein ganztägiger Termin, der als 24 Stunden gelesen wird, ruiniert jede Summe.</p>
+<h3>Derselbe Termin in zwei Kalendern</h3>
+<p>Wenn ein Kunde Sie einlädt und Sie den Termin zusätzlich in Ihren Arbeitskalender kopieren, zählt ein Export beider Kalender ihn doppelt. Die Termine teilen eine Kennung (iCalUID), mit der Sie nur einen behalten können.</p>
+<h3>Wiederkehrende Termine mit Ausnahmen</h3>
+<p>Ein wöchentlicher Anruf, der in einer Woche verschoben und in einer anderen abgesagt wurde, muss so zählen, wie er stattgefunden hat, nicht wie die Serie es vorsieht. Lesen Sie die einzelnen Vorkommen, nicht die Serie.</p>
+<h3>Zeitzonen</h3>
+<p>Wenn Ihre Tabelle und ein Kalender unterschiedliche Zeitzonen verwenden, verschieben sich die Anfangszeiten. Verwenden Sie für den Stundenzettel eine einzige Zeitzone, meist die der Tabelle.</p>
+
+<h2>Ein Stundenzettel, dem Sie vertrauen können: die Checkliste</h2>
+<ol>
+  <li>Wählen Sie eine Art, Kunden zu markieren (Farbe, Kalender, Wort im Titel oder Domain der Gäste), und bleiben Sie dabei.</li>
+  <li>Zählen Sie von jedem Termin nur den Teil innerhalb des Zeitraums.</li>
+  <li>Lassen Sie abgelehnte Einladungen, ganztägige Termine und als verfügbar markierte Zeit weg.</li>
+  <li>Zählen Sie einen Termin, der in zwei Kalendern steht, nur einmal.</li>
+  <li>Frieren Sie jeden Monat ein, sobald er abgerechnet ist, damit spätere Änderungen im Kalender nicht verändern, was Sie verschickt haben.</li>
+</ol>
+
+<div class="cta-end">
+  <p><b>Soll das jede Stunde für Sie erledigt werden?</b> Calendar Timesheet kümmert sich um jeden Punkt dieser Checkliste, in Ihrer eigenen Tabelle in Google Tabellen, ohne Konto.</p>
+  <p><a class="btn primary" href="/de/get-the-sheet/">Kostenlose Tabelle holen</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Weitere Ratgeber</h2><ul class="guide-list"><li><a href="/de/guides/count-hours-in-google-calendar/">Stunden in Google Kalender zählen: pro Kunde, Farbe, Woche</a><p>Google Kalender zeigt keine Summen. So zählen Sie Ihre Stunden pro Kunde, Farbe, Woche oder Monat, kostenlos in Google Tabellen oder automatisch.</p></li><li><a href="/de/guides/export-google-calendar-to-google-sheets/">Google Kalender automatisch in Google Tabellen exportieren</a><p>Termine aus Google Kalender in Google Tabellen exportieren: der .ics-Export, Apps Script und eine automatische stündliche Synchronisierung, ehrlich verglichen.</p></li><li><a href="/de/guides/export-google-calendar-to-excel/">Google Kalender exportieren: Excel oder CSV mit Dauern</a><p>Google Kalender hat keinen Excel- oder CSV-Export. Termine in Google Tabellen bringen, Dauern ergänzen, dann eine .xlsx- oder .csv-Datei herunterladen.</p></li><li><a href="/de/guides/bill-clients-from-google-calendar/">Kunden aus Google Kalender abrechnen: Stundensatz, Rundung</a><p>So rechnen Freiberufler aus dem Kalender ab: Stundensatz pro Kunde, Rundungsregeln, Mindestabrechnung, Stundenkontingente und Stundennachweise zum Monatsende.</p></li><li><a href="/de/guides/google-calendar-time-tracking/">Zeiterfassung mit Google Kalender: Stunden ohne Timer</a><p>Abrechenbare Stunden mit Google Kalender statt Timer erfassen: planen, korrigieren, Kunden zuordnen, zählen. Was der Kalender nicht kann, und 5 häufige Fehler.</p></li><li><a href="/de/guides/google-sheets-timesheet-template/">Stundenzettel-Vorlage für Freiberufler in Google Tabellen</a><p>Ein Stundenzettel für Freiberufler in Google Tabellen: Spalten, Formeln für Dauer, Aufrundung auf 15 Minuten, Mindestdauer, Beträge und Monatssummen pro Kunde.</p></li><li><a href="/de/guides/google-calendar-time-insights-personal-account/">„Ihre Zeit im Blick“ fehlt in Google Kalender? Wo und warum</a><p>Nur einige Workspace-Versionen haben „Ihre Zeit im Blick“: wo die Funktion ist, warum sie fehlt, was sie zählt und kostenlose Alternativen für jedes Konto.</p></li><li><a href="/de/guides/calculate-hours-worked-from-google-calendar/">Arbeitszeit in Google Kalender: Stunden berechnen</a><p>Google Kalender zählt keine Stunden, die Arbeitszeit ist nur Verfügbarkeit. So kommen Sie am Computer und auf dem Smartphone an Ihre Gesamtstunden.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/de/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Entwickelt in Frankreich von Pierre Chevallier, entrepreneur individuel. Nicht mit Google verbunden und von Google nicht gebilligt. Google Kalender™ und Google Tabellen™ sind Marken von Google LLC.</p></div><nav aria-label="Fußzeile"><a href="/de/guides/">Ratgeber</a><a href="/de/support/">Support</a><a href="/de/privacy/">Datenschutz</a><a href="/de/terms/">Nutzungsbedingungen</a><a href="/de/google-calendar-hours-calculator/">Stundenrechner</a><a href="/de/billable-hours-calculator/">Dezimalstunden-Rechner</a><a href="/de/google-calendar-to-excel/">Excel-Konverter</a></nav><nav class="langs" aria-label="Sprache"><a href="/guides/google-calendar-timesheet/" hreflang="en" lang="en">English</a><a href="/de/guides/google-calendar-timesheet/" hreflang="de" lang="de" aria-current="page">Deutsch</a><a href="/fr/guides/google-calendar-timesheet/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/google-calendar-timesheet/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/google-calendar-timesheet/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/google-calendar-timesheet/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/google-calendar-timesheet/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facturar por horas desde Google Calendar: tarifas y redondeo</title>
+<meta name="description" content="Cómo facturan los freelancers desde su calendario: tarifas por hora para cada cliente, reglas de redondeo, mínimos, bolsas de horas e informes de fin de mes.">
+<link rel="canonical" href="https://calendartimesheet.com/es/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/bill-clients-from-google-calendar/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/bill-clients-from-google-calendar/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Facturar por horas desde Google Calendar: tarifas y redondeo">
+<meta property="og:description" content="Cómo facturan los freelancers desde su calendario: tarifas por hora para cada cliente, reglas de redondeo, mínimos, bolsas de horas e informes de fin de mes.">
+<meta property="og:url" content="https://calendartimesheet.com/es/guides/bill-clients-from-google-calendar/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/es/"},{"@type":"ListItem","position":2,"name":"Facturar por horas desde Google Calendar: tarifas y redondeo","item":"https://calendartimesheet.com/es/guides/bill-clients-from-google-calendar/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Facturar por horas desde Google Calendar: tarifas y redondeo","description":"Cómo facturan los freelancers desde su calendario: tarifas por hora para cada cliente, reglas de redondeo, mínimos, bolsas de horas e informes de fin de mes.","inLanguage":"es","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/es/guides/bill-clients-from-google-calendar/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top"><div class="wrap"><a class="brand" href="/es/" aria-label="Calendar Timesheet, inicio"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/es/#how">Cómo funciona</a><a href="/es/#features">Funciones</a><a href="/es/#pricing">Precios</a><a href="/es/guides/">Guías</a><details class="lang"><summary aria-label="Idioma"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Español</span><span class="lang-short">ES</span></summary><ul><li><a href="/guides/bill-clients-from-google-calendar/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/bill-clients-from-google-calendar/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/bill-clients-from-google-calendar/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/bill-clients-from-google-calendar/" hreflang="es" lang="es" aria-current="page">Español</a></li><li><a href="/pt-br/guides/bill-clients-from-google-calendar/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/bill-clients-from-google-calendar/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/bill-clients-from-google-calendar/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/es/get-the-sheet/">Obtén la hoja gratis</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Facturar a clientes desde Google Calendar: tarifas, redondeo y mínimos</h1>
+<p class="meta">Actualizado el 19 de octubre de 2026. Lectura de unos 7 minutos. Información general, no asesoramiento jurídico ni fiscal.</p>
+
+<p>Cuando tu calendario ya recoge tu trabajo para clientes, facturar es cuestión de reglas: qué reuniones cuentan, a qué tarifa, con qué redondeo y cuándo un mes es definitivo. Escribir esas reglas una vez, y aplicarlas igual cada mes, es lo que hace que una factura sea fácil de defender.</p>
+
+<h2>Tarifas: por cliente, a veces por proyecto</h2>
+<p>La mayoría de los freelancers tienen una tarifa por hora para cada cliente y, a veces, otra distinta para un proyecto concreto (por ejemplo, un taller que se factura más caro que las llamadas). Guarda la tarifa junto al cliente, no en tu cabeza, y en la moneda del cliente si a unos les facturas en dólares y a otros en euros. Cuando cambie la tarifa, anota desde qué mes: las facturas ya enviadas no deben cambiar.</p>
+
+<h2>Redondeo: elige una regla y comunícala</h2>
+<p>El redondeo convierte los minutos reales en tiempo facturable. Reglas habituales:</p>
+<table>
+  <thead><tr><th scope="col">Regla</th><th scope="col">Quién la usa</th><th scope="col">Una llamada de 37 minutos pasa a</th></tr></thead>
+  <tbody>
+    <tr><td>Tiempo exacto</td><td>Quien factura por minutos</td><td>37 minutos</td></tr>
+    <tr><td>Al alza a 6 minutos (una décima de hora)</td><td>Abogados, muchos consultores</td><td>42 minutos (0,7 h)</td></tr>
+    <tr><td>Al alza a 15 minutos</td><td>Coaches, formadores, agencias</td><td>45 minutos</td></tr>
+    <tr><td>Al alza a 30 minutos</td><td>Trabajo presencial, intervenciones cortas</td><td>60 minutos</td></tr>
+  </tbody>
+</table>
+<p>Redondea cada reunión, no el total mensual, y escribe la regla en tu presupuesto o contrato para que el cliente la conozca antes de la primera factura.</p>
+
+<h2>Mínimo por reunión</h2>
+<p>Una llamada de cinco minutos también interrumpe tu jornada. Un mínimo, por ejemplo de 15 o 30 minutos por reunión, lo cubre. Aplícalo después del redondeo: una llamada de 5 minutos con redondeo a 15 minutos y un mínimo de 30 minutos factura 30 minutos.</p>
+
+<h2>Un ejemplo práctico: las horas facturables de un mes</h2>
+<p>Cliente Acme, 80 US$ la hora, cada reunión redondeada al alza a 15 minutos, con un mínimo de 30 minutos por reunión. Cuatro reuniones en octubre:</p>
+<table>
+  <thead><tr><th scope="col">Reunión</th><th scope="col">Tiempo real</th><th scope="col">Redondeado al alza a 15 min</th><th scope="col">Facturado, tras el mínimo</th></tr></thead>
+  <tbody>
+    <tr><td>Llamada de arranque</td><td>0:37</td><td>0:45</td><td>0:45</td></tr>
+    <tr><td>Seguimiento rápido</td><td>0:05</td><td>0:15</td><td>0:30</td></tr>
+    <tr><td>Taller</td><td>2:10</td><td>2:15</td><td>2:15</td></tr>
+    <tr><td>Revisión</td><td>1:00</td><td>1:00</td><td>1:00</td></tr>
+    <tr><td><b>Total</b></td><td><b>3:52</b></td><td></td><td><b>4:30</b></td></tr>
+  </tbody>
+</table>
+<p>4,5 horas a 80 US$ son <b>360 US$</b>. Redondear en cambio el total mensual (3:52 al alza a 4:00) daría 320 US$: la regla cambia la factura, y por eso debe figurar en el presupuesto. En una hoja de cálculo, el tiempo facturado de una reunión es <code>=MAX(MULTIPLO.SUPERIOR(D2;0,25);0,5)</code>, con las horas reales en número decimal en la columna D; la guía <a href="/es/guides/google-sheets-timesheet-template/">Plantilla de registro de horas en Hojas de cálculo de Google</a> tiene el conjunto completo de fórmulas. Para probar una regla con tus propias horas, pégalas en la <a href="/es/billable-hours-calculator/">calculadora de horas facturables</a>, gratuita.</p>
+
+<h2>Bolsas de horas y horas prepagadas</h2>
+<p>Algunos clientes compran una bolsa de horas: 20 horas al mes, o 40 horas para usar a lo largo de un trimestre. Controla las horas usadas frente a la bolsa y avisa al cliente antes de que se agote. Un aviso al 80% da tiempo para recargarla; uno al 100% evita trabajar sin cobrar.</p>
+
+<h2>Lo que no cuenta</h2>
+<p>Decídelo una vez: invitaciones rechazadas, gestiones internas, desplazamientos (facturados o no), eventos de todo el día. Marca el tiempo no facturable con su propio color o calendario para que nunca se cuele en el total de un cliente.</p>
+
+<h2>Cierra el mes y luego factura</h2>
+<p>Los calendarios no paran de cambiar: las reuniones se mueven a posteriori, se cancelan, se renombran. Cuando factures un mes, congela sus cifras. Los cambios hechos después en el calendario no deben alterar una factura ya enviada; si algo estaba realmente mal, vuelve a calcular a propósito y emite una corrección.</p>
+<p>Un informe por cliente y por mes debería mostrar, para cada reunión: fecha, inicio y fin, título o descripción, duración real, duración facturada e importe. Los clientes confían más en una lista detallada que en una sola cifra.</p>
+
+<h2>Haz seguimiento de los pagos</h2>
+<p>Anota cuándo se facturó cada informe y cuándo se pagó. Todo lo que siga sin pagar a los 30 días merece un recordatorio; con una lista mensual de informes vencidos basta para tenerlo controlado.</p>
+
+<h2>Las mismas reglas, aplicadas automáticamente</h2>
+<p><a href="/es/">Calendar Timesheet</a> aplica estas reglas en tu propia hoja de cálculo de Google: una tarifa y una moneda por cliente y por proyecto, redondeo al alza a 5, 6, 10, 15, 30 o 60 minutos, un mínimo opcional por reunión, horas prepagadas con avisos al 80% y al 100%, eventos rechazados y de todo el día excluidos, y meses congelados al cerrarlos. El día 1 recibes un informe por cliente y un correo con los totales y todo lo que siga sin pagar a los 30 días.</p>
+<p>No es una herramienta de facturación: prepara las cifras y el detalle; la factura la haces con tu programa o tu plantilla de siempre.</p>
+
+<div class="cta-end">
+  <p><b>Pruébalo con tu propio calendario.</b> La prueba de Pro dura hasta tu primer informe de fin de mes, 14 días como mínimo. Sin tarjeta.</p>
+  <p><a class="btn primary" href="/es/get-the-sheet/">Obtén la hoja gratis</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Más guías</h2><ul class="guide-list"><li><a href="/es/guides/google-calendar-timesheet/">Cómo convertir Google Calendar en un registro de horas</a><p>Tres formas de convertir Google Calendar en un registro de horas: a mano, con un script en Hojas de cálculo de Google o automáticamente. Con sus trampas.</p></li><li><a href="/es/guides/count-hours-in-google-calendar/">Contar horas en Google Calendar por cliente, color o semana</a><p>Google Calendar no da totales. Cómo repartir tus horas por cliente, color, semana o mes con colores, calendarios y palabras clave, gratis o automáticamente.</p></li><li><a href="/es/guides/export-google-calendar-to-google-sheets/">Exportar Google Calendar a Hojas de cálculo de Google</a><p>Exporta los eventos de Google Calendar a Hojas de cálculo de Google: la exportación .ics, Apps Script y una sincronización automática cada hora, comparados.</p></li><li><a href="/es/guides/export-google-calendar-to-excel/">Exportar Google Calendar a Excel o CSV, con duraciones</a><p>Google Calendar no exporta a Excel ni a CSV. Lleva tus eventos a Hojas de cálculo de Google, añade duraciones que se puedan sumar y descarga un .xlsx o .csv.</p></li><li><a href="/es/guides/google-calendar-time-tracking/">Control de horas con Google Calendar, sin cronómetro</a><p>Controla las horas facturables con Google Calendar, sin cronómetro: planifica, corrige, etiqueta y cuenta. Lo que el calendario no hace y 5 errores habituales.</p></li><li><a href="/es/guides/google-sheets-timesheet-template/">Plantilla de registro de horas en Hojas de cálculo de Google</a><p>Registro de horas de freelancer en Hojas de cálculo de Google: columnas, fórmulas, redondeo a 15 minutos, mínimos, importes y totales mensuales por cliente.</p></li><li><a href="/es/guides/google-calendar-time-insights-personal-account/">Estadísticas de tiempo de Google Calendar: por qué faltan</a><p>Estadísticas de tiempo solo está en algunas ediciones de Workspace. Dónde está, por qué falta, qué cuenta y cómo ver gratis tus horas con cualquier cuenta.</p></li><li><a href="/es/guides/calculate-hours-worked-from-google-calendar/">Calcular horas trabajadas con Google Calendar</a><p>Google Calendar no suma horas y el horario laboral solo indica disponibilidad. Cómo ver tu total de horas trabajadas en cualquier dispositivo, con las fórmulas.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/es/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Hecho en Francia por Pierre Chevallier, entrepreneur individuel. Sin afiliación con Google ni respaldo de Google. Google Calendar™ y Hojas de cálculo de Google™ son marcas comerciales de Google LLC.</p></div><nav aria-label="Pie de página"><a href="/es/guides/">Guías</a><a href="/es/support/">Soporte</a><a href="/es/privacy/">Privacidad</a><a href="/es/terms/">Condiciones</a><a href="/es/google-calendar-hours-calculator/">Calculadora de horas</a><a href="/es/billable-hours-calculator/">Horas a decimales</a><a href="/es/google-calendar-to-excel/">Conversor a Excel</a></nav><nav class="langs" aria-label="Idioma"><a href="/guides/bill-clients-from-google-calendar/" hreflang="en" lang="en">English</a><a href="/de/guides/bill-clients-from-google-calendar/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/bill-clients-from-google-calendar/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/bill-clients-from-google-calendar/" hreflang="es" lang="es" aria-current="page">Español</a><a href="/pt-br/guides/bill-clients-from-google-calendar/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/bill-clients-from-google-calendar/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/bill-clients-from-google-calendar/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

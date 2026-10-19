@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exporter Google Agenda vers Google Sheets automatiquement</title>
+<meta name="description" content="Exporter vos événements Google Agenda vers Google Sheets : export .ics, Apps Script et synchronisation automatique toutes les heures, comparés honnêtement.">
+<link rel="canonical" href="https://calendartimesheet.com/fr/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Exporter Google Agenda vers Google Sheets automatiquement">
+<meta property="og:description" content="Exporter vos événements Google Agenda vers Google Sheets : export .ics, Apps Script et synchronisation automatique toutes les heures, comparés honnêtement.">
+<meta property="og:url" content="https://calendartimesheet.com/fr/guides/export-google-calendar-to-google-sheets/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/fr/"},{"@type":"ListItem","position":2,"name":"Exporter Google Agenda vers Google Sheets automatiquement","item":"https://calendartimesheet.com/fr/guides/export-google-calendar-to-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Exporter Google Agenda vers Google Sheets automatiquement","description":"Exporter vos événements Google Agenda vers Google Sheets : export .ics, Apps Script et synchronisation automatique toutes les heures, comparés honnêtement.","inLanguage":"fr","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/fr/guides/export-google-calendar-to-google-sheets/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top"><div class="wrap"><a class="brand" href="/fr/" aria-label="Calendar Timesheet, accueil"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/fr/#how">Fonctionnement</a><a href="/fr/#features">Fonctionnalités</a><a href="/fr/#pricing">Tarifs</a><a href="/fr/guides/">Guides</a><details class="lang"><summary aria-label="Langue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Français</span><span class="lang-short">FR</span></summary><ul><li><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr" aria-current="page">Français</a></li><li><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/fr/get-the-sheet/">Feuille gratuite</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Exporter Google Agenda vers Google Sheets automatiquement</h1>
+<p class="meta">Mis à jour le 19 octobre 2026. Environ 6 minutes de lecture.</p>
+
+<p>Google Agenda n’a pas de bouton « exporter vers Sheets ». Il propose un export de vos agendas sous forme de fichiers <code>.ics</code>, le format standard des agendas, conçu pour transférer des événements vers une autre application d’agenda. Pour mettre les événements dans une feuille de calcul, et les y tenir à jour, il faut l’une des approches ci-dessous. Si vous n’avez besoin que d’un total d’heures, la <a href="/fr/google-calendar-hours-calculator/">calculatrice d’heures Google Agenda</a>, gratuite, lit directement l’export de Google, sans aucune feuille de calcul.</p>
+
+<h2>Option 1 : l’export intégré de Google Agenda</h2>
+<p>Dans Google Agenda, ouvrez <b>Paramètres</b>, puis <b>Importer et exporter</b>, puis <b>Exporter</b>. Vous téléchargez un fichier zip contenant un fichier <code>.ics</code> par agenda (la <a href="https://support.google.com/calendar/answer/37111?hl=fr">page d’aide</a> de Google le décrit).</p>
+<ul>
+  <li><b>Points forts</b> : complet, officiel, fonctionne avec tous les comptes.</li>
+  <li><b>Points faibles</b> : Google Sheets ne sait pas ouvrir les fichiers <code>.ics</code>, il faut donc un convertisseur. Beaucoup écrivent une ligne par série d’événements, avec la règle de répétition au lieu des dates réelles ; le <a href="/fr/google-calendar-to-excel/">convertisseur Google Agenda vers Excel</a> gratuit de ce site écrit une ligne par occurrence, en Excel ou en CSV, et son fichier <code>.xlsx</code> s’importe dans Google Sheets (Fichier, Importer). Cela reste un instantané : la semaine suivante, il faut recommencer.</li>
+</ul>
+<p>Si le fichier doit finir dans Excel ou en CSV, consultez le guide <a href="/fr/guides/export-google-calendar-to-excel/">Exporter Google Agenda en Excel ou CSV, avec les durées</a>.</p>
+
+<h2>Option 2 : un script avec un déclencheur horaire</h2>
+<p>Apps Script, intégré à Google Sheets, peut lire votre agenda et écrire des lignes, et un déclencheur basé sur le temps peut le lancer toutes les heures. Partez du court script du guide <a href="/fr/guides/google-calendar-timesheet/">Transformer Google Agenda en feuille de temps</a>, puis, dans l’éditeur Apps Script, ouvrez <b>Déclencheurs</b>, cliquez sur <b>Ajouter un déclencheur</b>, choisissez votre fonction, une source d’événement basée sur le temps et un intervalle d’une heure.</p>
+<ul>
+  <li><b>Points forts</b> : gratuit, exactement ce que vous voulez, reste dans votre compte.</li>
+  <li><b>Points faibles</b> : c’est à vous de l’entretenir. Le relancer réécrit la feuille, si bien que les notes ajoutées à côté des lignes se retrouvent décalées. Lire plusieurs agendas, ignorer les invitations refusées, couper les rendez-vous qui passent minuit et éviter les doublons : tout cela reste à écrire vous-même.</li>
+</ul>
+
+<h2>Option 3 : une applet IFTTT</h2>
+<p>IFTTT relie deux services sans code. Son applet <a href="https://ifttt.com/applets/AvwRrWna-add-new-google-calendar-events-to-google-sheets">« Add new Google Calendar events to Google Sheets »</a> se déclenche chaque fois qu’un nouvel événement est ajouté à votre agenda et ajoute une ligne en bas de la première feuille d’une feuille de calcul de votre choix. La page de l’applet indique deux limites : avec l’offre gratuite d’IFTTT, l’agenda est vérifié toutes les heures (toutes les 5 minutes avec les offres payantes), et une nouvelle feuille de calcul est créée au-delà de 2&nbsp;000 lignes.</p>
+<ul>
+  <li><b>Points forts</b> : gratuit, sans code, fonctionne seul une fois connecté.</li>
+  <li><b>Points faibles</b> : l’applet ne réagit qu’aux nouveaux événements. Les événements qui existent déjà ne sont pas copiés, et l’action ne fait qu’ajouter des lignes : un rendez-vous que vous déplacez ou annulez plus tard garde la ligne écrite à sa création. Les durées et les totaux par client sont à ajouter vous-même avec des formules. Les connecteurs comme Zapier ou Make fonctionnent de la même façon ; vérifiez ce que comprennent leurs offres gratuites.</li>
+</ul>
+
+<h2>Option 4 : un module complémentaire pour Google Sheets</h2>
+<p>Les modules complémentaires s’installent dans Google Sheets en deux clics et font la lecture pour vous. Ils se répartissent en deux familles :</p>
+<ul>
+  <li><b>Les exportateurs bruts</b> copient les événements dans une feuille, souvent à intervalles réguliers. Ils conviennent à ceux qui veulent les données et construiront leurs propres rapports.</li>
+  <li><b>Les modules de feuille de temps</b> vont plus loin : ils transforment les événements en heures par client ou par projet, avec des totaux. <a href="/fr/">Calendar Timesheet</a> en fait partie, et c’est le nôtre.</li>
+</ul>
+<p>Avant d’installer un module complémentaire, regardez ce que Google vous demande d’autoriser. Un outil qui ne fait que lire doit demander à <i>consulter</i> vos agendas, pas à les modifier, et à n’accéder qu’à la feuille de calcul dans laquelle vous l’utilisez.</p>
+
+<h2>Côte à côte</h2>
+<table>
+  <thead><tr><th scope="col"></th><th scope="col">Export .ics</th><th scope="col">Script avec déclencheur</th><th scope="col">Calendar Timesheet</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">S’ouvre dans Sheets</th><td>Non, il faut un convertisseur</td><td>Oui</td><td>Oui</td></tr>
+    <tr><th scope="row">Reste à jour</th><td>Non</td><td>Oui, toutes les heures</td><td>Oui, toutes les heures</td></tr>
+    <tr><th scope="row">Plusieurs agendas</th><td>Un fichier par agenda</td><td>Si vous le codez</td><td>Oui</td></tr>
+    <tr><th scope="row">Occurrences réelles des événements périodiques</th><td>Non, règles de la série</td><td>Oui</td><td>Oui</td></tr>
+    <tr><th scope="row">Garde vos notes à côté des lignes</th><td>Non</td><td>Pas par défaut</td><td>Oui</td></tr>
+    <tr><th scope="row">Totaux par client, montants</th><td>Non</td><td>Si vous le codez</td><td>Oui (Pro)</td></tr>
+    <tr><th scope="row">Coût</th><td>Gratuit</td><td>Gratuit, plus votre temps</td><td>Export gratuit ; Pro à partir de 49&nbsp;$ par an</td></tr>
+  </tbody>
+</table>
+
+<h2>L’export gratuit de Calendar Timesheet</h2>
+<p>L’export de Calendar Timesheet est gratuit, sans limite de durée : choisissez n’importe quelle période jusqu’à un an et les agendas à lire, et il écrit une ligne par événement (date, début, fin, durée, titre, agenda, couleur) dans une feuille <b>Export</b>, avec les totaux par couleur et par agenda. Il ne modifie jamais votre agenda et n’envoie rien hors de votre compte Google.</p>
+
+<div class="cta-end">
+  <p><a class="btn primary" href="/fr/get-the-sheet/">Obtenir la feuille gratuite</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Autres guides</h2><ul class="guide-list"><li><a href="/fr/guides/google-calendar-timesheet/">Transformer Google Agenda en feuille de temps</a><p>Trois façons de transformer Google Agenda en feuille de temps : à la main, avec une formule dans Google Sheets ou automatiquement. Pas à pas, avec les pièges.</p></li><li><a href="/fr/guides/count-hours-in-google-calendar/">Compter ses heures Google Agenda : client, couleur, semaine</a><p>Google Agenda n’affiche aucun total. Répartissez vos heures par client, couleur ou semaine grâce aux couleurs, aux agendas et aux mots du titre.</p></li><li><a href="/fr/guides/export-google-calendar-to-excel/">Exporter Google Agenda en Excel ou CSV, avec les durées</a><p>Google Agenda n’exporte ni en Excel ni en CSV. Passez par Google Sheets, ajoutez des durées qui s’additionnent, puis téléchargez un fichier .xlsx ou .csv.</p></li><li><a href="/fr/guides/bill-clients-from-google-calendar/">Facturer depuis Google Agenda : taux, arrondis, minimums</a><p>Comment les indépendants facturent depuis leur agenda : taux horaire par client, règles d’arrondi, minimums facturés, forfaits et relevés de fin de mois.</p></li><li><a href="/fr/guides/google-calendar-time-tracking/">Suivi du temps avec Google Agenda : heures sans chronomètre</a><p>Suivez vos heures facturables dans Google Agenda sans chronomètre : planifier, corriger, étiqueter, compter. Ses limites et 5 erreurs courantes à éviter.</p></li><li><a href="/fr/guides/google-sheets-timesheet-template/">Modèle de feuille de temps Google Sheets pour indépendants</a><p>Feuille de temps d’indépendant dans Google Sheets : colonnes, formules de durée, arrondi au quart d’heure, minimums, montants et totaux mensuels par client.</p></li><li><a href="/fr/guides/google-calendar-time-insights-personal-account/">Utilisation du temps Google Agenda : où et pourquoi absente</a><p>L’utilisation du temps de Google Agenda est réservée à certaines éditions Workspace. Où la trouver, pourquoi elle manque, comment compter vos heures sans elle.</p></li><li><a href="/fr/guides/calculate-hours-worked-from-google-calendar/">Google Agenda peut-il calculer les heures travaillées ?</a><p>Google Agenda ne totalise pas les heures, et ses heures de travail ne sont qu’une disponibilité. Votre total sur tout appareil, avec les formules Google Sheets.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/fr/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Conçu en France par Pierre Chevallier, entrepreneur individuel. Ni affilié à Google, ni approuvé par Google. Google Agenda™ et Google Sheets™ sont des marques de Google LLC.</p></div><nav aria-label="Pied de page"><a href="/fr/guides/">Guides</a><a href="/fr/support/">Assistance</a><a href="/fr/privacy/">Confidentialité</a><a href="/fr/terms/">Conditions</a><a href="/fr/google-calendar-hours-calculator/">Calculatrice d’heures</a><a href="/fr/billable-hours-calculator/">Heures en décimal</a><a href="/fr/google-calendar-to-excel/">Export vers Excel</a></nav><nav class="langs" aria-label="Langue"><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr" aria-current="page">Français</a><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

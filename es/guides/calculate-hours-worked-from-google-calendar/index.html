@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcular horas trabajadas con Google Calendar</title>
+<meta name="description" content="Google Calendar no suma horas y el horario laboral solo indica disponibilidad. Cómo ver tu total de horas trabajadas en cualquier dispositivo, con las fórmulas.">
+<link rel="canonical" href="https://calendartimesheet.com/es/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/calculate-hours-worked-from-google-calendar/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Calcular horas trabajadas con Google Calendar">
+<meta property="og:description" content="Google Calendar no suma horas y el horario laboral solo indica disponibilidad. Cómo ver tu total de horas trabajadas en cualquier dispositivo, con las fórmulas.">
+<meta property="og:url" content="https://calendartimesheet.com/es/guides/calculate-hours-worked-from-google-calendar/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/es/"},{"@type":"ListItem","position":2,"name":"Calcular horas trabajadas con Google Calendar","item":"https://calendartimesheet.com/es/guides/calculate-hours-worked-from-google-calendar/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Calcular horas trabajadas con Google Calendar","description":"Google Calendar no suma horas y el horario laboral solo indica disponibilidad. Cómo ver tu total de horas trabajadas en cualquier dispositivo, con las fórmulas.","inLanguage":"es","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/es/guides/calculate-hours-worked-from-google-calendar/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top"><div class="wrap"><a class="brand" href="/es/" aria-label="Calendar Timesheet, inicio"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/es/#how">Cómo funciona</a><a href="/es/#features">Funciones</a><a href="/es/#pricing">Precios</a><a href="/es/guides/">Guías</a><details class="lang"><summary aria-label="Idioma"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Español</span><span class="lang-short">ES</span></summary><ul><li><a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/calculate-hours-worked-from-google-calendar/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/calculate-hours-worked-from-google-calendar/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/calculate-hours-worked-from-google-calendar/" hreflang="es" lang="es" aria-current="page">Español</a></li><li><a href="/pt-br/guides/calculate-hours-worked-from-google-calendar/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/calculate-hours-worked-from-google-calendar/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/calculate-hours-worked-from-google-calendar/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/es/get-the-sheet/">Obtén la hoja gratis</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>¿Puede Google Calendar calcular las horas trabajadas?</h1>
+<p class="meta">Actualizado el 19 de octubre de 2026. Lectura de unos 6 minutos.</p>
+
+<p>No. Google Calendar coloca los eventos en una cuadrícula, pero nunca suma sus duraciones, y al pie de una semana no hay ningún total. El ajuste llamado Horario laboral tampoco cuenta nada. Para saber cuántas horas has trabajado, hay que sumar las duraciones en otro sitio: de cabeza, en Hojas de cálculo de Google o con una herramienta que lea el calendario por ti. Esta guía trata del total; para repartirlo entre clientes, colores o semanas, consulta <a href="/es/guides/count-hours-in-google-calendar/">Contar horas en Google Calendar por cliente, color o semana</a>.</p>
+
+<h2>El horario laboral es disponibilidad, no un recuento</h2>
+<p>En una cuenta de trabajo o de centro educativo, el <a href="https://support.google.com/calendar/answer/7638168?hl=es">horario laboral</a> indica a los demás cuándo estás disponible, para que programen reuniones a horas razonables. Google lo describe como una programación semanal periódica: de lunes a viernes, de 9:00 a 17:00, por ejemplo. No dice nada de lo que hiciste realmente. Un día con tres horas de trabajo para clientes y un día con diez muestran el mismo horario laboral.</p>
+
+<h2>Cómo ver el total de horas en Google Calendar en el ordenador, el iPhone o Android</h2>
+<ul>
+  <li><b>En el ordenador</b>: ninguna vista del calendario muestra un total. En una cuenta de trabajo o de centro educativo, <b>Estadísticas de tiempo</b> muestra el tiempo que pasas en reuniones, pero la <a href="https://support.google.com/calendar/answer/10738043?hl=es">página de ayuda</a> de Google dice que solo está disponible en un ordenador y solo para tu calendario principal. Las cuentas personales no lo tienen: consulta <a href="/es/guides/google-calendar-time-insights-personal-account/">Estadísticas de tiempo de Google Calendar: por qué faltan</a>.</li>
+  <li><b>En iPhone y Android</b>: la aplicación Google Calendar no muestra ningún total ni Estadísticas de tiempo. La forma de consultar tus horas en el móvil es una hoja de cálculo que ya contenga el total: ábrela en la aplicación Hojas de cálculo de Google.</li>
+</ul>
+<p>Para tener un total en un minuto, sin hoja de cálculo: exporta tu calendario en un ordenador y suelta el archivo en la <a href="/es/google-calendar-hours-calculator/">calculadora de horas de Google Calendar</a>, gratuita. Suma cualquier periodo en tu navegador, por calendario, palabra clave y semana.</p>
+
+<h2>Método 1: leer las horas en el calendario</h2>
+<p>Con unos pocos eventos, basta la vista Semana: suma los bloques uno a uno y apunta el total. A partir de diez eventos, o en cuanto necesitas un total por cliente, se vuelve lento y es fácil equivocarse.</p>
+
+<h2>Método 2: fórmulas de Hojas de cálculo de Google</h2>
+<p>Pon un evento por fila, con la fecha en la columna A, la hora de inicio en la columna B y la de fin en la columna C. Hojas de cálculo de Google guarda una hora como una fracción de día, lo que explica las fórmulas siguientes, escritas como las muestra Hojas de cálculo de Google en español.</p>
+<table>
+  <thead><tr><th scope="col">Quieres</th><th scope="col">Fórmula en la columna D</th></tr></thead>
+  <tbody>
+    <tr><td><b>Horas en número decimal</b> (1,5 para 1 h 30)</td><td><code>=(C2-B2)*24</code>, con la columna D en formato de número</td></tr>
+    <tr><td><b>Un evento que termina después de medianoche</b></td><td><code>=RESIDUO(C2-B2;1)*24</code></td></tr>
+    <tr><td><b>Redondeado al alza al cuarto de hora siguiente</b></td><td><code>=MULTIPLO.SUPERIOR((C2-B2)*24;0,25)</code></td></tr>
+    <tr><td><b>El total de la columna</b></td><td><code>=SUMA(D2:D200)</code></td></tr>
+  </tbody>
+</table>
+<p>Si prefieres conservar las duraciones como horas (1:30 en lugar de 1,5), usa <code>=C2-B2</code> y da al total el formato de número personalizado <code>[h]:mm</code> (Formato, Número, Formato de número personalizado). Sin los corchetes, un total de 26 horas se muestra como 2:00, porque la visualización vuelve a empezar cada 24 horas.</p>
+<p>Las fórmulas necesitan antes los eventos en la hoja. La guía <a href="/es/guides/google-calendar-timesheet/">Cómo convertir Google Calendar en un registro de horas</a> tiene un script corto que los copia para cualquier periodo, y la guía <a href="/es/guides/google-sheets-timesheet-template/">Plantilla de registro de horas en Hojas de cálculo de Google</a> añade mínimos, importes y totales mensuales por cliente.</p>
+
+<h2>Un total mensual con una sola fórmula</h2>
+<p>Con las fechas en la columna A y las horas decimales en la columna D, esta fórmula suma todas las horas de octubre de 2026, estén donde estén las filas en la lista:</p>
+<p><code>=SUMAR.SI.CONJUNTO(D:D; A:A; "&gt;="&amp;FECHA(2026;10;1); A:A; "&lt;"&amp;FECHA(2026;11;1))</code></p>
+<p>Cambia las dos fechas para otro mes o para una semana. La segunda fecha es el primer día después del periodo, así que el último día cuenta entero, hasta medianoche.</p>
+
+<h2>Método 3: deja que una herramienta lea el calendario</h2>
+<p><a href="/es/">Calendar Timesheet</a> hace la copia y los cálculos en tu propia hoja de cálculo de Google: una fila por evento con fecha, inicio, fin y horas, y luego totales por cliente, asignados por color, calendario, una palabra del título o el dominio de correo de los invitados. Con el piloto automático, la hoja se actualiza cada hora y cierra cada mes por sí sola.</p>
+
+<h2>Cuatro cosas que falsean el total</h2>
+<ul>
+  <li><b>Los eventos de todo el día.</b> Un festivo o una fecha límite marcados como de todo el día no son 24 horas de trabajo. Déjalos fuera.</li>
+  <li><b>Las invitaciones rechazadas.</b> Siguen apareciendo en muchos calendarios. Cuenta solo aquello a lo que asististe.</li>
+  <li><b>La misma reunión en dos calendarios.</b> Los eventos copiados o compartidos pueden aparecer dos veces. Cuenta cada uno una sola vez.</li>
+  <li><b>Lo previsto en lugar de lo que pasó.</b> Si una llamada se alargó 20 minutos, mueve el final del evento antes de contar.</li>
+</ul>
+
+<div class="cta-end">
+  <p><b>Deja de sumar a mano.</b> La exportación gratuita de Calendar Timesheet te da las horas de cualquier periodo, por color y por calendario; Pro añade clientes, tarifas y piloto automático.</p>
+  <p><a class="btn primary" href="/es/get-the-sheet/">Obtén la hoja gratis</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Más guías</h2><ul class="guide-list"><li><a href="/es/guides/google-calendar-timesheet/">Cómo convertir Google Calendar en un registro de horas</a><p>Tres formas de convertir Google Calendar en un registro de horas: a mano, con un script en Hojas de cálculo de Google o automáticamente. Con sus trampas.</p></li><li><a href="/es/guides/count-hours-in-google-calendar/">Contar horas en Google Calendar por cliente, color o semana</a><p>Google Calendar no da totales. Cómo repartir tus horas por cliente, color, semana o mes con colores, calendarios y palabras clave, gratis o automáticamente.</p></li><li><a href="/es/guides/export-google-calendar-to-google-sheets/">Exportar Google Calendar a Hojas de cálculo de Google</a><p>Exporta los eventos de Google Calendar a Hojas de cálculo de Google: la exportación .ics, Apps Script y una sincronización automática cada hora, comparados.</p></li><li><a href="/es/guides/export-google-calendar-to-excel/">Exportar Google Calendar a Excel o CSV, con duraciones</a><p>Google Calendar no exporta a Excel ni a CSV. Lleva tus eventos a Hojas de cálculo de Google, añade duraciones que se puedan sumar y descarga un .xlsx o .csv.</p></li><li><a href="/es/guides/bill-clients-from-google-calendar/">Facturar por horas desde Google Calendar: tarifas y redondeo</a><p>Cómo facturan los freelancers desde su calendario: tarifas por hora para cada cliente, reglas de redondeo, mínimos, bolsas de horas e informes de fin de mes.</p></li><li><a href="/es/guides/google-calendar-time-tracking/">Control de horas con Google Calendar, sin cronómetro</a><p>Controla las horas facturables con Google Calendar, sin cronómetro: planifica, corrige, etiqueta y cuenta. Lo que el calendario no hace y 5 errores habituales.</p></li><li><a href="/es/guides/google-sheets-timesheet-template/">Plantilla de registro de horas en Hojas de cálculo de Google</a><p>Registro de horas de freelancer en Hojas de cálculo de Google: columnas, fórmulas, redondeo a 15 minutos, mínimos, importes y totales mensuales por cliente.</p></li><li><a href="/es/guides/google-calendar-time-insights-personal-account/">Estadísticas de tiempo de Google Calendar: por qué faltan</a><p>Estadísticas de tiempo solo está en algunas ediciones de Workspace. Dónde está, por qué falta, qué cuenta y cómo ver gratis tus horas con cualquier cuenta.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/es/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Hecho en Francia por Pierre Chevallier, entrepreneur individuel. Sin afiliación con Google ni respaldo de Google. Google Calendar™ y Hojas de cálculo de Google™ son marcas comerciales de Google LLC.</p></div><nav aria-label="Pie de página"><a href="/es/guides/">Guías</a><a href="/es/support/">Soporte</a><a href="/es/privacy/">Privacidad</a><a href="/es/terms/">Condiciones</a><a href="/es/google-calendar-hours-calculator/">Calculadora de horas</a><a href="/es/billable-hours-calculator/">Horas a decimales</a><a href="/es/google-calendar-to-excel/">Conversor a Excel</a></nav><nav class="langs" aria-label="Idioma"><a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en" lang="en">English</a><a href="/de/guides/calculate-hours-worked-from-google-calendar/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/calculate-hours-worked-from-google-calendar/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/calculate-hours-worked-from-google-calendar/" hreflang="es" lang="es" aria-current="page">Español</a><a href="/pt-br/guides/calculate-hours-worked-from-google-calendar/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/calculate-hours-worked-from-google-calendar/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/calculate-hours-worked-from-google-calendar/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

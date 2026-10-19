@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urenregistratie-template in Google Spreadsheets voor zzp'ers</title>
+<meta name="description" content="Een urenstaat voor zzp'ers in Google Spreadsheets: de kolommen, de formules voor de duur, afronden op 15 minuten, minima, bedragen en maandtotalen per klant.">
+<link rel="canonical" href="https://calendartimesheet.com/nl/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/google-sheets-timesheet-template/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Urenregistratie-template in Google Spreadsheets voor zzp'ers">
+<meta property="og:description" content="Een urenstaat voor zzp'ers in Google Spreadsheets: de kolommen, de formules voor de duur, afronden op 15 minuten, minima, bedragen en maandtotalen per klant.">
+<meta property="og:url" content="https://calendartimesheet.com/nl/guides/google-sheets-timesheet-template/">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/nl/"},{"@type":"ListItem","position":2,"name":"Urenregistratie-template in Google Spreadsheets voor zzp'ers","item":"https://calendartimesheet.com/nl/guides/google-sheets-timesheet-template/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Urenregistratie-template in Google Spreadsheets voor zzp'ers","description":"Een urenstaat voor zzp'ers in Google Spreadsheets: de kolommen, de formules voor de duur, afronden op 15 minuten, minima, bedragen en maandtotalen per klant.","inLanguage":"nl","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/nl/guides/google-sheets-timesheet-template/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top"><div class="wrap"><a class="brand" href="/nl/" aria-label="Calendar Timesheet, startpagina"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Hoofdmenu"><a href="/nl/#how">Zo werkt het</a><a href="/nl/#features">Functies</a><a href="/nl/#pricing">Prijzen</a><a href="/nl/guides/">Handleidingen</a><details class="lang"><summary aria-label="Taal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Nederlands</span><span class="lang-short">NL</span></summary><ul><li><a href="/guides/google-sheets-timesheet-template/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/google-sheets-timesheet-template/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/google-sheets-timesheet-template/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/google-sheets-timesheet-template/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/google-sheets-timesheet-template/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/google-sheets-timesheet-template/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/google-sheets-timesheet-template/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></li></ul></details><a class="btn primary sm" href="/nl/get-the-sheet/">Gratis spreadsheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Urenregistratie-template in Google Spreadsheets voor zzp'ers, met formules</h1>
+<p class="meta">Bijgewerkt op 19 oktober 2026. Ongeveer 7 minuten leestijd.</p>
+
+<p>Een urenstaat om te factureren heeft meer nodig dan uren: de klant, het tarief, de afronding die je hebt afgesproken en een totaal per klant per maand. Hieronder staan de indeling die voor de meeste freelancers en consultants werkt, de exacte formules om in Google Spreadsheets te typen en de valkuilen die totalen kapotmaken. Aan het einde: een kant-en-klare spreadsheet die zichzelf vult vanuit Google Agenda.</p>
+
+<h2>De kolommen die een urenstaat voor facturatie nodig heeft</h2>
+<table>
+  <thead><tr><th scope="col">Kolom</th><th scope="col">Inhoud</th><th scope="col">Notatie</th></tr></thead>
+  <tbody>
+    <tr><td>A</td><td>Datum</td><td>Datum</td></tr>
+    <tr><td>B</td><td>Begin</td><td>Tijd</td></tr>
+    <tr><td>C</td><td>Einde</td><td>Tijd</td></tr>
+    <tr><td>D</td><td>Duur</td><td>Duur, <code>[h]:mm</code></td></tr>
+    <tr><td>E</td><td>Gefactureerde duur, na afronding</td><td>Duur, <code>[h]:mm</code></td></tr>
+    <tr><td>F</td><td>Klant</td><td>Tekst</td></tr>
+    <tr><td>G</td><td>Uurtarief</td><td>Valuta</td></tr>
+    <tr><td>H</td><td>Bedrag</td><td>Valuta</td></tr>
+    <tr><td>I</td><td>Notities</td><td>Tekst</td></tr>
+  </tbody>
+</table>
+<p>Houd één regel per afspraak of werkblok aan. Totalen komen in een apart blad, zodat sorteren en filteren van de regels ze nooit kapotmaakt.</p>
+
+<h2>De formules, regel voor regel</h2>
+<p>Deze komen in rij 2 en kun je naar beneden doortrekken. Google Spreadsheets slaat tijden op als delen van een dag; daarom vermenigvuldigen sommige formules met 24.</p>
+<ul>
+  <li><b>Duur</b> in D2: <code>=REST(C2-B2; 1)</code>. Met <code>REST</code> blijft het resultaat juist als een sessie over middernacht loopt.</li>
+  <li><b>Gefactureerde duur, omhoog afgerond op 15 minuten</b>, in E2: <code>=AFRONDEN.BOVEN(D2; TIJD(0; 15; 0))</code>. Gebruik <code>TIJD(0; 6; 0)</code> voor tienden van een uur.</li>
+  <li><b>Met een minimum van 30 minuten</b> wordt E2: <code>=MAX(AFRONDEN.BOVEN(D2; TIJD(0; 15; 0)); TIJD(0; 30; 0))</code>.</li>
+  <li><b>Bedrag</b> in H2: <code>=E2*24*G2</code>. Zonder de <code>*24</code> zou een afspraak van twee uur tegen 80 maar 6,67 opleveren.</li>
+  <li><b>Uren als decimaal getal</b>, voor facturen die 2,25 vragen in plaats van 2:15: <code>=E2*24</code>.</li>
+</ul>
+<p>De formules staan hier zoals Google Spreadsheets ze in het Nederlands toont, met een puntkomma tussen de argumenten. Gebruikt je spreadsheet Engelse functienamen, dan schrijf je bijvoorbeeld <code>CEILING(D2; TIME(0; 15; 0))</code>.</p>
+
+<h2>Totalen per klant en per maand</h2>
+<p>In een apart blad, één regel per klant:</p>
+<ul>
+  <li><b>Uren voor Acme in oktober 2026</b>: <code>=SOMMEN.ALS(Regels!E:E; Regels!F:F; "Acme"; Regels!A:A; "&gt;="&amp;DATUM(2026;10;1); Regels!A:A; "&lt;"&amp;DATUM(2026;11;1))</code>, met de notatie <code>[h]:mm</code>.</li>
+  <li><b>Bedrag voor Acme in oktober</b>: dezelfde formule op kolom H.</li>
+</ul>
+<p>Schrijf de grenzen van de maand als <code>&gt;=</code> de eerste dag en <code>&lt;</code> de eerste dag van de volgende maand. Zo valt de laatste dag nooit weg, hoe laat de laatste afspraak ook is.</p>
+
+<h2>Vier valkuilen die een urenstaat kapotmaken</h2>
+<ol>
+  <li><b>Totalen getoond modulo 24 uur.</b> Met de notatie <code>h:mm</code> wordt 26 uur getoond als 2:00. Gebruik voor duur altijd <code>[h]:mm</code>.</li>
+  <li><b>Tijden als tekst getypt.</b> Een tijd die je uit een e-mail plakt, kan tekst zijn: hij staat links in de cel en wordt door sommen genegeerd. Typ hem opnieuw, of zet hem in <code>=TIJDWAARDE()</code>.</li>
+  <li><b>Het totaal afronden in plaats van elke regel.</b> Met afronding omhoog op 15 minuten leveren 4 afspraken van 20 minuten 2:00 op als je elke regel afrondt, of 1:30 als je het totaal afrondt. Zet in je offerte welke van de twee, en pas het elke maand op dezelfde manier toe.</li>
+  <li><b>De vorige maand wijzigen na het factureren.</b> Kopieer de totalen van elke maand naar een afgesloten blad zodra je hebt gefactureerd, zodat een late wijziging in een regel een verstuurde factuur niet kan veranderen.</li>
+</ol>
+
+<h2>De template vullen vanuit Google Agenda</h2>
+<p>Elke afspraak twee keer typen, één keer in de agenda en één keer in de spreadsheet, is waar de meeste urenstaten misgaan. Staan je afspraken in Google Agenda, exporteer ze dan: de handleiding <a href="/nl/guides/export-google-calendar-to-google-sheets/">Google Agenda automatisch exporteren naar Spreadsheets</a> vergelijkt de ingebouwde export, een klein script en een add-on. Om elke regel aan zijn klant te koppelen, legt de handleiding <a href="/nl/guides/count-hours-in-google-calendar/">Uren tellen in Google Agenda: per klant, kleur of week</a> kleuren, agenda's, woorden in de titel en domeinen van gasten uit.</p>
+
+<div class="cta-end">
+  <h2>Een template die zichzelf vult</h2>
+  <p>De gratis spreadsheet van Calendar Timesheet doet dit werk voor je. De gratis export schrijft elke periode van je agenda in een blad, één regel per afspraak, met totalen per kleur en per agenda. De proefperiode van Pro voegt klanten, tarieven, afronding en minimums toe, vult deze kolommen elk uur en sluit elke maand af met één maandoverzicht per klant.</p>
+  <p><a class="btn primary" href="/nl/get-the-sheet/">Gratis spreadsheet ophalen</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Meer handleidingen</h2><ul class="guide-list"><li><a href="/nl/guides/google-calendar-timesheet/">Zo maak je van Google Agenda een urenstaat</a><p>Drie manieren om van Google Agenda een urenstaat te maken: met de hand, met een formule in Google Spreadsheets of automatisch. Stap voor stap, met valkuilen.</p></li><li><a href="/nl/guides/count-hours-in-google-calendar/">Uren tellen in Google Agenda: per klant, kleur of week</a><p>Google Agenda toont geen totalen. Zo verdeel je je uren per klant, kleur, week of maand met kleuren, agenda's en trefwoorden, gratis of automatisch.</p></li><li><a href="/nl/guides/export-google-calendar-to-google-sheets/">Google Agenda automatisch exporteren naar Spreadsheets</a><p>Afspraken uit Google Agenda exporteren naar Google Spreadsheets: de .ics-export, Apps Script en een automatische synchronisatie per uur, eerlijk vergeleken.</p></li><li><a href="/nl/guides/export-google-calendar-to-excel/">Google Agenda exporteren naar Excel of CSV, met de duur</a><p>Google Agenda heeft geen export naar Excel of CSV. Zet je afspraken in Google Spreadsheets, voeg een duur toe die optelt en download een .xlsx- of .csv-bestand.</p></li><li><a href="/nl/guides/bill-clients-from-google-calendar/">Uren factureren uit Google Agenda: tarief, afronding, minima</a><p>Zo factureren zzp'ers en freelancers vanuit hun agenda: uurtarieven per klant, afrondingsregels, een minimum per afspraak, urenbundels en maandoverzichten.</p></li><li><a href="/nl/guides/google-calendar-time-tracking/">Urenregistratie met Google Agenda: uren zonder timer</a><p>Houd declarabele uren bij met Google Agenda in plaats van een timer: plannen, corrigeren, toewijzen, tellen. Wat de agenda niet kan, en 5 veelgemaakte fouten.</p></li><li><a href="/nl/guides/google-calendar-time-insights-personal-account/">Geen Tijdsinzichten in Google Agenda? Waar en waarom</a><p>Tijdsinzichten zit alleen in sommige Google Workspace-versies. Waar het staat, waarom het ontbreekt, wat het telt en hoe je je uren gratis ziet op elk account.</p></li><li><a href="/nl/guides/calculate-hours-worked-from-google-calendar/">Kan Google Agenda gewerkte uren berekenen?</a><p>Google Agenda telt geen uren op en Werktijden is alleen beschikbaarheid. Zo zie je je totaal op elk apparaat, met de formules voor Google Spreadsheets.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/nl/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Gemaakt in Frankrijk door Pierre Chevallier, entrepreneur individuel. Niet gelieerd aan of goedgekeurd door Google. Google Agenda™ en Google Spreadsheets™ zijn handelsmerken van Google LLC.</p></div><nav aria-label="Voettekst"><a href="/nl/guides/">Handleidingen</a><a href="/nl/support/">Support</a><a href="/nl/privacy/">Privacy</a><a href="/nl/terms/">Voorwaarden</a><a href="/nl/google-calendar-hours-calculator/">Urencalculator</a><a href="/nl/billable-hours-calculator/">Uren naar decimalen</a><a href="/nl/google-calendar-to-excel/">Excel-converter</a></nav><nav class="langs" aria-label="Taal"><a href="/guides/google-sheets-timesheet-template/" hreflang="en" lang="en">English</a><a href="/de/guides/google-sheets-timesheet-template/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/google-sheets-timesheet-template/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/google-sheets-timesheet-template/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/google-sheets-timesheet-template/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/google-sheets-timesheet-template/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/google-sheets-timesheet-template/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></nav></div></footer>
+</body>
+</html>

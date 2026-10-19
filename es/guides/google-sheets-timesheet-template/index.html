@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plantilla de registro de horas en Hojas de cálculo de Google</title>
+<meta name="description" content="Registro de horas de freelancer en Hojas de cálculo de Google: columnas, fórmulas, redondeo a 15 minutos, mínimos, importes y totales mensuales por cliente.">
+<link rel="canonical" href="https://calendartimesheet.com/es/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/google-sheets-timesheet-template/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/google-sheets-timesheet-template/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Plantilla de registro de horas en Hojas de cálculo de Google">
+<meta property="og:description" content="Registro de horas de freelancer en Hojas de cálculo de Google: columnas, fórmulas, redondeo a 15 minutos, mínimos, importes y totales mensuales por cliente.">
+<meta property="og:url" content="https://calendartimesheet.com/es/guides/google-sheets-timesheet-template/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/es/"},{"@type":"ListItem","position":2,"name":"Plantilla de registro de horas en Hojas de cálculo de Google","item":"https://calendartimesheet.com/es/guides/google-sheets-timesheet-template/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Plantilla de registro de horas en Hojas de cálculo de Google","description":"Registro de horas de freelancer en Hojas de cálculo de Google: columnas, fórmulas, redondeo a 15 minutos, mínimos, importes y totales mensuales por cliente.","inLanguage":"es","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/es/guides/google-sheets-timesheet-template/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top"><div class="wrap"><a class="brand" href="/es/" aria-label="Calendar Timesheet, inicio"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/es/#how">Cómo funciona</a><a href="/es/#features">Funciones</a><a href="/es/#pricing">Precios</a><a href="/es/guides/">Guías</a><details class="lang"><summary aria-label="Idioma"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Español</span><span class="lang-short">ES</span></summary><ul><li><a href="/guides/google-sheets-timesheet-template/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/google-sheets-timesheet-template/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/google-sheets-timesheet-template/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/google-sheets-timesheet-template/" hreflang="es" lang="es" aria-current="page">Español</a></li><li><a href="/pt-br/guides/google-sheets-timesheet-template/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/google-sheets-timesheet-template/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/google-sheets-timesheet-template/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/es/get-the-sheet/">Obtén la hoja gratis</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Plantilla de registro de horas para autónomos y freelancers en Hojas de cálculo de Google, con fórmulas</h1>
+<p class="meta">Actualizado el 19 de octubre de 2026. Lectura de unos 7 minutos.</p>
+
+<p>Un registro de horas para facturar necesita algo más que horas: necesita el cliente, la tarifa, el redondeo acordado y un total por cliente y por mes. Abajo tienes la estructura que funciona para la mayoría de los freelancers y consultores, las fórmulas exactas que hay que escribir en Hojas de cálculo de Google y las trampas que estropean los totales. Al final, una hoja lista para usar que se rellena sola desde Google Calendar.</p>
+
+<h2>Las columnas que necesita un registro de horas para facturar</h2>
+<table>
+  <thead><tr><th scope="col">Columna</th><th scope="col">Contenido</th><th scope="col">Formato</th></tr></thead>
+  <tbody>
+    <tr><td>A</td><td>Fecha</td><td>Fecha</td></tr>
+    <tr><td>B</td><td>Inicio</td><td>Hora</td></tr>
+    <tr><td>C</td><td>Fin</td><td>Hora</td></tr>
+    <tr><td>D</td><td>Duración</td><td>Duración, <code>[h]:mm</code></td></tr>
+    <tr><td>E</td><td>Duración facturada, tras el redondeo</td><td>Duración, <code>[h]:mm</code></td></tr>
+    <tr><td>F</td><td>Cliente</td><td>Texto</td></tr>
+    <tr><td>G</td><td>Tarifa por hora</td><td>Moneda</td></tr>
+    <tr><td>H</td><td>Importe</td><td>Moneda</td></tr>
+    <tr><td>I</td><td>Notas</td><td>Texto</td></tr>
+  </tbody>
+</table>
+<p>Usa una fila por reunión o por bloque de trabajo. Los totales van en una pestaña aparte, así ordenar y filtrar las filas nunca los rompe.</p>
+
+<h2>Las fórmulas, fila a fila</h2>
+<p>Van en la fila 2 y se pueden arrastrar hacia abajo. Hojas de cálculo de Google guarda las horas como fracciones de día, por eso algunas fórmulas multiplican por 24.</p>
+<ul>
+  <li><b>Duración</b> en D2: <code>=RESIDUO(C2-B2; 1)</code>. <code>RESIDUO</code> mantiene el resultado correcto cuando una sesión pasa de la medianoche.</li>
+  <li><b>Duración facturada redondeada al alza a 15 minutos</b> en E2: <code>=MULTIPLO.SUPERIOR(D2; NSHORA(0; 15; 0))</code>. Usa <code>NSHORA(0; 6; 0)</code> para décimas de hora.</li>
+  <li><b>Con un mínimo de 30 minutos</b>, E2 pasa a ser: <code>=MAX(MULTIPLO.SUPERIOR(D2; NSHORA(0; 15; 0)); NSHORA(0; 30; 0))</code>.</li>
+  <li><b>Importe</b> en H2: <code>=E2*24*G2</code>. Sin el <code>*24</code>, una reunión de dos horas a 80 se facturaría por 6,67.</li>
+  <li><b>Horas en decimal</b>, para facturas que piden 2,25 en lugar de 2:15: <code>=E2*24</code>.</li>
+</ul>
+<p>Si la configuración regional de tu hoja de cálculo usa el punto como separador decimal, como la de Estados Unidos, las fórmulas llevan una coma en lugar de punto y coma: <code>=MULTIPLO.SUPERIOR(D2, NSHORA(0, 15, 0))</code>.</p>
+
+<h2>Totales por cliente y por mes</h2>
+<p>En una pestaña aparte, una fila por cliente (en estas fórmulas, <code>Detalle</code> es el nombre de la pestaña que contiene las filas de la plantilla):</p>
+<ul>
+  <li><b>Horas de Acme en octubre de 2026</b>: <code>=SUMAR.SI.CONJUNTO(Detalle!E:E; Detalle!F:F; "Acme"; Detalle!A:A; "&gt;="&amp;FECHA(2026;10;1); Detalle!A:A; "&lt;"&amp;FECHA(2026;11;1))</code>, con formato <code>[h]:mm</code>.</li>
+  <li><b>Importe de Acme en octubre</b>: la misma fórmula sobre la columna H.</li>
+</ul>
+<p>Escribe los límites del mes como <code>&gt;=</code> el primer día y <code>&lt;</code> el primer día del mes siguiente. Así el último día nunca se queda fuera, sea cual sea la hora de la última reunión.</p>
+
+<h2>Cuatro trampas que estropean un registro de horas</h2>
+<ol>
+  <li><b>Totales que vuelven a cero cada 24 horas.</b> Con el formato <code>h:mm</code>, 26 horas se muestran como 2:00. Usa siempre <code>[h]:mm</code> para las duraciones.</li>
+  <li><b>Horas escritas como texto.</b> Una hora pegada desde un correo puede ser texto: se queda a la izquierda de la celda y las sumas la ignoran. Vuelve a escribirla o envuélvela en <code>=HORANUMERO()</code>.</li>
+  <li><b>Redondear el total en lugar de cada fila.</b> Con redondeo al alza a 15 minutos, 4 reuniones de 20 minutos facturan 2:00 si redondeas cada fila, o 1:30 si redondeas el total. Indica cuál en tu presupuesto y aplícalo igual cada mes.</li>
+  <li><b>Modificar el mes anterior después de facturar.</b> Una vez facturado, copia los totales de cada mes a una pestaña cerrada, para que un cambio tardío en una fila no pueda alterar una factura enviada.</li>
+</ol>
+
+<h2>Rellenar la plantilla desde Google Calendar</h2>
+<p>Escribir cada reunión dos veces, una en el calendario y otra en la hoja, es donde fallan la mayoría de los registros de horas. Si tus reuniones están en Google Calendar, expórtalas: la guía <a href="/es/guides/export-google-calendar-to-google-sheets/">Exportar Google Calendar a Hojas de cálculo de Google</a> compara la exportación integrada, un pequeño script y un complemento. Para etiquetar cada fila con su cliente, la guía <a href="/es/guides/count-hours-in-google-calendar/">Contar horas en Google Calendar por cliente, color o semana</a> explica los colores, los calendarios, las palabras del título y los dominios de los invitados.</p>
+
+<div class="cta-end">
+  <h2>Una plantilla que se rellena sola</h2>
+  <p>La hoja gratuita de Calendar Timesheet hace este trabajo por ti. Su exportación gratuita escribe cualquier periodo de tu calendario en una pestaña, una fila por evento, con totales por color y por calendario. La prueba de Pro añade clientes, tarifas, redondeo y mínimos, rellena estas columnas cada hora y cierra cada mes con un informe por cliente.</p>
+  <p><a class="btn primary" href="/es/get-the-sheet/">Obtén la hoja gratis</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Más guías</h2><ul class="guide-list"><li><a href="/es/guides/google-calendar-timesheet/">Cómo convertir Google Calendar en un registro de horas</a><p>Tres formas de convertir Google Calendar en un registro de horas: a mano, con un script en Hojas de cálculo de Google o automáticamente. Con sus trampas.</p></li><li><a href="/es/guides/count-hours-in-google-calendar/">Contar horas en Google Calendar por cliente, color o semana</a><p>Google Calendar no da totales. Cómo repartir tus horas por cliente, color, semana o mes con colores, calendarios y palabras clave, gratis o automáticamente.</p></li><li><a href="/es/guides/export-google-calendar-to-google-sheets/">Exportar Google Calendar a Hojas de cálculo de Google</a><p>Exporta los eventos de Google Calendar a Hojas de cálculo de Google: la exportación .ics, Apps Script y una sincronización automática cada hora, comparados.</p></li><li><a href="/es/guides/export-google-calendar-to-excel/">Exportar Google Calendar a Excel o CSV, con duraciones</a><p>Google Calendar no exporta a Excel ni a CSV. Lleva tus eventos a Hojas de cálculo de Google, añade duraciones que se puedan sumar y descarga un .xlsx o .csv.</p></li><li><a href="/es/guides/bill-clients-from-google-calendar/">Facturar por horas desde Google Calendar: tarifas y redondeo</a><p>Cómo facturan los freelancers desde su calendario: tarifas por hora para cada cliente, reglas de redondeo, mínimos, bolsas de horas e informes de fin de mes.</p></li><li><a href="/es/guides/google-calendar-time-tracking/">Control de horas con Google Calendar, sin cronómetro</a><p>Controla las horas facturables con Google Calendar, sin cronómetro: planifica, corrige, etiqueta y cuenta. Lo que el calendario no hace y 5 errores habituales.</p></li><li><a href="/es/guides/google-calendar-time-insights-personal-account/">Estadísticas de tiempo de Google Calendar: por qué faltan</a><p>Estadísticas de tiempo solo está en algunas ediciones de Workspace. Dónde está, por qué falta, qué cuenta y cómo ver gratis tus horas con cualquier cuenta.</p></li><li><a href="/es/guides/calculate-hours-worked-from-google-calendar/">Calcular horas trabajadas con Google Calendar</a><p>Google Calendar no suma horas y el horario laboral solo indica disponibilidad. Cómo ver tu total de horas trabajadas en cualquier dispositivo, con las fórmulas.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/es/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Hecho en Francia por Pierre Chevallier, entrepreneur individuel. Sin afiliación con Google ni respaldo de Google. Google Calendar™ y Hojas de cálculo de Google™ son marcas comerciales de Google LLC.</p></div><nav aria-label="Pie de página"><a href="/es/guides/">Guías</a><a href="/es/support/">Soporte</a><a href="/es/privacy/">Privacidad</a><a href="/es/terms/">Condiciones</a><a href="/es/google-calendar-hours-calculator/">Calculadora de horas</a><a href="/es/billable-hours-calculator/">Horas a decimales</a><a href="/es/google-calendar-to-excel/">Conversor a Excel</a></nav><nav class="langs" aria-label="Idioma"><a href="/guides/google-sheets-timesheet-template/" hreflang="en" lang="en">English</a><a href="/de/guides/google-sheets-timesheet-template/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/google-sheets-timesheet-template/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/google-sheets-timesheet-template/" hreflang="es" lang="es" aria-current="page">Español</a><a href="/pt-br/guides/google-sheets-timesheet-template/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/google-sheets-timesheet-template/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/google-sheets-timesheet-template/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

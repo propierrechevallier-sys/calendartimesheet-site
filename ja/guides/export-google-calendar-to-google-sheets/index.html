@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google カレンダーをスプレッドシートに自動で書き出す・同期する | Calendar Timesheet</title>
+<meta name="description" content="Google カレンダーの予定を Google スプレッドシートに書き出す方法を比較。.ics エクスポート、Apps Script、1 時間ごとの自動同期の長所と短所を率直に紹介します。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/export-google-calendar-to-google-sheets/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/export-google-calendar-to-google-sheets/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google カレンダーをスプレッドシートに自動で書き出す・同期する">
+<meta property="og:description" content="Google カレンダーの予定を Google スプレッドシートに書き出す方法を比較。.ics エクスポート、Apps Script、1 時間ごとの自動同期の長所と短所を率直に紹介します。">
+<meta property="og:url" content="https://calendartimesheet.com/ja/guides/export-google-calendar-to-google-sheets/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/ja/"},{"@type":"ListItem","position":2,"name":"Google カレンダーをスプレッドシートに自動で書き出す・同期する","item":"https://calendartimesheet.com/ja/guides/export-google-calendar-to-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google カレンダーをスプレッドシートに自動で書き出す・同期する","description":"Google カレンダーの予定を Google スプレッドシートに書き出す方法を比較。.ics エクスポート、Apps Script、1 時間ごとの自動同期の長所と短所を率直に紹介します。","inLanguage":"ja","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/ja/guides/export-google-calendar-to-google-sheets/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/ja/guides/">ガイド</a><details class="lang"><summary aria-label="言語"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">日本語</span><span class="lang-short">JA</span></summary><ul><li><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li><li><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google カレンダーの予定を Google スプレッドシートに自動で書き出す</h1>
+<p class="meta">2026年10月19日更新。約 6 分で読めます。</p>
+
+<p>Google カレンダーには「スプレッドシートにエクスポート」のようなボタンはありません。用意されているのは、カレンダーを標準のカレンダー形式である <code>.ics</code> ファイルとして書き出す機能で、予定を別のカレンダー アプリに移すためのものです。予定をスプレッドシートに入れ、最新の状態に保つには、以下のいずれかの方法が必要です。時間の合計だけが必要なら、無料の <a href="/ja/google-calendar-hours-calculator/">Google カレンダー時間集計ツール</a>が、スプレッドシートを使わずに Google のエクスポートを直接読み込みます。</p>
+
+<h2>選択肢 1：Google カレンダー自体のエクスポート</h2>
+<p>Google カレンダーで <b>設定</b>、<b>インポート / エクスポート</b>、<b>エクスポート</b> の順に開きます。カレンダーごとに 1 つの <code>.ics</code> ファイルを含む zip がダウンロードされます（Google の<a href="https://support.google.com/calendar/answer/37111?hl=ja">ヘルプページ</a>で説明されています）。</p>
+<ul>
+  <li><b>長所</b>：完全で公式、どのアカウントでも使えます。</li>
+  <li><b>短所</b>：Google スプレッドシートは <code>.ics</code> ファイルを開けないため、変換ツールが必要です。多くの変換ツールは、実際の日付ではなく繰り返しのルールを付けて、定期的な予定のシリーズごとに 1 行を書き出します。このサイトの無料の <a href="/ja/google-calendar-to-excel/">Google カレンダー Excel 変換ツール</a>は各回を 1 行ずつ書き出し、その <code>.xlsx</code> ファイルは Google スプレッドシートにインポートできます（[ファイル]、[インポート]）。それでも、ある時点のコピーにすぎません。翌週にはもう一度やり直すことになります。</li>
+</ul>
+<p>ファイルを最終的に Excel や CSV にする必要がある場合は、<a href="/ja/guides/export-google-calendar-to-excel/">Google カレンダーを Excel または CSV に書き出す（所要時間付き）</a>をご覧ください。</p>
+
+<h2>選択肢 2：タイマー付きのスクリプト</h2>
+<p>Google スプレッドシートに組み込まれた Apps Script は、カレンダーを読み込んで行を書き込めます。時間主導型トリガーを使えば、1 時間ごとに実行できます。ガイド「<a href="/ja/guides/google-calendar-timesheet/">Google カレンダーをタイムシートにする方法</a>」の短いスクリプトから始め、Apps Script エディタで <b>トリガー</b> を開いて <b>トリガーを追加</b> をクリックし、関数を選んでから、イベントのソースに「時間主導型」を選び、1 時間ごとに実行する設定にします。</p>
+<ul>
+  <li><b>長所</b>：無料で、思いどおりのものが作れ、自分のアカウント内にとどまります。</li>
+  <li><b>短所</b>：保守は自分で行います。再実行するとシートが書き直されるため、行の横に追加したメモがずれてしまいます。複数のカレンダーの読み込み、辞退した招待の除外、深夜 0 時をまたぐ会議の分割、重複の回避は、すべて自分で書く必要があります。</li>
+</ul>
+
+<h2>選択肢 3：IFTTT のアプレット</h2>
+<p>IFTTT は、コードなしで 2 つのサービスをつなぎます。アプレット <a href="https://ifttt.com/applets/AvwRrWna-add-new-google-calendar-events-to-google-sheets">「Add new Google Calendar events to Google Sheets」</a>は、カレンダーに新しい予定が追加されるたびに起動し、選んだスプレッドシートの最初のシートの末尾に 1 行を追加します。アプレットのページには 2 つの制限が記載されています。IFTTT の無料プランではカレンダーの確認は 1 時間ごと（有料プランでは 5 分ごと）で、2000 行を超えると新しいスプレッドシートが作成されます。</p>
+<ul>
+  <li><b>長所</b>：無料で、コード不要、一度接続すれば自動で動きます。</li>
+  <li><b>短所</b>：反応するのは新しい予定だけです。既存の予定はコピーされず、アクションは行を追加するだけなので、後で移動やキャンセルをした会議も、作成時に書き込まれた行のまま残ります。所要時間やクライアント別の合計は、数式で自分で追加する必要があります。Zapier や Make などの連携ツールも同じ仕組みです。無料プランに何が含まれるかを確認してください。</li>
+</ul>
+
+<h2>選択肢 4：Google スプレッドシートのアドオン</h2>
+<p>アドオンは 2 回のクリックで Google スプレッドシートにインストールでき、読み込みを代わりに行ってくれます。大きく 2 種類に分かれます。</p>
+<ul>
+  <li><b>単純なエクスポート ツール</b>は、予定をシートにコピーします。多くは定期的な実行に対応しています。データを手に入れて、自分でレポートを作りたい人に向いています。</li>
+  <li><b>タイムシート用のアドオン</b>はさらに一歩進み、予定をクライアントやプロジェクトごとの時間に変え、合計を出します。<a href="/ja/">Calendar Timesheet</a> はその 1 つで、私たちが開発しています。</li>
+</ul>
+<p>アドオンをインストールする前に、Google が何の許可を求めているかを確認してください。読み込むだけのツールなら、カレンダーの編集ではなく<i>表示</i>の許可を求め、アクセスするのは使用するスプレッドシートだけのはずです。</p>
+
+<h2>比較</h2>
+<table>
+  <thead><tr><th scope="col"></th><th scope="col">.ics エクスポート</th><th scope="col">タイマー付きスクリプト</th><th scope="col">Calendar Timesheet</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">スプレッドシートで開ける</th><td>いいえ、変換ツールが必要</td><td>はい</td><td>はい</td></tr>
+    <tr><th scope="row">最新の状態を保つ</th><td>いいえ</td><td>はい、1 時間ごと</td><td>はい、1 時間ごと</td></tr>
+    <tr><th scope="row">複数のカレンダー</th><td>カレンダーごとに 1 ファイル</td><td>コードを書けば可能</td><td>はい</td></tr>
+    <tr><th scope="row">定期的な予定の実際の各回</th><td>いいえ、シリーズのルール</td><td>はい</td><td>はい</td></tr>
+    <tr><th scope="row">行の横のメモを保持</th><td>いいえ</td><td>標準では不可</td><td>はい</td></tr>
+    <tr><th scope="row">クライアント別の合計、金額</th><td>いいえ</td><td>コードを書けば可能</td><td>はい（Pro）</td></tr>
+    <tr><th scope="row">費用</th><td>無料</td><td>無料（ただし手間がかかる）</td><td>エクスポートは無料、Pro は年額 $49 から</td></tr>
+  </tbody>
+</table>
+
+<h2>Calendar Timesheet の無料エクスポート</h2>
+<p>Calendar Timesheet のエクスポートは、ずっと無料です。最長 1 年までの任意の期間と読み込むカレンダーを選ぶと、予定ごとに 1 行（日付、開始、終了、所要時間、タイトル、カレンダー、色）を <b>エクスポート</b> シートに書き出し、色別とカレンダー別の合計も表示します。カレンダーを編集することはなく、Google アカウントの外には何も送信しません。</p>
+
+<div class="cta-end">
+  <p><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">その他のガイド</h2><ul class="guide-list"><li><a href="/ja/guides/google-calendar-timesheet/">Google カレンダーをタイムシートにする 3 つの方法</a><p>Google カレンダーをタイムシートにする 3 つの方法を手順ごとに解説。手作業、Google スプレッドシートの短いスクリプト、自動化と、合計を狂わせる落とし穴。</p></li><li><a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーで時間を集計：クライアント別・色別・週別</a><p>Google カレンダーには合計が表示されません。色、カレンダー、キーワードで、時間をクライアント別・色別・週別・月別に集計する方法を、無料と自動の両方で紹介。</p></li><li><a href="/ja/guides/export-google-calendar-to-excel/">Google カレンダーをエクセルにエクスポートする方法（CSV 対応）</a><p>Google カレンダーには Excel・CSV への出力機能がありません。予定を Google スプレッドシートに入れ、合計できる所要時間を加えて、.xlsx や .csv でダウンロードする方法。</p></li><li><a href="/ja/guides/bill-clients-from-google-calendar/">Google カレンダーから請求：時間単価・端数処理・最低時間</a><p>フリーランスがカレンダーから請求する方法。クライアントごとの時間単価、端数処理のルール、最低請求時間、前払い契約、月末の請求明細を解説します。</p></li><li><a href="/ja/guides/google-calendar-time-tracking/">Google カレンダーで工数管理：タイマーなしで作業時間を記録</a><p>タイマーの代わりに Google カレンダーで請求対象の時間を記録する方法。予定を入れ、修正し、クライアントのタグを付けて集計。カレンダーにできないことと、よくある 5 つのミスも。</p></li><li><a href="/ja/guides/google-sheets-timesheet-template/">スプレッドシートのタイムシート テンプレート：フリーランス向け</a><p>Google スプレッドシートで作るフリーランスのタイムシート。列の構成と、所要時間、15 分単位の切り上げ、最低時間、金額、クライアント別の月次合計の数式。</p></li><li><a href="/ja/guides/google-calendar-time-insights-personal-account/">Google カレンダーの時間の分析情報が表示されない理由</a><p>時間の分析情報（Time Insights）は一部の Google Workspace エディション専用です。場所、表示されない理由、集計の対象、どのアカウントでも時間を確認できる無料の方法。</p></li><li><a href="/ja/guides/calculate-hours-worked-from-google-calendar/">Google カレンダーで稼働時間・勤務時間を計算する方法</a><p>Google カレンダーは時間を合計せず、業務時間の設定は空き状況を示すだけです。どの端末でも合計時間を確認する方法と、Google スプレッドシートの数式を紹介します。</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p></div><nav aria-label="フッター"><a href="/ja/guides/">ガイド</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a><a href="/ja/google-calendar-hours-calculator/">時間集計ツール</a><a href="/ja/billable-hours-calculator/">時間の10進数変換</a><a href="/ja/google-calendar-to-excel/">Excel 変換</a></nav><nav class="langs" aria-label="言語"><a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en" lang="en">English</a><a href="/de/guides/export-google-calendar-to-google-sheets/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/export-google-calendar-to-google-sheets/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/export-google-calendar-to-google-sheets/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/export-google-calendar-to-google-sheets/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/export-google-calendar-to-google-sheets/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/guides/export-google-calendar-to-google-sheets/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>
