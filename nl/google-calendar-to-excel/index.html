@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Agenda exporteren naar Excel of CSV, gratis</title>
+<meta name="description" content="Google Agenda naar Excel of CSV: zet de export om in één regel per afspraak, terugkerende afspraken uitgewerkt. Gratis, er wordt niets geüpload.">
+<link rel="canonical" href="https://calendartimesheet.com/nl/google-calendar-to-excel/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/google-calendar-to-excel/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/google-calendar-to-excel/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/google-calendar-to-excel/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/google-calendar-to-excel/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/google-calendar-to-excel/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/google-calendar-to-excel/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/google-calendar-to-excel/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/google-calendar-to-excel/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google Agenda exporteren naar Excel of CSV, gratis">
+<meta property="og:description" content="Google Agenda naar Excel of CSV: zet de export om in één regel per afspraak, terugkerende afspraken uitgewerkt. Gratis, er wordt niets geüpload.">
+<meta property="og:url" content="https://calendartimesheet.com/nl/google-calendar-to-excel/">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Google Agenda naar Excel-converter","url":"https://calendartimesheet.com/nl/google-calendar-to-excel/","inLanguage":"nl","description":"Google Agenda naar Excel of CSV: zet de export om in één regel per afspraak, terugkerende afspraken uitgewerkt. Gratis, er wordt niets geüpload.","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top"><div class="wrap"><a class="brand" href="/nl/" aria-label="Calendar Timesheet, startpagina"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Hoofdmenu"><a href="/nl/#how">Zo werkt het</a><a href="/nl/#features">Functies</a><a href="/nl/#pricing">Prijzen</a><a href="/guides/">Handleidingen (in het Engels)</a><details class="lang"><summary aria-label="Taal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Nederlands</span><span class="lang-short">NL</span></summary><ul><li><a href="/google-calendar-to-excel/" hreflang="en" lang="en">English</a></li><li><a href="/de/google-calendar-to-excel/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/google-calendar-to-excel/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/google-calendar-to-excel/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/google-calendar-to-excel/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/google-calendar-to-excel/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/google-calendar-to-excel/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></li></ul></details><a class="btn primary sm" href="/nl/get-the-sheet/">Gratis spreadsheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google Agenda omzetten naar Excel en CSV</h1>
+<p class="meta">Gratis. Je agendabestand wordt door je browser gelezen en het Excel-bestand wordt daar ook gemaakt: er wordt niets geüpload, geen account, geen inloggen bij Google.</p>
+
+<div class="calc" id="conv">
+  <label class="drop" for="conv-file" id="conv-drop">
+    <b>Zet hier de export van Google Agenda neer</b>
+    <span>Het <code>.zip</code>-bestand van Google Agenda (Instellingen, Importeren en exporteren, Exporteren), of een of meer <code>.ics</code>-bestanden.</span>
+    <span class="btn quiet">Bestand kiezen</span>
+    <input type="file" id="conv-file" accept=".zip,.ics" multiple>
+  </label>
+  <ul class="calc-files" id="conv-files" aria-label="Gelezen bestanden"></ul>
+  <p class="calc-error" id="conv-error" role="alert" hidden></p>
+
+  <div class="calc-opts">
+    <label>Van <input type="date" id="conv-from"></label>
+    <label>Tot en met <input type="date" id="conv-to"></label>
+    <div class="calc-checks">
+      <label><input type="checkbox" id="conv-allday" checked> Afspraken van een hele dag overslaan</label>
+      <label><input type="checkbox" id="conv-declined" checked> Uitnodigingen die je hebt afgewezen overslaan</label>
+      <label><input type="checkbox" id="conv-free"> Tijd die als beschikbaar wordt weergegeven overslaan</label>
+    </div>
+  </div>
+
+  <div class="conv-actions">
+    <button type="button" class="btn primary" id="conv-xlsx" disabled>Excel downloaden (.xlsx)</button>
+    <button type="button" class="btn quiet" id="conv-csv" disabled>CSV downloaden</button>
+  </div>
+
+  <section class="calc-result" id="conv-result" aria-live="polite">
+    <p class="muted">Je afspraken verschijnen hier zodra een bestand is gelezen.</p>
+  </section>
+  <noscript><p class="calc-error">De converter heeft JavaScript nodig. Hij werkt alleen in je browser; er wordt niets verstuurd.</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>Elke maand dezelfde lijst, zonder iets te exporteren?</b> De gratis spreadsheet van Calendar Timesheet zet je agenda's rechtstreeks in Google Spreadsheets, inclusief de kleuren van afspraken; Pro voegt klanten, tarieven en overzichten aan het einde van de maand toe.</p>
+  <p><a class="btn primary" href="/nl/get-the-sheet/">Gratis spreadsheet ophalen</a></p>
+</div>
+
+<h2>Wat je krijgt</h2>
+<p>Eén regel per afspraak, op volgorde van begintijd, met deze kolommen:</p>
+<table>
+  <thead><tr><th scope="col">Kolom</th><th scope="col">Inhoud</th></tr></thead>
+  <tbody>
+    <tr><td><b>Datum</b></td><td>De dag waarop de afspraak begint, als echte datum die Excel kan sorteren en filteren.</td></tr>
+    <tr><td><b>Begin, Einde</b></td><td>Tijden in de tijdzone van je computer. In het Excel-bestand houden ze hun volledige datum, zodat <code>=C2-B2</code> ook klopt voor een afspraak die na middernacht eindigt.</td></tr>
+    <tr><td><b>Duur</b></td><td>Uren en minuten in de notatie <code>[h]:mm</code>, zodat een totaal van 26 uur als 26:00 wordt getoond en niet als 2:00.</td></tr>
+    <tr><td><b>Uren</b></td><td>Dezelfde duur als decimaal getal (1,50 voor 1 uur en 30 minuten), klaar om met een uurtarief te vermenigvuldigen.</td></tr>
+    <tr><td><b>Titel, Agenda, Locatie, Beschrijving</b></td><td>Zoals ze in Google Agenda staan.</td></tr>
+  </tbody>
+</table>
+<p>Het Excel-bestand krijgt onder de afspraken een totaalregel met <code>SOM</code>-formules. Het CSV-bestand bevat alleen de afspraken, zodat het netjes in een ander programma te importeren is.</p>
+
+<h2>Waar de converter voor zorgt</h2>
+<ul>
+  <li><b>Terugkerende afspraken, één regel per herhaling.</b> De export van Google bewaart een wekelijkse vergadering maar één keer, met de herhaalregel. De converter schrijft elke datum in de periode, zonder de datums die je hebt verwijderd, verplaatst of geannuleerd.</li>
+  <li><b>Alleen de periode die je kiest.</b> Google exporteert de hele geschiedenis van elke agenda; jij kiest de datums. Een afspraak die over het begin of het einde van de periode loopt, wordt daar afgekapt en gemarkeerd met "(gedeeltelijk)".</li>
+  <li><b>Niets dubbel.</b> Een afspraak die in twee agenda's staat, verschijnt één keer. Afgewezen uitnodigingen en afspraken van een hele dag blijven buiten beschouwing, tenzij je de vinkjes weghaalt.</li>
+  <li><b>Een CSV die in kolommen opent.</b> Als de taal van je browser decimalen met een komma schrijft, zoals het Nederlands of het Duits, wordt de CSV gescheiden door puntkomma's, zoals Excel dan verwacht. Hij wordt opgeslagen in UTF-8 met byte order mark (BOM), zodat accenten en andere schriften goed overkomen.</li>
+  <li><b>Geen verrassingen met formules.</b> In de CSV krijgt een titel die met = of + begint een apostrof ervoor, zodat Excel hem als tekst toont in plaats van hem als formule uit te voeren.</li>
+</ul>
+
+<h2>Zo exporteer je Google Agenda</h2>
+<ol>
+  <li>Open Google Agenda op een computer. Volgens de <a href="https://support.google.com/calendar/answer/37111?hl=nl">hulp van Google</a> kun je je agenda niet exporteren vanuit de Google Agenda-app.</li>
+  <li>Klik op <b>Instellingen</b>, dan op <b>Importeren en exporteren</b> en onder Exporteren op <b>Exporteren</b>. Er wordt een <code>.zip</code>-bestand gedownload met één <code>.ics</code>-bestand per agenda.</li>
+  <li>Zet dat <code>.zip</code>-bestand hierboven neer, zonder het uit te pakken. Voor één agenda open je de pagina <b>Instellingen en delen</b> van die agenda en kies je <b>Agenda exporteren</b>.</li>
+</ol>
+<p>Je kunt een agenda exporteren als je het recht "Wijzigingen aanbrengen en opties voor delen beheren" hebt.</p>
+
+<h2>Het bestand openen in Google Spreadsheets</h2>
+<p>Klik in Google Spreadsheets bovenaan op <b>Bestand</b> en dan op <b>Importeren</b>, en kies het <code>.xlsx</code>-bestand. Datums, tijden, duur en totaal komen er ongewijzigd in. Wil je een spreadsheet die elke maand vanzelf bijgewerkt is, zonder opnieuw te exporteren? Dan vergelijkt de handleiding <a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en">Export Google Calendar to Google Sheets automatically</a> (in het Engels) de automatische mogelijkheden.</p>
+
+<h2>Vragen</h2>
+<h3>Wordt mijn agenda ergens naartoe geüpload?</h3>
+<p>Nee. Achter deze pagina zit geen server: je browser opent de export, maakt het Excel- of CSV-bestand en slaat het op je computer op. Er wordt niets verstuurd of ergens anders opgeslagen, en als je het tabblad sluit, is alles weg. Het <a href="/nl/privacy/">privacybeleid</a> zegt hetzelfde.</p>
+<h3>Waarom is er geen kolom voor de kleur?</h3>
+<p>De export van Google Agenda bevat geen kleuren van afspraken, dus geen enkele converter kan ze uit het bestand lezen. Calendar Timesheet leest de kleuren rechtstreeks uit je agenda; de handleiding <a href="/guides/count-hours-in-google-calendar/" hreflang="en">How to count hours in Google Calendar per client, colour or week</a> (in het Engels) vergelijkt de methoden.</p>
+<h3>In welke tijdzone staan de tijden?</h3>
+<p>In die van je computer, vermeld boven het voorbeeld. Afspraken die in een andere tijdzone zijn gemaakt, worden omgerekend, zoals Google Agenda ze aan je toont.</p>
+<h3>Kan ik exporteren vanaf mijn telefoon?</h3>
+<p>De export van Google Agenda werkt alleen op een computer. Voor een totaal dat je overal kunt bekijken, zie de handleiding <a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en">Can Google Calendar calculate hours worked?</a> (in het Engels).</p>
+<h3>Ik heb alleen het totaal aantal uren nodig</h3>
+<p>De <a href="/nl/google-calendar-hours-calculator/">urencalculator voor Google Agenda</a> leest dezelfde export en telt hem op per agenda, trefwoord en week, zonder bestand om te openen. Om de duur af te ronden op 6 of 15 minuten en er een prijs aan te hangen, gebruik je de <a href="/nl/billable-hours-calculator/">calculator voor declarabele uren</a>.</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/nl/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Gemaakt in Frankrijk door Pierre Chevallier, entrepreneur individuel. Niet gelieerd aan of goedgekeurd door Google. Google Agenda™ en Google Spreadsheets™ zijn handelsmerken van Google LLC.</p></div><nav aria-label="Voettekst"><a href="/guides/">Handleidingen (in het Engels)</a><a href="/nl/support/">Support</a><a href="/nl/privacy/">Privacy</a><a href="/nl/terms/">Voorwaarden</a><a href="/nl/google-calendar-hours-calculator/">Urencalculator</a><a href="/nl/billable-hours-calculator/">Uren naar decimalen</a><a href="/nl/google-calendar-to-excel/">Excel-converter</a></nav><nav class="langs" aria-label="Taal"><a href="/google-calendar-to-excel/" hreflang="en" lang="en">English</a><a href="/de/google-calendar-to-excel/" hreflang="de" lang="de">Deutsch</a><a href="/fr/google-calendar-to-excel/" hreflang="fr" lang="fr">Français</a><a href="/es/google-calendar-to-excel/" hreflang="es" lang="es">Español</a><a href="/pt-br/google-calendar-to-excel/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/google-calendar-to-excel/" hreflang="ja" lang="ja">日本語</a><a href="/nl/google-calendar-to-excel/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/zone.js" defer></script>
+<script src="/assets/js/core/periods.js" defer></script>
+<script src="/assets/js/core/events.js" defer></script>
+<script src="/assets/js/core/exporter.js" defer></script>
+<script src="/assets/js/calc/ics.js" defer></script>
+<script src="/assets/js/calc/zip.js" defer></script>
+<script src="/assets/js/calc/files.js" defer></script>
+<script src="/assets/js/calc/convert.js" defer></script>
+<script src="/assets/js/calc/xlsx.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/convertui.js" defer></script>
+</body>
+</html>

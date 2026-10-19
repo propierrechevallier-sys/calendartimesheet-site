@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google カレンダーを Excel（エクセル）・CSV にエクスポート【無料】</title>
+<meta name="description" content="Google カレンダーのエクスポートを Excel（エクセル）・CSV ファイルに変換して出力。予定を 1 行ずつ書き出し、定期的な予定も日付ごとに展開します。無料で、ファイルはアップロードされません。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/google-calendar-to-excel/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/google-calendar-to-excel/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/google-calendar-to-excel/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/google-calendar-to-excel/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/google-calendar-to-excel/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/google-calendar-to-excel/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/google-calendar-to-excel/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/google-calendar-to-excel/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/google-calendar-to-excel/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google カレンダーを Excel（エクセル）・CSV にエクスポート【無料】">
+<meta property="og:description" content="Google カレンダーのエクスポートを Excel（エクセル）・CSV ファイルに変換して出力。予定を 1 行ずつ書き出し、定期的な予定も日付ごとに展開します。無料で、ファイルはアップロードされません。">
+<meta property="og:url" content="https://calendartimesheet.com/ja/google-calendar-to-excel/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Google カレンダー Excel 変換ツール","url":"https://calendartimesheet.com/ja/google-calendar-to-excel/","inLanguage":"ja","description":"Google カレンダーのエクスポートを Excel（エクセル）・CSV ファイルに変換して出力。予定を 1 行ずつ書き出し、定期的な予定も日付ごとに展開します。無料で、ファイルはアップロードされません。","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/guides/">ガイド（英語）</a><details class="lang"><summary aria-label="言語"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">日本語</span><span class="lang-short">JA</span></summary><ul><li><a href="/google-calendar-to-excel/" hreflang="en" lang="en">English</a></li><li><a href="/de/google-calendar-to-excel/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/google-calendar-to-excel/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/google-calendar-to-excel/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/google-calendar-to-excel/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/google-calendar-to-excel/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li><li><a href="/nl/google-calendar-to-excel/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google カレンダーを Excel・CSV に変換</h1>
+<p class="meta">無料。カレンダーのファイルはブラウザ内で読み込まれ、Excel ファイルもブラウザ内で作成されます。アップロードはなく、アカウント登録も Google へのログインも不要です。</p>
+
+<div class="calc" id="conv">
+  <label class="drop" for="conv-file" id="conv-drop">
+    <b>Google カレンダーのエクスポートをここにドロップ</b>
+    <span>Google カレンダーの <code>.zip</code>（設定、インポート / エクスポート、エクスポート）、または 1 つ以上の <code>.ics</code> ファイル。</span>
+    <span class="btn quiet">ファイルを選択</span>
+    <input type="file" id="conv-file" accept=".zip,.ics" multiple>
+  </label>
+  <ul class="calc-files" id="conv-files" aria-label="読み込んだファイル"></ul>
+  <p class="calc-error" id="conv-error" role="alert" hidden></p>
+
+  <div class="calc-opts">
+    <label>開始日 <input type="date" id="conv-from"></label>
+    <label>終了日 <input type="date" id="conv-to"></label>
+    <div class="calc-checks">
+      <label><input type="checkbox" id="conv-allday" checked> 終日の予定を除く</label>
+      <label><input type="checkbox" id="conv-declined" checked> 辞退した招待を除く</label>
+      <label><input type="checkbox" id="conv-free"> 「空き時間」と表示される予定を除く</label>
+    </div>
+  </div>
+
+  <div class="conv-actions">
+    <button type="button" class="btn primary" id="conv-xlsx" disabled>Excel をダウンロード（.xlsx）</button>
+    <button type="button" class="btn quiet" id="conv-csv" disabled>CSV をダウンロード</button>
+  </div>
+
+  <section class="calc-result" id="conv-result" aria-live="polite">
+    <p class="muted">ファイルを読み込むと、ここに予定が表示されます。</p>
+  </section>
+  <noscript><p class="calc-error">変換ツールには JavaScript が必要です。ブラウザ内だけで動作し、何も送信されません。</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>毎月同じ一覧を、エクスポートなしで。</b>無料の Calendar Timesheet のスプレッドシートはカレンダーを Google スプレッドシートに直接書き出し、予定の色も含まれます。Pro ではクライアント、時間単価、月末の明細が加わります。</p>
+  <p><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></p>
+</div>
+
+<h2>出力される内容</h2>
+<p>予定ごとに 1 行、開始時刻の順に並び、次の列があります。</p>
+<table>
+  <thead><tr><th scope="col">列</th><th scope="col">内容</th></tr></thead>
+  <tbody>
+    <tr><td><b>日付</b></td><td>予定が始まる日です。Excel で並べ替えやフィルタができる日付データです。</td></tr>
+    <tr><td><b>開始、終了</b></td><td>パソコンのタイムゾーンでの時刻です。Excel ファイルでは日付も保持されるため、午前 0 時をまたぐ予定でも <code>=C2-B2</code> が正しく計算されます。</td></tr>
+    <tr><td><b>所要時間</b></td><td><code>[h]:mm</code> 形式の時間と分です。合計 26 時間が 2:00 ではなく 26:00 と表示されます。</td></tr>
+    <tr><td><b>時間（10進数）</b></td><td>同じ所要時間を 10進数で表したもの（1 時間 30 分なら 1.50）です。時間単価をそのまま掛けられます。</td></tr>
+    <tr><td><b>タイトル、カレンダー、場所、説明</b></td><td>Google カレンダーに入力されているとおりです。</td></tr>
+  </tbody>
+</table>
+<p>Excel ファイルには、予定の下に <code>SUM</code> 関数による合計行が入ります。CSV ファイルは予定だけなので、ほかのツールにそのまま取り込めます。</p>
+
+<h2>変換ツールが処理すること</h2>
+<ul>
+  <li><b>定期的な予定は 1 回ずつ 1 行に。</b>Google のエクスポートでは、毎週の会議は繰り返しのルール付きで 1 回分しか保存されません。変換ツールは期間内のすべての日付を書き出し、削除・移動・キャンセルした日付は除きます。</li>
+  <li><b>選んだ期間だけ。</b>Google は各カレンダーの全履歴をエクスポートしますが、出力する日付はご自分で選べます。期間の始まりや終わりをまたぐ予定はそこで区切られ、「（一部）」と表示されます。</li>
+  <li><b>重複なし。</b>2 つのカレンダーにある同じ予定は 1 回だけ出力されます。辞退した招待と終日の予定は、チェックを外さない限り除外されます。</li>
+  <li><b>列に分かれて開く CSV。</b>ブラウザの言語が小数点にカンマを使う場合（フランス語やドイツ語など）は、Excel の想定どおりセミコロン区切りの CSV になり、日本語ではカンマ区切りになります。文字化けを防ぐため、BOM 付きの UTF-8 で保存されます。</li>
+  <li><b>数式の誤動作を防止。</b>CSV では、= や + で始まるタイトルの前にアポストロフィを付けるため、Excel は数式として実行せず、文字列として表示します。</li>
+</ul>
+
+<h2>Google カレンダーをエクスポートする方法</h2>
+<ol>
+  <li>パソコンで Google カレンダーを開きます。<a href="https://support.google.com/calendar/answer/37111?hl=ja">Google のヘルプ</a>によると、Google カレンダー アプリから書き出すことはできません。</li>
+  <li><b>設定</b>、<b>インポート / エクスポート</b>の順にクリックし、「エクスポート」の欄で<b>エクスポート</b>をクリックします。カレンダーごとに 1 つの <code>.ics</code> ファイルを含む <code>.zip</code> がダウンロードされます。</li>
+  <li>その <code>.zip</code> を解凍せずに、上の枠にドロップします。1 つのカレンダーだけを書き出すには、そのカレンダーの<b>設定と共有</b>を開き、<b>カレンダーをエクスポート</b>を選びます。</li>
+</ol>
+<p>カレンダーを書き出すには「予定の変更および共有の管理」権限が必要です。</p>
+
+<h2>Google スプレッドシートで開く</h2>
+<p>Google スプレッドシートの上部で [<b>ファイル</b>]、[<b>インポート</b>] の順にクリックし、<code>.xlsx</code> ファイルを選びます。日付、時刻、所要時間、合計はそのまま取り込まれます。エクスポートし直さずに毎月最新の表を保つ自動の方法は、ガイド <a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en">Export Google Calendar to Google Sheets automatically</a>（英語）で比較しています。</p>
+
+<h2>よくある質問</h2>
+<h3>カレンダーはどこかにアップロードされますか？</h3>
+<p>いいえ。このページにはサーバーがありません。ブラウザがエクスポートを開き、Excel または CSV ファイルを作成してパソコンに保存するだけです。ほかの場所に送信・保存されることはなく、タブを閉じるとすべて消えます。<a href="/ja/privacy/">プライバシーポリシー</a>にも同じことが書かれています。</p>
+<h3>色の列がないのはなぜですか？</h3>
+<p>Google カレンダーのエクスポートには予定の色が含まれないため、どの変換ツールでもファイルから色を読み取ることはできません。Calendar Timesheet はカレンダーから色を直接読み取ります。方法の比較はガイド <a href="/guides/count-hours-in-google-calendar/" hreflang="en">How to count hours in Google Calendar per client, colour or week</a>（英語）をご覧ください。</p>
+<h3>時刻はどのタイムゾーンですか？</h3>
+<p>パソコンのタイムゾーンで、プレビューの上に表示されます。別のタイムゾーンで作成された予定も、Google カレンダーでの表示と同じように変換されます。</p>
+<h3>スマートフォンからエクスポートできますか？</h3>
+<p>Google カレンダーのエクスポートはパソコンでのみ行えます。どこでも確認できる合計については、ガイド <a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en">Can Google Calendar calculate hours worked?</a>（英語）をご覧ください。</p>
+<h3>合計時間だけが必要な場合は？</h3>
+<p><a href="/ja/google-calendar-hours-calculator/">Google カレンダー時間集計ツール</a>は同じエクスポートを読み込み、カレンダー・キーワード・週ごとに合計します。ファイルを開く必要はありません。時間を 6 分または 15 分単位で切り上げて金額を出すには、<a href="/ja/billable-hours-calculator/">請求時間の計算ツール</a>をお使いください。</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p></div><nav aria-label="フッター"><a href="/guides/">ガイド（英語）</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a><a href="/ja/google-calendar-hours-calculator/">時間集計ツール</a><a href="/ja/billable-hours-calculator/">時間の10進数変換</a><a href="/ja/google-calendar-to-excel/">Excel 変換</a></nav><nav class="langs" aria-label="言語"><a href="/google-calendar-to-excel/" hreflang="en" lang="en">English</a><a href="/de/google-calendar-to-excel/" hreflang="de" lang="de">Deutsch</a><a href="/fr/google-calendar-to-excel/" hreflang="fr" lang="fr">Français</a><a href="/es/google-calendar-to-excel/" hreflang="es" lang="es">Español</a><a href="/pt-br/google-calendar-to-excel/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/google-calendar-to-excel/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/google-calendar-to-excel/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/zone.js" defer></script>
+<script src="/assets/js/core/periods.js" defer></script>
+<script src="/assets/js/core/events.js" defer></script>
+<script src="/assets/js/core/exporter.js" defer></script>
+<script src="/assets/js/calc/ics.js" defer></script>
+<script src="/assets/js/calc/zip.js" defer></script>
+<script src="/assets/js/calc/files.js" defer></script>
+<script src="/assets/js/calc/convert.js" defer></script>
+<script src="/assets/js/calc/xlsx.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/convertui.js" defer></script>
+</body>
+</html>

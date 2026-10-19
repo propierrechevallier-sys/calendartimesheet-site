@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exporter Google Agenda vers Excel ou CSV : outil gratuit</title>
+<meta name="description" content="Exporter Google Agenda vers Excel ou CSV : déposez l’export et obtenez une ligne par événement, événements périodiques développés. Gratuit, sans envoi.">
+<link rel="canonical" href="https://calendartimesheet.com/fr/google-calendar-to-excel/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/google-calendar-to-excel/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/google-calendar-to-excel/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/google-calendar-to-excel/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/google-calendar-to-excel/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/google-calendar-to-excel/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/google-calendar-to-excel/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/google-calendar-to-excel/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/google-calendar-to-excel/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Exporter Google Agenda vers Excel ou CSV : outil gratuit">
+<meta property="og:description" content="Exporter Google Agenda vers Excel ou CSV : déposez l’export et obtenez une ligne par événement, événements périodiques développés. Gratuit, sans envoi.">
+<meta property="og:url" content="https://calendartimesheet.com/fr/google-calendar-to-excel/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Convertisseur Google Agenda vers Excel","url":"https://calendartimesheet.com/fr/google-calendar-to-excel/","inLanguage":"fr","description":"Exporter Google Agenda vers Excel ou CSV : déposez l’export et obtenez une ligne par événement, événements périodiques développés. Gratuit, sans envoi.","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","url":"https://calendartimesheet.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top"><div class="wrap"><a class="brand" href="/fr/" aria-label="Calendar Timesheet, accueil"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/fr/#how">Fonctionnement</a><a href="/fr/#features">Fonctionnalités</a><a href="/fr/#pricing">Tarifs</a><a href="/guides/">Guides (en anglais)</a><details class="lang"><summary aria-label="Langue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Français</span><span class="lang-short">FR</span></summary><ul><li><a href="/google-calendar-to-excel/" hreflang="en" lang="en">English</a></li><li><a href="/de/google-calendar-to-excel/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/google-calendar-to-excel/" hreflang="fr" lang="fr" aria-current="page">Français</a></li><li><a href="/es/google-calendar-to-excel/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/google-calendar-to-excel/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/google-calendar-to-excel/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/google-calendar-to-excel/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/fr/get-the-sheet/">Feuille gratuite</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Exporter Google Agenda vers Excel et CSV</h1>
+<p class="meta">Gratuit. Votre fichier d’agenda est lu par votre navigateur et le fichier Excel y est créé aussi : rien n’est envoyé, aucun compte, aucune connexion Google.</p>
+
+<div class="calc" id="conv">
+  <label class="drop" for="conv-file" id="conv-drop">
+    <b>Déposez ici l’export de Google Agenda</b>
+    <span>Le fichier <code>.zip</code> de Google Agenda (Paramètres, Importer et exporter, Exporter), ou un ou plusieurs fichiers <code>.ics</code>.</span>
+    <span class="btn quiet">Choisir un fichier</span>
+    <input type="file" id="conv-file" accept=".zip,.ics" multiple>
+  </label>
+  <ul class="calc-files" id="conv-files" aria-label="Fichiers lus"></ul>
+  <p class="calc-error" id="conv-error" role="alert" hidden></p>
+
+  <div class="calc-opts">
+    <label>Du <input type="date" id="conv-from"></label>
+    <label>Au <input type="date" id="conv-to"></label>
+    <div class="calc-checks">
+      <label><input type="checkbox" id="conv-allday" checked> Ignorer les événements d’une journée entière</label>
+      <label><input type="checkbox" id="conv-declined" checked> Ignorer les invitations refusées</label>
+      <label><input type="checkbox" id="conv-free"> Ignorer le temps affiché comme disponible</label>
+    </div>
+  </div>
+
+  <div class="conv-actions">
+    <button type="button" class="btn primary" id="conv-xlsx" disabled>Télécharger en Excel (.xlsx)</button>
+    <button type="button" class="btn quiet" id="conv-csv" disabled>Télécharger en CSV</button>
+  </div>
+
+  <section class="calc-result" id="conv-result" aria-live="polite">
+    <p class="muted">Vos événements s’affichent ici dès qu’un fichier est lu.</p>
+  </section>
+  <noscript><p class="calc-error">Le convertisseur a besoin de JavaScript. Il fonctionne uniquement dans votre navigateur : rien n’est envoyé.</p></noscript>
+</div>
+
+<div class="cta-end">
+  <p><b>La même liste chaque mois, sans rien exporter ?</b> La feuille gratuite Calendar Timesheet copie directement vos agendas dans Google Sheets, couleurs des événements comprises ; Pro ajoute les clients, les taux et les relevés de fin de mois.</p>
+  <p><a class="btn primary" href="/fr/get-the-sheet/">Obtenir la feuille gratuite</a></p>
+</div>
+
+<h2>Ce que vous obtenez</h2>
+<p>Une ligne par événement, dans l’ordre des heures de début, avec ces colonnes :</p>
+<table>
+  <thead><tr><th scope="col">Colonne</th><th scope="col">Contenu</th></tr></thead>
+  <tbody>
+    <tr><td><b>Date</b></td><td>Le jour où commence l’événement, sous forme de vraie date qu’Excel sait trier et filtrer.</td></tr>
+    <tr><td><b>Début, Fin</b></td><td>Les heures dans le fuseau horaire de votre ordinateur. Dans le fichier Excel, elles gardent leur date complète : <code>=C2-B2</code> reste juste pour un événement qui se termine après minuit.</td></tr>
+    <tr><td><b>Durée</b></td><td>Heures et minutes au format <code>[h]:mm</code>, pour qu’un total de 26 heures s’affiche 26:00 et non 2:00.</td></tr>
+    <tr><td><b>Heures</b></td><td>La même durée en nombre décimal (1,50 pour 1 h 30), prête à multiplier par un taux horaire.</td></tr>
+    <tr><td><b>Titre, Agenda, Lieu, Description</b></td><td>Tels qu’écrits dans Google Agenda.</td></tr>
+  </tbody>
+</table>
+<p>Le fichier Excel ajoute une ligne de total sous les événements, avec des formules <code>SOMME</code>. Le fichier CSV ne contient que les événements, pour s’importer proprement dans un autre outil.</p>
+
+<h2>Ce que le convertisseur gère pour vous</h2>
+<ul>
+  <li><b>Les événements périodiques, une ligne par occurrence.</b> L’export de Google enregistre une réunion hebdomadaire une seule fois, avec sa règle de répétition. Le convertisseur écrit chaque date de la période, sans celles que vous avez supprimées, déplacées ou annulées.</li>
+  <li><b>Seulement la période choisie.</b> Google exporte tout l’historique de chaque agenda ; c’est vous qui choisissez les dates. Un événement à cheval sur le début ou la fin de la période y est coupé et marqué « (partiel) ».</li>
+  <li><b>Aucun doublon.</b> Un événement présent dans deux agendas n’apparaît qu’une fois. Les invitations refusées et les événements d’une journée entière sont écartés, sauf si vous décochez les cases.</li>
+  <li><b>Un CSV qui s’ouvre en colonnes.</b> Si la langue de votre navigateur écrit les décimales avec une virgule, comme le français ou l’allemand, le CSV est séparé par des points-virgules, ce qu’Excel attend dans ce cas. Il est enregistré en UTF-8 avec une marque d’ordre des octets (BOM), pour que les accents s’affichent correctement.</li>
+  <li><b>Pas de formule surprise.</b> Dans le CSV, un titre qui commence par = ou + reçoit une apostrophe devant lui : Excel l’affiche comme du texte au lieu de l’exécuter comme une formule.</li>
+</ul>
+
+<h2>Exporter votre Google Agenda</h2>
+<ol>
+  <li>Sur un ordinateur, ouvrez Google Agenda. La <a href="https://support.google.com/calendar/answer/37111?hl=fr">page d’aide de Google</a> précise qu’on ne peut pas exporter depuis l’application Google Agenda.</li>
+  <li>Cliquez sur <b>Paramètres</b>, puis sur <b>Importer et exporter</b>, puis sur <b>Exporter</b>. Un fichier <code>.zip</code> contenant un fichier <code>.ics</code> par agenda est téléchargé.</li>
+  <li>Déposez ce <code>.zip</code> ci-dessus, sans le décompresser. Pour un seul agenda, ouvrez sa page <b>Paramètres et partage</b> et choisissez <b>Exporter l’agenda</b>.</li>
+</ol>
+<p>Vous pouvez exporter un agenda si vous disposez de l’autorisation « Apporter des modifications et gérer le partage ».</p>
+
+<h2>Ouvrir le fichier dans Google Sheets</h2>
+<p>Dans Google Sheets, en haut de l’écran, cliquez sur <b>Fichier</b>, puis sur <b>Importer</b>, et choisissez le fichier <code>.xlsx</code>. Dates, heures, durées et total arrivent tels quels. Pour une feuille à jour chaque mois sans exporter à nouveau, le guide <a href="/guides/export-google-calendar-to-google-sheets/" hreflang="en">Export Google Calendar to Google Sheets automatically</a> (en anglais) compare les solutions automatiques.</p>
+
+<h2>Questions</h2>
+<h3>Mon agenda est-il envoyé quelque part ?</h3>
+<p>Non. Cette page n’a aucun serveur derrière elle : votre navigateur ouvre l’export, crée le fichier Excel ou CSV et l’enregistre sur votre ordinateur. Rien n’est envoyé ni conservé ailleurs, et fermer l’onglet efface tout. La <a href="/fr/privacy/">politique de confidentialité</a> le confirme.</p>
+<h3>Pourquoi n’y a-t-il pas de colonne pour la couleur ?</h3>
+<p>L’export de Google Agenda ne contient pas les couleurs des événements : aucun convertisseur ne peut donc les lire dans le fichier. Calendar Timesheet lit les couleurs directement dans votre agenda ; le guide <a href="/guides/count-hours-in-google-calendar/" hreflang="en">How to count hours in Google Calendar per client, colour or week</a> (en anglais) compare les méthodes.</p>
+<h3>Dans quel fuseau horaire sont les heures ?</h3>
+<p>Celui de votre ordinateur, indiqué au-dessus de l’aperçu. Les événements créés dans un autre fuseau horaire y sont convertis, comme Google Agenda vous les affiche.</p>
+<h3>Puis-je exporter depuis mon téléphone ?</h3>
+<p>L’export de Google Agenda ne fonctionne que sur un ordinateur. Pour un total lisible partout, consultez le guide <a href="/guides/calculate-hours-worked-from-google-calendar/" hreflang="en">Can Google Calendar calculate hours worked?</a> (en anglais).</p>
+<h3>Je n’ai besoin que du total des heures</h3>
+<p>La <a href="/fr/google-calendar-hours-calculator/">calculatrice d’heures Google Agenda</a> lit le même export et l’additionne par agenda, par mot-clé et par semaine, sans fichier à ouvrir. Pour arrondir les durées à 6 ou 15 minutes et en calculer le montant, utilisez la <a href="/fr/billable-hours-calculator/">calculatrice d’heures facturables</a>.</p>
+
+
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/fr/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Conçu en France par Pierre Chevallier, entrepreneur individuel. Ni affilié à Google, ni approuvé par Google. Google Agenda™ et Google Sheets™ sont des marques de Google LLC.</p></div><nav aria-label="Pied de page"><a href="/guides/">Guides (en anglais)</a><a href="/fr/support/">Assistance</a><a href="/fr/privacy/">Confidentialité</a><a href="/fr/terms/">Conditions</a><a href="/fr/google-calendar-hours-calculator/">Calculatrice d’heures</a><a href="/fr/billable-hours-calculator/">Heures en décimal</a><a href="/fr/google-calendar-to-excel/">Export vers Excel</a></nav><nav class="langs" aria-label="Langue"><a href="/google-calendar-to-excel/" hreflang="en" lang="en">English</a><a href="/de/google-calendar-to-excel/" hreflang="de" lang="de">Deutsch</a><a href="/fr/google-calendar-to-excel/" hreflang="fr" lang="fr" aria-current="page">Français</a><a href="/es/google-calendar-to-excel/" hreflang="es" lang="es">Español</a><a href="/pt-br/google-calendar-to-excel/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/google-calendar-to-excel/" hreflang="ja" lang="ja">日本語</a><a href="/nl/google-calendar-to-excel/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+<script src="/assets/js/core/zone.js" defer></script>
+<script src="/assets/js/core/periods.js" defer></script>
+<script src="/assets/js/core/events.js" defer></script>
+<script src="/assets/js/core/exporter.js" defer></script>
+<script src="/assets/js/calc/ics.js" defer></script>
+<script src="/assets/js/calc/zip.js" defer></script>
+<script src="/assets/js/calc/files.js" defer></script>
+<script src="/assets/js/calc/convert.js" defer></script>
+<script src="/assets/js/calc/xlsx.js" defer></script>
+<script src="/assets/js/calc/text.js" defer></script>
+<script src="/assets/js/calc/convertui.js" defer></script>
+</body>
+</html>

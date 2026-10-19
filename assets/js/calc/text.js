@@ -198,8 +198,8 @@ AH.calcText = (function () {
     sheet: 'Termine', total: 'Gesamt', part: '(teilweise)',
     warnRule: ['{n} wiederkehrender Termin nutzt eine Regel, die der Konverter nicht auflösen kann; nur das erste Datum wird aufgeführt: {titles}.',
       '{n} wiederkehrende Termine nutzen eine Regel, die der Konverter nicht auflösen kann; nur das erste Datum wird aufgeführt: {titles}.'],
-    warnLong: ['{n} wiederkehrender Termin reicht zu weit zurück, um vollständig aufgelöst zu werden; einige Daten können fehlen: {titles}.',
-      '{n} wiederkehrende Termine reichen zu weit zurück, um vollständig aufgelöst zu werden; einige Daten können fehlen: {titles}.'] };
+    warnLong: ['{n} wiederkehrender Termin reicht zu weit zurück, um vollständig aufgelöst zu werden; einzelne Termine können fehlen: {titles}.',
+      '{n} wiederkehrende Termine reichen zu weit zurück, um vollständig aufgelöst zu werden; einzelne Termine können fehlen: {titles}.'] };
   TEXT.fr.conv = { placeholder: 'Vos événements s’affichent ici dès qu’un fichier est lu.', summary: ['{n} événement · {hours} h', '{n} événements · {hours} h'],
     preview: 'Aperçu des {shown} premières lignes. Le fichier téléchargé les contient toutes ({n}).', none: 'Aucun événement sur cette période.',
     heads: { date: 'Date', start: 'Début', end: 'Fin', duration: 'Durée', hours: 'Heures', title: 'Titre', calendar: 'Agenda', location: 'Lieu', description: 'Description' },
@@ -212,10 +212,10 @@ AH.calcText = (function () {
     preview: 'Vista previa de las primeras {shown} filas. El archivo descargado las incluye todas ({n}).', none: 'No hay eventos en este periodo.',
     heads: { date: 'Fecha', start: 'Inicio', end: 'Fin', duration: 'Duración', hours: 'Horas', title: 'Título', calendar: 'Calendario', location: 'Ubicación', description: 'Descripción' },
     sheet: 'Eventos', total: 'Total', part: '(parcial)',
-    warnRule: ['{n} evento periódico usa una regla que el conversor no sabe desarrollar; solo aparece su primera fecha: {titles}.',
-      '{n} eventos periódicos usan una regla que el conversor no sabe desarrollar; solo aparece su primera fecha: {titles}.'],
-    warnLong: ['{n} evento periódico se remonta demasiado atrás para desarrollarlo entero; pueden faltar fechas: {titles}.',
-      '{n} eventos periódicos se remontan demasiado atrás para desarrollarlos enteros; pueden faltar fechas: {titles}.'] };
+    warnRule: ['{n} evento periódico usa una regla que el conversor no puede desplegar; solo aparece su primera fecha: {titles}.',
+      '{n} eventos periódicos usan una regla que el conversor no puede desplegar; solo aparece la primera fecha de cada uno: {titles}.'],
+    warnLong: ['{n} evento periódico empezó hace demasiado tiempo para desplegarlo entero; pueden faltar fechas: {titles}.',
+      '{n} eventos periódicos empezaron hace demasiado tiempo para desplegarlos enteros; pueden faltar fechas: {titles}.'] };
   TEXT['pt-BR'].conv = { placeholder: 'Seus eventos aparecem aqui assim que um arquivo é lido.', summary: ['{n} evento · {hours} horas', '{n} eventos · {hours} horas'],
     preview: 'Prévia das primeiras {shown} linhas. O arquivo baixado tem todas as {n}.', none: 'Nenhum evento neste período.',
     heads: { date: 'Data', start: 'Início', end: 'Fim', duration: 'Duração', hours: 'Horas', title: 'Título', calendar: 'Agenda', location: 'Local', description: 'Descrição' },
@@ -226,14 +226,14 @@ AH.calcText = (function () {
       '{n} eventos recorrentes começam há tempo demais para serem expandidos por completo; algumas datas podem faltar: {titles}.'] };
   TEXT.ja.conv = { placeholder: 'ファイルを読み込むと、ここに予定が表示されます。', summary: ['{n} 件の予定・{hours} 時間', '{n} 件の予定・{hours} 時間'],
     preview: '最初の {shown} 行のプレビューです。ダウンロードしたファイルには {n} 行すべてが含まれます。', none: 'この期間に予定はありません。',
-    heads: { date: '日付', start: '開始', end: '終了', duration: '時間', hours: '10進数の時間', title: 'タイトル', calendar: 'カレンダー', location: '場所', description: '説明' },
+    heads: { date: '日付', start: '開始', end: '終了', duration: '所要時間', hours: '時間（10進数）', title: 'タイトル', calendar: 'カレンダー', location: '場所', description: '説明' },
     sheet: '予定', total: '合計', part: '（一部）',
     warnRule: ['定期的な予定 {n} 件は、このツールでは展開できないルールを使っています。最初の日付のみを出力しています：{titles}。',
       '定期的な予定 {n} 件は、このツールでは展開できないルールを使っています。最初の日付のみを出力しています：{titles}。'],
     warnLong: ['定期的な予定 {n} 件は開始日が古すぎるため、すべてを展開できません。一部の日付が欠けている可能性があります：{titles}。',
       '定期的な予定 {n} 件は開始日が古すぎるため、すべてを展開できません。一部の日付が欠けている可能性があります：{titles}。'] };
   TEXT.nl.conv = { placeholder: 'Je afspraken verschijnen hier zodra een bestand is gelezen.', summary: ['{n} afspraak · {hours} uur', '{n} afspraken · {hours} uur'],
-    preview: 'Voorbeeld van de eerste {shown} regels. Het gedownloade bestand bevat ze alle {n}.', none: 'Geen afspraken in deze periode.',
+    preview: 'Voorbeeld van de eerste {shown} regels. Het gedownloade bestand bevat alle {n} regels.', none: 'Geen afspraken in deze periode.',
     heads: { date: 'Datum', start: 'Begin', end: 'Einde', duration: 'Duur', hours: 'Uren', title: 'Titel', calendar: 'Agenda', location: 'Locatie', description: 'Beschrijving' },
     sheet: 'Afspraken', total: 'Totaal', part: '(gedeeltelijk)',
     warnRule: ['{n} terugkerende afspraak gebruikt een regel die de converter niet kan uitwerken; alleen de eerste datum staat erin: {titles}.',
