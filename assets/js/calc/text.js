@@ -184,7 +184,8 @@ AH.calcText = (function () {
     once: 'Als je alleen het totaal afrondt: {billed} ({hours} uur).', onceAmount: 'Als je alleen het totaal afrondt: {billed} ({hours} uur), {amount}.' };
   // Convertisseur Excel et CSV (2026-10-19) : en-têtes repris de la feuille du module (src/core/i18n.js : col.date, col.start,
   // col.end, export.calendar, st.total, st.partial) ; lieu et description avec les mots de Google Agenda dans chaque langue.
-  TEXT.en.conv = { placeholder: 'Your events appear here as soon as a file is read.', summary: ['{n} event · {hours} hours', '{n} events · {hours} hours'],
+  TEXT.en.conv = { invalidPeriod: 'Choose a valid period to see your events.', msg: { 'zip-method': 'This .zip uses a compression the converter cannot read. Unzip it first, then drop the .ics files.' },
+    placeholder: 'Your events appear here as soon as a file is read.', summary: ['{n} event · {hours} hours', '{n} events · {hours} hours'],
     preview: 'Preview of the first {shown} lines. The downloaded file has all {n}.', none: 'No event in this period.',
     heads: { date: 'Date', start: 'Start', end: 'End', duration: 'Duration', hours: 'Hours', title: 'Title', calendar: 'Calendar', location: 'Location', description: 'Description' },
     sheet: 'Events', total: 'Total', part: '(partial)',
@@ -192,7 +193,8 @@ AH.calcText = (function () {
       '{n} repeating events use a rule this converter cannot expand; only their first date is listed: {titles}.'],
     warnLong: ['{n} repeating event goes back too far to be expanded in full; some of its dates may be missing: {titles}.',
       '{n} repeating events go back too far to be expanded in full; some of their dates may be missing: {titles}.'] };
-  TEXT.de.conv = { placeholder: 'Ihre Termine erscheinen hier, sobald eine Datei gelesen ist.', summary: ['{n} Termin · {hours} Stunden', '{n} Termine · {hours} Stunden'],
+  TEXT.de.conv = { invalidPeriod: 'Wählen Sie einen gültigen Zeitraum, um Ihre Termine zu sehen.', msg: { 'zip-method': 'Diese ZIP-Datei verwendet eine Komprimierung, die der Konverter nicht lesen kann. Entpacken Sie sie zuerst und legen Sie dann die .ics-Dateien hier ab.' },
+    placeholder: 'Ihre Termine erscheinen hier, sobald eine Datei gelesen ist.', summary: ['{n} Termin · {hours} Stunden', '{n} Termine · {hours} Stunden'],
     preview: 'Vorschau der ersten {shown} Zeilen. Die heruntergeladene Datei enthält alle {n}.', none: 'Keine Termine in diesem Zeitraum.',
     heads: { date: 'Datum', start: 'Beginn', end: 'Ende', duration: 'Dauer', hours: 'Stunden', title: 'Titel', calendar: 'Kalender', location: 'Ort', description: 'Beschreibung' },
     sheet: 'Termine', total: 'Gesamt', part: '(teilweise)',
@@ -200,7 +202,8 @@ AH.calcText = (function () {
       '{n} wiederkehrende Termine nutzen eine Regel, die der Konverter nicht auflösen kann; nur das erste Datum wird aufgeführt: {titles}.'],
     warnLong: ['{n} wiederkehrender Termin reicht zu weit zurück, um vollständig aufgelöst zu werden; einzelne Termine können fehlen: {titles}.',
       '{n} wiederkehrende Termine reichen zu weit zurück, um vollständig aufgelöst zu werden; einzelne Termine können fehlen: {titles}.'] };
-  TEXT.fr.conv = { placeholder: 'Vos événements s’affichent ici dès qu’un fichier est lu.', summary: ['{n} événement · {hours} h', '{n} événements · {hours} h'],
+  TEXT.fr.conv = { invalidPeriod: 'Choisissez une période valide pour voir vos événements.', msg: { 'zip-method': 'Ce .zip utilise une compression que le convertisseur ne sait pas lire. Décompressez-le d’abord, puis déposez les fichiers .ics.' },
+    placeholder: 'Vos événements s’affichent ici dès qu’un fichier est lu.', summary: ['{n} événement · {hours} h', '{n} événements · {hours} h'],
     preview: 'Aperçu des {shown} premières lignes. Le fichier téléchargé les contient toutes ({n}).', none: 'Aucun événement sur cette période.',
     heads: { date: 'Date', start: 'Début', end: 'Fin', duration: 'Durée', hours: 'Heures', title: 'Titre', calendar: 'Agenda', location: 'Lieu', description: 'Description' },
     sheet: 'Événements', total: 'Total', part: '(partiel)',
@@ -208,7 +211,8 @@ AH.calcText = (function () {
       '{n} événements périodiques suivent une règle que le convertisseur ne sait pas développer ; seule leur première date figure dans le fichier : {titles}.'],
     warnLong: ['{n} événement périodique remonte trop loin pour être développé en entier ; certaines dates peuvent manquer : {titles}.',
       '{n} événements périodiques remontent trop loin pour être développés en entier ; certaines dates peuvent manquer : {titles}.'] };
-  TEXT.es.conv = { placeholder: 'Tus eventos aparecen aquí en cuanto se lee un archivo.', summary: ['{n} evento · {hours} horas', '{n} eventos · {hours} horas'],
+  TEXT.es.conv = { invalidPeriod: 'Elige un periodo válido para ver tus eventos.', msg: { 'zip-method': 'Este .zip usa una compresión que el conversor no puede leer. Descomprímelo primero y suelta aquí los archivos .ics.' },
+    placeholder: 'Tus eventos aparecen aquí en cuanto se lee un archivo.', summary: ['{n} evento · {hours} horas', '{n} eventos · {hours} horas'],
     preview: 'Vista previa de las primeras {shown} filas. El archivo descargado las incluye todas ({n}).', none: 'No hay eventos en este periodo.',
     heads: { date: 'Fecha', start: 'Inicio', end: 'Fin', duration: 'Duración', hours: 'Horas', title: 'Título', calendar: 'Calendario', location: 'Ubicación', description: 'Descripción' },
     sheet: 'Eventos', total: 'Total', part: '(parcial)',
@@ -216,7 +220,8 @@ AH.calcText = (function () {
       '{n} eventos periódicos usan una regla que el conversor no puede desplegar; solo aparece la primera fecha de cada uno: {titles}.'],
     warnLong: ['{n} evento periódico empezó hace demasiado tiempo para desplegarlo entero; pueden faltar fechas: {titles}.',
       '{n} eventos periódicos empezaron hace demasiado tiempo para desplegarlos enteros; pueden faltar fechas: {titles}.'] };
-  TEXT['pt-BR'].conv = { placeholder: 'Seus eventos aparecem aqui assim que um arquivo é lido.', summary: ['{n} evento · {hours} horas', '{n} eventos · {hours} horas'],
+  TEXT['pt-BR'].conv = { invalidPeriod: 'Escolha um período válido para ver seus eventos.', msg: { 'zip-method': 'Este .zip usa uma compactação que o conversor não consegue ler. Descompacte-o primeiro e depois solte aqui os arquivos .ics.' },
+    placeholder: 'Seus eventos aparecem aqui assim que um arquivo é lido.', summary: ['{n} evento · {hours} horas', '{n} eventos · {hours} horas'],
     preview: 'Prévia das primeiras {shown} linhas. O arquivo baixado tem todas as {n}.', none: 'Nenhum evento neste período.',
     heads: { date: 'Data', start: 'Início', end: 'Fim', duration: 'Duração', hours: 'Horas', title: 'Título', calendar: 'Agenda', location: 'Local', description: 'Descrição' },
     sheet: 'Eventos', total: 'Total', part: '(parcial)',
@@ -224,7 +229,8 @@ AH.calcText = (function () {
       '{n} eventos recorrentes usam uma regra que o conversor não consegue expandir; só a primeira data aparece: {titles}.'],
     warnLong: ['{n} evento recorrente começa há tempo demais para ser expandido por completo; algumas datas podem faltar: {titles}.',
       '{n} eventos recorrentes começam há tempo demais para serem expandidos por completo; algumas datas podem faltar: {titles}.'] };
-  TEXT.ja.conv = { placeholder: 'ファイルを読み込むと、ここに予定が表示されます。', summary: ['{n} 件の予定・{hours} 時間', '{n} 件の予定・{hours} 時間'],
+  TEXT.ja.conv = { invalidPeriod: '予定を表示するには、有効な期間を選んでください。', msg: { 'zip-method': 'この .zip は、この変換ツールでは読めない圧縮方式を使っています。先に解凍し、.ics ファイルをドロップしてください。' },
+    placeholder: 'ファイルを読み込むと、ここに予定が表示されます。', summary: ['{n} 件の予定・{hours} 時間', '{n} 件の予定・{hours} 時間'],
     preview: '最初の {shown} 行のプレビューです。ダウンロードしたファイルには {n} 行すべてが含まれます。', none: 'この期間に予定はありません。',
     heads: { date: '日付', start: '開始', end: '終了', duration: '所要時間', hours: '時間（10進数）', title: 'タイトル', calendar: 'カレンダー', location: '場所', description: '説明' },
     sheet: '予定', total: '合計', part: '（一部）',
@@ -232,7 +238,8 @@ AH.calcText = (function () {
       '定期的な予定 {n} 件は、このツールでは展開できないルールを使っています。最初の日付のみを出力しています：{titles}。'],
     warnLong: ['定期的な予定 {n} 件は開始日が古すぎるため、すべてを展開できません。一部の日付が欠けている可能性があります：{titles}。',
       '定期的な予定 {n} 件は開始日が古すぎるため、すべてを展開できません。一部の日付が欠けている可能性があります：{titles}。'] };
-  TEXT.nl.conv = { placeholder: 'Je afspraken verschijnen hier zodra een bestand is gelezen.', summary: ['{n} afspraak · {hours} uur', '{n} afspraken · {hours} uur'],
+  TEXT.nl.conv = { invalidPeriod: 'Kies een geldige periode om je afspraken te zien.', msg: { 'zip-method': 'Dit .zip-bestand gebruikt een compressiemethode die de converter niet kan lezen. Pak het eerst uit en zet daarna de .ics-bestanden hier neer.' },
+    placeholder: 'Je afspraken verschijnen hier zodra een bestand is gelezen.', summary: ['{n} afspraak · {hours} uur', '{n} afspraken · {hours} uur'],
     preview: 'Voorbeeld van de eerste {shown} regels. Het gedownloade bestand bevat alle {n} regels.', none: 'Geen afspraken in deze periode.',
     heads: { date: 'Datum', start: 'Begin', end: 'Einde', duration: 'Duur', hours: 'Uren', title: 'Titel', calendar: 'Agenda', location: 'Locatie', description: 'Beschrijving' },
     sheet: 'Afspraken', total: 'Totaal', part: '(gedeeltelijk)',

@@ -50,10 +50,14 @@ AH.xlsx = (function () {
     return out;
   }
   function esc(s) { return s.split('&').join('&amp;').split('<').join('&lt;').split('>').join('&gt;').split('"').join('&quot;'); }
-  // Une cellule Excel contient 32 767 caractères au plus ; la coupe ne sépare jamais une paire de substitution.
+  // Une cellule Excel contient 32 767 caractères au plus ; la coupe ne sépare jamais une paire de substitution. Excel lit
+  // « _xHHHH_ » comme un caractère codé (ST_Xstring) et XML change un retour chariot en saut de ligne : le « _ » d'un tel
+  // motif est codé _x005F_ et le retour chariot _x000D_, pour que le texte revienne à l'identique (revue du 2026-10-19).
   function text(s) {
     var t = clean(s);
     if (t.length > MAX) { var c = t.charCodeAt(MAX - 1); t = t.slice(0, c >= 0xD800 && c <= 0xDBFF ? MAX - 1 : MAX); }
+    if (t.indexOf('_x') >= 0) t = t.replace(/_(x[0-9A-Fa-f]{4}_)/g, '_x005F_$1');
+    if (t.indexOf(String.fromCharCode(13)) >= 0) t = t.split(String.fromCharCode(13)).join('_x000D_');
     return esc(t);
   }
   // Colonne n° i (0 = A) → lettres.

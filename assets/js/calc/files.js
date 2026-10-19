@@ -8,7 +8,23 @@ AH.calcFiles = (function () {
     if (typeof DecompressionStream === 'undefined') return Promise.reject(new Error('no-inflate'));
     return new Response(new Blob([u8]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer().then(function (b) { return new Uint8Array(b); });
   }
-  function decode(u8) { return new TextDecoder('utf-8').decode(u8); }
+  // Lignes repliées de l'iCalendar (RFC 5545 § 3.1 : fin de ligne suivie d'une espace ou d'une tabulation) dépliées sur les
+  // octets, avant le décodage : un écrivain qui replie au milieu d'un caractère multioctet ne l'abîme plus (revue du 2026-10-19).
+  function unfold(u8) {
+    // Rien de replié : le fichier tel quel, sans copie.
+    var any = false;
+    for (var k = u8.indexOf(10); k >= 0 && !any; k = u8.indexOf(10, k + 1)) any = u8[k + 1] === 32 || u8[k + 1] === 9;
+    if (!any) return u8;
+    var out = new Uint8Array(u8.length), n = 0;
+    for (var i = 0; i < u8.length; i++) {
+      var b = u8[i];
+      if (b === 13 && u8[i + 1] === 10 && (u8[i + 2] === 32 || u8[i + 2] === 9)) { i += 2; continue; }
+      if (b === 10 && (u8[i + 1] === 32 || u8[i + 1] === 9)) { i += 1; continue; }
+      out[n++] = b;
+    }
+    return out.subarray(0, n);
+  }
+  function decode(u8) { return new TextDecoder('utf-8').decode(unfold(u8)); }
   // Un fichier déposé → [{ name, text }] : les .ics d'un .zip, ou le fichier lui-même.
   function read(f) {
     return f.arrayBuffer().then(function (buf) {
@@ -21,6 +37,6 @@ AH.calcFiles = (function () {
       return [{ name: f.name, text: decode(u8) }];
     });
   }
-  return { read: read };
+  return { read: read, text: decode };
 })();
 if (typeof module !== 'undefined' && module.exports) module.exports = AH.calcFiles;

@@ -6,19 +6,19 @@ var AH = (typeof AH !== 'undefined') ? AH : {};
 AH.convert = (function () {
   'use strict';
   var DAY = 86400000, EPOCH = 25569, CRLF = String.fromCharCode(13, 10), BOM = String.fromCharCode(0xFEFF);
-  var REASON = { allDay: 'allDay', declined: 'declined', transparent: 'free', duplicate: 'duplicate' };
   function dep(n) { return (typeof module !== 'undefined' && module.exports) ? require('../core/' + n + '.js') : AH[n]; }
+  // Règles partagées avec la calculatrice : sélection, exclusions, libellé des agendas, durée en h:mm (src/calc/hours.js).
+  function hours() { return (typeof module !== 'undefined' && module.exports) ? require('./hours.js') : AH.hours; }
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   // o : { from, to (AAAA-MM-JJ), zone, skipAllDay, skipDeclined, skipFree, calendarOrder }.
   function table(events, o) {
-    var r = dep('exporter').range(o.from, o.to, o.zone);
-    if (!r.ok) return { ok: false, error: r.error.replace(/^err[.]/, '') };
-    var sel = dep('events').select(events, r.range, { excludeAllDay: !!o.skipAllDay, excludeDeclined: !!o.skipDeclined, excludeTransparent: !!o.skipFree }, o.calendarOrder || []);
-    var excluded = { allDay: 0, declined: 0, free: 0, duplicate: 0 };
-    sel.excluded.forEach(function (x) { var k = REASON[x.reason]; if (k) excluded[k] += 1; });
-    return { ok: true, range: r.range, excluded: excluded, rows: sel.kept.map(function (k) {
+    var s = hours().pick(events, o);
+    if (!s.ok) return s;
+    // Deux agendas du même nom (deux comptes « Work ») : l'adresse de chacun est ajoutée, comme dans la calculatrice.
+    var label = hours().calendarLabels(s.kept.map(function (k) { return k.ev; }));
+    return { ok: true, range: s.range, excluded: s.excluded, rows: s.kept.map(function (k) {
       return { start: k.part.start, end: k.part.end, minutes: k.part.minutes, partial: !!k.part.partial, title: k.ev.title || '',
-        calendar: k.ev.calendarName || k.ev.calendarId || '', location: k.ev.location || '', description: k.ev.description || '' };
+        calendar: label(k.ev), location: k.ev.location || '', description: k.ev.description || '' };
     }) };
   }
   // Heure locale du fuseau → numéro de série d'Excel (jours depuis le 30/12/1899, fraction = heure).
@@ -46,14 +46,15 @@ AH.convert = (function () {
   function csv(t, zone, text, fmt) {
     var sep = fmt.sep, lines = [text.heads.map(function (h) { return field(h, sep, true); }).join(sep)];
     t.rows.forEach(function (r) {
-      var s = zone.parts(r.start), e = zone.parts(r.end), hrs = (Math.round(r.minutes / 60 * 100) / 100).toFixed(2).replace('.', fmt.decimal);
-      lines.push([s.y + '-' + pad(s.m) + '-' + pad(s.d), pad(s.h) + ':' + pad(s.min), pad(e.h) + ':' + pad(e.min),
-        Math.floor(r.minutes / 60) + ':' + pad(r.minutes % 60), field(hrs, sep, false)]
+      var hrs = (Math.round(r.minutes / 60 * 100) / 100).toFixed(2).replace('.', fmt.decimal);
+      lines.push([dep('zone').dateKey(r.start, zone), clock(r.start, zone), clock(r.end, zone), hours().hm(r.minutes), field(hrs, sep, false)]
         .concat([title(r, text), r.calendar, r.location, r.description].map(function (x) { return field(x, sep, true); })).join(sep));
     });
     return BOM + lines.join(CRLF) + CRLF;
   }
+  // Heure locale « HH:MM » (CSV et aperçu de la page).
+  function clock(ms, zone) { var p = zone.parts(ms); return pad(p.h) + ':' + pad(p.min); }
   function fileName(from, to, ext) { return 'google-calendar-' + from + '-to-' + to + '.' + ext; }
-  return { table: table, sheet: sheet, csv: csv, fileName: fileName, serial: serial };
+  return { table: table, sheet: sheet, csv: csv, clock: clock, fileName: fileName, serial: serial };
 })();
 if (typeof module !== 'undefined' && module.exports) module.exports = AH.convert;

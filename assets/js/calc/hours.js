@@ -25,21 +25,38 @@ AH.hours = (function () {
     }
     return out;
   }
-  // o : { from, to (AAAA-MM-JJ), zone, keywords, skipAllDay, skipDeclined, skipFree, calendarOrder }.
-  function compute(events, o) {
+  // Rendez-vous d'une période choisis par le moteur du module, exclusions comptées par motif affiché : commun à la
+  // calculatrice et au convertisseur Excel (src/calc/convert.js). o : { from, to, zone, skipAllDay, skipDeclined, skipFree,
+  // calendarOrder }.
+  function pick(events, o) {
     var r = dep('exporter').range(o.from, o.to, o.zone);
     if (!r.ok) return { ok: false, error: r.error.replace(/^err[.]/, '') };
-    var rg = r.range, P = dep('periods'), R = dep('rules');
-    var sel = dep('events').select(events, rg, { excludeAllDay: !!o.skipAllDay, excludeDeclined: !!o.skipDeclined, excludeTransparent: !!o.skipFree }, o.calendarOrder || []);
+    var sel = dep('events').select(events, r.range, { excludeAllDay: !!o.skipAllDay, excludeDeclined: !!o.skipDeclined, excludeTransparent: !!o.skipFree }, o.calendarOrder || []);
+    var excluded = { allDay: 0, declined: 0, free: 0, duplicate: 0 };
+    sel.excluded.forEach(function (x) { var k = REASON[x.reason]; if (k) excluded[k] += 1; });
+    return { ok: true, range: r.range, kept: sel.kept, excluded: excluded };
+  }
+  // Libellé de l'agenda d'un rendez-vous : son nom, plus son adresse quand deux agendas de la liste portent le même nom.
+  function calendarLabels(events) {
+    var ids = {}, shared = {};
+    function key(ev) { var id = ev.calendarId || ev.calendarName || ''; return { id: id, name: ev.calendarName || id }; }
+    events.forEach(function (ev) { var k = key(ev); (ids[k.name] = ids[k.name] || {})[k.id] = true; });
+    Object.keys(ids).forEach(function (n) { shared[n] = Object.keys(ids[n]).length > 1; });
+    return function (ev) { var k = key(ev); return shared[k.name] ? k.name + ' (' + k.id + ')' : k.name; };
+  }
+  // o : { from, to (AAAA-MM-JJ), zone, keywords, skipAllDay, skipDeclined, skipFree, calendarOrder }.
+  function compute(events, o) {
+    var s = pick(events, o);
+    if (!s.ok) return s;
+    var rg = s.range, P = dep('periods'), R = dep('rules');
     var kws = keywords(o.keywords), rules = R.prepare(kws.map(function (k) { return { type: 'title', value: k }; }));
     var cals = {}, calNames = [], byKw = kws.map(function (k) { return { name: k, minutes: 0, count: 0 }; });
     var other = { name: OTHER, other: true, minutes: 0, count: 0 }, wk = weeks(o.from, rg, o.zone).map(function (w) { return Object.assign(w, { minutes: 0, count: 0 }); });
-    var total = { minutes: 0, count: 0 }, excluded = { allDay: 0, declined: 0, free: 0, duplicate: 0 };
-    sel.excluded.forEach(function (x) { var k = REASON[x.reason]; if (k) excluded[k] += 1; });
-    sel.kept.forEach(function (k) {
+    var total = { minutes: 0, count: 0 }, label = calendarLabels(s.kept.map(function (k) { return k.ev; }));
+    s.kept.forEach(function (k) {
       var mn = k.part.minutes, id = k.ev.calendarId || k.ev.calendarName || '';
       total.minutes += mn; total.count += 1;
-      if (!cals[id]) { cals[id] = { id: id, name: k.ev.calendarName || id, minutes: 0, count: 0 }; calNames.push(id); }
+      if (!cals[id]) { cals[id] = { name: label(k.ev), minutes: 0, count: 0 }; calNames.push(id); }
       cals[id].minutes += mn; cals[id].count += 1;
       if (kws.length) {
         var ctx = R.context(k.ev), i = -1;
@@ -49,17 +66,14 @@ AH.hours = (function () {
       }
       wk.forEach(function (w) { var p = P.clip(k.part, w); if (p) { w.minutes += p.minutes; w.count += 1; } });
     });
-    // Deux agendas du même nom : l'adresse de chacun est ajoutée pour les distinguer.
-    var byCal = calNames.map(function (n) { return cals[n]; });
-    byCal.forEach(function (c) { if (byCal.filter(function (d) { return d.name === c.name; }).length > 1) c.label = c.name + ' (' + c.id + ')'; });
-    return { ok: true, range: rg, zone: o.zone.tz, total: total, excluded: excluded,
-      byCalendar: byCal.map(function (c) { return { name: c.label || c.name, minutes: c.minutes, count: c.count }; })
+    return { ok: true, range: rg, zone: o.zone.tz, total: total, excluded: s.excluded,
+      byCalendar: calNames.map(function (n) { return cals[n]; })
         .sort(function (a, b) { return b.minutes - a.minutes || (a.name < b.name ? -1 : 1); }),
       byKeyword: kws.length ? byKw.concat([other]) : null,
       byWeek: wk.map(function (w) { return { monday: w.monday, partial: w.partial, minutes: w.minutes, count: w.count }; }) };
   }
   // 86 h 45 → « 86:45 ».
   function hm(minutes) { var m = Math.round(minutes); return Math.floor(m / 60) + ':' + pad(m % 60); }
-  return { compute: compute, keywords: keywords, hm: hm, OTHER: OTHER };
+  return { compute: compute, pick: pick, calendarLabels: calendarLabels, keywords: keywords, hm: hm, OTHER: OTHER };
 })();
 if (typeof module !== 'undefined' && module.exports) module.exports = AH.hours;
