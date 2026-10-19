@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facturer par tranches de 6 minutes depuis Google Agenda</title>
+<meta name="description" content="Facturer au dixième d’heure depuis Google Agenda : la règle des 6 minutes, un exemple chiffré et une formule Google Sheets qui ne facture jamais trop.">
+<link rel="canonical" href="https://calendartimesheet.com/fr/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Facturer par tranches de 6 minutes depuis Google Agenda">
+<meta property="og:description" content="Facturer au dixième d’heure depuis Google Agenda : la règle des 6 minutes, un exemple chiffré et une formule Google Sheets qui ne facture jamais trop.">
+<meta property="og:url" content="https://calendartimesheet.com/fr/guides/bill-in-6-minute-increments/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/fr/"},{"@type":"ListItem","position":2,"name":"Facturer par tranches de 6 minutes depuis Google Agenda","item":"https://calendartimesheet.com/fr/guides/bill-in-6-minute-increments/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Facturer par tranches de 6 minutes depuis Google Agenda","description":"Facturer au dixième d’heure depuis Google Agenda : la règle des 6 minutes, un exemple chiffré et une formule Google Sheets qui ne facture jamais trop.","inLanguage":"fr","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/fr/guides/bill-in-6-minute-increments/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top"><div class="wrap"><a class="brand" href="/fr/" aria-label="Calendar Timesheet, accueil"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/fr/#how">Fonctionnement</a><a href="/fr/#features">Fonctionnalités</a><a href="/fr/#pricing">Tarifs</a><a href="/fr/guides/">Guides</a><details class="lang"><summary aria-label="Langue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Français</span><span class="lang-short">FR</span></summary><ul><li><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr" aria-current="page">Français</a></li><li><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/fr/get-the-sheet/">Feuille gratuite</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Facturer par tranches de 6 minutes depuis Google Agenda</h1>
+<p class="meta">Mis à jour le 19 octobre 2026. Environ 6 minutes de lecture. Informations générales, et non un conseil juridique ou fiscal.</p>
+
+<p>Avocats, experts-comptables et nombre de consultants facturent au dixième d’heure : chaque tranche de 6 minutes entamée compte pour 0,1 heure. Si votre travail client figure déjà dans Google Agenda, l’agenda contient tout ce qu’il faut pour facturer ainsi, sans chronomètre. Ce guide montre la règle sur une journée réelle, la formule Google Sheets qui l’applique sans jamais facturer trop, et ce qu’il faut écrire dans votre convention d’honoraires ou votre lettre de mission.</p>
+
+<h2>Comment fonctionnent les tranches de 6 minutes</h2>
+<p>Chaque rendez-vous est arrondi au multiple de 6 minutes supérieur, puis converti en heures : de 1 à 6 minutes, on facture 0,1&nbsp;h ; de 7 à 12 minutes, 0,2&nbsp;h ; et ainsi de suite jusqu’à 1,0&nbsp;h pour 55 à 60 minutes. Le tableau complet se trouve sous la <a href="/fr/billable-hours-calculator/">calculatrice d’heures facturables</a>, qui arrondit aussi une liste de durées à votre place.</p>
+<p>L’arrondi s’applique à chaque rendez-vous, pas à la journée ni au mois. C’est ce qui rend la règle prévisible : le client peut rapprocher chaque ligne de la facture du rendez-vous dont elle provient.</p>
+
+<h2>Un exemple chiffré : une journée dans l’agenda</h2>
+<p>Quatre rendez-vous pour un même client, à 90&nbsp;€ de l’heure :</p>
+<table>
+  <thead><tr><th scope="col">Rendez-vous dans Google Agenda</th><th scope="col">Durée réelle</th><th scope="col">Facturé</th></tr></thead>
+  <tbody>
+    <tr><td>Appel avec le client</td><td>7 min</td><td>0,2 h</td></tr>
+    <tr><td>Court appel, ajouté après coup</td><td>2 min</td><td>0,1 h</td></tr>
+    <tr><td>Relecture d’un projet</td><td>31 min</td><td>0,6 h</td></tr>
+    <tr><td>Réunion</td><td>1 h 20 min</td><td>1,4 h</td></tr>
+    <tr><td><b>Total</b></td><td><b>2 h 00 min</b></td><td><b>2,3 h</b></td></tr>
+  </tbody>
+</table>
+<p>2,3 heures à 90&nbsp;€ font <b>207&nbsp;€</b>. Le temps réel, exactement 2 heures, ferait 180&nbsp;€. Les 27&nbsp;€ d’écart viennent de l’arrondi : arrondir chaque rendez-vous aux 6 minutes supérieures ajoute en moyenne 2,5 minutes par rendez-vous, si bien que de nombreux rendez-vous courts s’additionnent. C’est le fonctionnement normal de la règle, et la raison de l’annoncer avant la première facture.</p>
+
+<h2>De Google Agenda aux dixièmes d’heure, pas à pas</h2>
+<ol>
+  <li><b>Un événement par prestation pour un client.</b> Mettez le client dans le titre, une couleur ou un agenda dédié, et corrigez l’heure de fin quand un rendez-vous a duré moins ou plus longtemps que prévu. Le guide <a href="/fr/guides/google-calendar-time-tracking/">Suivi du temps avec Google Agenda : heures sans chronomètre</a> décrit la routine, et <a href="/fr/guides/count-hours-in-google-calendar/">Compter ses heures Google Agenda : client, couleur, semaine</a> explique comment étiqueter chaque événement.</li>
+  <li><b>Placez les événements dans Google Sheets</b>, une ligne par événement, avec l’heure de début en colonne B et l’heure de fin en colonne C. Le guide <a href="/fr/guides/export-google-calendar-to-google-sheets/">Exporter Google Agenda vers Google Sheets automatiquement</a> compare les méthodes.</li>
+  <li><b>Heures facturées en colonne D</b> : <code>=PLAFOND(ARRONDI((C2-B2)*1440); 6)/60</code>. La formule convertit la durée en minutes entières (une journée compte 1&nbsp;440 minutes), les arrondit au multiple de 6 supérieur, puis divise par 60.</li>
+  <li><b>Montant en colonne E</b>, le taux horaire étant en colonne F : <code>=D2*F2</code>. Le total du mois est la somme de la colonne E.</li>
+</ol>
+<p>Le <a href="/fr/guides/google-sheets-timesheet-template/">Modèle de feuille de temps Google Sheets pour indépendants</a> donne les autres colonnes d’une feuille de temps de facturation : client, minimum par rendez-vous et totaux par mois. Ces formules sont écrites comme Google Sheets les affiche en français ; avec une feuille réglée sur l’anglais, utilisez <code>CEILING</code> et <code>ROUND</code>, avec une virgule comme séparateur.</p>
+
+<h2>Trois pièges qui changent la facture</h2>
+<ul>
+  <li><b>Le piège du tableur.</b> La formule qui paraît évidente, PLAFOND((C2-B2)*24; 0,1), facture parfois un appel de 6 minutes 0,2 heure, car Google Sheets enregistre les heures comme des fractions de jour, avec d’infimes erreurs. Dans un essai fait dans Google Sheets le 19 octobre 2026, cela arrivait pour 192 des 1&nbsp;434 heures de début possibles d’un appel de 6 minutes sur une journée. La formule ci-dessus, qui convertit d’abord la durée en minutes entières, n’a produit aucune erreur sur les mêmes 1&nbsp;434 appels.</li>
+  <li><b>Un créneau d’agenda n’est pas du temps réel.</b> Un appel prévu pour 30 minutes qui en a duré 7 est facturé 0,5 heure au lieu de 0,2 si l’événement garde sa fin prévue. Corrigez l’heure de fin à la fin de l’appel, ou juste après.</li>
+  <li><b>Les événements qui se chevauchent.</b> Deux événements à la même heure pour deux clients font facturer deux fois les mêmes minutes. Cherchez les chevauchements avant de facturer, et ne gardez pour chaque client que le temps réellement passé.</li>
+</ul>
+
+<h2>Que mettre dans la convention d’honoraires ou la lettre de mission</h2>
+<p>Énoncez la règle en termes simples avant la première facture, par exemple : « Le temps est enregistré par tâche et facturé par unités de 0,1 heure (6 minutes), chaque tâche étant arrondie à l’unité supérieure. »</p>
+<p>À titre d’exemple américain : aux États-Unis, l’avis 2022 FEO 4 (<a href="https://www.ncbar.gov/for-lawyers/ethics/adopted-opinions/2022-formal-ethics-opinion-4/">2022 Formal Ethics Opinion 4</a>) du barreau de Caroline du Nord (North Carolina State Bar), adopté le 27 octobre 2023, admet la facturation par unités de six minutes lorsque l’avocat a expliqué cette pratique par écrit à chaque client et que celui-ci l’a acceptée, à condition que la facturation soit exacte et que les prestations pour des clients différents ne se chevauchent pas. Il ajoute que facturer par unités d’une heure serait manifestement excessif. Les règles varient selon le pays et la profession : renseignez-vous auprès de votre ordre ou de votre organisme professionnel.</p>
+
+<h2>Questions</h2>
+<h3>6 minutes, est-ce bien 0,1 heure ?</h3>
+<p>Oui. Une heure compte 60 minutes : un dixième d’heure fait donc 6 minutes, et 0,25 heure fait 15 minutes.</p>
+<h3>Une tâche d’une minute est-elle facturée 0,1 heure ?</h3>
+<p>Selon la règle habituelle, oui : toute tranche entamée compte. Certains clients imposent leurs propres consignes de facturation ; dans ce cas, suivez ce que vous avez convenu avec eux.</p>
+<h3>Google Agenda peut-il arrondir mes heures ?</h3>
+<p>Non. Google Agenda n’a ni fonction de facturation ni arrondi. L’arrondi se fait dans Google Sheets, avec la formule ci-dessus, ou avec un module complémentaire.</p>
+
+<div class="cta-end">
+  <h2>Des dixièmes d’heure, chaque mois</h2>
+  <p>La feuille gratuite Calendar Timesheet exporte votre agenda vers Google Sheets, avec des totaux par couleur et par agenda. L’essai de Pro arrondit chaque événement aux 6 minutes supérieures (ou à 5, 10, 15, 30 ou 60), ajoute un minimum par événement et un taux par client, et clôture chaque mois en un relevé par client.</p>
+  <p><a class="btn primary" href="/fr/get-the-sheet/">Obtenir la feuille gratuite</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Autres guides</h2><ul class="guide-list"><li><a href="/fr/guides/google-calendar-timesheet/">Transformer Google Agenda en feuille de temps</a><p>Trois façons de transformer Google Agenda en feuille de temps : à la main, avec une formule dans Google Sheets ou automatiquement. Pas à pas, avec les pièges.</p></li><li><a href="/fr/guides/count-hours-in-google-calendar/">Compter ses heures Google Agenda : client, couleur, semaine</a><p>Google Agenda n’affiche aucun total. Répartissez vos heures par client, couleur ou semaine grâce aux couleurs, aux agendas et aux mots du titre.</p></li><li><a href="/fr/guides/export-google-calendar-to-google-sheets/">Exporter Google Agenda vers Google Sheets automatiquement</a><p>Exporter vos événements Google Agenda vers Google Sheets : export .ics, Apps Script et synchronisation automatique toutes les heures, comparés honnêtement.</p></li><li><a href="/fr/guides/export-google-calendar-to-excel/">Exporter Google Agenda en Excel ou CSV, avec les durées</a><p>Google Agenda n’exporte ni en Excel ni en CSV. Passez par Google Sheets, ajoutez des durées qui s’additionnent, puis téléchargez un fichier .xlsx ou .csv.</p></li><li><a href="/fr/guides/bill-clients-from-google-calendar/">Facturer depuis Google Agenda : taux, arrondis, minimums</a><p>Comment les indépendants facturent depuis leur agenda : taux horaire par client, règles d’arrondi, minimums facturés, forfaits et relevés de fin de mois.</p></li><li><a href="/fr/guides/google-calendar-time-tracking/">Suivi du temps avec Google Agenda : heures sans chronomètre</a><p>Suivez vos heures facturables dans Google Agenda sans chronomètre : planifier, corriger, étiqueter, compter. Ses limites et 5 erreurs courantes à éviter.</p></li><li><a href="/fr/guides/google-sheets-timesheet-template/">Modèle de feuille de temps Google Sheets pour indépendants</a><p>Feuille de temps d’indépendant dans Google Sheets : colonnes, formules de durée, arrondi au quart d’heure, minimums, montants et totaux mensuels par client.</p></li><li><a href="/fr/guides/google-calendar-time-insights-personal-account/">Utilisation du temps Google Agenda : où et pourquoi absente</a><p>L’utilisation du temps de Google Agenda est réservée à certaines éditions Workspace. Où la trouver, pourquoi elle manque, comment compter vos heures sans elle.</p></li><li><a href="/fr/guides/calculate-hours-worked-from-google-calendar/">Google Agenda peut-il calculer les heures travaillées ?</a><p>Google Agenda ne totalise pas les heures, et ses heures de travail ne sont qu’une disponibilité. Votre total sur tout appareil, avec les formules Google Sheets.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/fr/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Conçu en France par Pierre Chevallier, entrepreneur individuel. Ni affilié à Google, ni approuvé par Google. Google Agenda™ et Google Sheets™ sont des marques de Google LLC.</p></div><nav aria-label="Pied de page"><a href="/fr/guides/">Guides</a><a href="/fr/support/">Assistance</a><a href="/fr/privacy/">Confidentialité</a><a href="/fr/terms/">Conditions</a><a href="/fr/google-calendar-hours-calculator/">Calculatrice d’heures</a><a href="/fr/billable-hours-calculator/">Heures en décimal</a><a href="/fr/google-calendar-to-excel/">Export vers Excel</a></nav><nav class="langs" aria-label="Langue"><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en">English</a><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr" aria-current="page">Français</a><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bill in 6-minute increments from Google Calendar</title>
+<meta name="description" content="Billing in tenths of an hour from Google Calendar: how 6-minute increments work, a worked example, and a Google Sheets formula that never overbills.">
+<link rel="canonical" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Bill in 6-minute increments from Google Calendar">
+<meta property="og:description" content="Billing in tenths of an hour from Google Calendar: how 6-minute increments work, a worked example, and a Google Sheets formula that never overbills.">
+<meta property="og:url" content="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calendartimesheet.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://calendartimesheet.com/guides/"},{"@type":"ListItem","position":3,"name":"Bill in 6-minute increments from Google Calendar","item":"https://calendartimesheet.com/guides/bill-in-6-minute-increments/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Bill in 6-minute increments from Google Calendar","description":"Billing in tenths of an hour from Google Calendar: how 6-minute increments work, a worked example, and a Google Sheets formula that never overbills.","inLanguage":"en","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/guides/bill-in-6-minute-increments/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="/" aria-label="Calendar Timesheet, home"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/guides/">Guides</a><details class="lang"><summary aria-label="Language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">English</span><span class="lang-short">EN</span></summary><ul><li><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/get-the-sheet/">Get the free sheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>How to bill in 6-minute increments from Google Calendar</h1>
+<p class="meta">Updated 19 October 2026. About 6 minutes to read. General information, not legal or tax advice.</p>
+
+<p>Lawyers, accountants and many consultants bill in tenths of an hour: every started block of 6 minutes counts as 0.1 hours. If your client work is already in Google Calendar, the calendar holds everything you need to bill that way without running a timer. This guide shows the rule on a real day, the Google Sheets formula that applies it without overbilling, and what to write in your engagement letter.</p>
+
+<h2>How 6-minute increments work</h2>
+<p>Each entry is rounded up to the next multiple of 6 minutes, then converted to hours: 1 to 6 minutes bill 0.1, 7 to 12 minutes bill 0.2, and so on up to 55 to 60 minutes for 1.0. The full table is the <a href="/billable-hours-calculator/">6-minute increments chart</a> under the billable hours calculator, which also rounds a list of durations for you.</p>
+<p>The rounding applies to each entry, not to the day or the month. That is what makes it predictable: the client can check any line of the invoice against the meeting it comes from.</p>
+
+<h2>A worked example: one day from the calendar</h2>
+<p>Four entries for one client, at $250 an hour:</p>
+<table>
+  <thead><tr><th scope="col">Entry in Google Calendar</th><th scope="col">Real time</th><th scope="col">Billed</th></tr></thead>
+  <tbody>
+    <tr><td>Call with the client</td><td>7 min</td><td>0.2 h</td></tr>
+    <tr><td>Short call, added afterwards</td><td>2 min</td><td>0.1 h</td></tr>
+    <tr><td>Review of a draft</td><td>31 min</td><td>0.6 h</td></tr>
+    <tr><td>Meeting</td><td>1 h 20 min</td><td>1.4 h</td></tr>
+    <tr><td><b>Total</b></td><td><b>2 h 00 min</b></td><td><b>2.3 h</b></td></tr>
+  </tbody>
+</table>
+<p>2.3 hours at $250 is <b>$575</b>. The real time, exactly 2 hours, would be $500. The $75 difference is the rounding: rounding each entry up to 6 minutes adds 2.5 minutes per entry on average, so many short entries add up. That is how the rule works, and it is the reason to state the rule before the first invoice.</p>
+
+<h2>From Google Calendar to tenths of an hour, step by step</h2>
+<ol>
+  <li><b>One event per piece of client work.</b> Put the client in the title, a colour or a dedicated calendar, and correct the end time when a meeting runs short or long. The <a href="/guides/google-calendar-time-tracking/">guide to time tracking with Google Calendar</a> shows the routine, and the <a href="/guides/count-hours-in-google-calendar/">guide to counting hours by client</a> explains how to tag each event.</li>
+  <li><b>Get the events into Google Sheets</b>, one line per event, with the start time in column B and the end time in column C. The <a href="/guides/export-google-calendar-to-google-sheets/">guide to exporting Google Calendar to Google Sheets</a> compares the ways to do it.</li>
+  <li><b>Billed hours in column D:</b> <code>=CEILING(ROUND((C2-B2)*1440),6)/60</code>. The formula turns the duration into whole minutes (a day has 1,440 minutes), rounds them up to a multiple of 6, then divides by 60.</li>
+  <li><b>Amount in column E</b>, with the hourly rate in column F: <code>=D2*F2</code>. The total for the month is the sum of column E.</li>
+</ol>
+<p>The <a href="/guides/google-sheets-timesheet-template/">Google Sheets timesheet template</a> has the other columns of a billing timesheet: client, minimum per entry and totals per month.</p>
+
+<h2>Three traps that change the invoice</h2>
+<ul>
+  <li><b>The spreadsheet trap.</b> The obvious formula, CEILING((C2-B2)*24, 0.1), sometimes bills a 6-minute call as 0.2 hours, because Google Sheets stores times as fractions of a day with tiny errors. In a test we ran in Google Sheets on 19 October 2026, it happened for 192 of the 1,434 possible start times of a 6-minute call in one day. The formula above, which turns the duration into whole minutes first, gave no error on the same 1,434 calls.</li>
+  <li><b>Calendar slots are not real time.</b> A call scheduled for 30 minutes that took 7 bills 0.5 hours instead of 0.2 if the event keeps its planned end. Correct the end time when the call ends, or right after.</li>
+  <li><b>Overlapping events.</b> Two events at the same time for two clients bill the same minutes twice. Look for overlaps before you invoice, and keep only the time you actually spent on each client.</li>
+</ul>
+
+<h2>What to write in the engagement letter</h2>
+<p>State the rule in plain words before the first invoice, for example: “Time is recorded per task and billed in units of 0.1 hour (6 minutes), each task rounded up to the next unit.”</p>
+<p>In the United States, the North Carolina State Bar's <a href="https://www.ncbar.gov/for-lawyers/ethics/adopted-opinions/2022-formal-ethics-opinion-4/">2022 Formal Ethics Opinion 4</a>, adopted on 27 October 2023, accepts billing in six-minute units when the lawyer has explained the practice to each client in writing and the client has agreed, provided the billing is accurate and the services to different clients do not overlap. It adds that billing in one-hour units would be clearly excessive. Rules differ by country, state and profession: check those of your bar or professional body.</p>
+
+<h2>Questions</h2>
+<h3>Is 6 minutes the same as 0.1 hours?</h3>
+<p>Yes. An hour has 60 minutes, so a tenth of an hour is 6 minutes, and 0.25 hours is 15 minutes.</p>
+<h3>Does a 1-minute task bill 0.1 hours?</h3>
+<p>Under the usual rule, yes: every started unit counts. Some clients send their own billing guidelines; when they do, follow what you agreed with them.</p>
+<h3>Can Google Calendar round my hours?</h3>
+<p>No. Google Calendar has no billing or rounding feature. The rounding happens in Google Sheets, with the formula above, or in an add-on.</p>
+
+<div class="cta-end">
+  <h2>Tenths of an hour, every month</h2>
+  <p>The free Calendar Timesheet sheet exports your calendar to Google Sheets, with totals by colour and by calendar. The Pro trial rounds each event up to 6 minutes (or 5, 10, 15, 30 or 60), adds a minimum per event and a rate per client, and closes each month into one statement per client.</p>
+  <p><a class="btn primary" href="/get-the-sheet/">Get the free sheet</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">More guides</h2><ul class="guide-list"><li><a href="/guides/google-calendar-timesheet/">How to turn Google Calendar into a timesheet</a><p>Three ways to turn Google Calendar into a timesheet: by hand, with a short script in Google Sheets, or automatically. Step by step, with the pitfalls.</p></li><li><a href="/guides/count-hours-in-google-calendar/">Count hours in Google Calendar per client, colour or week</a><p>Google Calendar shows no totals. How to split your hours per client, colour, week or month with colours, calendars and keywords, free or automatic.</p></li><li><a href="/guides/export-google-calendar-to-google-sheets/">Export Google Calendar to Google Sheets automatically</a><p>Export Google Calendar events to Google Sheets: the .ics export, Apps Script, and an automatic hourly sync, compared honestly.</p></li><li><a href="/guides/export-google-calendar-to-excel/">Export Google Calendar to Excel or CSV, with durations</a><p>Google Calendar has no Excel or CSV export. Get your events into Google Sheets, add durations that add up, then download a .xlsx or .csv file.</p></li><li><a href="/guides/bill-clients-from-google-calendar/">Bill clients from Google Calendar: rates, rounding, minimums</a><p>How freelancers bill from their calendar: hourly rates per client, rounding rules, minimum charges, retainers and month-end statements.</p></li><li><a href="/guides/google-calendar-time-tracking/">Google Calendar time tracking: hours without a timer</a><p>Track billable hours with Google Calendar instead of a timer: plan, correct, tag each client, count. What the calendar cannot do, and 5 common mistakes.</p></li><li><a href="/guides/google-sheets-timesheet-template/">Google Sheets timesheet template for freelancers</a><p>A freelance timesheet in Google Sheets: the columns, the formulas for duration, rounding up to 15 minutes, minimums, amounts and monthly totals per client.</p></li><li><a href="/guides/google-calendar-time-insights-personal-account/">Google Calendar Time Insights: where it is, why it's missing</a><p>Time Insights is only in some Google Workspace editions. Where to find it, why it is missing, what it counts, and free ways to see your hours on any account.</p></li><li><a href="/guides/calculate-hours-worked-from-google-calendar/">Can Google Calendar calculate hours worked?</a><p>Google Calendar does not total hours, and Working hours is only availability. See your total hours on any device, with the Google Sheets formulas.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Made in France by Pierre Chevallier, entrepreneur individuel. Not affiliated with or endorsed by Google. Google Calendar™ and Google Sheets™ are trademarks of Google LLC.</p></div><nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/google-calendar-hours-calculator/">Hours calculator</a><a href="/billable-hours-calculator/">Billable hours calculator</a><a href="/google-calendar-to-excel/">Excel converter</a><a href="/about/">About</a></nav><nav class="langs" aria-label="Language"><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en" aria-current="page">English</a><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

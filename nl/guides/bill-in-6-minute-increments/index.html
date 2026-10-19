@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factureren in blokken van 6 minuten: formule en voorbeeld</title>
+<meta name="description" content="Factureer in tienden van een uur vanuit Google Agenda: de regel, een uitgewerkt voorbeeld, de formule voor Google Spreadsheets en drie valkuilen.">
+<link rel="canonical" href="https://calendartimesheet.com/nl/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Factureren in blokken van 6 minuten: formule en voorbeeld">
+<meta property="og:description" content="Factureer in tienden van een uur vanuit Google Agenda: de regel, een uitgewerkt voorbeeld, de formule voor Google Spreadsheets en drie valkuilen.">
+<meta property="og:url" content="https://calendartimesheet.com/nl/guides/bill-in-6-minute-increments/">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/nl/"},{"@type":"ListItem","position":2,"name":"Factureren in blokken van 6 minuten: formule en voorbeeld","item":"https://calendartimesheet.com/nl/guides/bill-in-6-minute-increments/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Factureren in blokken van 6 minuten: formule en voorbeeld","description":"Factureer in tienden van een uur vanuit Google Agenda: de regel, een uitgewerkt voorbeeld, de formule voor Google Spreadsheets en drie valkuilen.","inLanguage":"nl","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/nl/guides/bill-in-6-minute-increments/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top"><div class="wrap"><a class="brand" href="/nl/" aria-label="Calendar Timesheet, startpagina"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Hoofdmenu"><a href="/nl/#how">Zo werkt het</a><a href="/nl/#features">Functies</a><a href="/nl/#pricing">Prijzen</a><a href="/nl/guides/">Handleidingen</a><details class="lang"><summary aria-label="Taal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Nederlands</span><span class="lang-short">NL</span></summary><ul><li><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></li></ul></details><a class="btn primary sm" href="/nl/get-the-sheet/">Gratis spreadsheet</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Factureren in blokken van 6 minuten vanuit Google Agenda</h1>
+<p class="meta">Bijgewerkt op 19 oktober 2026. Ongeveer 6 minuten leestijd. Algemene informatie, geen juridisch of fiscaal advies.</p>
+
+<p>Advocaten, accountants en veel consultants factureren in tienden van een uur: elk begonnen blok van 6 minuten telt als 0,1 uur. Staat je klantwerk al in Google Agenda, dan heb je daar alles wat je nodig hebt om zo te factureren, zonder timer. Deze handleiding laat de regel zien op een echte dag, geeft de formule voor Google Spreadsheets die niet te veel factureert en zegt wat je in je opdrachtbevestiging kunt zetten.</p>
+
+<h2>Zo werken blokken van 6 minuten</h2>
+<p>Elke afspraak wordt omhoog afgerond op het volgende veelvoud van 6 minuten en daarna omgerekend naar uren: 1 tot 6 minuten telt als 0,1, 7 tot 12 minuten als 0,2, enzovoort tot 55 tot 60 minuten als 1,0. De volledige tabel staat onder de <a href="/nl/billable-hours-calculator/">calculator voor declarabele uren</a>, die ook een lijst met duren voor je afrondt.</p>
+<p>De afronding geldt per afspraak, niet per dag of per maand. Daardoor is het voorspelbaar: de klant kan elke regel van de factuur terugvinden in de afspraak waar hij vandaan komt.</p>
+
+<h2>Een uitgewerkt voorbeeld: één dag uit de agenda</h2>
+<p>Vier afspraken voor één klant, tegen $&nbsp;250 per uur:</p>
+<table>
+  <thead><tr><th scope="col">Afspraak in Google Agenda</th><th scope="col">Echte tijd</th><th scope="col">Gefactureerd</th></tr></thead>
+  <tbody>
+    <tr><td>Gesprek met de klant</td><td>7 min</td><td>0,2 uur</td></tr>
+    <tr><td>Kort telefoontje, achteraf toegevoegd</td><td>2 min</td><td>0,1 uur</td></tr>
+    <tr><td>Beoordeling van een concept</td><td>31 min</td><td>0,6 uur</td></tr>
+    <tr><td>Overleg</td><td>1 uur 20 min</td><td>1,4 uur</td></tr>
+    <tr><td><b>Totaal</b></td><td><b>2 uur 00 min</b></td><td><b>2,3 uur</b></td></tr>
+  </tbody>
+</table>
+<p>2,3 uur tegen $&nbsp;250 is <b>$&nbsp;575</b>. De echte tijd, precies 2 uur, zou $&nbsp;500 zijn. Het verschil van $&nbsp;75 is de afronding: omhoog afronden op 6 minuten voegt gemiddeld 2,5 minuut toe per afspraak, dus veel korte afspraken tellen op. Zo werkt de regel nu eenmaal, en daarom zet je hem in je opdrachtbevestiging voordat je de eerste factuur verstuurt.</p>
+
+<h2>Van Google Agenda naar tienden van een uur, stap voor stap</h2>
+<ol>
+  <li><b>Eén afspraak per stuk klantwerk.</b> Zet de klant in de titel, een kleur of een eigen agenda, en pas het einde aan als een afspraak korter of langer duurde. De handleiding <a href="/nl/guides/google-calendar-time-tracking/">Urenregistratie met Google Agenda: uren zonder timer</a> beschrijft de routine, en <a href="/nl/guides/count-hours-in-google-calendar/">Uren tellen in Google Agenda: per klant, kleur of week</a> legt uit hoe je elke afspraak aan een klant koppelt.</li>
+  <li><b>Zet de afspraken in Google Spreadsheets</b>, één regel per afspraak, met de begintijd in kolom B en de eindtijd in kolom C. De handleiding <a href="/nl/guides/export-google-calendar-to-google-sheets/">Google Agenda automatisch exporteren naar Spreadsheets</a> vergelijkt de manieren om dat te doen.</li>
+  <li><b>Gefactureerde uren in kolom D:</b> <code>=AFRONDEN.BOVEN(AFRONDEN((C2-B2)*1440); 6)/60</code>. De formule zet de duur om in hele minuten (een dag heeft 1.440 minuten), rondt die omhoog af op een veelvoud van 6 en deelt daarna door 60.</li>
+  <li><b>Bedrag in kolom E</b>, met het uurtarief in kolom F: <code>=D2*F2</code>. Het maandtotaal is de som van kolom E.</li>
+</ol>
+<p>De <a href="/nl/guides/google-sheets-timesheet-template/">Urenregistratie-template in Google Spreadsheets voor zzp'ers</a> bevat de andere kolommen van een urenstaat voor facturatie: klant, minimum per afspraak en totalen per maand.</p>
+
+<h2>Drie valkuilen die de factuur veranderen</h2>
+<ul>
+  <li><b>De valkuil van de spreadsheet.</b> De voor de hand liggende formule, AFRONDEN.BOVEN((C2-B2)*24; 0,1), factureert een gesprek van 6 minuten soms als 0,2 uur, omdat Google Spreadsheets tijden opslaat als delen van een dag, met piepkleine fouten. In een test die we op 19 oktober 2026 in Google Spreadsheets deden, gebeurde dat bij 192 van de 1.434 mogelijke begintijden van een gesprek van 6 minuten binnen één dag. De formule hierboven, die de duur eerst omzet in hele minuten, gaf op dezelfde 1.434 gesprekken geen enkele fout.</li>
+  <li><b>Een agenda-blok is niet de echte tijd.</b> Een gesprek dat voor 30 minuten stond ingepland en 7 minuten duurde, wordt als 0,5 uur gefactureerd in plaats van 0,2 als de afspraak zijn geplande einde houdt. Pas het einde aan zodra het gesprek klaar is, of vlak daarna.</li>
+  <li><b>Overlappende afspraken.</b> Twee afspraken op hetzelfde moment voor twee klanten factureren dezelfde minuten twee keer. Zoek naar overlap voordat je factureert en houd per klant alleen de tijd over die je er echt aan besteedde.</li>
+</ul>
+
+<h2>Wat je in de opdrachtbevestiging zet</h2>
+<p>Schrijf de regel in gewone woorden op voordat je de eerste factuur verstuurt, bijvoorbeeld: &ldquo;De tijd wordt per taak bijgehouden en gefactureerd in eenheden van 0,1 uur (6 minuten), waarbij elke taak naar boven wordt afgerond op de volgende eenheid.&rdquo;</p>
+<p>Een Amerikaans voorbeeld: in de Verenigde Staten accepteert het advies <a href="https://www.ncbar.gov/for-lawyers/ethics/adopted-opinions/2022-formal-ethics-opinion-4/">2022 Formal Ethics Opinion 4</a> van de North Carolina State Bar, vastgesteld op 27 oktober 2023, facturering in eenheden van zes minuten, als de advocaat de werkwijze schriftelijk aan elke klant heeft uitgelegd en de klant ermee heeft ingestemd, mits de facturering juist is en de werkzaamheden voor verschillende klanten elkaar niet overlappen. Het voegt eraan toe dat facturering in eenheden van een uur duidelijk bovenmatig zou zijn.</p>
+<p>In Nederland bepaalt regel 17 van de <a href="https://www.advocatenorde.nl/voor-advocaten/wet-en-regelgeving/gedragsregels/gedragsregels-advocatuur/de-advocaat-de-verhouding">Gedragsregels advocatuur</a> van de Nederlandse orde van advocaten dat de advocaat bij het aanvaarden van de opdracht duidelijke afspraken maakt over honorarium, doorbelasting van kosten en wijze van declareren, en dat de declaratie in beginsel periodiek en gespecificeerd is, met opgave van tarief en tijdsbesteding. Regels verschillen per land en per beroep: controleer die van je eigen beroepsorganisatie.</p>
+
+<h2>Vragen</h2>
+<h3>Is 6 minuten hetzelfde als 0,1 uur?</h3>
+<p>Ja. Een uur heeft 60 minuten, dus een tiende uur is 6 minuten, en 0,25 uur is 15 minuten.</p>
+<h3>Wordt een taak van 1 minuut als 0,1 uur gefactureerd?</h3>
+<p>Volgens de gebruikelijke regel wel: elke begonnen eenheid telt. Sommige klanten sturen hun eigen factureringsrichtlijnen mee; doen zij dat, houd je dan aan wat je met hen hebt afgesproken.</p>
+<h3>Kan Google Agenda mijn uren afronden?</h3>
+<p>Nee. Google Agenda heeft geen functie voor facturering of afronding. De afronding gebeurt in Google Spreadsheets, met de formule hierboven, of in een add-on.</p>
+
+<div class="cta-end">
+  <h2>Tienden van een uur, elke maand</h2>
+  <p>De gratis spreadsheet van Calendar Timesheet exporteert je agenda naar Google Spreadsheets, met totalen per kleur en per agenda. De proefperiode van Pro rondt elke afspraak omhoog af op 6 minuten (of 5, 10, 15, 30 of 60), voegt een minimum per afspraak en een tarief per klant toe en sluit elke maand af met één maandoverzicht per klant.</p>
+  <p><a class="btn primary" href="/nl/get-the-sheet/">Gratis spreadsheet ophalen</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Meer handleidingen</h2><ul class="guide-list"><li><a href="/nl/guides/google-calendar-timesheet/">Zo maak je van Google Agenda een urenstaat</a><p>Drie manieren om van Google Agenda een urenstaat te maken: met de hand, met een formule in Google Spreadsheets of automatisch. Stap voor stap, met valkuilen.</p></li><li><a href="/nl/guides/count-hours-in-google-calendar/">Uren tellen in Google Agenda: per klant, kleur of week</a><p>Google Agenda toont geen totalen. Zo verdeel je je uren per klant, kleur, week of maand met kleuren, agenda's en trefwoorden, gratis of automatisch.</p></li><li><a href="/nl/guides/export-google-calendar-to-google-sheets/">Google Agenda automatisch exporteren naar Spreadsheets</a><p>Afspraken uit Google Agenda exporteren naar Google Spreadsheets: de .ics-export, Apps Script en een automatische synchronisatie per uur, eerlijk vergeleken.</p></li><li><a href="/nl/guides/export-google-calendar-to-excel/">Google Agenda exporteren naar Excel of CSV, met de duur</a><p>Google Agenda heeft geen export naar Excel of CSV. Zet je afspraken in Google Spreadsheets, voeg een duur toe die optelt en download een .xlsx- of .csv-bestand.</p></li><li><a href="/nl/guides/bill-clients-from-google-calendar/">Uren factureren uit Google Agenda: tarief, afronding, minima</a><p>Zo factureren zzp'ers en freelancers vanuit hun agenda: uurtarieven per klant, afrondingsregels, een minimum per afspraak, urenbundels en maandoverzichten.</p></li><li><a href="/nl/guides/google-calendar-time-tracking/">Urenregistratie met Google Agenda: uren zonder timer</a><p>Houd declarabele uren bij met Google Agenda in plaats van een timer: plannen, corrigeren, toewijzen, tellen. Wat de agenda niet kan, en 5 veelgemaakte fouten.</p></li><li><a href="/nl/guides/google-sheets-timesheet-template/">Urenregistratie-template in Google Spreadsheets voor zzp'ers</a><p>Een urenstaat voor zzp'ers in Google Spreadsheets: de kolommen, de formules voor de duur, afronden op 15 minuten, minima, bedragen en maandtotalen per klant.</p></li><li><a href="/nl/guides/google-calendar-time-insights-personal-account/">Geen Tijdsinzichten in Google Agenda? Waar en waarom</a><p>Tijdsinzichten zit alleen in sommige Google Workspace-versies. Waar het staat, waarom het ontbreekt, wat het telt en hoe je je uren gratis ziet op elk account.</p></li><li><a href="/nl/guides/calculate-hours-worked-from-google-calendar/">Kan Google Agenda gewerkte uren berekenen?</a><p>Google Agenda telt geen uren op en Werktijden is alleen beschikbaarheid. Zo zie je je totaal op elk apparaat, met de formules voor Google Spreadsheets.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/nl/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Gemaakt in Frankrijk door Pierre Chevallier, entrepreneur individuel. Niet gelieerd aan of goedgekeurd door Google. Google Agenda™ en Google Spreadsheets™ zijn handelsmerken van Google LLC.</p></div><nav aria-label="Voettekst"><a href="/nl/guides/">Handleidingen</a><a href="/nl/support/">Support</a><a href="/nl/privacy/">Privacy</a><a href="/nl/terms/">Voorwaarden</a><a href="/nl/google-calendar-hours-calculator/">Urencalculator</a><a href="/nl/billable-hours-calculator/">Uren naar decimalen</a><a href="/nl/google-calendar-to-excel/">Excel-converter</a></nav><nav class="langs" aria-label="Taal"><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en">English</a><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></nav></div></footer>
+</body>
+</html>

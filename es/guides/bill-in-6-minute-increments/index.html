@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facturar por tramos de 6 minutos con Google Calendar</title>
+<meta name="description" content="Facturar por décimas de hora desde Google Calendar: la regla de 6 minutos, un ejemplo con cifras, la fórmula en Hojas de cálculo y la carta de encargo.">
+<link rel="canonical" href="https://calendartimesheet.com/es/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Facturar por tramos de 6 minutos con Google Calendar">
+<meta property="og:description" content="Facturar por décimas de hora desde Google Calendar: la regla de 6 minutos, un ejemplo con cifras, la fórmula en Hojas de cálculo y la carta de encargo.">
+<meta property="og:url" content="https://calendartimesheet.com/es/guides/bill-in-6-minute-increments/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/es/"},{"@type":"ListItem","position":2,"name":"Facturar por tramos de 6 minutos con Google Calendar","item":"https://calendartimesheet.com/es/guides/bill-in-6-minute-increments/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Facturar por tramos de 6 minutos con Google Calendar","description":"Facturar por décimas de hora desde Google Calendar: la regla de 6 minutos, un ejemplo con cifras, la fórmula en Hojas de cálculo y la carta de encargo.","inLanguage":"es","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/es/guides/bill-in-6-minute-increments/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top"><div class="wrap"><a class="brand" href="/es/" aria-label="Calendar Timesheet, inicio"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="Principal"><a href="/es/#how">Cómo funciona</a><a href="/es/#features">Funciones</a><a href="/es/#pricing">Precios</a><a href="/es/guides/">Guías</a><details class="lang"><summary aria-label="Idioma"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">Español</span><span class="lang-short">ES</span></summary><ul><li><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es" aria-current="page">Español</a></li><li><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/es/get-the-sheet/">Obtén la hoja gratis</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Cómo facturar por tramos de 6 minutos desde Google Calendar</h1>
+<p class="meta">Actualizado el 19 de octubre de 2026. Lectura de unos 6 minutos. Información general, no asesoramiento jurídico ni fiscal.</p>
+
+<p>Abogados, contables y muchos consultores facturan por décimas de hora: cada bloque de 6 minutos empezado cuenta como 0,1 horas. Si tu trabajo para clientes ya está en Google Calendar, el calendario contiene todo lo necesario para facturar así sin cronómetro. Esta guía muestra la regla con un día real, la fórmula de Hojas de cálculo de Google que la aplica sin facturar de más y qué conviene escribir en tu carta de encargo.</p>
+
+<h2>Cómo funcionan los tramos de 6 minutos</h2>
+<p>Cada entrada se redondea al alza al siguiente múltiplo de 6 minutos y después se convierte en horas: de 1 a 6 minutos se facturan 0,1; de 7 a 12 minutos, 0,2; y así hasta los 55 a 60 minutos, que son 1,0. La tabla completa está en la <a href="/es/billable-hours-calculator/">tabla de tramos de 6 minutos</a> de la calculadora de horas facturables, que además redondea por ti una lista de duraciones.</p>
+<p>El redondeo se aplica a cada entrada, no al día ni al mes. Eso es lo que lo hace previsible: el cliente puede comprobar cualquier línea de la factura con la reunión de la que sale.</p>
+
+<h2>Un ejemplo práctico: un día sacado del calendario</h2>
+<p>Cuatro entradas de un mismo cliente, a 150 US$ la hora:</p>
+<table>
+  <thead><tr><th scope="col">Entrada en Google Calendar</th><th scope="col">Tiempo real</th><th scope="col">Facturado</th></tr></thead>
+  <tbody>
+    <tr><td>Llamada con el cliente</td><td>7 min</td><td>0,2 h</td></tr>
+    <tr><td>Llamada corta, añadida después</td><td>2 min</td><td>0,1 h</td></tr>
+    <tr><td>Revisión de un borrador</td><td>31 min</td><td>0,6 h</td></tr>
+    <tr><td>Reunión</td><td>1 h 20 min</td><td>1,4 h</td></tr>
+    <tr><td><b>Total</b></td><td><b>2 h 00 min</b></td><td><b>2,3 h</b></td></tr>
+  </tbody>
+</table>
+<p>2,3 horas a 150 US$ son <b>345 US$</b>. El tiempo real, exactamente 2 horas, serían 300 US$. Los 45 US$ de diferencia son el redondeo: redondear cada entrada al alza a 6 minutos añade de media 2,5 minutos por entrada, así que muchas entradas cortas se acumulan. Así funciona la regla, y por eso conviene enunciarla antes de la primera factura.</p>
+
+<h2>De Google Calendar a décimas de hora, paso a paso</h2>
+<ol>
+  <li><b>Un evento por cada trabajo para un cliente.</b> Pon el cliente en el título, un color o un calendario propio, y corrige la hora de fin cuando una reunión se acorte o se alargue. La guía <a href="/es/guides/google-calendar-time-tracking/">Control de horas con Google Calendar, sin cronómetro</a> explica la rutina, y la guía <a href="/es/guides/count-hours-in-google-calendar/">Contar horas en Google Calendar por cliente, color o semana</a>, cómo etiquetar cada evento.</li>
+  <li><b>Lleva los eventos a Hojas de cálculo de Google</b>, una fila por evento, con la hora de inicio en la columna B y la de fin en la columna C. La guía <a href="/es/guides/export-google-calendar-to-google-sheets/">Exportar Google Calendar a Hojas de cálculo de Google</a> compara las formas de hacerlo.</li>
+  <li><b>Horas facturadas en la columna D:</b> <code>=MULTIPLO.SUPERIOR(REDONDEAR((C2-B2)*1440);6)/60</code>. La fórmula convierte la duración en minutos enteros (un día tiene 1440 minutos), los redondea al alza a un múltiplo de 6 y divide entre 60.</li>
+  <li><b>Importe en la columna E</b>, con la tarifa por hora en la columna F: <code>=D2*F2</code>. El total del mes es la suma de la columna E.</li>
+</ol>
+<p>La <a href="/es/guides/google-sheets-timesheet-template/">plantilla de registro de horas en Hojas de cálculo de Google</a> tiene el resto de columnas de un registro para facturar: cliente, mínimo por entrada y totales por mes.</p>
+
+<h2>Tres trampas que cambian la factura</h2>
+<ul>
+  <li><b>La trampa de la hoja de cálculo.</b> La fórmula más obvia, MULTIPLO.SUPERIOR((C2-B2)*24;0,1), a veces factura como 0,2 horas una llamada de 6 minutos, porque Hojas de cálculo de Google guarda las horas como fracciones de día con errores minúsculos. En una prueba que hicimos en Hojas de cálculo de Google el 19 de octubre de 2026, ocurrió con 192 de las 1434 horas de inicio posibles de una llamada de 6 minutos en un día. La fórmula de arriba, que convierte primero la duración en minutos enteros, no dio ningún error con las mismas 1434 llamadas.</li>
+  <li><b>Las franjas del calendario no son tiempo real.</b> Una llamada programada para 30 minutos que duró 7 se factura como 0,5 horas en lugar de 0,2 si el evento conserva la hora de fin prevista. Corrige la hora de fin cuando acabe la llamada, o justo después.</li>
+  <li><b>Eventos solapados.</b> Dos eventos a la misma hora para dos clientes facturan dos veces los mismos minutos. Busca solapamientos antes de facturar y conserva solo el tiempo que de verdad dedicaste a cada cliente.</li>
+</ul>
+
+<h2>Qué escribir en la carta de encargo</h2>
+<p>Enuncia la regla con palabras sencillas antes de la primera factura, por ejemplo: «El tiempo se registra por tarea y se factura en unidades de 0,1 hora (6 minutos), redondeando cada tarea al alza a la unidad siguiente».</p>
+<p>En Estados Unidos, la <a href="https://www.ncbar.gov/for-lawyers/ethics/adopted-opinions/2022-formal-ethics-opinion-4/">opinión ética formal 2022 FEO 4</a> del Colegio de Abogados de Carolina del Norte (North Carolina State Bar), adoptada el 27 de octubre de 2023, admite facturar en unidades de seis minutos cuando el abogado ha explicado esa práctica por escrito a cada cliente y este la ha aceptado, siempre que la facturación sea exacta y los servicios prestados a distintos clientes no se solapen. Añade que facturar en unidades de una hora sería claramente excesivo. Las normas cambian según el país, el estado y la profesión: consulta las de tu colegio profesional u organismo equivalente.</p>
+
+<h2>Preguntas</h2>
+<h3>¿6 minutos son lo mismo que 0,1 horas?</h3>
+<p>Sí. Una hora tiene 60 minutos, así que una décima de hora son 6 minutos, y 0,25 horas son 15 minutos.</p>
+<h3>¿Una tarea de 1 minuto se factura como 0,1 horas?</h3>
+<p>Con la regla habitual, sí: cada unidad empezada cuenta. Algunos clientes envían sus propias normas de facturación; si es tu caso, sigue lo que hayas acordado con ellos.</p>
+<h3>¿Puede Google Calendar redondear mis horas?</h3>
+<p>No. Google Calendar no tiene ninguna función de facturación ni de redondeo. El redondeo se hace en Hojas de cálculo de Google, con la fórmula de arriba, o en un complemento.</p>
+
+<div class="cta-end">
+  <h2>Décimas de hora, cada mes</h2>
+  <p>La hoja gratuita de Calendar Timesheet exporta tu calendario a Hojas de cálculo de Google, con totales por color y por calendario. La prueba de Pro redondea cada evento al alza a 6 minutos (o a 5, 10, 15, 30 o 60), añade un mínimo por evento y una tarifa por cliente, y cierra cada mes con un informe por cliente.</p>
+  <p><a class="btn primary" href="/es/get-the-sheet/">Obtén la hoja gratis</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">Más guías</h2><ul class="guide-list"><li><a href="/es/guides/google-calendar-timesheet/">Cómo convertir Google Calendar en un registro de horas</a><p>Tres formas de convertir Google Calendar en un registro de horas: a mano, con un script en Hojas de cálculo de Google o automáticamente. Con sus trampas.</p></li><li><a href="/es/guides/count-hours-in-google-calendar/">Contar horas en Google Calendar por cliente, color o semana</a><p>Google Calendar no da totales. Cómo repartir tus horas por cliente, color, semana o mes con colores, calendarios y palabras clave, gratis o automáticamente.</p></li><li><a href="/es/guides/export-google-calendar-to-google-sheets/">Exportar Google Calendar a Hojas de cálculo de Google</a><p>Exporta los eventos de Google Calendar a Hojas de cálculo de Google: la exportación .ics, Apps Script y una sincronización automática cada hora, comparados.</p></li><li><a href="/es/guides/export-google-calendar-to-excel/">Exportar Google Calendar a Excel o CSV, con duraciones</a><p>Google Calendar no exporta a Excel ni a CSV. Lleva tus eventos a Hojas de cálculo de Google, añade duraciones que se puedan sumar y descarga un .xlsx o .csv.</p></li><li><a href="/es/guides/bill-clients-from-google-calendar/">Facturar por horas desde Google Calendar: tarifas y redondeo</a><p>Cómo facturan los freelancers desde su calendario: tarifas por hora para cada cliente, reglas de redondeo, mínimos, bolsas de horas e informes de fin de mes.</p></li><li><a href="/es/guides/google-calendar-time-tracking/">Control de horas con Google Calendar, sin cronómetro</a><p>Controla las horas facturables con Google Calendar, sin cronómetro: planifica, corrige, etiqueta y cuenta. Lo que el calendario no hace y 5 errores habituales.</p></li><li><a href="/es/guides/google-sheets-timesheet-template/">Plantilla de registro de horas en Hojas de cálculo de Google</a><p>Registro de horas de freelancer en Hojas de cálculo de Google: columnas, fórmulas, redondeo a 15 minutos, mínimos, importes y totales mensuales por cliente.</p></li><li><a href="/es/guides/google-calendar-time-insights-personal-account/">Estadísticas de tiempo de Google Calendar: por qué faltan</a><p>Estadísticas de tiempo solo está en algunas ediciones de Workspace. Dónde está, por qué falta, qué cuenta y cómo ver gratis tus horas con cualquier cuenta.</p></li><li><a href="/es/guides/calculate-hours-worked-from-google-calendar/">Calcular horas trabajadas con Google Calendar</a><p>Google Calendar no suma horas y el horario laboral solo indica disponibilidad. Cómo ver tu total de horas trabajadas en cualquier dispositivo, con las fórmulas.</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/es/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Hecho en Francia por Pierre Chevallier, entrepreneur individuel. Sin afiliación con Google ni respaldo de Google. Google Calendar™ y Hojas de cálculo de Google™ son marcas comerciales de Google LLC.</p></div><nav aria-label="Pie de página"><a href="/es/guides/">Guías</a><a href="/es/support/">Soporte</a><a href="/es/privacy/">Privacidad</a><a href="/es/terms/">Condiciones</a><a href="/es/google-calendar-hours-calculator/">Calculadora de horas</a><a href="/es/billable-hours-calculator/">Horas a decimales</a><a href="/es/google-calendar-to-excel/">Conversor a Excel</a></nav><nav class="langs" aria-label="Idioma"><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en">English</a><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es" aria-current="page">Español</a><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja">日本語</a><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>

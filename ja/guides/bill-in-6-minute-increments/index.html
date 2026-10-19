@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google カレンダーで 6 分単位（0.1 時間）請求：数式と計算例 | Calendar Timesheet</title>
+<meta name="description" content="Google カレンダーから 0.1 時間（6 分）単位で請求する方法。仕組み、計算例、過大請求にならない Google スプレッドシートの数式を解説します。">
+<link rel="canonical" href="https://calendartimesheet.com/ja/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="en" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="de" href="https://calendartimesheet.com/de/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="fr" href="https://calendartimesheet.com/fr/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="es" href="https://calendartimesheet.com/es/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="pt-BR" href="https://calendartimesheet.com/pt-br/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="ja" href="https://calendartimesheet.com/ja/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="nl" href="https://calendartimesheet.com/nl/guides/bill-in-6-minute-increments/">
+<link rel="alternate" hreflang="x-default" href="https://calendartimesheet.com/guides/bill-in-6-minute-increments/">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/assets/fonts/geist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calendar Timesheet">
+<meta property="og:title" content="Google カレンダーで 6 分単位（0.1 時間）請求：数式と計算例">
+<meta property="og:description" content="Google カレンダーから 0.1 時間（6 分）単位で請求する方法。仕組み、計算例、過大請求にならない Google スプレッドシートの数式を解説します。">
+<meta property="og:url" content="https://calendartimesheet.com/ja/guides/bill-in-6-minute-increments/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calendartimesheet.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar Timesheet","item":"https://calendartimesheet.com/ja/"},{"@type":"ListItem","position":2,"name":"Google カレンダーで 6 分単位（0.1 時間）請求：数式と計算例","item":"https://calendartimesheet.com/ja/guides/bill-in-6-minute-increments/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google カレンダーで 6 分単位（0.1 時間）請求：数式と計算例","description":"Google カレンダーから 0.1 時間（6 分）単位で請求する方法。仕組み、計算例、過大請求にならない Google スプレッドシートの数式を解説します。","inLanguage":"ja","image":"https://calendartimesheet.com/assets/og.png","datePublished":"2026-10-19","dateModified":"2026-10-19","author":{"@type":"Person","name":"Pierre Chevallier","url":"https://calendartimesheet.com/about/"},"publisher":{"@type":"Organization","name":"Calendar Timesheet","logo":{"@type":"ImageObject","url":"https://calendartimesheet.com/assets/apple-touch-icon.png"}},"mainEntityOfPage":"https://calendartimesheet.com/ja/guides/bill-in-6-minute-increments/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/" aria-label="Calendar Timesheet、ホーム"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><nav class="nav" aria-label="メイン"><a href="/ja/#how">使い方</a><a href="/ja/#features">機能</a><a href="/ja/#pricing">料金</a><a href="/ja/guides/">ガイド</a><details class="lang"><summary aria-label="言語"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg><span class="lang-long">日本語</span><span class="lang-short">JA</span></summary><ul><li><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en">English</a></li><li><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es">Español</a></li><li><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li><li><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl">Nederlands</a></li></ul></details><a class="btn primary sm" href="/ja/get-the-sheet/">無料シートを入手</a></nav></div></header>
+<main id="main" class="page"><div class="wrap">
+<h1>Google カレンダーから 6 分単位（0.1 時間）で請求する方法</h1>
+<p class="meta">2026年10月19日更新。約 6 分で読めます。一般的な情報であり、法律や税務に関する助言ではありません。</p>
+
+<p>弁護士、会計士、多くのコンサルタントは、1 時間の 10 分の 1、つまり 0.1 時間を 1 単位として請求します。始めた 6 分のブロックごとに 0.1 時間と数える方式です。クライアントの仕事がすでに Google カレンダーに入っているなら、タイマーを使わなくても、この方式で請求するために必要な情報はカレンダーにそろっています。このガイドでは、実際の 1 日を例にしたルールの適用、過大請求にならない Google スプレッドシートの数式、委任契約書や業務委託契約書に書いておくことを紹介します。</p>
+
+<h2>6 分単位の仕組み</h2>
+<p>各記録を次の 6 分の倍数に切り上げてから、時間に換算します。1 分から 6 分は 0.1 時間、7 分から 12 分は 0.2 時間と数え、55 分から 60 分は 1.0 時間になります。全体の早見表は、請求時間の計算ツールの下にある<a href="/ja/billable-hours-calculator/">6 分単位の早見表</a>にあります。このツールでは、所要時間の一覧をまとめて切り上げることもできます。</p>
+<p>切り上げは 1 日や 1 か月の合計ではなく、記録ごとに行います。だからこそ結果が予測しやすく、クライアントは請求書のどの行も、元になった会議と照らし合わせて確認できます。</p>
+
+<h2>具体例：カレンダーの 1 日分</h2>
+<p>あるクライアントの 4 件の記録を、時間単価 8,000 円で計算します。</p>
+<table>
+  <thead><tr><th scope="col">Google カレンダーの予定</th><th scope="col">実際の時間</th><th scope="col">請求時間</th></tr></thead>
+  <tbody>
+    <tr><td>クライアントとの電話</td><td>7 分</td><td>0.2 時間</td></tr>
+    <tr><td>短い電話（後から追加）</td><td>2 分</td><td>0.1 時間</td></tr>
+    <tr><td>草案のレビュー</td><td>31 分</td><td>0.6 時間</td></tr>
+    <tr><td>打ち合わせ</td><td>1 時間 20 分</td><td>1.4 時間</td></tr>
+    <tr><td><b>合計</b></td><td><b>2 時間 00 分</b></td><td><b>2.3 時間</b></td></tr>
+  </tbody>
+</table>
+<p>8,000 円で 2.3 時間なら <b>18,400 円</b> です。実際の時間はちょうど 2 時間で、16,000 円になります。差額の 2,400 円が切り上げ分です。記録ごとに 6 分単位で切り上げると、1 件あたり平均で約 2.5 分が上乗せされるため、短い記録が多いほど積み重なります。これがこの方式の仕組みであり、最初の請求書の前にルールを伝えておくべき理由です。</p>
+
+<h2>Google カレンダーから 0.1 時間単位へ：手順</h2>
+<ol>
+  <li><b>クライアントの仕事 1 件につき予定を 1 つ。</b>タイトル、色、または専用のカレンダーでクライアントがわかるようにし、会議が早く終わったり延びたりしたら終了時刻を直します。手順は<a href="/ja/guides/google-calendar-time-tracking/">Google カレンダーで工数管理：タイマーなしで作業時間を記録</a>で、各予定にタグを付ける方法は<a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーで時間を集計：クライアント別・色別・週別</a>で説明しています。</li>
+  <li><b>予定を Google スプレッドシートに入れます。</b>1 予定を 1 行とし、開始時刻を B 列、終了時刻を C 列に置きます。方法の比較は<a href="/ja/guides/export-google-calendar-to-google-sheets/">Google カレンダーをスプレッドシートに自動で書き出す・同期する</a>にあります。</li>
+  <li><b>D 列に請求時間：</b><code>=CEILING(ROUND((C2-B2)*1440),6)/60</code>。この数式は、所要時間をまず分単位の整数にし（1 日は 1,440 分）、6 の倍数に切り上げてから 60 で割ります。</li>
+  <li><b>E 列に金額</b>（時間単価は F 列）：<code>=D2*F2</code>。月の合計は E 列の合計です。</li>
+</ol>
+<p>クライアント、最低時間、月ごとの合計といった請求用の列は、<a href="/ja/guides/google-sheets-timesheet-template/">フリーランス向け Google スプレッドシートのタイムシート テンプレート（数式付き）</a>にそろっています。</p>
+
+<h2>請求額が変わる 3 つの落とし穴</h2>
+<ul>
+  <li><b>スプレッドシートの落とし穴。</b>誰もが最初に思いつく数式 CEILING((C2-B2)*24, 0.1) は、6 分の電話を 0.2 時間として請求してしまうことがあります。Google スプレッドシートは時刻を 1 日に対する割合で保存しており、そこにごくわずかな誤差があるためです。2026年10月19日に Google スプレッドシートで行った検証では、1 日の中で 6 分の電話が始まりうる 1,434 通りの開始時刻のうち、192 通りでこの誤りが起きました。上の数式は先に所要時間を分単位の整数にするため、同じ 1,434 通りで誤りは 0 件でした。</li>
+  <li><b>カレンダーの枠は実際の時間ではありません。</b>30 分で予定していた電話が 7 分で終わったのに、予定の終了時刻のままだと、0.2 時間ではなく 0.5 時間で請求されます。電話が終わったら、または終わった直後に、終了時刻を直しましょう。</li>
+  <li><b>重なった予定。</b>2 つのクライアントの予定が同じ時間に入っていると、同じ分数を二重に請求することになります。請求の前に重なりを探し、各クライアントに実際に使った時間だけを残してください。</li>
+</ul>
+
+<h2>委任契約書・業務委託契約書に書くこと</h2>
+<p>最初の請求書の前に、ルールをわかりやすい言葉で書いておきましょう。たとえば「時間は業務ごとに記録し、0.1 時間（6 分）を 1 単位として請求します。各業務は次の単位に切り上げます。」のようにします。</p>
+<p>アメリカの例として、ノースカロライナ州弁護士会の<a href="https://www.ncbar.gov/for-lawyers/ethics/adopted-opinions/2022-formal-ethics-opinion-4/">2022 Formal Ethics Opinion 4</a>（2023年10月27日採択）があります。弁護士がこのやり方を依頼者ごとに書面で説明し、依頼者が同意していること、請求が正確であること、複数の依頼者への業務が重ならないことを条件に、6 分単位での請求を認めています。一方で、1 時間単位での請求は明らかに過大になるとしています。これはアメリカの一州の見解です。ルールは国、州、職種によって異なるため、所属する弁護士会や職能団体の規則を確認してください。</p>
+
+<h2>よくある質問</h2>
+<h3>6 分は 0.1 時間と同じですか？</h3>
+<p>はい。1 時間は 60 分なので、1 時間の 10 分の 1 は 6 分です。0.25 時間は 15 分にあたります。</p>
+<h3>1 分の作業でも 0.1 時間として請求しますか？</h3>
+<p>一般的なルールでは、はい。始めた単位はすべて数えます。クライアントが独自の請求ガイドラインを出している場合は、合意した内容に従ってください。</p>
+<h3>Google カレンダーで時間を切り上げられますか？</h3>
+<p>いいえ。Google カレンダーには請求や端数処理の機能がありません。切り上げは、上の数式を使った Google スプレッドシート、またはアドオンで行います。</p>
+
+<div class="cta-end">
+  <h2>毎月、0.1 時間単位で</h2>
+  <p>無料の Calendar Timesheet のスプレッドシートは、カレンダーを Google スプレッドシートに書き出し、色別・カレンダー別の合計を付けます。Pro のトライアルでは、各予定を 6 分（または 5、10、15、30、60 分）単位で切り上げ、予定ごとの最低時間とクライアントごとの単価を加え、毎月クライアントごとの請求明細にまとめて締めます。</p>
+  <p><a class="btn primary" href="/ja/get-the-sheet/">無料のスプレッドシートを入手</a></p>
+</div>
+
+<section class="related" aria-labelledby="related-title"><h2 id="related-title">その他のガイド</h2><ul class="guide-list"><li><a href="/ja/guides/google-calendar-timesheet/">Google カレンダーをタイムシートにする 3 つの方法</a><p>Google カレンダーをタイムシートにする 3 つの方法を手順ごとに解説。手作業、Google スプレッドシートの短いスクリプト、自動化と、合計を狂わせる落とし穴。</p></li><li><a href="/ja/guides/count-hours-in-google-calendar/">Google カレンダーで時間を集計：クライアント別・色別・週別</a><p>Google カレンダーには合計が表示されません。色、カレンダー、キーワードで、時間をクライアント別・色別・週別・月別に集計する方法を、無料と自動の両方で紹介。</p></li><li><a href="/ja/guides/export-google-calendar-to-google-sheets/">Google カレンダーをスプレッドシートに自動で書き出す・同期する</a><p>Google カレンダーの予定を Google スプレッドシートに書き出す方法を比較。.ics エクスポート、Apps Script、1 時間ごとの自動同期の長所と短所を率直に紹介します。</p></li><li><a href="/ja/guides/export-google-calendar-to-excel/">Google カレンダーをエクセルにエクスポートする方法（CSV 対応）</a><p>Google カレンダーには Excel・CSV への出力機能がありません。予定を Google スプレッドシートに入れ、合計できる所要時間を加えて、.xlsx や .csv でダウンロードする方法。</p></li><li><a href="/ja/guides/bill-clients-from-google-calendar/">Google カレンダーから請求：時間単価・端数処理・最低時間</a><p>フリーランスがカレンダーから請求する方法。クライアントごとの時間単価、端数処理のルール、最低請求時間、前払い契約、月末の請求明細を解説します。</p></li><li><a href="/ja/guides/google-calendar-time-tracking/">Google カレンダーで工数管理：タイマーなしで作業時間を記録</a><p>タイマーの代わりに Google カレンダーで請求対象の時間を記録する方法。予定を入れ、修正し、クライアントのタグを付けて集計。カレンダーにできないことと、よくある 5 つのミスも。</p></li><li><a href="/ja/guides/google-sheets-timesheet-template/">スプレッドシートのタイムシート テンプレート：フリーランス向け</a><p>Google スプレッドシートで作るフリーランスのタイムシート。列の構成と、所要時間、15 分単位の切り上げ、最低時間、金額、クライアント別の月次合計の数式。</p></li><li><a href="/ja/guides/google-calendar-time-insights-personal-account/">Google カレンダーの時間の分析情報が表示されない理由</a><p>時間の分析情報（Time Insights）は一部の Google Workspace エディション専用です。場所、表示されない理由、集計の対象、どのアカウントでも時間を確認できる無料の方法。</p></li><li><a href="/ja/guides/calculate-hours-worked-from-google-calendar/">Google カレンダーで稼働時間・勤務時間を計算する方法</a><p>Google カレンダーは時間を合計せず、業務時間の設定は空き状況を示すだけです。どの端末でも合計時間を確認する方法と、Google スプレッドシートの数式を紹介します。</p></li></ul></section>
+</div></main>
+<footer class="foot"><div class="wrap"><div><a class="brand" href="/ja/"><span class="logo" aria-hidden="true"><span><i></i><i></i><i></i></span></span>Calendar Timesheet</a><p>Pierre Chevallier（entrepreneur individuel）がフランスで制作しています。Google との提携や Google による承認はありません。Google カレンダー™ および Google スプレッドシート™ は Google LLC の商標です。</p></div><nav aria-label="フッター"><a href="/ja/guides/">ガイド</a><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a><a href="/ja/google-calendar-hours-calculator/">時間集計ツール</a><a href="/ja/billable-hours-calculator/">時間の10進数変換</a><a href="/ja/google-calendar-to-excel/">Excel 変換</a></nav><nav class="langs" aria-label="言語"><a href="/guides/bill-in-6-minute-increments/" hreflang="en" lang="en">English</a><a href="/de/guides/bill-in-6-minute-increments/" hreflang="de" lang="de">Deutsch</a><a href="/fr/guides/bill-in-6-minute-increments/" hreflang="fr" lang="fr">Français</a><a href="/es/guides/bill-in-6-minute-increments/" hreflang="es" lang="es">Español</a><a href="/pt-br/guides/bill-in-6-minute-increments/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="/ja/guides/bill-in-6-minute-increments/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="/nl/guides/bill-in-6-minute-increments/" hreflang="nl" lang="nl">Nederlands</a></nav></div></footer>
+</body>
+</html>
